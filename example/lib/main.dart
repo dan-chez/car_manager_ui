@@ -22,7 +22,7 @@ class ExampleApp extends ConsumerWidget {
     final goRouter = ref.watch(goRouterProvider);
     return MaterialApp.router(
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: kAmaranthPrimary),
+        colorScheme: ColorScheme.fromSeed(seedColor: kMyrtleGreen),
         useMaterial3: true,
       ),
       routerConfig: goRouter,
