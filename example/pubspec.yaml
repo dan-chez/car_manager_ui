@@ -12,6 +12,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   carmanager_ui:
     path: ../
+  go_router: ^14.1.1
+  flutter_riverpod: ^2.5.1
 
 dev_dependencies:
   flutter_test:
