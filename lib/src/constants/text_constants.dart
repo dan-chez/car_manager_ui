@@ -9,3 +9,20 @@ const kCMButtonTextStyle = TextStyle(
   color: kWhite,
   fontWeight: FontWeight.w600,
 );
+
+// End Button Style
+
+// Text Style
+
+const kMediumTitleTextStyle = TextStyle(
+  fontSize: kTextMediumTitleSize,
+  color: kMyrtleGreen,
+);
+
+const kContentTextStyle = TextStyle(
+  fontSize: kTextContentSize,
+  color: kMyrtleGreen,
+  fontWeight: FontWeight.w300,
+);
+
+// End Text Style
