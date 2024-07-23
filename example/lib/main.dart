@@ -1,4 +1,3 @@
-import 'package:car_manager_ui/component_model.dart';
 import 'package:car_manager_ui/component_view.dart';
 import 'package:car_manager_ui/components_showcases.dart';
 import 'package:car_manager_ui/navigation/go_router_provider.dart';
@@ -51,9 +50,8 @@ class MyHomePage extends StatelessWidget {
           child: ListView(
             shrinkWrap: true,
             children: components.map((component) {
-              final model = ComponentModel(description: component.description, path: component.path);
               return ComponentView(
-                model: model,
+                model: component,
               );
             }).toList(),
           ),
