@@ -20,10 +20,7 @@ class TextFieldShowcase extends StatelessWidget {
           shrinkWrap: true,
           padding: const EdgeInsets.all(10),
           children: [
-            Text(
-              'CMTextField',
-              style: kMediumTitleTextStyle.copyWith(fontSize: 18),
-            ),
+            _createTextFieldTitle('CMTextField', higherSize: true),
             _createTextFieldTitle('Can\'t be empty, capitalize first letter of each word, support any input'),
             const CMTextField(
               hintText: 'Get value',
@@ -55,6 +52,19 @@ class TextFieldShowcase extends StatelessWidget {
               canBeEmpty: true,
               textInputType: TextInputType.number,
             ),
+            _createTextFieldTitle('CMMultilineTextField', higherSize: true),
+            _createTextFieldTitle('Can be empty, maxLength 100'),
+            const CMMultilineTextField(
+              onTextChange: _printValue,
+              maxLength: 100,
+            ),
+            _createTextFieldTitle('Can\'t be empty, initial value'),
+            const CMMultilineTextField(
+              onTextChange: _printValue,
+              canBeEmpty: false,
+              initialValue: 'This is a initial value',
+              errorText: 'This can\'t be empty',
+            ),
           ],
         ),
       ),
@@ -68,16 +78,16 @@ void _printValue(String value) {
   }
 }
 
-Widget _createTextFieldTitle(String title) {
+Widget _createTextFieldTitle(String title, {bool higherSize = false}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       const SizedBox(height: 16),
       Text(
         title,
-        style: kMediumTitleTextStyle.copyWith(fontSize: 12),
+        style: kMediumTitleTextStyle.copyWith(fontSize: higherSize ? 18 : 12),
       ),
-      const SizedBox(height: 16),
+      SizedBox(height: higherSize ? 0 : 16),
     ],
   );
 }
