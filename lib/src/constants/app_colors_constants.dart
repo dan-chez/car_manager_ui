@@ -5,4 +5,5 @@ const Color kMyrtleGreen = Color(0xFF353C61);
 const Color kGreyDisable = Color(0xFF888888);
 const Color kWhite = Color(0xFFFFFFFF);
 const Color kSilver = Color(0XFFB1B1B1);
+const Color kDarkDisable = Color(0xFFF8F8F8);
 
