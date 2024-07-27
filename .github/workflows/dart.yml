@@ -1,0 +1,20 @@
+on: push
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "11.0.17"
+      - name: 'Set up Flutter'
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+      - run: flutter --version
+      - run: flutter pub get
+      # Analyze our Dart code
+      - run: flutter analyze --no-fatal-infos
+      # Run our tests
+      - run: flutter test --coverage
