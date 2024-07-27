@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../base_component_app.dart';
+import '../base/base_component_app.dart';
 
 void main() {
   testWidgets('CMTextField displays initial value', (WidgetTester tester) async {
