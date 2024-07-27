@@ -81,6 +81,13 @@ class TextFieldShowcase extends StatelessWidget {
               onTextChange: printValue,
               canBeEmpty: false,
             ),
+            createTextFieldTitle('Disabled'),
+            const CMMoneyTextField(
+              hintText: 'Income',
+              onTextChange: printValue,
+              canBeEmpty: false,
+              isEnabled: false,
+            ),
           ],
         ),
       ),
