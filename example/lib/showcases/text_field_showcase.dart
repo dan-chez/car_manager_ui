@@ -1,4 +1,5 @@
 import 'package:car_manager_ui/showcase_utils.dart';
+import 'package:car_manager_ui/showcases/showcase_app_base.dart';
 import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -12,26 +13,23 @@ class TextFieldShowcase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('TextField showcase'),
-      ),
+    return ShowcaseAppBase(
+      title: 'TextField showcase',
       body: ScrollConfiguration(
         behavior: CMScrollBehavior(),
         child: ListView(
           shrinkWrap: true,
           padding: const EdgeInsets.all(10),
           children: [
-            createTextFieldTitle('CMTextField', higherSize: true),
-            createTextFieldTitle('Can\'t be empty, capitalize first letter of each word, support any input'),
+            createShowcaseTitle('CMTextField', higherSize: true),
+            createShowcaseTitle('Can\'t be empty, capitalize first letter of each word, support any input'),
             const CMTextField(
               hintText: 'Get value',
               onTextChange: printValue,
               errorText: 'This can\'t be empty',
               textCapitalization: TextCapitalization.words,
             ),
-            createTextFieldTitle(
+            createShowcaseTitle(
                 'Can\'t be empty, capitalize first letter of each word, support any input, initial value'),
             const CMTextField(
               hintText: 'Custom hint',
@@ -40,7 +38,7 @@ class TextFieldShowcase extends StatelessWidget {
               textCapitalization: TextCapitalization.words,
               initialValue: 'Custom initial value',
             ),
-            createTextFieldTitle('Can be empty, support any input, initial value'),
+            createShowcaseTitle('Can be empty, support any input, initial value'),
             const CMTextField(
               hintText: 'Custom hint',
               onTextChange: printValue,
@@ -48,40 +46,41 @@ class TextFieldShowcase extends StatelessWidget {
               errorText: 'This can\'t be empty',
               initialValue: 'Custom initial value',
             ),
-            createTextFieldTitle('Can be empty, numbers input'),
+            createShowcaseTitle('Can be empty, numbers input'),
             const CMTextField(
               hintText: 'Custom hint',
               onTextChange: printValue,
               canBeEmpty: true,
               textInputType: TextInputType.number,
             ),
-            createTextFieldTitle('CMMultilineTextField', higherSize: true),
-            createTextFieldTitle('Can be empty, maxLength 100'),
+            createShowcaseTitle('CMMultilineTextField', higherSize: true),
+            createShowcaseTitle('Can be empty, maxLength 100'),
             const CMMultilineTextField(
               onTextChange: printValue,
               maxLength: 100,
             ),
-            createTextFieldTitle('Can\'t be empty, initial value'),
+            createShowcaseTitle('Can\'t be empty, initial value'),
             const CMMultilineTextField(
               onTextChange: printValue,
               canBeEmpty: false,
               initialValue: 'This is a initial value',
               errorText: 'This can\'t be empty',
             ),
-            createTextFieldTitle('CMMoneyTextField', higherSize: true),
-            createTextFieldTitle('Can be empty, enabled'),
+            createShowcaseTitle('CMMoneyTextField', higherSize: true),
+            createShowcaseTitle('Can be empty'),
             const CMMoneyTextField(
               hintText: 'Income',
               onTextChange: printValue,
               canBeEmpty: true,
             ),
-            createTextFieldTitle('Can\'t be empty, enabled'),
+            createShowcaseTitle('Can\'t be empty'),
             const CMMoneyTextField(
               hintText: 'Income',
               onTextChange: printValue,
               canBeEmpty: false,
+              errorText: 'This can\'t be empty',
             ),
-            createTextFieldTitle('Disabled'),
+            createShowcaseTitle('Disabled'),
             const CMMoneyTextField(
               hintText: 'Income',
               onTextChange: printValue,

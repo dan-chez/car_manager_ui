@@ -2,7 +2,7 @@ import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-/// Creates a text field title widget with a specified title and optional size adjustment.
+/// Creates a showcase title widget with a specified title and optional size adjustment.
 ///
 /// This function returns a [Column] widget containing a [Text] widget for the title,
 /// with customizable styling based on the [higherSize] parameter. If [higherSize] is true,
@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 ///
 /// [title] - The text to display as the title.
 /// [higherSize] - A boolean flag to adjust the font size and spacing. Defaults to false.
-Widget createTextFieldTitle(String title, {bool higherSize = false}) {
+Widget createShowcaseTitle(String title, {bool higherSize = false}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
