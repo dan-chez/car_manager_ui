@@ -10,6 +10,11 @@ const kCMButtonTextStyle = TextStyle(
   fontWeight: FontWeight.w600,
 );
 
+const kCMOutLinedButtonTextStyle = TextStyle(
+  fontSize: kTextContentSize,
+  color: kAmaranthPrimary,
+);
+
 // End Button Style
 
 // Text Style
