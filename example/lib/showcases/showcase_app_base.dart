@@ -1,3 +1,4 @@
+import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 
 /// A stateless widget that serves as a base structure for a screen with a customizable title.
@@ -9,16 +10,16 @@ import 'package:flutter/material.dart';
 ///
 /// Example usage:
 /// ```dart
-/// ShowcaseAppBase(title: 'TextField showcase', body: child);
+/// ShowcaseAppBase(title: 'TextField showcase', children: [...]);
 /// ```
 class ShowcaseAppBase extends StatelessWidget {
   final String title;
-  final Widget body;
+  final List<Widget> children;
 
   const ShowcaseAppBase({
     super.key,
     required this.title,
-    required this.body,
+    required this.children,
   });
 
   @override
@@ -28,7 +29,14 @@ class ShowcaseAppBase extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(title),
       ),
-      body: body,
+      body: ScrollConfiguration(
+        behavior: CMScrollBehavior(),
+        child: ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.all(10),
+          children: children,
+        ),
+      ),
     );
   }
 }
