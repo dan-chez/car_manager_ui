@@ -1,5 +1,6 @@
 import 'package:car_manager_ui/component_model.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
+import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 
 /// A collection of component showcases used in the example application.
 ///
@@ -11,5 +12,9 @@ final components = {
   ComponentModel(
     description: 'Buttons',
     path: ButtonShowcase.path,
+  ),
+  ComponentModel(
+    description: 'TextFields',
+    path: TextFieldShowcase.path,
   )
 };

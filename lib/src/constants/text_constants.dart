@@ -2,7 +2,7 @@ import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/int_constants.dart';
 import 'package:flutter/material.dart';
 
-//Button Style
+// Button Style
 
 const kCMButtonTextStyle = TextStyle(
   fontSize: kTextContentSize,
@@ -24,5 +24,12 @@ const kContentTextStyle = TextStyle(
   color: kMyrtleGreen,
   fontWeight: FontWeight.w300,
 );
+
+const kErrorTextStyle = TextStyle(
+  fontSize: kTextErrorSize,
+  color: kAmaranthPrimary,
+  fontWeight: FontWeight.w300,
+);
+
 
 // End Text Style
