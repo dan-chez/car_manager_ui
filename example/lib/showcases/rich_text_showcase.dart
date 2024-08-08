@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 /// styles and functionalities within the application.
 class RichTextShowcase extends StatelessWidget {
   /// This path is used to navigate to the button showcase using GoRouter.
-  static String path = '/rich_text';
+  static String path = '/richText';
 
   const RichTextShowcase({super.key});
 

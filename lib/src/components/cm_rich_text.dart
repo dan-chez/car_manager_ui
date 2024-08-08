@@ -1,4 +1,5 @@
-import 'package:carmanager_ui/carmanager_ui.dart';
+import 'package:carmanager_ui/src/constants/string_constants.dart';
+import 'package:carmanager_ui/src/constants/text_constants.dart';
 import 'package:flutter/material.dart';
 
 /// A factory class for creating rich text widgets with customizable styles.
@@ -27,7 +28,7 @@ class CMRichText {
   const CMRichText({
     required this.text,
     required this.boldPositions,
-    this.textDivider = '|',
+    this.textDivider = StringConstants.textDivider,
     this.textStyle = kMediumTitleTextStyle,
     this.textAlign = TextAlign.center,
     this.boldFontWeight = FontWeight.w600,

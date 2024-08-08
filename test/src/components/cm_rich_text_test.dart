@@ -2,6 +2,8 @@ import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'base/base_component_app.dart';
+
 void main() {
   testWidgets('Bold Positions Test', (WidgetTester tester) async {
     const testText = 'This text is bold|, this isn\'t,| this is';
@@ -12,7 +14,7 @@ void main() {
       boldPositions: boldPositions,
     )();
 
-    await tester.pumpWidget(MaterialApp(home: Scaffold(body: richText)));
+    await tester.pumpWidget(baseComponentApp(richText));
 
     final richTextWidget = tester.widget<RichText>(find.byType(RichText));
     final textSpans = richTextWidget.text as TextSpan;
@@ -33,7 +35,7 @@ void main() {
       textAlign: testAlign,
     ).call();
 
-    await tester.pumpWidget(MaterialApp(home: Scaffold(body: richText)));
+    await tester.pumpWidget(baseComponentApp(richText));
 
     final richTextWidget = tester.widget<RichText>(find.byType(RichText));
     expect(richTextWidget.textAlign, testAlign);
