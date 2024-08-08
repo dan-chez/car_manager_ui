@@ -7,3 +7,11 @@ final kCMButtonStyle = TextButton.styleFrom(
   backgroundColor: kAmaranthPrimary,
   foregroundColor: kMyrtleGreen,
 );
+
+final kCMOutlinedButtonStyle = OutlinedButton.styleFrom(
+  shape: const StadiumBorder(),
+  side: const BorderSide(color: kAmaranthPrimary),
+  disabledBackgroundColor: kAmaranthPrimary.withOpacity(0.3),
+  backgroundColor: kWhite,
+  foregroundColor: kAmaranthPrimary,
+);
