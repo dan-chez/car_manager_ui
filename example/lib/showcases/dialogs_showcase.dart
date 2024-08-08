@@ -62,6 +62,21 @@ class DialogsShowcase extends StatelessWidget {
             );
           },
         ),
+        createShowcaseTitle('Basic confirmation dialog with message an button, shows close button, can pop and image'),
+        PrimaryButton(
+          txtLabel: 'Confirm dialog',
+          onPressed: () {
+            context.push(
+              ConfirmDialogRoute.path,
+              extra: _getDialogContent(
+                message: 'Basic confirm dialog',
+                buttonText: 'Button',
+                boldPositions: [],
+                image: 'assets/success.svg',
+              ),
+            );
+          },
+        ),
       ],
     );
   }
@@ -73,6 +88,7 @@ class DialogsShowcase extends StatelessWidget {
     bool canPop = true,
     bool showCloseButton = true,
     bool popWhenOnPressed = true,
+    String? image,
   }) {
     return ConfirmDialogData(
       message: message,
@@ -82,6 +98,7 @@ class DialogsShowcase extends StatelessWidget {
       popWhenOnPressed: popWhenOnPressed,
       boldPositions: boldPositions,
       onPressed: () {},
+      image: image,
     );
   }
 }
