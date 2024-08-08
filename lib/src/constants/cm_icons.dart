@@ -1,7 +1,6 @@
-import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 
-//Icons
 const kAddExpenseIconWhite = Icon(Icons.add, color: kWhite);
 
 const kAddExpenseIconRed = Icon(Icons.add, color: kAmaranthPrimary);
