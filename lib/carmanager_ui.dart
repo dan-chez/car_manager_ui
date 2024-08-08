@@ -2,6 +2,8 @@ library carmanager_ui;
 
 export 'package:carmanager_ui/src/components/buttons/primary_button.dart';
 export 'package:carmanager_ui/src/components/cm_rich_text.dart';
+export 'package:carmanager_ui/src/components/dialogs/confirm/confirm_dialog_data.dart';
+export 'package:carmanager_ui/src/components/dialogs/confirm/confirm_dialog_route.dart';
 export 'package:carmanager_ui/src/components/loader/loader.dart';
 export 'package:carmanager_ui/src/components/text_field/cm_multiline_text_field.dart';
 export 'package:carmanager_ui/src/components/text_field/cm_text_field.dart';

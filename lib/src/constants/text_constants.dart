@@ -24,6 +24,11 @@ const kMediumTitleTextStyle = TextStyle(
   color: kMyrtleGreen,
 );
 
+const kSubtitleTextStyle = TextStyle(
+  fontSize: kTextSubtitleSize,
+  color: kMyrtleGreen,
+);
+
 const kContentTextStyle = TextStyle(
   fontSize: kTextContentSize,
   color: kMyrtleGreen,
