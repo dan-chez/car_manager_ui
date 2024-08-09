@@ -1,6 +1,7 @@
 import 'package:car_manager_ui/main.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
 import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
+import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,7 +24,6 @@ class GoRouterHelper {
   late final GoRouter router;
 
   GoRouterHelper._internal() {
-
     // All component screens must be added here
     var routes = [
       GoRoute(
@@ -62,6 +62,16 @@ class GoRouterHelper {
         pageBuilder: (_, state) {
           return _getPage(
             child: const IconButtonShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: RichTextShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const RichTextShowcase(),
             state: state,
           );
         },
