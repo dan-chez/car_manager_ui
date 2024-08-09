@@ -15,6 +15,17 @@ const kCMOutLinedButtonTextStyle = TextStyle(
   color: kAmaranthPrimary,
 );
 
+const kSubtitleTextStyle = TextStyle(
+  fontSize: kTextSubtitleSize,
+  color: kMyrtleGreen,
+);
+
+const kTitleTextStyle = TextStyle(
+  fontSize: kTextTitleSize,
+  color: kMyrtleGreen,
+  fontWeight: FontWeight.w700,
+);
+
 // End Button Style
 
 // Text Style
