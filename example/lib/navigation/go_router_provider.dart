@@ -1,9 +1,11 @@
 import 'package:car_manager_ui/main.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
+import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
-import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
+import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
+import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -25,7 +27,6 @@ class GoRouterHelper {
   late final GoRouter router;
 
   GoRouterHelper._internal() {
-
     // All component screens must be added here
     var routes = [
       GoRoute(
@@ -87,6 +88,23 @@ class GoRouterHelper {
             state: state,
           );
         },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: DialogsShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const DialogsShowcase(),
+            state: state,
+          );
+        },
+      ),
+      // Dialog routes
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: ConfirmDialogRoute.path,
+        pageBuilder: (context, state) =>
+            ConfirmDialogRoute.createRoute(context, state, dialogData: state.extra as ConfirmDialogData),
       ),
     ];
     router = GoRouter(
