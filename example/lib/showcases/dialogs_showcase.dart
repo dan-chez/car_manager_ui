@@ -24,7 +24,7 @@ class DialogsShowcase extends StatelessWidget {
           onPressed: () {
             context.push(
               ConfirmDialogRoute.path,
-              extra: _getDialogContent(
+              extra: _getConfirmDialogContent(
                 message: 'Basic confirm dialog',
                 buttonText: 'Button',
                 boldPositions: [],
@@ -38,7 +38,7 @@ class DialogsShowcase extends StatelessWidget {
           onPressed: () {
             context.push(
               ConfirmDialogRoute.path,
-              extra: _getDialogContent(
+              extra: _getConfirmDialogContent(
                 message: 'Basic confirm dialog',
                 buttonText: 'Button',
                 boldPositions: [],
@@ -48,13 +48,14 @@ class DialogsShowcase extends StatelessWidget {
             );
           },
         ),
-        createShowcaseTitle('Basic confirmation dialog with message with bold words an button, shows close button, can pop'),
+        createShowcaseTitle(
+            'Basic confirmation dialog with message with bold words an button, shows close button, can pop'),
         PrimaryButton(
           txtLabel: 'Confirm dialog',
           onPressed: () {
             context.push(
               ConfirmDialogRoute.path,
-              extra: _getDialogContent(
+              extra: _getConfirmDialogContent(
                 message: 'Basic confirm dialog,|this is bold',
                 buttonText: 'Button',
                 boldPositions: [1],
@@ -68,7 +69,7 @@ class DialogsShowcase extends StatelessWidget {
           onPressed: () {
             context.push(
               ConfirmDialogRoute.path,
-              extra: _getDialogContent(
+              extra: _getConfirmDialogContent(
                 message: 'Basic confirm dialog',
                 buttonText: 'Button',
                 boldPositions: [],
@@ -77,11 +78,27 @@ class DialogsShowcase extends StatelessWidget {
             );
           },
         ),
+        createShowcaseTitle('ErrorDialog', higherSize: true),
+        createShowcaseTitle('Basic error dialog with title an subtitle'),
+        PrimaryButton(
+          txtLabel: 'Error dialog',
+          onPressed: () {
+            context.push(
+              ErrorDialogRoute.path,
+              extra: const ErrorDialogData(
+                title: "You're not the problem,|we are",
+                titleBoldPositions: [1],
+                subtitle: 'Please try again later',
+                imagePath: 'assets/cm_car_error.svg',
+              ),
+            );
+          },
+        ),
       ],
     );
   }
 
-  ConfirmDialogData _getDialogContent({
+  ConfirmDialogData _getConfirmDialogContent({
     required String message,
     required String buttonText,
     required List<int> boldPositions,
