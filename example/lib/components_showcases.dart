@@ -1,5 +1,6 @@
 import 'package:car_manager_ui/component_model.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
+import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
 import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
@@ -26,5 +27,9 @@ final components = {
   ComponentModel(
     description: 'RichText',
     path: RichTextShowcase.path,
+  ),
+  ComponentModel(
+    description: 'Dialogs',
+    path: DialogsShowcase.path,
   ),
 };
