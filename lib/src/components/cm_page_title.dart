@@ -47,7 +47,10 @@ class CMPageTitle extends StatelessWidget {
             boldTitle,
             style: kTitleTextStyle.copyWith(fontWeight: FontWeight.w600),
           ),
-          if (showBottomDivider) kPrimaryDivider
+          Visibility(
+            visible: showBottomDivider,
+            child: kPrimaryDivider,
+          ),
         ],
       ),
     );
