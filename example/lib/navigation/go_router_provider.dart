@@ -1,5 +1,6 @@
 import 'package:car_manager_ui/main.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
+import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
@@ -53,6 +54,16 @@ class GoRouterHelper {
         pageBuilder: (_, state) {
           return _getPage(
             child: const TextFieldShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: IconButtonShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const IconButtonShowcase(),
             state: state,
           );
         },
