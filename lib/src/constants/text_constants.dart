@@ -41,6 +41,11 @@ const kContentTextStyle = TextStyle(
   fontWeight: FontWeight.w300,
 );
 
+const kCaptionTextStyle = TextStyle(
+  fontSize: kTextCaptionSize,
+  color: kMyrtleGreen,
+);
+
 const kErrorTextStyle = TextStyle(
   fontSize: kTextErrorSize,
   color: kAmaranthPrimary,
