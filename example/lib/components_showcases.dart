@@ -1,9 +1,10 @@
 import 'package:car_manager_ui/component_model.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
 import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
-import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
+import 'package:car_manager_ui/showcases/dropdown_showcase.dart';
 import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
+import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 
 /// A collection of component showcases used in the example application.
@@ -36,5 +37,9 @@ final components = {
   ComponentModel(
     description: 'PageTitle',
     path: PageTitleShowcase.path,
-  )
+  ),
+  ComponentModel(
+    description: 'CMDropdown',
+    path: DropdownShowcase.path,
+  ),
 };
