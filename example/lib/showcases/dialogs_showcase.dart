@@ -94,6 +94,17 @@ class DialogsShowcase extends StatelessWidget {
             );
           },
         ),
+        createShowcaseTitle('LoadingDialog', higherSize: true),
+        createShowcaseTitle('Loading dialog, full screen size, can\'t pop'),
+        PrimaryButton(
+          txtLabel: 'Loading dialog',
+          onPressed: () {
+            context.push(
+              LoadingDialogRoute.path,
+              extra: const LoadingDialogData(lottieAssetPath: 'assets/cmloading.json'),
+            );
+          },
+        ),
       ],
     );
   }
