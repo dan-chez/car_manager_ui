@@ -10,6 +10,7 @@ export 'package:carmanager_ui/src/components/dialogs/error/error_dialog_data.dar
 export 'package:carmanager_ui/src/components/dialogs/error/error_dialog_route.dart';
 export 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog_data.dart';
 export 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog_route.dart';
+export 'package:carmanager_ui/src/components/dropdown/cm_dropdown.dart';
 export 'package:carmanager_ui/src/components/loader/loader.dart';
 export 'package:carmanager_ui/src/components/text_field/cm_multiline_text_field.dart';
 export 'package:carmanager_ui/src/components/text_field/cm_text_field.dart';
