@@ -123,6 +123,12 @@ class GoRouterHelper {
         pageBuilder: (context, state) =>
             ErrorDialogRoute.createRoute(context, state, dialogData: state.extra as ErrorDialogData),
       ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: LoadingDialogRoute.path,
+        pageBuilder: (context, state) =>
+            LoadingDialogRoute.createRoute(context, state, dialogData: state.extra as LoadingDialogData),
+      ),
     ];
     router = GoRouter(
       debugLogDiagnostics: true,
