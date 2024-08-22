@@ -4,7 +4,7 @@ import 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog_data
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-/// Route class to call error dialog
+/// Route class to call loading dialog
 /// Example usage:
 /// ```dart
 /// context.push(
