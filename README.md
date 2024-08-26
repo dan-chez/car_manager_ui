@@ -9,6 +9,26 @@
 - **Customizable Components**: Includes a variety of customizable widgets to create attractive and functional interfaces.
 - **Easy Integration**: Simple integration into your codebase.
 - **Stylish Components**: All components are designed to be visually appealing and aesthetically pleasing.
+- 
+## Available Widgets
+
+**Car Manager UI** provides a comprehensive set of widgets to help you build a feature-rich and visually appealing vehicle management application. Below is a list of the available widgets:
+
+- **CloseIconButton**: A customizable icon button designed for closing dialogs.
+- **CMIconButton**: A versatile icon button that can be used for various actions within the app.
+- **PrimaryButton**: A primary action button with customizable styles, text, and loading state.
+- **ConfirmDialog**: A dialog widget for confirming user actions with customizable messages and buttons.
+- **ErrorDialog**: A dialog widget for displaying error messages with customizable content.
+- **LoadingDialog**: A dialog widget that shows a loading indicator, useful for asynchronous operations.
+- **CMDropdown**: A dropdown menu widget for selecting options from a list.
+- **Loader**: A simple loading indicator widget.
+- **CMMoneyTextField**: A text field widget specifically designed for inputting monetary values.
+- **CMMultilineTextField**: A text field widget that supports multiline input, ideal for longer text entries.
+- **CMTextField**: A standard text field widget with customizable styles.
+- **CMPageTitle**: A widget for displaying page titles with consistent styling.
+- **CMRichText**: A widget for displaying rich text with various styles and formatting options.
+
+These widgets are designed to be easily integrated into your codebase, providing a consistent and professional look and feel across your application.
 
 ## Usage
 
