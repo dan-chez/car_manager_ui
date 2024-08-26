@@ -9,7 +9,7 @@
 - **Customizable Components**: Includes a variety of customizable widgets to create attractive and functional interfaces.
 - **Easy Integration**: Simple integration into your codebase.
 - **Stylish Components**: All components are designed to be visually appealing and aesthetically pleasing.
-- 
+
 ## Available Widgets
 
 **Car Manager UI** provides a comprehensive set of widgets to help you build a feature-rich and visually appealing vehicle management application. Below is a list of the available widgets:
