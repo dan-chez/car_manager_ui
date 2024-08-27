@@ -49,7 +49,7 @@ This will add a line like this to your package’s pubspec.yaml (and run an impl
 
 ```yaml
 dependencies:
-  car_manager_ui: ^1.0.0
+  car_manager_ui: ^0.0.1
 ```
 
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more.
@@ -59,7 +59,7 @@ Import it
 Now in your Dart code, you can use:
 
 ```dart
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:carmanager_ui/carmanager_ui.dart';
 ```
 
 ## Usage
@@ -87,12 +87,17 @@ class MyApp extends StatelessWidget {
           title: const Text('Car Manager UI Example'),
         ),
         body: Center(
+          // Primary button customized with Car Manager UI.
           child: PrimaryButton(
+            // Text displayed on the button.
             txtLabel: 'Click Me',
+            // Function executed when the button is pressed.
             onPressed: () {
               // Your onPressed function here
             },
+            // Indicates whether the button is in a loading state.
             isLoading: false,
+            // Icon displayed on the button.
             icon: const Icon(Icons.car_rental),
           ),
         ),
