@@ -1,5 +1,6 @@
 # Car Manager UI
 
+[![Pub Version](https://img.shields.io/pub/v/car_manager_ui.svg)](https://pub.dev/packages/car_manager_ui)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 **Car Manager UI** is a library of graphical components designed for the Car Manager application. This library provides a collection of widgets and UI elements that make it easy to create vehicle management applications with Flutter.
@@ -29,6 +30,37 @@
 - **CMRichText**: A widget for displaying rich text with various styles and formatting options.
 
 These widgets are designed to be easily integrated into your codebase, providing a consistent and professional look and feel across your application.
+
+## Get Started
+
+Use this package as a library in your Flutter project.
+
+### Depend on it
+
+Run this command:
+
+With Flutter:
+
+```bash
+$ flutter pub add car_manager_ui
+```
+
+This will add a line like this to your package’s pubspec.yaml (and run an implicit flutter pub get):
+
+```yaml
+dependencies:
+  car_manager_ui: ^1.0.0
+```
+
+Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more.
+
+Import it
+
+Now in your Dart code, you can use:
+
+```dart
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+```
 
 ## Usage
 
