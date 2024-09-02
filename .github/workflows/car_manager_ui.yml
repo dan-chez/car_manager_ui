@@ -17,3 +17,7 @@ jobs:
       - run: flutter analyze --no-fatal-infos
       # Run our tests
       - run: flutter test --coverage
+      - name: 'Publish to coveralls.io'
+        uses: coverallsapp/github-action@v2.3.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
