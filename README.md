@@ -14,11 +14,7 @@
 
 ## Get Started
 
-Use this package as a library in your Flutter project.
-
-Run this command:
-
-With Flutter:
+Run this command with Flutter:
 
 ```bash
 $ flutter pub add car_manager_ui
@@ -30,8 +26,6 @@ This will add a line like this to your package’s pubspec.yaml (and run an impl
 dependencies:
   car_manager_ui: ^<latest_version>
 ```
-
-Import it
 
 Now in your Dart code, you can use:
 
