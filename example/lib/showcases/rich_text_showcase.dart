@@ -43,6 +43,32 @@ class RichTextShowcase extends StatelessWidget {
         const Divider(height: 12),
         const CMRichText(text: 'All text bold and end align|', boldPositions: [0], textAlign: TextAlign.end)(),
         const Divider(height: 12),
+        CMRichText(
+          text: 'Align start and italic',
+          boldPositions: [],
+          textAlign: TextAlign.start,
+          textStyle: kMediumTitleTextStyle.copyWith(fontStyle: FontStyle.italic),
+        )(),
+        const Divider(height: 12),
+        CMRichText(
+          text: 'Underlined text',
+          boldPositions: [0],
+          textStyle: kMediumTitleTextStyle.copyWith(decoration: TextDecoration.underline),
+        )(),
+        const Divider(height: 12),
+        const CMRichText(
+          text: '    Leading spaces| and trailing spaces    and align start',
+          boldPositions: [0],
+          textStyle: kMediumTitleTextStyle,
+          textAlign: TextAlign.start,
+        )(),
+        const Divider(height: 12),
+        CMRichText(
+          text: 'This is bold and blue|',
+          boldPositions: [0],
+          textStyle: kMediumTitleTextStyle.copyWith(color: Colors.blue),
+        )(),
+        const Divider(height: 12),
       ],
     );
   }
