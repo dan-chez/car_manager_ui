@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'package:car_manager_ui/constants/image_constants.dart';
 import 'package:car_manager_ui/showcase_utils.dart';
 import 'package:car_manager_ui/showcases/showcase_app_base.dart';
 import 'package:carmanager_ui/carmanager_ui.dart';
@@ -87,7 +88,7 @@ class DialogsShowcase extends StatelessWidget {
                 message: 'Basic confirm dialog',
                 buttonText: 'Button',
                 boldPositions: [],
-                image: 'assets/success.svg',
+                image: kSuccessImage,
               ),
             );
           },
@@ -103,7 +104,7 @@ class DialogsShowcase extends StatelessWidget {
                 title: "You're not the problem,|we are",
                 titleBoldPositions: [1],
                 subtitle: 'Please try again later',
-                imagePath: 'assets/cm_car_error.svg',
+                imagePath: kCarErrorImageSvg,
               ),
             );
           },
@@ -118,7 +119,7 @@ class DialogsShowcase extends StatelessWidget {
             });
             context.push(
               LoadingDialogRoute.path,
-              extra: const LoadingDialogData(lottieAssetPath: 'assets/cmloading.json'),
+              extra: const LoadingDialogData(lottieAssetPath: kLoadingAnimation),
             );
           },
         ),
