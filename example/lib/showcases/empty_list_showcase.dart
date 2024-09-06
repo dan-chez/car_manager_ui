@@ -45,6 +45,12 @@ class EmptyListShowcase extends StatelessWidget {
           boldPositions: [0, 2],
           imagePath: kCarImage,
         ),
+        const SizedBox(height: 40),
+        createShowcaseTitle('If the image path is null, displaying text only.'),
+        const CMEmptyList(
+          text: 'Looks like|your garage is|empty',
+          boldPositions: [1, 2],
+        ),
       ],
     );
   }

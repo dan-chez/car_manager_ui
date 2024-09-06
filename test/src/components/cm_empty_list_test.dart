@@ -14,6 +14,7 @@
 
 import 'package:carmanager_ui/src/components/cm_empty_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'base/base_component_app.dart';
@@ -90,6 +91,22 @@ void main() {
     final TextSpan emptyTextSpan = spans[1] as TextSpan;
     expect(emptyTextSpan.text.toString().trim(), equals('found'));
     expect(emptyTextSpan.style!.fontWeight, equals(FontWeight.w700));
+  });
 
+  testWidgets('CMEmptyList does not display asset image when imagePath is null', (WidgetTester tester) async {
+    const testText = 'Your garage is|empty';
+    const testBoldPositions = [1];
+
+    // Define the test data with a null image path
+    await tester.pumpWidget(baseComponentApp(
+      const CMEmptyList(
+        text: testText,
+        boldPositions: testBoldPositions,
+        imagePath: null, // No image path provided
+      ),
+    ));
+
+    // Verify that the asset (SvgPicture) is not displayed
+    expect(find.byType(SvgPicture), findsNothing);
   });
 }
