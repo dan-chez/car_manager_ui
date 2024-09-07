@@ -14,7 +14,6 @@
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/cm_icons.dart';
-import 'package:carmanager_ui/src/utils/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

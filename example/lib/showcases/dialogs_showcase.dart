@@ -115,7 +115,9 @@ class DialogsShowcase extends StatelessWidget {
           txtLabel: 'Loading dialog',
           onPressed: () {
             Future.delayed(const Duration(seconds: 5), () {
-              context.pop();
+              if (context.mounted) {
+                Navigator.of(context).pop();
+              }
             });
             context.push(
               LoadingDialogRoute.path,
