@@ -19,6 +19,7 @@ const _animationsPath = "assets/animations/";
 const kCarErrorImageSvg = "${_imagesSvgPath}cm_car_error.svg";
 const kSuccessImage = "${_imagesSvgPath}success.svg";
 const kCarImage = "${_imagesSvgPath}car.svg";
+const kCarManagerFullLogoImage = "${_imagesSvgPath}carmanager_full_logo.svg";
 
 // Animations
 const kLoadingAnimation = "${_animationsPath}cmloading.json";

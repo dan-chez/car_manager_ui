@@ -14,6 +14,9 @@
 
 import 'package:car_manager_ui/main.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
+import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_back_showcase.dart';
+import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_no_back_showcase.dart';
+import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_showcase.dart';
 import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/dropdown_showcase.dart';
 import 'package:car_manager_ui/showcases/empty_list_showcase.dart';
@@ -121,6 +124,36 @@ class GoRouterHelper {
         pageBuilder: (_, state) {
           return _getPage(
             child: const DropdownShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: CmAppbarShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const CmAppbarShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: CmAppbarBackShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const CmAppbarBackShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: CmAppbarNoBackShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const CmAppbarNoBackShowcase(),
             state: state,
           );
         },

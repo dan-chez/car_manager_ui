@@ -22,3 +22,5 @@ const kAddExpenseIconRed = Icon(Icons.add, color: kAmaranthPrimary);
 const kCloseIcon = Icon(Icons.close, color: kCanyonBronze);
 
 const kArrowDownIcon = Icon(Icons.arrow_drop_down, color: kMyrtleGreen);
+
+const kBackArrowIcon = Icon(Icons.arrow_back_ios_outlined, color: kMyrtleGreen, size: 20);
