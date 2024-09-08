@@ -15,6 +15,12 @@
 import 'package:flutter/material.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 
+//Custom Icons
+const String _iconsFontFamily = "CMIcons";
+
+const IconData _iconDataDelete = IconData(0xe801, fontFamily: _iconsFontFamily);
+
+//Icons
 const kAddExpenseIconWhite = Icon(Icons.add, color: kWhite);
 
 const kAddExpenseIconRed = Icon(Icons.add, color: kAmaranthPrimary);
@@ -22,3 +28,9 @@ const kAddExpenseIconRed = Icon(Icons.add, color: kAmaranthPrimary);
 const kCloseIcon = Icon(Icons.close, color: kCanyonBronze);
 
 const kArrowDownIcon = Icon(Icons.arrow_drop_down, color: kMyrtleGreen);
+
+const kEditReportIcon = Icon(Icons.edit_note, color: kMyrtleGreen, size: 30);
+
+const kDeleteIcon = Icon(_iconDataDelete, color: kAmaranthPrimary, size: 17);
+
+const kArrowForwardIcon = Icon(Icons.arrow_forward_ios_outlined, color: kMyrtleGreen, size: 15);

@@ -27,6 +27,7 @@ dependencies:
   go_router: ^14.1.1
   flutter_svg: ^2.0.9
   lottie: ^3.1.2
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
