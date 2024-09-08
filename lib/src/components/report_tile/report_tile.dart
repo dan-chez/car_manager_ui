@@ -21,14 +21,14 @@ import 'package:carmanager_ui/src/utils/extensions/number_extensions.dart';
 import 'package:carmanager_ui/src/utils/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
 
-class CMTextCard extends StatelessWidget {
+class ReportTile extends StatelessWidget {
   final String text;
   final String value;
   final VoidCallback onPressed;
   final VoidCallback? onDelete;
   final bool showDeleteAndEditIcon;
 
-  const CMTextCard({
+  const ReportTile({
     super.key,
     required this.text,
     required this.value,
