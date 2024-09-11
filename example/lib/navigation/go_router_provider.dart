@@ -130,30 +130,30 @@ class GoRouterHelper {
       ),
       GoRoute(
         parentNavigatorKey: _appNavigatorKey,
-        path: CmAppbarShowcase.path,
+        path: CMAppbarShowcase.path,
         pageBuilder: (_, state) {
           return _getPage(
-            child: const CmAppbarShowcase(),
+            child: const CMAppbarShowcase(),
             state: state,
           );
         },
       ),
       GoRoute(
         parentNavigatorKey: _appNavigatorKey,
-        path: CmAppbarBackShowcase.path,
+        path: CMAppbarBackShowcase.path,
         pageBuilder: (_, state) {
           return _getPage(
-            child: const CmAppbarBackShowcase(),
+            child: const CMAppbarBackShowcase(),
             state: state,
           );
         },
       ),
       GoRoute(
         parentNavigatorKey: _appNavigatorKey,
-        path: CmAppbarNoBackShowcase.path,
+        path: CMAppbarNoBackShowcase.path,
         pageBuilder: (_, state) {
           return _getPage(
-            child: const CmAppbarNoBackShowcase(),
+            child: const CMAppbarNoBackShowcase(),
             state: state,
           );
         },

@@ -64,6 +64,6 @@ final components = {
   ),
   ComponentModel(
     description: 'CMAppBar',
-    path: CmAppbarShowcase.path,
+    path: CMAppbarShowcase.path,
   ),
 };

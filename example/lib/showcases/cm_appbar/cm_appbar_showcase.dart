@@ -20,13 +20,13 @@ import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-/// The [CmAppbarShowcase] class provides a visual representation of various [CMAppbar]
+/// The [CMAppbarShowcase] class provides a visual representation of various [CMAppbar]
 /// styles and functionalities within the application.
-class CmAppbarShowcase extends StatelessWidget {
-  /// This path is used to navigate to the button showcase using GoRouter.
+class CMAppbarShowcase extends StatelessWidget {
+  /// This path is used to navigate to the CMAppBar showcase using GoRouter.
   static String path = '/cmAppbar';
 
-  const CmAppbarShowcase({super.key});
+  const CMAppbarShowcase({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +37,14 @@ class CmAppbarShowcase extends StatelessWidget {
         PrimaryButton(
           txtLabel: 'Click me',
           onPressed: () {
-            context.push(CmAppbarBackShowcase.path);
+            context.push(CMAppbarBackShowcase.path);
           },
         ),
         createShowcaseTitle('CMAppBar without back button'),
         PrimaryButton(
           txtLabel: 'Click me',
           onPressed: () {
-            context.go(CmAppbarNoBackShowcase.path);
+            context.go(CMAppbarNoBackShowcase.path);
           },
         ),
       ],
