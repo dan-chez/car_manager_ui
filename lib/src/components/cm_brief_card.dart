@@ -37,7 +37,7 @@ import 'package:carmanager_ui/src/constants/cm_icons.dart';
 /// ```
 class CMBriefCard extends StatelessWidget {
   //This string should contain the svg image path
-  final String? cardIcon;
+  final String? iconPath;
   final String title;
   final String description;
   final Function() onPressed;
@@ -45,7 +45,7 @@ class CMBriefCard extends StatelessWidget {
 
   const CMBriefCard({
     super.key,
-    this.cardIcon,
+    this.iconPath,
     required this.title,
     required this.description,
     required this.onPressed,
@@ -56,7 +56,7 @@ class CMBriefCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Color iconColor = isEnabled ? kAmaranthPrimary : kSilver;
 
-    final asset = cardIcon ?? '';
+    final asset = iconPath ?? '';
 
     return TextButton(
       style: kCMBriefCardButtonStyle,
@@ -66,7 +66,7 @@ class CMBriefCard extends StatelessWidget {
         child: Row(
           children: [
             Visibility(
-              visible: cardIcon != null,
+              visible: iconPath != null,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: SvgPicture.asset(

@@ -32,10 +32,9 @@ class BriefCardShowcase extends StatelessWidget {
     return ShowcaseAppBase(
       title: 'CMBriefCard showcase',
       children: [
-        createShowcaseTitle('CMBriefCard', higherSize: true),
         createShowcaseTitle('This version demonstrates the default behavior of the CMBriefCard with an icon, title, and description. It is enabled and fully interactive.'),
         CMBriefCard(
-          cardIcon: kSearchImage,
+          iconPath: kSearchImage,
           title: 'Card Title',
           description: 'This is a description of the card.',
           onPressed: () {
@@ -44,7 +43,7 @@ class BriefCardShowcase extends StatelessWidget {
         ),
         createShowcaseTitle('Disabled CMBriefCard. The card icon and text appear in a muted color, and the card cannot be clicked.'),
         CMBriefCard(
-          cardIcon: kFolderImage,
+          iconPath: kFolderImage,
           title: 'Disabled Card',
           description: 'This card is disabled and cannot be clicked.',
           onPressed: () {},
@@ -60,7 +59,7 @@ class BriefCardShowcase extends StatelessWidget {
         ),
         createShowcaseTitle('CMBriefCard with a longer description'),
         CMBriefCard(
-          cardIcon: kSuccessImage,
+          iconPath: kSuccessImage,
           title: 'Card with Longer Description',
           description:
           'This card demonstrates a longer description text to show how the layout adapts.',

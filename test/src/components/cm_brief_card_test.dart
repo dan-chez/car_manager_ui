@@ -43,7 +43,7 @@ void main() {
         title: 'Test Title',
         description: 'Test Description',
         onPressed: () {},
-        cardIcon: null,
+        iconPath: null,
       ),
     ));
 
