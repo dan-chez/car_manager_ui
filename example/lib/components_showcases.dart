@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import 'package:car_manager_ui/component_model.dart';
+import 'package:car_manager_ui/showcases/brief_card_showcase.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
 import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/dropdown_showcase.dart';
@@ -60,5 +61,9 @@ final components = {
   ComponentModel(
     description: 'CMEmptyList',
     path: EmptyListShowcase.path,
+  ),
+  ComponentModel(
+    description: 'CMBriefCard',
+    path: BriefCardShowcase.path,
   ),
 };
