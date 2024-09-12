@@ -12,14 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
-import 'package:flutter/material.dart';
+const _imagesSvgPath = "assets/images/svg/";
+const _animationsPath = "assets/animations/";
 
-const kPrimaryDivider = Divider(
-  thickness: 1,
-  color: kkAmaranthPrimaryWithOpacity,
-);
+// SVG
+const kCarErrorImageSvg = "${_imagesSvgPath}cm_car_error.svg";
+const kSuccessImage = "${_imagesSvgPath}success.svg";
+const kCarImage = "${_imagesSvgPath}car.svg";
 
-const kSmallDividerVertical = SizedBox(
-  height: 24,
-);
+// Animations
+const kLoadingAnimation = "${_animationsPath}cmloading.json";
