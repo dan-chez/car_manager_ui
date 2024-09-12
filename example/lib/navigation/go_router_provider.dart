@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import 'package:car_manager_ui/main.dart';
+import 'package:car_manager_ui/showcases/brief_card_showcase.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
 import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_back_showcase.dart';
 import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_no_back_showcase.dart';
@@ -164,6 +165,16 @@ class GoRouterHelper {
         pageBuilder: (_, state) {
           return _getPage(
             child: const EmptyListShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: BriefCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const BriefCardShowcase(),
             state: state,
           );
         },
