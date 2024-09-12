@@ -39,7 +39,7 @@ void main() {
       when(() => navigator.canPop()).thenReturn(true);
     });
 
-    testWidgets('should not display the asset image if assetName is null', (WidgetTester tester) async {
+    testWidgets('Should not display the asset image if assetName is null', (WidgetTester tester) async {
       await tester.pumpWidget(
         baseAppBarApp(navigator),
       );
@@ -49,7 +49,7 @@ void main() {
       expect(svgImageFinder, findsNothing);
     });
 
-    testWidgets('shows back button when canPop is true', (WidgetTester tester) async {
+    testWidgets('Shows back button when canPop is true', (WidgetTester tester) async {
       await tester.pumpWidget(
         baseAppBarApp(navigator),
       );
@@ -59,7 +59,7 @@ void main() {
       expect(iconFinder, findsOne);
     });
 
-    testWidgets('don\'t show back button when canPop is false', (WidgetTester tester) async {
+    testWidgets('Don\'t show back button when canPop is false', (WidgetTester tester) async {
 
       when(() => navigator.canPop()).thenReturn(false);
 
@@ -72,7 +72,7 @@ void main() {
       expect(iconFinder, findsNothing);
     });
 
-    testWidgets('back button should call pop', (WidgetTester tester) async {
+    testWidgets('Back button should call pop', (WidgetTester tester) async {
       await tester.pumpWidget(
         baseAppBarApp(navigator),
       );
