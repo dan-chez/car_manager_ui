@@ -13,7 +13,11 @@
 // limitations under the License.
 
 import 'package:car_manager_ui/main.dart';
+import 'package:car_manager_ui/showcases/brief_card_showcase.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
+import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_back_showcase.dart';
+import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_no_back_showcase.dart';
+import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_showcase.dart';
 import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/dropdown_showcase.dart';
 import 'package:car_manager_ui/showcases/empty_list_showcase.dart';
@@ -127,10 +131,50 @@ class GoRouterHelper {
       ),
       GoRoute(
         parentNavigatorKey: _appNavigatorKey,
+        path: CMAppbarShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const CMAppbarShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: CMAppbarBackShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const CMAppbarBackShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: CMAppbarNoBackShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const CMAppbarNoBackShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
         path: EmptyListShowcase.path,
         pageBuilder: (_, state) {
           return _getPage(
             child: const EmptyListShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: BriefCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const BriefCardShowcase(),
             state: state,
           );
         },

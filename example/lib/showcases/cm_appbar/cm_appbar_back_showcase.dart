@@ -12,16 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const _imagesSvgPath = "assets/images/svg/";
-const _animationsPath = "assets/animations/";
+import 'package:car_manager_ui/constants/image_constants.dart';
+import 'package:carmanager_ui/carmanager_ui.dart';
+import 'package:flutter/material.dart';
 
-// SVG
-const kCarErrorImageSvg = "${_imagesSvgPath}cm_car_error.svg";
-const kSuccessImage = "${_imagesSvgPath}success.svg";
-const kCarImage = "${_imagesSvgPath}car.svg";
-const kFolderImage = "${_imagesSvgPath}folder.svg";
-const kSearchImage = "${_imagesSvgPath}loupe.svg";
-const kCarManagerFullLogoImage = "${_imagesSvgPath}carmanager_full_logo.svg";
+class CMAppbarBackShowcase extends StatelessWidget {
 
-// Animations
-const kLoadingAnimation = "${_animationsPath}cmloading.json";
+  /// This path is used to navigate to the CMAppBar showcase with back button using GoRouter.
+  static String path = '/cmAppbarBack';
+  const CMAppbarBackShowcase({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      appBar: CMAppbar(
+        assetName: kCarManagerFullLogoImage,
+      ),
+    );
+  }
+}

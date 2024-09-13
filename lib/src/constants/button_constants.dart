@@ -30,6 +30,16 @@ final kCMOutlinedButtonStyle = OutlinedButton.styleFrom(
   foregroundColor: kAmaranthPrimary,
 );
 
+final kCMBriefCardButtonStyle = ElevatedButton.styleFrom(
+  shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(10)),
+  ),
+  elevation: 3.5,
+  shadowColor: kLightShadowColor,
+  backgroundColor: kCornejo,
+  disabledBackgroundColor: kDarkDisable,
+);
+
 final kCMTextCardButtonStyle = ElevatedButton.styleFrom(
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(Radius.circular(5)),
