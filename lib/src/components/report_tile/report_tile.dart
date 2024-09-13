@@ -41,9 +41,9 @@ class ReportTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
-      child: TextButton(
+      child: ElevatedButton(
         onPressed: onPressed,
-        style: kCMTextCardButtonStyle,
+        style: kReportTileButtonStyle,
         child: IntrinsicHeight(
           child: Row(
             children: [

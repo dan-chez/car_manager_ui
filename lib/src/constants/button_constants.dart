@@ -40,9 +40,9 @@ final kCMBriefCardButtonStyle = ElevatedButton.styleFrom(
   disabledBackgroundColor: kDarkDisable,
 );
 
-final kCMTextCardButtonStyle = ElevatedButton.styleFrom(
+final kReportTileButtonStyle = ElevatedButton.styleFrom(
   shape: const RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(5)),
+    borderRadius: BorderRadius.all(Radius.circular(4)),
   ),
   elevation: 3.5,
   shadowColor: kLightShadowColor,

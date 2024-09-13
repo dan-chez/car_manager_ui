@@ -12,13 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:flutter/material.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:flutter/material.dart';
 
 //Custom Icons
 const String _iconsFontFamily = "CMIcons";
+const String _fontPackage = 'carmanager_ui';
 
-const IconData _iconDataDelete = IconData(0xe801, fontFamily: _iconsFontFamily);
+const IconData _iconDataDelete = IconData(0xe801, fontFamily: _iconsFontFamily, fontPackage: _fontPackage);
 
 //Icons
 const kAddExpenseIconWhite = Icon(Icons.add, color: kWhite);
