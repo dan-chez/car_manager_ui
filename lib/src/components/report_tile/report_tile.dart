@@ -21,6 +21,20 @@ import 'package:carmanager_ui/src/utils/extensions/number_extensions.dart';
 import 'package:carmanager_ui/src/utils/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
 
+/// The [ReportTile] widget allows you to display a report's name [text] and
+/// its value [value] in a structured layout. It supports interaction via
+/// [onPressed] and optional deletion via [onDelete]. It conditionally displays
+/// the delete and edit icons or an arrow based on the [showDeleteAndEditIcon] flag.
+///
+/// Example usage:
+/// ```dart
+/// ReportTile(
+///   text: 'Monday 19',
+///   value: '1500',
+///   onPressed: () => print('Pressed'),
+///   onDelete: () => print('Delete Pressed'),
+/// );
+/// ```
 class ReportTile extends StatelessWidget {
   final String text;
   final String value;
@@ -84,6 +98,7 @@ class ReportTile extends StatelessWidget {
                   ],
                 ),
               ),
+              // If delete and edit icons are hidden, show a forward arrow.
               Visibility(
                 visible: !showDeleteAndEditIcon,
                 child: kArrowForwardIcon,
