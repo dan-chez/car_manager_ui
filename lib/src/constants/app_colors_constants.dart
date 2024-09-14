@@ -25,6 +25,9 @@ const Color kDarkDisable = Color(0xFFF8F8F8);
 const Color kkAmaranthPrimaryWithOpacity = Color.fromRGBO(225, 70, 88, 0.73);
 const Color kLightShadowColor = Color.fromRGBO(0, 0, 0, 0.35);
 const Color kGreen = Color(0XFF159700);
+const Color kkMyrtleGreenWithOpacity = Color.fromRGBO(53, 60, 97, 0.73);
+const Color kPrimaryColorWithOpacityBG = Color(0x1FFFC9CF);
+const Color kBoxShadowColor = Color(0x1A000000);
 
 // Dialogs
 const Color kBarrierColor = Color.fromRGBO(0, 0, 0, 0.5);
