@@ -32,4 +32,3 @@ const Color kBarrierColor = Color.fromRGBO(0, 0, 0, 0.5);
 
 //CMExpenseSummaryCard
 const Color kExpenseSummaryCardBg = Color.fromRGBO(231, 235, 255, 0.53);
-
