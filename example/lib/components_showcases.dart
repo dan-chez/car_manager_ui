@@ -23,6 +23,7 @@ import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
+import 'package:car_manager_ui/showcases/toggle_button_showcase.dart';
 
 /// A collection of component showcases used in the example application.
 ///
@@ -70,5 +71,9 @@ final components = {
   ComponentModel(
     description: 'CMAppBar',
     path: CMAppbarShowcase.path,
+  ),
+  ComponentModel(
+    description: 'CMToggleButton',
+    path: ToggleButtonShowcase.path,
   ),
 };

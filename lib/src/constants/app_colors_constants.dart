@@ -27,3 +27,6 @@ const Color kLightShadowColor = Color.fromRGBO(0, 0, 0, 0.35);
 
 // Dialogs
 const Color kBarrierColor = Color.fromRGBO(0, 0, 0, 0.5);
+
+//ToggleButton
+const Color kInactiveToggleButtonSelection = Color.fromRGBO(235, 235, 235, 1);
