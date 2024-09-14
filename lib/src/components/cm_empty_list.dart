@@ -30,7 +30,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 ///   imagePath: 'assets/empty.svg',
 /// );
 /// ```
-
 class CMEmptyList extends StatelessWidget {
   final String text;
   final String textDivider;
