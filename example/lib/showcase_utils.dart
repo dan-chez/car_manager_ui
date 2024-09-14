@@ -45,3 +45,9 @@ void printValue(String value) {
     print(value);
   }
 }
+
+/// This function ensures that any currently visible SnackBar is removed before displaying a new one
+void showCustomSnackBar(BuildContext context, SnackBar snackBar) {
+  ScaffoldMessenger.of(context).removeCurrentSnackBar();
+  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+}
