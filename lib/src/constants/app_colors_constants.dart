@@ -23,8 +23,13 @@ const Color kWhite = Color(0xFFFFFFFF);
 const Color kSilver = Color(0XFFB1B1B1);
 const Color kDarkDisable = Color(0xFFF8F8F8);
 const Color kkAmaranthPrimaryWithOpacity = Color.fromRGBO(225, 70, 88, 0.73);
+const Color kkMyrtleGreenWithOpacity = Color.fromRGBO(53, 60, 97, 0.73);
 const Color kLightShadowColor = Color.fromRGBO(0, 0, 0, 0.35);
 const Color kGreen = Color(0XFF159700);
 
 // Dialogs
 const Color kBarrierColor = Color.fromRGBO(0, 0, 0, 0.5);
+
+//CMExpenseSummaryCard
+const Color kExpenseSummaryCardBg = Color.fromRGBO(231, 235, 255, 0.53);
+
