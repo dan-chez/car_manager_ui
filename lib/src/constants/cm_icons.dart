@@ -12,9 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:flutter/material.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:flutter/material.dart';
 
+//Custom Icons
+const String _iconsFontFamily = "CMIcons";
+const String _fontPackage = 'carmanager_ui';
+
+const IconData _iconDataDelete = IconData(0xe801, fontFamily: _iconsFontFamily, fontPackage: _fontPackage);
+
+//Icons
 const kAddExpenseIconWhite = Icon(Icons.add, color: kWhite);
 
 const kAddExpenseIconRed = Icon(Icons.add, color: kAmaranthPrimary);
@@ -28,3 +35,7 @@ const kArrowForwardIcon = Icon(Icons.arrow_forward_ios_outlined, color: kMyrtleG
 const kArrowForwardDisableIcon = Icon(Icons.arrow_forward_ios_outlined, color: kSilver, size: 15);
 
 const kBackArrowIcon = Icon(Icons.arrow_back_ios_outlined, color: kMyrtleGreen, size: 20);
+
+const kEditReportIcon = Icon(Icons.edit_note, color: kMyrtleGreen, size: 30);
+
+const kDeleteIcon = Icon(_iconDataDelete, color: kAmaranthPrimary, size: 17);
