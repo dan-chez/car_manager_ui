@@ -16,7 +16,7 @@ import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/text_constants.dart';
 import 'package:flutter/material.dart';
 
-/// The [HorizontalInfoCard] widget displays a card with a vertical layout featuring a [textValue]
+/// The [HorizontalInfoCard] widget displays a card with a horizontal layout featuring a [textValue]
 /// and a [textDescription]. The card is styled with a shadow and rounded corners, and it adjusts
 /// to the full width of its container.
 ///
@@ -56,28 +56,29 @@ class HorizontalInfoCard extends StatelessWidget {
             const BoxDecoration(color: kPrimaryColorWithOpacityBG, borderRadius: BorderRadius.all(Radius.circular(6))),
         child: Padding(
           padding: const EdgeInsets.only(right: 12, top: 20, left: 12, bottom: 15),
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  textValue,
-                  style: kTitleTextStyle.copyWith(
-                    color: kkMyrtleGreenWithOpacity,
-                  ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                textValue,
+                style: kTitleTextStyle.copyWith(
+                  color: kkMyrtleGreenWithOpacity,
                 ),
-                const SizedBox(width: 10),
-                Text(
+              ),
+              const SizedBox(width: 10),
+              Flexible(
+                child: Text(
                   textDescription,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
                   style: kCaptionTextStyle.copyWith(
                     fontWeight: FontWeight.w300,
                     color: kkMyrtleGreenWithOpacity,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

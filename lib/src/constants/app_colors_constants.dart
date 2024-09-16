@@ -28,7 +28,6 @@ const Color kkMyrtleGreenWithOpacity = Color.fromRGBO(53, 60, 97, 0.73);
 const Color kLightShadowColor = Color.fromRGBO(0, 0, 0, 0.35);
 const Color kGreen = Color(0XFF159700);
 const Color kBoxShadowColor = Color(0x1A000000);
-const Color kkMyrtleGreenWithOpacity = Color.fromRGBO(53, 60, 97, 0.73);
 
 // Dialogs
 const Color kBarrierColor = Color.fromRGBO(0, 0, 0, 0.5);

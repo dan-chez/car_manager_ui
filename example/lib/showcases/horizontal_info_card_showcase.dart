@@ -30,7 +30,7 @@ class HorizontalInfoCardShowcase extends StatelessWidget {
       title: 'HorizontalInfoCard showcase',
       children: [
         createShowcaseTitle(
-          'Displays a card with a vertical layout featuring a primary value and a description.',
+          'Displays a card with a horizontal layout featuring a primary value and a description.',
         ),
         const HorizontalInfoCard(
           textValue: '100',
@@ -71,7 +71,14 @@ class HorizontalInfoCardShowcase extends StatelessWidget {
               ),
             ),
           ],
-        )
+        ),
+        createShowcaseTitle(
+          'HorizontalInfoCard with long description',
+        ),
+        const HorizontalInfoCard(
+          textValue: '100',
+          textDescription: 'This is a showcase with long description for HorizontalInfoCard in HorizontalInfoCardShowcase',
+        ),
       ],
     );
   }
