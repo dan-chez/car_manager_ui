@@ -58,28 +58,29 @@ class VerticalInfoCard extends StatelessWidget {
         child: Padding(
           padding:
           const EdgeInsets.only(right: 12, top: 20, left: 12, bottom: 15),
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  textValue,
-                  style: kTitleTextStyle.copyWith(
-                    color: kkMyrtleGreenWithOpacity,
-                  ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                textValue,
+                style: kTitleTextStyle.copyWith(
+                  color: kkMyrtleGreenWithOpacity,
                 ),
-                Text(
-                  textDescription,
-                  style: kCaptionTextStyle.copyWith(
-                    fontWeight: FontWeight.w300,
-                    color: kkMyrtleGreenWithOpacity,
-                  ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Text(
+                textDescription,
+                style: kCaptionTextStyle.copyWith(
+                  fontWeight: FontWeight.w300,
+                  color: kkMyrtleGreenWithOpacity,
                 ),
-              ],
-            ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
           ),
         ),
       ),

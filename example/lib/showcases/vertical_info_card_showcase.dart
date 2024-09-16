@@ -37,6 +37,20 @@ class VerticalInfoCardShowcase extends StatelessWidget {
           textDescription: 'Active Users',
         ),
         createShowcaseTitle(
+          'Displays a vertical card with a long description.',
+        ),
+        const VerticalInfoCard(
+          textValue: '120',
+          textDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum lectus a condimentum scelerisque. Integer vel enim eget purus aliquam efficitur.',
+        ),
+        createShowcaseTitle(
+          'Displays a vertical card with a long value.',
+        ),
+        const VerticalInfoCard(
+          textValue: '99999999999999999999999999',
+          textDescription: 'Very long value',
+        ),
+        createShowcaseTitle(
           'Vertical stack of VerticalInfoCards showcasing different metrics.',
         ),
         const Column(

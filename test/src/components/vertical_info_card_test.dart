@@ -20,11 +20,9 @@ import 'base/base_component_app.dart';
 
 void main() {
   testWidgets('VerticalInfoCard displays textValue and textDescription correctly', (WidgetTester tester) async {
-    // Arrange
     const String testValue = '75%';
     const String testDescription = 'Success Rate';
 
-    // Act
     await tester.pumpWidget(baseComponentApp(
       const VerticalInfoCard(
         textValue: testValue,
@@ -32,18 +30,15 @@ void main() {
       ),
     ));
 
-    // Assert
     expect(find.text(testValue), findsOneWidget);
     expect(find.text(testDescription), findsOneWidget);
   });
 
   testWidgets('VerticalInfoCard adjusts to full width', (WidgetTester tester) async {
-    // Arrange
     const String testValue = '75%';
     const String testDescription = 'Success Rate';
     const double width = 263.11;
 
-    // Act
     await tester.pumpWidget(baseComponentApp(
       const SizedBox(
         width: width,
@@ -54,7 +49,6 @@ void main() {
       ),
     ));
 
-    // Assert
     final baseSize = tester.getSize(find.byType(VerticalInfoCard));
     expect(baseSize.width, equals(width));
   });
