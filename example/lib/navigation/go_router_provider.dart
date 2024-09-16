@@ -26,6 +26,7 @@ import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
 import 'package:car_manager_ui/showcases/report_tile_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
+import 'package:car_manager_ui/showcases/summary_card_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
@@ -187,6 +188,16 @@ class GoRouterHelper {
         pageBuilder: (_, state) {
           return _getPage(
             child: const ReportTileShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: SummaryCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const SummaryCardShowcase(),
             state: state,
           );
         },
