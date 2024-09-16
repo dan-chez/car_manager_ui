@@ -30,6 +30,10 @@ import 'package:flutter/material.dart';
 /// );
 /// ```
 class CMInfoCard extends StatelessWidget {
+  final Icon icon;
+  final String message;
+  final Size size;
+
   const CMInfoCard({
     super.key,
     required this.icon,
@@ -37,9 +41,6 @@ class CMInfoCard extends StatelessWidget {
     this.size = const Size(110, 120),
   });
 
-  final Icon icon;
-  final String message;
-  final Size size;
 
   @override
   Widget build(BuildContext context) {

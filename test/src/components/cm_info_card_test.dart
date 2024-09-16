@@ -16,15 +16,13 @@ import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'components/base/base_component_app.dart';
+import 'base/base_component_app.dart';
 
 void main() {
   testWidgets('Displays the correct icon and message', (WidgetTester tester) async {
-    // Arrange
     const testIcon = kMonitoringIcon;
     const testMessage = 'Test Info';
 
-    // Act
     await tester.pumpWidget(baseComponentApp(
       const CMInfoCard(
         icon: testIcon,
@@ -32,17 +30,14 @@ void main() {
       ),
     ));
 
-    // Assert
     expect(find.byIcon(testIcon.icon!), findsOneWidget);
     expect(find.text(testMessage), findsOneWidget);
   });
 
   testWidgets('Handles long message with ellipsis', (WidgetTester tester) async {
-    // Arrange
     const testIcon = kDeleteIcon;
     const longMessage = 'This is a very long message that should be truncated';
 
-    // Act
     await tester.pumpWidget(baseComponentApp(
       const CMInfoCard(
         icon: testIcon,
@@ -50,7 +45,6 @@ void main() {
       ),
     ));
 
-    // Assert
     final textFinder = find.text(longMessage);
     expect(textFinder, findsOneWidget);
     final Text textWidget = tester.widget(textFinder);
@@ -58,12 +52,10 @@ void main() {
   });
 
   testWidgets('Applies custom size to the card', (WidgetTester tester) async {
-    // Arrange
     const testIcon = kStarIcon;
     const testMessage = 'Custom Size';
     const customSize = Size(150, 180);
 
-    // Act
     await tester.pumpWidget(baseComponentApp(
       const CMInfoCard(
         icon: testIcon,
@@ -72,7 +64,6 @@ void main() {
       ),
     ));
 
-    // Assert
     final baseSize = tester.getSize(find.byType(CMInfoCard));
     expect(baseSize.width, customSize.width);
     expect(baseSize.height, customSize.height);
