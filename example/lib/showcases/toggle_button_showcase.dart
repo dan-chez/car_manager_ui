@@ -37,16 +37,19 @@ class ToggleButtonShowcase extends StatelessWidget {
               'Default behavior of the CMToggleButton with two options. It switches between "Option 1" and "Option 2".',
             ),
             CMToggleButton(
-              switchButtonLabels: const ['Option 1', 'Option 2'],
+              labels: const ['Option 1', 'Option 2'],
               onChanged: (index) {
                 printValue('Selected option index: $index');
               },
             ),
-            createShowcaseTitle(
-              'CMToggleButton with three options, allowing for multiple selections.',
+            Align(
+              alignment: Alignment.centerLeft,
+              child: createShowcaseTitle(
+                'CMToggleButton with three options.',
+              ),
             ),
             CMToggleButton(
-              switchButtonLabels: const ['Option A', 'Option B', 'Option C'],
+              labels: const ['Option A', 'Option B', 'Option C'],
               onChanged: (index) {
                 printValue('Selected option index: $index');
               },
@@ -55,7 +58,7 @@ class ToggleButtonShowcase extends StatelessWidget {
               'CMToggleButton with custom labels showing short text, suitable for compact layouts.',
             ),
             CMToggleButton(
-              switchButtonLabels: const ['Yes', 'No'],
+              labels: const ['Yes', 'No'],
               onChanged: (index) {
                 printValue('Selected option index: $index');
               },
@@ -64,7 +67,7 @@ class ToggleButtonShowcase extends StatelessWidget {
               'CMToggleButton with multiple options, showcasing a wide variety of labels.',
             ),
             CMToggleButton(
-              switchButtonLabels: const ['Yes', 'No', 'True', 'False', 'On', 'Off', 'Multiple'],
+              labels: const ['Yes', 'No', 'True', 'False', 'On', 'Off', 'Multiple'],
               onChanged: (index) {
                 printValue('Selected option index: $index');
               },
@@ -76,7 +79,7 @@ class ToggleButtonShowcase extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 CMToggleButton(
-                  switchButtonLabels: const ['Start', 'Stop'],
+                  labels: const ['Start', 'Stop'],
                   activeBgColor: kAmaranthPrimary,
                   onChanged: (index) {
                     printValue('Selected option index: $index');
@@ -84,7 +87,7 @@ class ToggleButtonShowcase extends StatelessWidget {
                 ),
                 CMToggleButton(
                   activeBgColor: Colors.deepPurple,
-                  switchButtonLabels: const ['Dark', 'Light'],
+                  labels: const ['Dark', 'Light'],
                   onChanged: (index) {
                     printValue('Selected option index: $index');
                   },

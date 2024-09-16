@@ -25,7 +25,7 @@ import 'package:toggle_switch/toggle_switch.dart';
 /// Example usage:
 /// ```dart
 /// CMToggleButton(
-///   switchButtonLabels: ['Option 1', 'Option 2'],
+///   labels: ['Option 1', 'Option 2'],
 ///   activeBgColor: Colors.blue,
 ///   onChanged: (index) {
 ///     print('Selected index: $index');
@@ -38,13 +38,13 @@ import 'package:toggle_switch/toggle_switch.dart';
 /// of the active toggle option.
 class CMToggleButton extends StatefulWidget {
   final Function(int) onChanged;
-  final List<String> switchButtonLabels;
+  final List<String> labels;
   final Color activeBgColor;
 
   const CMToggleButton({
     super.key,
     required this.onChanged,
-    required this.switchButtonLabels,
+    required this.labels,
     this.activeBgColor = kMyrtleGreen,
   });
 
@@ -62,7 +62,7 @@ class _CMToggleButtonState extends State<CMToggleButton> {
     final List<TextStyle> itemsTextStyle = [];
     final List<List<Color>> activeBGColors = [];
     final List<double> customWidths = [];
-    for (int i = 0; i < widget.switchButtonLabels.length; i++) {
+    for (int i = 0; i < widget.labels.length; i++) {
       activeBGColors.add([widget.activeBgColor]);
       customWidths.add(i == _switchButtonIndexSelected ? 95 : 85);
       itemsTextStyle.add(
@@ -84,14 +84,14 @@ class _CMToggleButtonState extends State<CMToggleButton> {
         activeFgColor: kMyrtleGreen,
         inactiveBgColor: kInactiveToggleButtonSelection,
         initialLabelIndex: _switchButtonIndexSelected,
-        totalSwitches: widget.switchButtonLabels.length,
-        labels: widget.switchButtonLabels,
+        totalSwitches: widget.labels.length,
+        labels: widget.labels,
         radiusStyle: true,
         customTextStyles: itemsTextStyle,
         onToggle: (index) {
           if (!_isToggleLocked) {
             _isToggleLocked = true;
-            //The delay is applied to wait for the animation of the average daily income card
+            // A delay is applied to allow time for any ongoing animations to complete.
             Future.delayed(const Duration(milliseconds: 500), () {
               _isToggleLocked = false;
             });

@@ -21,61 +21,53 @@ import 'base/base_component_app.dart';
 
 void main() {
   testWidgets('Should render toggle button with correct labels', (WidgetTester tester) async {
-    // Arrange
     const labels = ['Option 1', 'Option 2'];
 
-    // Act
     await tester.pumpWidget(baseComponentApp(
       CMToggleButton(
-        switchButtonLabels: labels,
+        labels: labels,
         onChanged: (_) {},
       ),
     ));
 
-    // Assert
     for (final label in labels) {
       expect(find.text(label), findsOneWidget);
     }
   });
 
   testWidgets('Should call onChanged when a toggle is pressed', (WidgetTester tester) async {
-    // Arrange
     int selectedIndex = -1;
     const labels = ['Yes', 'No'];
 
     await tester.pumpWidget(baseComponentApp(
       CMToggleButton(
-        switchButtonLabels: labels,
+        labels: labels,
         onChanged: (index) {
           selectedIndex = index;
         },
       ),
     ));
 
-    // Act
     await tester.tap(find.text('No'));
     await tester.pumpAndSettle();
 
-    // Assert
     expect(selectedIndex, 1);
   });
 
   testWidgets('Can set active background colors', (WidgetTester tester) async {
-    // Arrange
     const activeColor = Colors.red;
     const labels = ['On', 'Off'];
 
     await tester.pumpWidget(
       baseComponentApp(
         CMToggleButton(
-          switchButtonLabels: labels,
+          labels: labels,
           activeBgColor: activeColor,
           onChanged: (_) {},
         ),
       ),
     );
-
-    // Assert
+    
     final toggleButton = tester.widget<ToggleSwitch>(find.byType(ToggleSwitch));
 
     for (final color in toggleButton.activeBgColors ?? <Color>[]) {
