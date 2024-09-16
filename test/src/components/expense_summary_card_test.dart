@@ -20,11 +20,9 @@ import 'base/base_component_app.dart';
 
 void main() {
   testWidgets('CMExpenseSummaryCard displays description and value correctly', (WidgetTester tester) async {
-    // Arrange
     const description = 'Office Supplies';
     const value = '500000';
 
-    // Act
     await tester.pumpWidget(
       baseComponentApp(
         const CMExpenseSummaryCard(
@@ -34,62 +32,50 @@ void main() {
       ),
     );
 
-    // Assert
     expect(find.text(description), findsOneWidget);
     expect(find.text(value), findsOneWidget);
   });
 
-  testWidgets('CMExpenseSummaryCard shows delete icon when showDeleteIcon is true', (WidgetTester tester) async {
-    // Arrange
+  testWidgets('CMExpenseSummaryCard shows delete icon when onDeletePressed != null', (WidgetTester tester) async {
     const description = 'Employee Salaries';
     const value = '1200000';
 
-    // Act
     await tester.pumpWidget(baseComponentApp(
       CMExpenseSummaryCard(
         description: description,
         value: value,
-        showDeleteIcon: true,
         onDeletePressed: () {},
       ),
     ));
 
-    // Assert
     expect(find.byIcon(kDeleteIcon.icon!), findsOneWidget);
   });
 
-  testWidgets('CMExpenseSummaryCard does not show delete icon when showDeleteIcon is false',
+  testWidgets('CMExpenseSummaryCard does not show delete icon when onDeletePressed is null',
       (WidgetTester tester) async {
-    // Arrange
     const description = 'Utilities';
     const value = '150000';
 
-    // Act
     await tester.pumpWidget(baseComponentApp(
       const CMExpenseSummaryCard(
         description: description,
         value: value,
-        showDeleteIcon: false,
       ),
     ));
 
-    // Assert
     expect(find.byIcon(kDeleteIcon.icon!), findsNothing);
   });
 
   testWidgets('CMExpenseSummaryCard triggers onDeletePressed callback when delete icon is pressed',
       (WidgetTester tester) async {
-    // Arrange
     const description = 'Travel Expenses';
     const value = '75000';
     bool deletePressed = false;
 
-    // Act
     await tester.pumpWidget(baseComponentApp(
       CMExpenseSummaryCard(
         description: description,
         value: value,
-        showDeleteIcon: true,
         onDeletePressed: () {
           deletePressed = true;
         },
@@ -100,7 +86,6 @@ void main() {
     await tester.tap(find.byIcon(kDeleteIcon.icon!));
     await tester.pump();
 
-    // Assert
     expect(deletePressed, isTrue);
   });
 }

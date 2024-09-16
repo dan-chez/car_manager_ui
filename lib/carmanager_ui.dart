@@ -28,12 +28,12 @@ export 'package:carmanager_ui/src/components/dialogs/error/error_dialog_route.da
 export 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog_data.dart';
 export 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog_route.dart';
 export 'package:carmanager_ui/src/components/dropdown/cm_dropdown.dart';
+export 'package:carmanager_ui/src/components/expense_summary_card.dart';
 export 'package:carmanager_ui/src/components/loader/loader.dart';
 export 'package:carmanager_ui/src/components/report_tile/report_tile.dart';
 export 'package:carmanager_ui/src/components/text_field/cm_multiline_text_field.dart';
 export 'package:carmanager_ui/src/components/text_field/cm_text_field.dart';
 export 'package:carmanager_ui/src/components/text_field/money_text_field/cm_money_text_field.dart';
-export 'package:carmanager_ui/src/components/expense_summary_card.dart';
 export 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 export 'package:carmanager_ui/src/constants/button_constants.dart';
 export 'package:carmanager_ui/src/constants/cm_icons.dart';

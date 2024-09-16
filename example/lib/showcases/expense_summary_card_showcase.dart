@@ -51,7 +51,14 @@ class ExpenseSummaryCardShowcase extends StatelessWidget {
         CMExpenseSummaryCard(
           description: 'Monthly Subscription',
           value: '15000'.toMoneyFormat,
-          showDeleteIcon: true,
+          onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
+        ),
+        createShowcaseTitle(
+          'Card with long description and delete icon.',
+        ),
+        CMExpenseSummaryCard(
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum lectus a condimentum scelerisque. Integer vel enim eget purus aliquam efficitur.',
+          value: '23000'.toMoneyFormat,
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
         ),
         createShowcaseTitle(
@@ -62,6 +69,13 @@ class ExpenseSummaryCardShowcase extends StatelessWidget {
           value: '75000'.toMoneyFormat,
         ),
         createShowcaseTitle(
+          'Card with long description, without deletion icon.',
+        ),
+        CMExpenseSummaryCard(
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum lectus a condimentum scelerisque. Integer vel enim eget purus aliquam efficitur.',
+          value: '85000'.toMoneyFormat,
+        ),
+        createShowcaseTitle(
           'Expense card list, without delete icon',
         ),
         ..._buildExpenseCards(expenseMap1),
@@ -70,7 +84,6 @@ class ExpenseSummaryCardShowcase extends StatelessWidget {
         ),
         ..._buildExpenseCards(
           expenseMap2,
-          showDeleteIcon: true,
           onDelete: () => showCustomSnackBar(context, onDeleteSnackBar),
         ),
       ],
@@ -78,12 +91,11 @@ class ExpenseSummaryCardShowcase extends StatelessWidget {
   }
 
   List<Widget> _buildExpenseCards(Map<String, String> expenseMap,
-      {VoidCallback? onDelete, bool showDeleteIcon = false}) {
+      {VoidCallback? onDelete}) {
     return expenseMap.entries.map((entry) {
       return Padding(
         padding: const EdgeInsets.only(bottom: 5),
         child: CMExpenseSummaryCard(
-          showDeleteIcon: showDeleteIcon,
           onDeletePressed: onDelete,
           description: entry.key,
           value: entry.value.toMoneyFormat,

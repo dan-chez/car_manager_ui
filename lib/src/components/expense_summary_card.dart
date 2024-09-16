@@ -18,8 +18,8 @@ import 'package:carmanager_ui/src/constants/cm_icons.dart';
 import 'package:flutter/material.dart';
 
 /// The [CMExpenseSummaryCard] widget represents an item with a [description] and [value].
-/// It optionally includes a delete icon, which can be enabled using the [showDeleteIcon] parameter.
-/// When the delete icon is pressed, the [onDeletePressed] callback is triggered.
+/// It includes an optional delete icon, which is displayed when [onDeletePressed] is provided.
+/// The [onDeletePressed] callback is triggered when the delete icon is tapped.
 ///
 /// Example usage:
 /// ```dart
@@ -35,14 +35,12 @@ import 'package:flutter/material.dart';
 class CMExpenseSummaryCard extends StatelessWidget {
   final String description;
   final String value;
-  final bool showDeleteIcon;
   final void Function()? onDeletePressed;
 
   const CMExpenseSummaryCard({
     super.key,
     required this.description,
     required this.value,
-    this.showDeleteIcon = false,
     this.onDeletePressed,
   });
 
@@ -55,13 +53,11 @@ class CMExpenseSummaryCard extends StatelessWidget {
           Radius.circular(4),
         ),
       ),
+      padding: const EdgeInsets.symmetric(horizontal: 14),
       child: IntrinsicHeight(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            const SizedBox(
-              width: 14,
-            ),
             Expanded(
               child: Text(
                 description,
@@ -69,8 +65,11 @@ class CMExpenseSummaryCard extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   color: kkMyrtleGreenWithOpacity,
                 ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
+            const SizedBox(width: 14),
             Text(
               value,
               style: kContentTextStyle.copyWith(
@@ -78,13 +77,11 @@ class CMExpenseSummaryCard extends StatelessWidget {
                 color: kkMyrtleGreenWithOpacity,
               ),
             ),
-            if (showDeleteIcon)
-              _getDeleteSection()
-            else
-              const SizedBox(
-                height: 47,
-                width: 14,
-              )
+            Visibility(
+              visible: onDeletePressed != null,
+              replacement: const SizedBox(height: 47),
+              child: _getDeleteSection(),
+            )
           ],
         ),
       ),
