@@ -24,6 +24,7 @@ import 'package:car_manager_ui/showcases/info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
 import 'package:car_manager_ui/showcases/report_tile_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
+import 'package:car_manager_ui/showcases/summary_card_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 
 /// A collection of component showcases used in the example application.
@@ -76,6 +77,10 @@ final components = {
   ComponentModel(
     description: 'ReportTile',
     path: ReportTileShowcase.path,
+  ),
+  ComponentModel(
+    description: 'SummaryCard',
+    path: SummaryCardShowcase.path,
   ),
   ComponentModel(
     description: 'CMInfoCard',
