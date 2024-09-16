@@ -21,11 +21,9 @@ import 'base/base_component_app.dart';
 
 void main() {
   testWidgets('Displays the correct text and profit value', (WidgetTester tester) async {
-    // Define test data
     const String testText = 'Total Revenue';
     const String testProfit = '100000';
 
-    // Build the CMSummaryCard widget
     await tester.pumpWidget(baseComponentApp(
       const CMSummaryCard(
         text: testText,
@@ -33,18 +31,14 @@ void main() {
       ),
     ));
 
-    // Verify if the text is displayed correctly
     expect(find.text(testText), findsOneWidget);
-
-    // Verify if the profit is displayed correctly
     expect(find.text(testProfit.toMoneyFormat), findsOneWidget);
   });
+
   testWidgets('CMSummaryCard displays profit in green if positive', (WidgetTester tester) async {
-    // Define test data
     const String testText = 'Monthly Profit';
-    const String testProfit = '50000'; // Positive value
+    const String testProfit = '50000';
 
-    // Build the CMSummaryCard widget
     await tester.pumpWidget(baseComponentApp(
       const CMSummaryCard(
         text: testText,
@@ -52,16 +46,14 @@ void main() {
       ),
     ));
 
-    // Verify if the profit text color is green for positive values
     final profitTextWidget = tester.widget<Text>(find.text(testProfit.toMoneyFormat));
-    expect(profitTextWidget.style?.color, kGreen); // Adjust color to your specific green
+    expect(profitTextWidget.style?.color, kGreen);
   });
-  testWidgets('CMSummaryCard displays profit in red if negative', (WidgetTester tester) async {
-    // Define test data
-    const String testText = 'Monthly Loss';
-    const String testProfit = '-15000'; // Negative value
 
-    // Build the CMSummaryCard widget
+  testWidgets('CMSummaryCard displays profit in red if negative', (WidgetTester tester) async {
+    const String testText = 'Monthly Loss';
+    const String testProfit = '-15000';
+
     await tester.pumpWidget(baseComponentApp(
       const CMSummaryCard(
         text: testText,
@@ -69,17 +61,14 @@ void main() {
       ),
     ));
 
-    // Verify if the profit text color is red for negative values
     final profitTextWidget = tester.widget<Text>(find.text(testProfit.toMoneyFormat));
-    expect(profitTextWidget.style?.color, kAmaranthPrimary); // Adjust color to your specific red
+    expect(profitTextWidget.style?.color, kAmaranthPrimary);
   });
 
   testWidgets('CMSummaryCard displays profit with correct formatting', (WidgetTester tester) async {
-    // Define test data
     const String testText = 'Quarterly Earnings';
-    const String testProfit = '123456789'; // Large value
+    const String testProfit = '123456789';
 
-    // Build the CMSummaryCard widget
     await tester.pumpWidget(baseComponentApp(
       const CMSummaryCard(
         text: testText,
@@ -87,7 +76,6 @@ void main() {
       ),
     ));
 
-    // Verify if the profit text has the correct formatting
     expect(find.text(testProfit.toMoneyFormat), findsOneWidget);
   });
 }
