@@ -2,7 +2,7 @@
 
 [![Pub Version](https://img.shields.io/pub/v/car_manager_ui.svg)](https://pub.dev/packages/car_manager_ui)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Coverage Status](https://coveralls.io/repos/github/dan-chez/car_manager_ui/badge.svg?branch=feature/update_github_actions)](https://coveralls.io/github/dan-chez/car_manager_ui?branch=feature/update_github_actions)
+[![Coverage Status](https://coveralls.io/repos/github/dan-chez/car_manager_ui/badge.svg?branch=develop)](https://coveralls.io/github/dan-chez/car_manager_ui?branch=develop)
 
 **Car Manager UI** is a library of UI components designed for the Car Manager application. This library provides a collection of widgets and UI elements that makes it easy to implement and reuse widgets.
 
