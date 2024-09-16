@@ -22,6 +22,7 @@ import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/dropdown_showcase.dart';
 import 'package:car_manager_ui/showcases/empty_list_showcase.dart';
 import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
+import 'package:car_manager_ui/showcases/info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
 import 'package:car_manager_ui/showcases/report_tile_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
@@ -187,6 +188,16 @@ class GoRouterHelper {
         pageBuilder: (_, state) {
           return _getPage(
             child: const ReportTileShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: InfoCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const InfoCardShowcase(),
             state: state,
           );
         },

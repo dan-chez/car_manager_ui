@@ -15,6 +15,7 @@
 import 'package:flutter/material.dart';
 
 const Color kAmaranthPrimary = Color(0xFFE14658);
+const Color kLightAmaranthPrimary = Color(0xFFFFEFF1);
 const Color kMyrtleGreen = Color(0xFF353C61);
 const Color kGreyDisable = Color(0xFF888888);
 const Color kCanyonBronze = Color(0XFF2F323A);
@@ -26,6 +27,7 @@ const Color kkAmaranthPrimaryWithOpacity = Color.fromRGBO(225, 70, 88, 0.73);
 const Color kkMyrtleGreenWithOpacity = Color.fromRGBO(53, 60, 97, 0.73);
 const Color kLightShadowColor = Color.fromRGBO(0, 0, 0, 0.35);
 const Color kGreen = Color(0XFF159700);
+const Color kBoxShadowColor = Color(0x1A000000);
 
 // Dialogs
 const Color kBarrierColor = Color.fromRGBO(0, 0, 0, 0.5);
