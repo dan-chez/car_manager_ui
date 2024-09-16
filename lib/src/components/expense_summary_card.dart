@@ -26,7 +26,6 @@ import 'package:flutter/material.dart';
 /// CMExpenseSummaryCard(
 ///   description: 'Office Supplies',
 ///   value: '500000',
-///   showDeleteIcon: true,
 ///   onDeletePressed: () {
 ///     // Handle delete action
 ///   },
