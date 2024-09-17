@@ -39,3 +39,9 @@ const kBackArrowIcon = Icon(Icons.arrow_back_ios_outlined, color: kMyrtleGreen, 
 const kEditReportIcon = Icon(Icons.edit_note, color: kMyrtleGreen, size: 30);
 
 const kDeleteIcon = Icon(_iconDataDelete, color: kAmaranthPrimary, size: 17);
+
+const kMonitoringIcon = Icon(Icons.monitor, color: kMyrtleGreen, size: 45);
+
+const kSecurityIcon = Icon(Icons.verified_user_outlined, color: kMyrtleGreen, size: 45);
+
+const kStarIcon = Icon(Icons.star, color: kMyrtleGreen, size: 45);
