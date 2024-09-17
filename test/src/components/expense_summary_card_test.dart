@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:carmanager_ui/src/components/expense_summary_card.dart';
+import 'package:carmanager_ui/src/components/cm_expense_summary_card.dart';
 import 'package:carmanager_ui/src/constants/cm_icons.dart';
 import 'package:flutter_test/flutter_test.dart';
 
