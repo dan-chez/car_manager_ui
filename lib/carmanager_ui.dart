@@ -36,6 +36,7 @@ export 'package:carmanager_ui/src/components/report_tile/report_tile.dart';
 export 'package:carmanager_ui/src/components/text_field/cm_multiline_text_field.dart';
 export 'package:carmanager_ui/src/components/text_field/cm_text_field.dart';
 export 'package:carmanager_ui/src/components/text_field/money_text_field/cm_money_text_field.dart';
+export 'package:carmanager_ui/src/components/vertical_info_card.dart';
 export 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 export 'package:carmanager_ui/src/constants/button_constants.dart';
 export 'package:carmanager_ui/src/constants/cm_icons.dart';
