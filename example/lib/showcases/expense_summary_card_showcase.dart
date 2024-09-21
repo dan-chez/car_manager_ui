@@ -17,7 +17,7 @@ import 'package:car_manager_ui/showcases/showcase_app_base.dart';
 import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 
-/// The [ExpenseSummaryCardShowcase] class provides a visual representation of [CMExpenseSummaryCard].
+/// The [ExpenseSummaryCardShowcase] class provides a visual representation of [ExpenseSummaryCard].
 class ExpenseSummaryCardShowcase extends StatelessWidget {
   /// This path is used to navigate to the ExpenseSummaryCard showcase using GoRouter.
   static String path = '/expenseSummaryCard';
@@ -48,7 +48,7 @@ class ExpenseSummaryCardShowcase extends StatelessWidget {
         createShowcaseTitle(
           'Displays a card with a description and value. Includes an optional delete icon.',
         ),
-        CMExpenseSummaryCard(
+        ExpenseSummaryCard(
           description: 'Monthly Subscription',
           value: '15000'.toMoneyFormat,
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
@@ -56,7 +56,7 @@ class ExpenseSummaryCardShowcase extends StatelessWidget {
         createShowcaseTitle(
           'Card with long description and delete icon.',
         ),
-        CMExpenseSummaryCard(
+        ExpenseSummaryCard(
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum lectus a condimentum scelerisque. Integer vel enim eget purus aliquam efficitur.',
           value: '23000'.toMoneyFormat,
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
@@ -64,14 +64,14 @@ class ExpenseSummaryCardShowcase extends StatelessWidget {
         createShowcaseTitle(
           'Card with only description and value, without delete icon.',
         ),
-        CMExpenseSummaryCard(
+        ExpenseSummaryCard(
           description: 'Office Supplies',
           value: '75000'.toMoneyFormat,
         ),
         createShowcaseTitle(
           'Card with long description, without deletion icon.',
         ),
-        CMExpenseSummaryCard(
+        ExpenseSummaryCard(
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum lectus a condimentum scelerisque. Integer vel enim eget purus aliquam efficitur.',
           value: '85000'.toMoneyFormat,
         ),
@@ -95,7 +95,7 @@ class ExpenseSummaryCardShowcase extends StatelessWidget {
     return expenseMap.entries.map((entry) {
       return Padding(
         padding: const EdgeInsets.only(bottom: 5),
-        child: CMExpenseSummaryCard(
+        child: ExpenseSummaryCard(
           onDeletePressed: onDelete,
           description: entry.key,
           value: entry.value.toMoneyFormat,

@@ -19,7 +19,7 @@ export 'package:carmanager_ui/src/components/buttons/primary_button.dart';
 export 'package:carmanager_ui/src/components/cm_appbar.dart';
 export 'package:carmanager_ui/src/components/cm_brief_card.dart';
 export 'package:carmanager_ui/src/components/cm_empty_list.dart';
-export 'package:carmanager_ui/src/components/cm_expense_summary_card.dart';
+export 'package:carmanager_ui/src/components/expense_summary_card.dart';
 export 'package:carmanager_ui/src/components/cm_info_card.dart';
 export 'package:carmanager_ui/src/components/cm_page_title.dart';
 export 'package:carmanager_ui/src/components/cm_rich_text.dart';

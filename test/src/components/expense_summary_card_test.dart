@@ -12,20 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:carmanager_ui/src/components/cm_expense_summary_card.dart';
+import 'package:carmanager_ui/src/components/expense_summary_card.dart';
 import 'package:carmanager_ui/src/constants/cm_icons.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'base/base_component_app.dart';
 
 void main() {
-  testWidgets('CMExpenseSummaryCard displays description and value correctly', (WidgetTester tester) async {
+  testWidgets('ExpenseSummaryCard displays description and value correctly', (WidgetTester tester) async {
     const description = 'Office Supplies';
     const value = '500000';
 
     await tester.pumpWidget(
       baseComponentApp(
-        const CMExpenseSummaryCard(
+        const ExpenseSummaryCard(
           description: description,
           value: value,
         ),
@@ -36,12 +36,12 @@ void main() {
     expect(find.text(value), findsOneWidget);
   });
 
-  testWidgets('CMExpenseSummaryCard shows delete icon when onDeletePressed != null', (WidgetTester tester) async {
+  testWidgets('ExpenseSummaryCard shows delete icon when onDeletePressed != null', (WidgetTester tester) async {
     const description = 'Employee Salaries';
     const value = '1200000';
 
     await tester.pumpWidget(baseComponentApp(
-      CMExpenseSummaryCard(
+      ExpenseSummaryCard(
         description: description,
         value: value,
         onDeletePressed: () {},
@@ -51,13 +51,13 @@ void main() {
     expect(find.byIcon(kDeleteIcon.icon!), findsOneWidget);
   });
 
-  testWidgets('CMExpenseSummaryCard does not show delete icon when onDeletePressed is null',
+  testWidgets('ExpenseSummaryCard does not show delete icon when onDeletePressed is null',
       (WidgetTester tester) async {
     const description = 'Utilities';
     const value = '150000';
 
     await tester.pumpWidget(baseComponentApp(
-      const CMExpenseSummaryCard(
+      const ExpenseSummaryCard(
         description: description,
         value: value,
       ),
@@ -66,14 +66,14 @@ void main() {
     expect(find.byIcon(kDeleteIcon.icon!), findsNothing);
   });
 
-  testWidgets('CMExpenseSummaryCard triggers onDeletePressed callback when delete icon is pressed',
+  testWidgets('ExpenseSummaryCard triggers onDeletePressed callback when delete icon is pressed',
       (WidgetTester tester) async {
     const description = 'Travel Expenses';
     const value = '75000';
     bool deletePressed = false;
 
     await tester.pumpWidget(baseComponentApp(
-      CMExpenseSummaryCard(
+      ExpenseSummaryCard(
         description: description,
         value: value,
         onDeletePressed: () {

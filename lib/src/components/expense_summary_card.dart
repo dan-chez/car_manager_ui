@@ -17,13 +17,13 @@ import 'package:carmanager_ui/src/constants/text_constants.dart';
 import 'package:carmanager_ui/src/constants/cm_icons.dart';
 import 'package:flutter/material.dart';
 
-/// The [CMExpenseSummaryCard] widget represents an item with a [description] and [value].
+/// The [ExpenseSummaryCard] widget represents an item with a [description] and [value].
 /// It includes an optional delete icon, which is displayed when [onDeletePressed] is provided.
 /// The [onDeletePressed] callback is triggered when the delete icon is tapped.
 ///
 /// Example usage:
 /// ```dart
-/// CMExpenseSummaryCard(
+/// ExpenseSummaryCard(
 ///   description: 'Office Supplies',
 ///   value: '500000',
 ///   onDeletePressed: () {
@@ -31,12 +31,12 @@ import 'package:flutter/material.dart';
 ///   },
 /// )
 /// ```
-class CMExpenseSummaryCard extends StatelessWidget {
+class ExpenseSummaryCard extends StatelessWidget {
   final String description;
   final String value;
   final void Function()? onDeletePressed;
 
-  const CMExpenseSummaryCard({
+  const ExpenseSummaryCard({
     super.key,
     required this.description,
     required this.value,
