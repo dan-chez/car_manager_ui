@@ -13,7 +13,6 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/carmanager_ui.dart';
-import 'package:carmanager_ui/src/utils/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

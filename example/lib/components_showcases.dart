@@ -19,12 +19,17 @@ import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_showcase.dart';
 import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/dropdown_showcase.dart';
 import 'package:car_manager_ui/showcases/empty_list_showcase.dart';
+import 'package:car_manager_ui/showcases/expense_summary_card_showcase.dart';
+import 'package:car_manager_ui/showcases/horizontal_info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
+import 'package:car_manager_ui/showcases/info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
 import 'package:car_manager_ui/showcases/report_tile_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
+import 'package:car_manager_ui/showcases/summary_card_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 import 'package:car_manager_ui/showcases/toggle_button_showcase.dart';
+import 'package:car_manager_ui/showcases/vertical_info_card_showcase.dart';
 
 /// A collection of component showcases used in the example application.
 ///
@@ -76,6 +81,26 @@ final components = {
   ComponentModel(
     description: 'ReportTile',
     path: ReportTileShowcase.path,
+  ),
+  ComponentModel(
+    description: 'SummaryCard',
+    path: SummaryCardShowcase.path,
+  ),
+  ComponentModel(
+    description: 'CMInfoCard',
+    path: InfoCardShowcase.path,
+  ),
+  ComponentModel(
+    description: 'HorizontalInfoCard',
+    path: HorizontalInfoCardShowcase.path,
+  ),
+  ComponentModel(
+    description: 'VerticalInfoCard',
+    path: VerticalInfoCardShowcase.path,
+  ),
+  ComponentModel(
+    description: 'ExpenseSummaryCard',
+    path: ExpenseSummaryCardShowcase.path,
   ),
   ComponentModel(
     description: 'CMToggleButton',

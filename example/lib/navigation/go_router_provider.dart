@@ -21,12 +21,17 @@ import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_showcase.dart';
 import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/dropdown_showcase.dart';
 import 'package:car_manager_ui/showcases/empty_list_showcase.dart';
+import 'package:car_manager_ui/showcases/expense_summary_card_showcase.dart';
+import 'package:car_manager_ui/showcases/horizontal_info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
+import 'package:car_manager_ui/showcases/info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
 import 'package:car_manager_ui/showcases/report_tile_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
+import 'package:car_manager_ui/showcases/summary_card_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 import 'package:car_manager_ui/showcases/toggle_button_showcase.dart';
+import 'package:car_manager_ui/showcases/vertical_info_card_showcase.dart';
 import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -187,6 +192,56 @@ class GoRouterHelper {
         pageBuilder: (_, state) {
           return _getPage(
             child: const ReportTileShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: InfoCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const InfoCardShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: SummaryCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const SummaryCardShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: HorizontalInfoCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const HorizontalInfoCardShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: VerticalInfoCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const VerticalInfoCardShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: ExpenseSummaryCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const ExpenseSummaryCardShowcase(),
             state: state,
           );
         },
