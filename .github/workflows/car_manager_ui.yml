@@ -1,0 +1,23 @@
+name: analyze and test
+
+on: push
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v3
+      - name: 'Set up Flutter'
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+      - run: flutter --version
+      - run: flutter pub get
+      # Analyze our Dart code
+      - run: flutter analyze --no-fatal-infos
+      # Run our tests
+      - run: flutter test --coverage
+      - name: 'Publish to coveralls.io'
+        uses: coverallsapp/github-action@v2.3.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
