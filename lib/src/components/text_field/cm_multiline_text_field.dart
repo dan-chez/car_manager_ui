@@ -68,7 +68,7 @@ class _MultilineCMTextField extends State<TextFieldBase> {
     return TextField(
       textCapitalization: TextCapitalization.sentences,
       enabled: widget.isEnabled,
-      keyboardType: TextInputType.text,
+      keyboardType: TextInputType.multiline,
       onChanged: (value) {
         widget.onTextChange.call(value);
       },
