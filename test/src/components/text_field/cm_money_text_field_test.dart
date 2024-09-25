@@ -19,7 +19,8 @@ import 'package:flutter_test/flutter_test.dart';
 import '../base/base_component_app.dart';
 
 void main() {
-  testWidgets('CMMoneyTextField displays initial value', (WidgetTester tester) async {
+  testWidgets('CMMoneyTextField displays initial value',
+      (WidgetTester tester) async {
     const initialValue = '123456';
     await tester.pumpWidget(
       baseComponentApp(
@@ -34,7 +35,8 @@ void main() {
     expect(find.text('\$ 123.456'), findsOneWidget);
   });
 
-  testWidgets('CMMoneyTextField fires onTextChange callback', (WidgetTester tester) async {
+  testWidgets('CMMoneyTextField fires onTextChange callback',
+      (WidgetTester tester) async {
     String updatedText = '';
     await tester.pumpWidget(
       baseComponentApp(
@@ -52,7 +54,8 @@ void main() {
     expect(updatedText, '500');
   });
 
-  testWidgets('CMMoneyTextField shows error message when hasError is true', (WidgetTester tester) async {
+  testWidgets('CMMoneyTextField shows error message when hasError is true',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         CMMoneyTextField(
@@ -69,7 +72,8 @@ void main() {
     expect(find.text('Invalid amount'), findsOneWidget);
   });
 
-  testWidgets('CMMoneyTextField updates styling based on enabled state', (WidgetTester tester) async {
+  testWidgets('CMMoneyTextField updates styling based on enabled state',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         CMMoneyTextField(

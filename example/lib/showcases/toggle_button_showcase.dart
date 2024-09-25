@@ -67,7 +67,15 @@ class ToggleButtonShowcase extends StatelessWidget {
               'CMToggleButton with multiple options, showcasing a wide variety of labels.',
             ),
             CMToggleButton(
-              labels: const ['Yes', 'No', 'True', 'False', 'On', 'Off', 'Multiple'],
+              labels: const [
+                'Yes',
+                'No',
+                'True',
+                'False',
+                'On',
+                'Off',
+                'Multiple'
+              ],
               onChanged: (index) {
                 printValue('Selected option index: $index');
               },

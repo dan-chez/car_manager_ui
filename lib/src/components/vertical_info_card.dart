@@ -57,7 +57,7 @@ class VerticalInfoCard extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(6))),
         child: Padding(
           padding:
-          const EdgeInsets.only(right: 12, top: 20, left: 12, bottom: 15),
+              const EdgeInsets.only(right: 12, top: 20, left: 12, bottom: 15),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,

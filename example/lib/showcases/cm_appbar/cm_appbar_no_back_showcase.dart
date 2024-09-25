@@ -19,7 +19,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class CMAppbarNoBackShowcase extends StatelessWidget {
-
   /// This path is used to navigate to the CMAppBar showcase without back button using GoRouter.
   static String path = '/cmAppbarNoBack';
   const CMAppbarNoBackShowcase({super.key});

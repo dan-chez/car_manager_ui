@@ -17,11 +17,11 @@ import 'package:flutter/material.dart';
 class CMMoneyTextController extends TextEditingController {
   CMMoneyTextController(
       {double initialValue = 0.0,
-        this.decimalSeparator = '',
-        this.thousandSeparator = '.',
-        this.rightSymbol = '',
-        this.leftSymbol = '\$ ',
-        this.precision = 0}) {
+      this.decimalSeparator = '',
+      this.thousandSeparator = '.',
+      this.rightSymbol = '',
+      this.leftSymbol = '\$ ',
+      this.precision = 0}) {
     _validateConfig();
 
     addListener(() {
@@ -60,7 +60,8 @@ class CMMoneyTextController extends TextEditingController {
       text = masked;
 
       var cursorPosition = super.text.length - rightSymbol.length;
-      selection = TextSelection.fromPosition(TextPosition(offset: cursorPosition));
+      selection =
+          TextSelection.fromPosition(TextPosition(offset: cursorPosition));
     }
   }
 

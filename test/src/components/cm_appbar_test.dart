@@ -31,7 +31,6 @@ Widget baseAppBarApp(MockNavigator navigator, {String? assetName}) {
 
 void main() {
   group('CMAppbar', () {
-
     late MockNavigator navigator;
 
     setUp(() {
@@ -39,7 +38,8 @@ void main() {
       when(() => navigator.canPop()).thenReturn(true);
     });
 
-    testWidgets('Should not display the asset image if assetName is null', (WidgetTester tester) async {
+    testWidgets('Should not display the asset image if assetName is null',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         baseAppBarApp(navigator),
       );
@@ -49,7 +49,8 @@ void main() {
       expect(svgImageFinder, findsNothing);
     });
 
-    testWidgets('Shows back button when canPop is true', (WidgetTester tester) async {
+    testWidgets('Shows back button when canPop is true',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         baseAppBarApp(navigator),
       );
@@ -59,8 +60,8 @@ void main() {
       expect(iconFinder, findsOne);
     });
 
-    testWidgets('Don\'t show back button when canPop is false', (WidgetTester tester) async {
-
+    testWidgets('Don\'t show back button when canPop is false',
+        (WidgetTester tester) async {
       when(() => navigator.canPop()).thenReturn(false);
 
       await tester.pumpWidget(

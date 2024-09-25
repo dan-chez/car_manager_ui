@@ -13,14 +13,14 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/carmanager_ui.dart';
-import 'package:carmanager_ui/src/utils/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'base/base_component_app.dart';
 
 void main() {
-  testWidgets('Displays the correct text and profit value', (WidgetTester tester) async {
+  testWidgets('Displays the correct text and profit value',
+      (WidgetTester tester) async {
     const String testText = 'Total Revenue';
     const String testProfit = '100000';
 
@@ -35,7 +35,8 @@ void main() {
     expect(find.text(testProfit.toMoneyFormat), findsOneWidget);
   });
 
-  testWidgets('CMSummaryCard displays profit in green if positive', (WidgetTester tester) async {
+  testWidgets('CMSummaryCard displays profit in green if positive',
+      (WidgetTester tester) async {
     const String testText = 'Monthly Profit';
     const String testProfit = '50000';
 
@@ -46,11 +47,13 @@ void main() {
       ),
     ));
 
-    final profitTextWidget = tester.widget<Text>(find.text(testProfit.toMoneyFormat));
+    final profitTextWidget =
+        tester.widget<Text>(find.text(testProfit.toMoneyFormat));
     expect(profitTextWidget.style?.color, kGreen);
   });
 
-  testWidgets('CMSummaryCard displays profit in red if negative', (WidgetTester tester) async {
+  testWidgets('CMSummaryCard displays profit in red if negative',
+      (WidgetTester tester) async {
     const String testText = 'Monthly Loss';
     const String testProfit = '-15000';
 
@@ -61,11 +64,13 @@ void main() {
       ),
     ));
 
-    final profitTextWidget = tester.widget<Text>(find.text(testProfit.toMoneyFormat));
+    final profitTextWidget =
+        tester.widget<Text>(find.text(testProfit.toMoneyFormat));
     expect(profitTextWidget.style?.color, kAmaranthPrimary);
   });
 
-  testWidgets('CMSummaryCard displays profit with correct formatting', (WidgetTester tester) async {
+  testWidgets('CMSummaryCard displays profit with correct formatting',
+      (WidgetTester tester) async {
     const String testText = 'Quarterly Earnings';
     const String testProfit = '123456789';
 

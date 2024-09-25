@@ -30,7 +30,8 @@ class PageTitleShowcase extends StatelessWidget {
       title: 'PageTitle showcase',
       children: [
         createShowcaseTitle('CMPageTitle', higherSize: true),
-        createShowcaseTitle('The `CMPageTitle` widget is designed to display a page title with a combination of light and bold text. It provides options to customize the text and include an optional bottom divider.'),
+        createShowcaseTitle(
+            'The `CMPageTitle` widget is designed to display a page title with a combination of light and bold text. It provides options to customize the text and include an optional bottom divider.'),
         const CMPageTitle(
           lightTitle: 'Welcome to',
           boldTitle: 'Flutter',

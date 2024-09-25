@@ -38,7 +38,8 @@ class ButtonShowcase extends StatelessWidget {
             printValue('Button pressed');
           },
         ),
-        createShowcaseTitle('Can perform an action, receives a title, icon, custom style.'),
+        createShowcaseTitle(
+            'Can perform an action, receives a title, icon, custom style.'),
         PrimaryButton(
           txtLabel: 'Click me',
           icon: kAddExpenseIconRed,
