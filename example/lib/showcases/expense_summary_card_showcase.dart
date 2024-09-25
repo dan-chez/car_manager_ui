@@ -57,7 +57,8 @@ class ExpenseSummaryCardShowcase extends StatelessWidget {
           'Card with long description and delete icon.',
         ),
         ExpenseSummaryCard(
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum lectus a condimentum scelerisque. Integer vel enim eget purus aliquam efficitur.',
+          description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum lectus a condimentum scelerisque. Integer vel enim eget purus aliquam efficitur.',
           value: '23000'.toMoneyFormat,
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
         ),
@@ -72,7 +73,8 @@ class ExpenseSummaryCardShowcase extends StatelessWidget {
           'Card with long description, without deletion icon.',
         ),
         ExpenseSummaryCard(
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum lectus a condimentum scelerisque. Integer vel enim eget purus aliquam efficitur.',
+          description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum lectus a condimentum scelerisque. Integer vel enim eget purus aliquam efficitur.',
           value: '85000'.toMoneyFormat,
         ),
         createShowcaseTitle(

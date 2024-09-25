@@ -19,7 +19,8 @@ import 'package:flutter/material.dart';
 const String _iconsFontFamily = "CMIcons";
 const String _fontPackage = 'carmanager_ui';
 
-const IconData _iconDataDelete = IconData(0xe801, fontFamily: _iconsFontFamily, fontPackage: _fontPackage);
+const IconData _iconDataDelete =
+    IconData(0xe801, fontFamily: _iconsFontFamily, fontPackage: _fontPackage);
 
 //Icons
 const kAddExpenseIconWhite = Icon(Icons.add, color: kWhite);
@@ -30,11 +31,14 @@ const kCloseIcon = Icon(Icons.close, color: kCanyonBronze);
 
 const kArrowDownIcon = Icon(Icons.arrow_drop_down, color: kMyrtleGreen);
 
-const kArrowForwardIcon = Icon(Icons.arrow_forward_ios_outlined, color: kMyrtleGreen, size: 15);
+const kArrowForwardIcon =
+    Icon(Icons.arrow_forward_ios_outlined, color: kMyrtleGreen, size: 15);
 
-const kArrowForwardDisableIcon = Icon(Icons.arrow_forward_ios_outlined, color: kSilver, size: 15);
+const kArrowForwardDisableIcon =
+    Icon(Icons.arrow_forward_ios_outlined, color: kSilver, size: 15);
 
-const kBackArrowIcon = Icon(Icons.arrow_back_ios_outlined, color: kMyrtleGreen, size: 20);
+const kBackArrowIcon =
+    Icon(Icons.arrow_back_ios_outlined, color: kMyrtleGreen, size: 20);
 
 const kEditReportIcon = Icon(Icons.edit_note, color: kMyrtleGreen, size: 30);
 
@@ -42,6 +46,7 @@ const kDeleteIcon = Icon(_iconDataDelete, color: kAmaranthPrimary, size: 17);
 
 const kMonitoringIcon = Icon(Icons.monitor, color: kMyrtleGreen, size: 45);
 
-const kSecurityIcon = Icon(Icons.verified_user_outlined, color: kMyrtleGreen, size: 45);
+const kSecurityIcon =
+    Icon(Icons.verified_user_outlined, color: kMyrtleGreen, size: 45);
 
 const kStarIcon = Icon(Icons.star, color: kMyrtleGreen, size: 45);

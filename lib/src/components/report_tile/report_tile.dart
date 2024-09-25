@@ -64,7 +64,8 @@ class ReportTile extends StatelessWidget {
               Expanded(
                 child: Text(
                   text,
-                  style: kContentTextStyle.copyWith(fontWeight: FontWeight.w600),
+                  style:
+                      kContentTextStyle.copyWith(fontWeight: FontWeight.w600),
                 ),
               ),
               Text(

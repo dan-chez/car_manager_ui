@@ -19,9 +19,9 @@ import 'package:flutter/material.dart';
 const kTextFieldInputDecoration = InputDecoration(
   border: OutlineInputBorder(borderRadius: _borderRadius),
   focusedBorder:
-  OutlineInputBorder(borderSide: _borderSide, borderRadius: _borderRadius),
+      OutlineInputBorder(borderSide: _borderSide, borderRadius: _borderRadius),
   enabledBorder:
-  OutlineInputBorder(borderSide: _borderSide, borderRadius: _borderRadius),
+      OutlineInputBorder(borderSide: _borderSide, borderRadius: _borderRadius),
   floatingLabelBehavior: FloatingLabelBehavior.auto,
   errorStyle: kErrorTextStyle,
   hintStyle: TextStyle(color: kMyrtleGreen, fontWeight: FontWeight.w300),

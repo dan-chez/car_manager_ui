@@ -20,7 +20,8 @@ import '../base/base_component_app.dart';
 
 void main() {
   group('ReportTile Widget Tests', () {
-    testWidgets('Displays the correct text and formatted value', (WidgetTester tester) async {
+    testWidgets('Displays the correct text and formatted value',
+        (WidgetTester tester) async {
       const testText = 'Monday 19';
       const testValue = '1000';
 
@@ -38,7 +39,9 @@ void main() {
       expect(find.text(testValue.toMoneyFormat), findsOneWidget);
     });
 
-    testWidgets('Displays the delete and edit icons when showDeleteAndEditIcon is true', (WidgetTester tester) async {
+    testWidgets(
+        'Displays the delete and edit icons when showDeleteAndEditIcon is true',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         baseComponentApp(
           ReportTile(
@@ -56,7 +59,9 @@ void main() {
       expect(find.byIcon(kDeleteIcon.icon!), findsOneWidget);
     });
 
-    testWidgets('Hides delete and edit icons when showDeleteAndEditIcon is false', (WidgetTester tester) async {
+    testWidgets(
+        'Hides delete and edit icons when showDeleteAndEditIcon is false',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         baseComponentApp(
           ReportTile(
@@ -73,7 +78,8 @@ void main() {
       expect(find.byIcon(kArrowForwardIcon.icon!), findsOneWidget);
     });
 
-    testWidgets('Triggers onPressed when the ReportTile is pressed', (WidgetTester tester) async {
+    testWidgets('Triggers onPressed when the ReportTile is pressed',
+        (WidgetTester tester) async {
       bool pressed = false;
 
       await tester.pumpWidget(
@@ -94,7 +100,8 @@ void main() {
       expect(pressed, isTrue);
     });
 
-    testWidgets('Triggers onDelete when the delete button is pressed', (WidgetTester tester) async {
+    testWidgets('Triggers onDelete when the delete button is pressed',
+        (WidgetTester tester) async {
       bool deleted = false;
 
       await tester.pumpWidget(
@@ -116,7 +123,8 @@ void main() {
       expect(deleted, isTrue);
     });
 
-    testWidgets('Formats the value correctly as currency', (WidgetTester tester) async {
+    testWidgets('Formats the value correctly as currency',
+        (WidgetTester tester) async {
       const testValue = '150000';
 
       await tester.pumpWidget(
@@ -132,7 +140,8 @@ void main() {
       expect(find.text(testValue.toMoneyFormat), findsOneWidget);
     });
 
-    testWidgets('Applies correct color based on value being profit or not', (WidgetTester tester) async {
+    testWidgets('Applies correct color based on value being profit or not',
+        (WidgetTester tester) async {
       const profitValue = '100000';
       const lossValue = '-50000';
 
@@ -147,7 +156,8 @@ void main() {
         ),
       );
 
-      final profitText = tester.widget<Text>(find.text(profitValue.toMoneyFormat));
+      final profitText =
+          tester.widget<Text>(find.text(profitValue.toMoneyFormat));
       expect(profitText.style?.color, kGreen);
 
       // Test for loss

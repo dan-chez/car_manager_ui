@@ -41,7 +41,6 @@ class CMInfoCard extends StatelessWidget {
     this.size = const Size(110, 120),
   });
 
-
   @override
   Widget build(BuildContext context) {
     return Container(

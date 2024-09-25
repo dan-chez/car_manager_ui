@@ -67,7 +67,9 @@ class _CMToggleButtonState extends State<CMToggleButton> {
       customWidths.add(i == _switchButtonIndexSelected ? 95 : 85);
       itemsTextStyle.add(
         kContentTextStyle.copyWith(
-            fontWeight: i == _switchButtonIndexSelected ? FontWeight.w500 : FontWeight.w300,
+            fontWeight: i == _switchButtonIndexSelected
+                ? FontWeight.w500
+                : FontWeight.w300,
             color: i == _switchButtonIndexSelected ? kWhite : kMyrtleGreen),
       );
     }

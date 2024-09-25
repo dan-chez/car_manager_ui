@@ -20,7 +20,8 @@ import 'package:toggle_switch/toggle_switch.dart';
 import 'base/base_component_app.dart';
 
 void main() {
-  testWidgets('Should render toggle button with correct labels', (WidgetTester tester) async {
+  testWidgets('Should render toggle button with correct labels',
+      (WidgetTester tester) async {
     const labels = ['Option 1', 'Option 2'];
 
     await tester.pumpWidget(baseComponentApp(
@@ -35,7 +36,8 @@ void main() {
     }
   });
 
-  testWidgets('Should call onChanged when a toggle is pressed', (WidgetTester tester) async {
+  testWidgets('Should call onChanged when a toggle is pressed',
+      (WidgetTester tester) async {
     int selectedIndex = -1;
     const labels = ['Yes', 'No'];
 
@@ -67,7 +69,7 @@ void main() {
         ),
       ),
     );
-    
+
     final toggleButton = tester.widget<ToggleSwitch>(find.byType(ToggleSwitch));
 
     for (final color in toggleButton.activeBgColors ?? <Color>[]) {

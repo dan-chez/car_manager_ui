@@ -19,7 +19,8 @@ import 'package:flutter_test/flutter_test.dart';
 import '../base/base_component_app.dart';
 
 void main() {
-  testWidgets('Displays both light and bold titles correctly', (WidgetTester tester) async {
+  testWidgets('Displays both light and bold titles correctly',
+      (WidgetTester tester) async {
     const lightTitle = 'Welcome to';
     const boldTitle = 'Flutter';
 
@@ -36,7 +37,8 @@ void main() {
     expect(find.text(boldTitle), findsOneWidget);
   });
 
-  testWidgets('Applies correct text styles to light and bold titles', (WidgetTester tester) async {
+  testWidgets('Applies correct text styles to light and bold titles',
+      (WidgetTester tester) async {
     const lightTitle = 'Hello';
     const boldTitle = 'World';
 
@@ -56,7 +58,8 @@ void main() {
     expect(boldTitleText.style?.fontWeight, FontWeight.w600);
   });
 
-  testWidgets('Displays bottom divider when showBottomDivider is true', (WidgetTester tester) async {
+  testWidgets('Displays bottom divider when showBottomDivider is true',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         const CMPageTitle(
@@ -70,7 +73,8 @@ void main() {
     expect(find.byType(Divider), findsOneWidget);
   });
 
-  testWidgets('Does not display bottom divider when showBottomDivider is false', (WidgetTester tester) async {
+  testWidgets('Does not display bottom divider when showBottomDivider is false',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         const CMPageTitle(

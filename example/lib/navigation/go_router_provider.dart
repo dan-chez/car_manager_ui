@@ -37,7 +37,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-final GlobalKey<NavigatorState> _appNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'appNavigatorKey');
+final GlobalKey<NavigatorState> _appNavigatorKey =
+    GlobalKey<NavigatorState>(debugLabel: 'appNavigatorKey');
 
 /// A Riverpod provider for GoRouter, providing an instance of GoRouter
 /// configured through the GoRouterHelper class.
@@ -261,20 +262,23 @@ class GoRouterHelper {
       GoRoute(
         parentNavigatorKey: _appNavigatorKey,
         path: ConfirmDialogRoute.path,
-        pageBuilder: (context, state) =>
-            ConfirmDialogRoute.createRoute(context, state, dialogData: state.extra as ConfirmDialogData),
+        pageBuilder: (context, state) => ConfirmDialogRoute.createRoute(
+            context, state,
+            dialogData: state.extra as ConfirmDialogData),
       ),
       GoRoute(
         parentNavigatorKey: _appNavigatorKey,
         path: ErrorDialogRoute.path,
-        pageBuilder: (context, state) =>
-            ErrorDialogRoute.createRoute(context, state, dialogData: state.extra as ErrorDialogData),
+        pageBuilder: (context, state) => ErrorDialogRoute.createRoute(
+            context, state,
+            dialogData: state.extra as ErrorDialogData),
       ),
       GoRoute(
         parentNavigatorKey: _appNavigatorKey,
         path: LoadingDialogRoute.path,
-        pageBuilder: (context, state) =>
-            LoadingDialogRoute.createRoute(context, state, dialogData: state.extra as LoadingDialogData),
+        pageBuilder: (context, state) => LoadingDialogRoute.createRoute(
+            context, state,
+            dialogData: state.extra as LoadingDialogData),
       ),
     ];
     router = GoRouter(

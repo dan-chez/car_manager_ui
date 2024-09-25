@@ -84,15 +84,19 @@ class CMBriefCard extends StatelessWidget {
                   Text(
                     title,
                     style: isEnabled
-                        ? kSubtitleTextStyle.copyWith(fontWeight: FontWeight.w500)
-                        : kSubtitleTextStyle.copyWith(fontWeight: FontWeight.w500, color: kSilver),
+                        ? kSubtitleTextStyle.copyWith(
+                            fontWeight: FontWeight.w500)
+                        : kSubtitleTextStyle.copyWith(
+                            fontWeight: FontWeight.w500, color: kSilver),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     description,
                     style: isEnabled
-                        ? kCaptionTextStyle.copyWith(fontWeight: FontWeight.w300)
-                        : kCaptionTextStyle.copyWith(fontWeight: FontWeight.w300, color: kSilver),
+                        ? kCaptionTextStyle.copyWith(
+                            fontWeight: FontWeight.w300)
+                        : kCaptionTextStyle.copyWith(
+                            fontWeight: FontWeight.w300, color: kSilver),
                   ),
                 ],
               ),

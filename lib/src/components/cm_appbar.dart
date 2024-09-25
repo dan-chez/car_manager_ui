@@ -53,7 +53,9 @@ class CMAppbar extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
-              mainAxisAlignment: canPop ? MainAxisAlignment.spaceBetween : MainAxisAlignment.end,
+              mainAxisAlignment: canPop
+                  ? MainAxisAlignment.spaceBetween
+                  : MainAxisAlignment.end,
               children: [
                 Visibility(
                   visible: canPop,
@@ -69,13 +71,13 @@ class CMAppbar extends StatelessWidget implements PreferredSizeWidget {
                     icon: kBackArrowIcon,
                   ),
                 ),
-                  Visibility(
-                    visible: assetName != null,
-                    child: SvgPicture.asset(
-                      asset,
-                      height: 25,
-                    ),
-                  )
+                Visibility(
+                  visible: assetName != null,
+                  child: SvgPicture.asset(
+                    asset,
+                    height: 25,
+                  ),
+                )
               ],
             ),
           ],

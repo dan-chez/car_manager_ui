@@ -52,10 +52,12 @@ class HorizontalInfoCard extends StatelessWidget {
           ],
           borderRadius: BorderRadius.all(Radius.circular(6))),
       child: Container(
-        decoration:
-            const BoxDecoration(color: kPrimaryColorWithOpacityBG, borderRadius: BorderRadius.all(Radius.circular(6))),
+        decoration: const BoxDecoration(
+            color: kPrimaryColorWithOpacityBG,
+            borderRadius: BorderRadius.all(Radius.circular(6))),
         child: Padding(
-          padding: const EdgeInsets.only(right: 12, top: 20, left: 12, bottom: 15),
+          padding:
+              const EdgeInsets.only(right: 12, top: 20, left: 12, bottom: 15),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,

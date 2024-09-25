@@ -33,7 +33,8 @@ class DialogsShowcase extends StatelessWidget {
       title: 'Dialogs showcase',
       children: [
         createShowcaseTitle('ConfirmDialog', higherSize: true),
-        createShowcaseTitle('Basic confirmation dialog with message an button, shows close button, can pop'),
+        createShowcaseTitle(
+            'Basic confirmation dialog with message an button, shows close button, can pop'),
         PrimaryButton(
           txtLabel: 'Confirm dialog',
           onPressed: () {
@@ -47,7 +48,8 @@ class DialogsShowcase extends StatelessWidget {
             );
           },
         ),
-        createShowcaseTitle('Basic confirmation dialog with message an button, can\'t pop'),
+        createShowcaseTitle(
+            'Basic confirmation dialog with message an button, can\'t pop'),
         PrimaryButton(
           txtLabel: 'Confirm dialog',
           onPressed: () {
@@ -78,7 +80,8 @@ class DialogsShowcase extends StatelessWidget {
             );
           },
         ),
-        createShowcaseTitle('Basic confirmation dialog with message an button, shows close button, can pop and image'),
+        createShowcaseTitle(
+            'Basic confirmation dialog with message an button, shows close button, can pop and image'),
         PrimaryButton(
           txtLabel: 'Confirm dialog',
           onPressed: () {
@@ -110,7 +113,8 @@ class DialogsShowcase extends StatelessWidget {
           },
         ),
         createShowcaseTitle('LoadingDialog', higherSize: true),
-        createShowcaseTitle('Loading dialog, full screen size, can\'t pop. In 5 seconds will pop'),
+        createShowcaseTitle(
+            'Loading dialog, full screen size, can\'t pop. In 5 seconds will pop'),
         PrimaryButton(
           txtLabel: 'Loading dialog',
           onPressed: () {
@@ -121,7 +125,8 @@ class DialogsShowcase extends StatelessWidget {
             });
             context.push(
               LoadingDialogRoute.path,
-              extra: const LoadingDialogData(lottieAssetPath: kLoadingAnimation),
+              extra:
+                  const LoadingDialogData(lottieAssetPath: kLoadingAnimation),
             );
           },
         ),

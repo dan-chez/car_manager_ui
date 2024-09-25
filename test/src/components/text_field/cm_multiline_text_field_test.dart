@@ -19,7 +19,8 @@ import 'package:flutter_test/flutter_test.dart';
 import '../base/base_component_app.dart';
 
 void main() {
-  testWidgets('CMMultilineTextField renders with default values', (WidgetTester tester) async {
+  testWidgets('CMMultilineTextField renders with default values',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         CMMultilineTextField(
@@ -33,7 +34,8 @@ void main() {
     expect(find.text('Hint Text'), findsOneWidget);
   });
 
-  testWidgets('CMMultilineTextField updates text and calls onTextChange', (WidgetTester tester) async {
+  testWidgets('CMMultilineTextField updates text and calls onTextChange',
+      (WidgetTester tester) async {
     String changedText = '';
     await tester.pumpWidget(
       baseComponentApp(
@@ -50,7 +52,8 @@ void main() {
     expect(changedText, 'New Text');
   });
 
-  testWidgets('CMMultilineTextField shows error when canBeEmpty is false', (WidgetTester tester) async {
+  testWidgets('CMMultilineTextField shows error when canBeEmpty is false',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         CMMultilineTextField(
@@ -68,7 +71,8 @@ void main() {
     expect(find.text('This field cannot be empty'), findsOneWidget);
   });
 
-  testWidgets('CMMultilineTextField applies custom text style', (WidgetTester tester) async {
+  testWidgets('CMMultilineTextField applies custom text style',
+      (WidgetTester tester) async {
     const testStyle = TextStyle(color: Colors.red);
     await tester.pumpWidget(
       baseComponentApp(
@@ -84,7 +88,8 @@ void main() {
     expect(textField.style, testStyle);
   });
 
-  testWidgets('CMMultilineTextField respects maxLength', (WidgetTester tester) async {
+  testWidgets('CMMultilineTextField respects maxLength',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         CMMultilineTextField(
@@ -100,7 +105,8 @@ void main() {
     expect(textField.controller?.text.length, 10);
   });
 
-  testWidgets('CMMultilineTextField is disabled when isEnabled is false', (WidgetTester tester) async {
+  testWidgets('CMMultilineTextField is disabled when isEnabled is false',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         CMMultilineTextField(
@@ -115,7 +121,8 @@ void main() {
     expect(textField.enabled, isFalse);
   });
 
-  testWidgets('CMMultilineTextField handles null initialValue gracefully', (WidgetTester tester) async {
+  testWidgets('CMMultilineTextField handles null initialValue gracefully',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         CMMultilineTextField(

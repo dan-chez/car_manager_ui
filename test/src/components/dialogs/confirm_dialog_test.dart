@@ -22,8 +22,10 @@ import 'package:flutter_test/flutter_test.dart';
 import '../base/base_component_app.dart';
 
 void main() {
-  testWidgets('Close button visibility = true test', (WidgetTester tester) async {
-    const dialogData = ConfirmDialogData(message: 'Message', buttonText: 'Button', showCloseButton: true);
+  testWidgets('Close button visibility = true test',
+      (WidgetTester tester) async {
+    const dialogData = ConfirmDialogData(
+        message: 'Message', buttonText: 'Button', showCloseButton: true);
     await tester.pumpWidget(
       baseComponentApp(const ConfirmDialog(data: dialogData)),
     );
@@ -31,8 +33,10 @@ void main() {
     expect(find.byType(CloseIconButton), findsOneWidget);
   });
 
-  testWidgets('Close button visibility = false test', (WidgetTester tester) async {
-    const dialogData = ConfirmDialogData(message: 'Message', buttonText: 'Button', showCloseButton: false);
+  testWidgets('Close button visibility = false test',
+      (WidgetTester tester) async {
+    const dialogData = ConfirmDialogData(
+        message: 'Message', buttonText: 'Button', showCloseButton: false);
     await tester.pumpWidget(
       baseComponentApp(const ConfirmDialog(data: dialogData)),
     );
@@ -40,7 +44,8 @@ void main() {
     expect(find.byType(CloseIconButton), findsNothing);
   });
 
-  testWidgets('Button press triggers onPressed callback', (WidgetTester tester) async {
+  testWidgets('Button press triggers onPressed callback',
+      (WidgetTester tester) async {
     bool wasPressed = false;
     final dialogData = ConfirmDialogData(
       message: '',
@@ -72,7 +77,8 @@ void main() {
     expect(find.byType(SvgPicture), findsNothing);
   });
 
-  testWidgets('Dialog transition test, Verify dialog is displayed', (WidgetTester tester) async {
+  testWidgets('Dialog transition test, Verify dialog is displayed',
+      (WidgetTester tester) async {
     const dialogData = ConfirmDialogData(
       message: '',
       buttonText: 'Confirm',

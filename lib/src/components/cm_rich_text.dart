@@ -51,7 +51,9 @@ class CMRichText {
 
   RichText call() {
     // Ensure boldPositions is within valid range
-    assert(boldPositions.every((pos) => pos >= 0 && pos < text.split(textDivider).length),
+    assert(
+        boldPositions
+            .every((pos) => pos >= 0 && pos < text.split(textDivider).length),
         'All boldPositions must be valid indices within the split text.');
 
     // Split the text based on the divider

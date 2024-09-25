@@ -20,7 +20,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
-  testWidgets('CMEmptyList displays text with bold positions correctly', (WidgetTester tester) async {
+  testWidgets('CMEmptyList displays text with bold positions correctly',
+      (WidgetTester tester) async {
     // Define the test data
     const testText = 'Your garage is|empty';
     const testBoldPositions = [1];
@@ -52,12 +53,15 @@ void main() {
     expect(plainText.trim(), equals('Your garage is empty'));
 
     // Verify that the word 'empty' is bold
-    final TextSpan emptyTextSpan = spans[1] as TextSpan; // The second part of the split text
+    final TextSpan emptyTextSpan =
+        spans[1] as TextSpan; // The second part of the split text
     expect(emptyTextSpan.text.toString().trim(), equals('empty'));
-    expect(emptyTextSpan.style!.fontWeight, equals(FontWeight.w700)); // Verifying the bold fontWeight
+    expect(emptyTextSpan.style!.fontWeight,
+        equals(FontWeight.w700)); // Verifying the bold fontWeight
   });
 
-  testWidgets('CMEmptyList uses textDivider correctly', (WidgetTester tester) async {
+  testWidgets('CMEmptyList uses textDivider correctly',
+      (WidgetTester tester) async {
     // Define the test data
     const testText = 'No vehicles+found+here';
     const testBoldPositions = [1];
@@ -93,7 +97,8 @@ void main() {
     expect(emptyTextSpan.style!.fontWeight, equals(FontWeight.w700));
   });
 
-  testWidgets('CMEmptyList does not display asset image when imagePath is null', (WidgetTester tester) async {
+  testWidgets('CMEmptyList does not display asset image when imagePath is null',
+      (WidgetTester tester) async {
     const testText = 'Your garage is|empty';
     const testBoldPositions = [1];
 

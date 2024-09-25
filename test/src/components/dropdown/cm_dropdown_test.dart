@@ -35,7 +35,8 @@ void main() {
     expect(find.text('Please select'), findsOneWidget);
   });
 
-  testWidgets('Dropdown disabled when items empty', (WidgetTester tester) async {
+  testWidgets('Dropdown disabled when items empty',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         CMDropdown(

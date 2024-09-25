@@ -19,7 +19,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
-  testWidgets('ExpenseSummaryCard displays description and value correctly', (WidgetTester tester) async {
+  testWidgets('ExpenseSummaryCard displays description and value correctly',
+      (WidgetTester tester) async {
     const description = 'Office Supplies';
     const value = '500000';
 
@@ -36,7 +37,9 @@ void main() {
     expect(find.text(value), findsOneWidget);
   });
 
-  testWidgets('ExpenseSummaryCard shows delete icon when onDeletePressed != null', (WidgetTester tester) async {
+  testWidgets(
+      'ExpenseSummaryCard shows delete icon when onDeletePressed != null',
+      (WidgetTester tester) async {
     const description = 'Employee Salaries';
     const value = '1200000';
 
@@ -51,7 +54,8 @@ void main() {
     expect(find.byIcon(kDeleteIcon.icon!), findsOneWidget);
   });
 
-  testWidgets('ExpenseSummaryCard does not show delete icon when onDeletePressed is null',
+  testWidgets(
+      'ExpenseSummaryCard does not show delete icon when onDeletePressed is null',
       (WidgetTester tester) async {
     const description = 'Utilities';
     const value = '150000';
@@ -66,7 +70,8 @@ void main() {
     expect(find.byIcon(kDeleteIcon.icon!), findsNothing);
   });
 
-  testWidgets('ExpenseSummaryCard triggers onDeletePressed callback when delete icon is pressed',
+  testWidgets(
+      'ExpenseSummaryCard triggers onDeletePressed callback when delete icon is pressed',
       (WidgetTester tester) async {
     const description = 'Travel Expenses';
     const value = '75000';

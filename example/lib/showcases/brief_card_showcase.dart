@@ -32,7 +32,8 @@ class BriefCardShowcase extends StatelessWidget {
     return ShowcaseAppBase(
       title: 'CMBriefCard showcase',
       children: [
-        createShowcaseTitle('This version demonstrates the default behavior of the CMBriefCard with an icon, title, and description. It is enabled and fully interactive.'),
+        createShowcaseTitle(
+            'This version demonstrates the default behavior of the CMBriefCard with an icon, title, and description. It is enabled and fully interactive.'),
         CMBriefCard(
           iconPath: kSearchImage,
           title: 'Card Title',
@@ -41,7 +42,8 @@ class BriefCardShowcase extends StatelessWidget {
             printValue('Default CMBriefCard pressed');
           },
         ),
-        createShowcaseTitle('Disabled CMBriefCard. The card icon and text appear in a muted color, and the card cannot be clicked.'),
+        createShowcaseTitle(
+            'Disabled CMBriefCard. The card icon and text appear in a muted color, and the card cannot be clicked.'),
         CMBriefCard(
           iconPath: kFolderImage,
           title: 'Disabled Card',
@@ -49,7 +51,8 @@ class BriefCardShowcase extends StatelessWidget {
           onPressed: () {},
           isEnabled: false,
         ),
-        createShowcaseTitle('CMBriefCard without an icon, only displaying the title and description text, making it suitable for simpler presentations.'),
+        createShowcaseTitle(
+            'CMBriefCard without an icon, only displaying the title and description text, making it suitable for simpler presentations.'),
         CMBriefCard(
           title: 'No Image Card',
           description: 'This card does not include an image icon.',
@@ -62,7 +65,7 @@ class BriefCardShowcase extends StatelessWidget {
           iconPath: kSuccessImage,
           title: 'Card with Longer Description',
           description:
-          'This card demonstrates a longer description text to show how the layout adapts.',
+              'This card demonstrates a longer description text to show how the layout adapts.',
           onPressed: () {
             printValue('Card with long description pressed');
           },

@@ -31,7 +31,8 @@ class DropdownShowcase extends StatelessWidget {
       title: 'CMDropdown showcase',
       children: [
         createShowcaseTitle('CMDropdown', higherSize: true),
-        createShowcaseTitle('CMDropdown enabled with list of 3 items, hint and label text.'),
+        createShowcaseTitle(
+            'CMDropdown enabled with list of 3 items, hint and label text.'),
         CMDropdown(
           items: const {
             'key0': 'Value0',
@@ -43,7 +44,8 @@ class DropdownShowcase extends StatelessWidget {
           disabledHintText: '',
           onItemSelected: _print,
         ),
-        createShowcaseTitle('CMDropdown enabled with long list of items, hint and label text.'),
+        createShowcaseTitle(
+            'CMDropdown enabled with long list of items, hint and label text.'),
         CMDropdown(
           items: const {
             'key0': 'Value0',
@@ -73,7 +75,8 @@ class DropdownShowcase extends StatelessWidget {
           disabledHintText: '',
           onItemSelected: _print,
         ),
-        createShowcaseTitle('CMDropdown disabled with disabled hint and label text.'),
+        createShowcaseTitle(
+            'CMDropdown disabled with disabled hint and label text.'),
         CMDropdown(
           items: const {},
           labelText: 'This is label',
