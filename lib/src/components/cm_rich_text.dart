@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/string_constants.dart';
-import 'package:carmanager_ui/src/constants/text_constants.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
 /// A factory class for creating rich text widgets with customizable styles.

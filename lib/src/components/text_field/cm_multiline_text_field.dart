@@ -14,7 +14,7 @@
 
 import 'package:carmanager_ui/src/components/text_field/text_field_base.dart';
 import 'package:carmanager_ui/src/constants/decoration_constants.dart';
-import 'package:carmanager_ui/src/constants/text_constants.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
 class CMMultilineTextField extends TextFieldBase {
