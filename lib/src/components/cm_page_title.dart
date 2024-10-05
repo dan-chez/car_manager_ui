@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/dividers.dart';
-import 'package:carmanager_ui/src/constants/text_constants.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
 /// A widget that displays a page title with customizable styles and an optional bottom divider.
