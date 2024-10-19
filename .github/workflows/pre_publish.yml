@@ -1,9 +1,9 @@
-name: Publish to pub.dev
+name: Pre-publish validations before publis to pub.dev
 
 on:
   push:
-    tags:
-      - v*
+    branches:
+      - 'main'
 
 jobs:
   publish:
@@ -21,5 +21,5 @@ jobs:
           channel: "stable"
       - run: flutter --version
       - run: flutter pub get
-      - name: Publish package on pub.dev
-        run: dart pub publish --force
+      - name: Check Publish Warnings
+        run: dart pub publish --dry-run
