@@ -1,4 +1,4 @@
-name: Pre-publish validations before publis to pub.dev
+name: Pre-publish validations before publish to pub.dev
 
 on:
   push:
