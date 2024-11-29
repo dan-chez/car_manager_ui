@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/button_constants.dart';
-import 'package:carmanager_ui/src/constants/text_constants.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:carmanager_ui/src/constants/cm_icons.dart';
 
 /// The [CMBriefCard] widget is used to display a brief, actionable card with an optional SVG icon,

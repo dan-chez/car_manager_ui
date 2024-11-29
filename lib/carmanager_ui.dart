@@ -43,6 +43,6 @@ export 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 export 'package:carmanager_ui/src/constants/button_constants.dart';
 export 'package:carmanager_ui/src/constants/cm_icons.dart';
 export 'package:carmanager_ui/src/constants/int_constants.dart';
-export 'package:carmanager_ui/src/constants/text_constants.dart';
+export 'package:carmanager_ui/src/constants/text_style_constants.dart';
 export 'package:carmanager_ui/src/utils/cm_scroll_behavior.dart';
 export 'package:carmanager_ui/src/utils/extensions/string_extensions.dart';

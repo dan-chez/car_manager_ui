@@ -14,7 +14,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
-import 'package:carmanager_ui/src/constants/text_constants.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 /// A custom toggle button widget with animated transitions and customizable background colors.

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
-import 'package:carmanager_ui/src/constants/text_constants.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
 /// The [HorizontalInfoCard] widget displays a card with a horizontal layout featuring a [textValue]

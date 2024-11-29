@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
-import 'package:carmanager_ui/src/constants/text_constants.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:carmanager_ui/src/utils/extensions/number_extensions.dart';
 import 'package:carmanager_ui/src/utils/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
