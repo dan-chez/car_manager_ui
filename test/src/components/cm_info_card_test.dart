@@ -19,7 +19,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
-  testWidgets('Displays the correct icon and message', (WidgetTester tester) async {
+  testWidgets('Displays the correct icon and message',
+      (WidgetTester tester) async {
     const testIcon = kMonitoringIcon;
     const testMessage = 'Test Info';
 
@@ -34,7 +35,8 @@ void main() {
     expect(find.text(testMessage), findsOneWidget);
   });
 
-  testWidgets('Handles long message with ellipsis', (WidgetTester tester) async {
+  testWidgets('Handles long message with ellipsis',
+      (WidgetTester tester) async {
     const testIcon = kDeleteIcon;
     const longMessage = 'This is a very long message that should be truncated';
 

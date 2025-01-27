@@ -19,7 +19,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
-  testWidgets('VerticalInfoCard displays textValue and textDescription correctly', (WidgetTester tester) async {
+  testWidgets(
+      'VerticalInfoCard displays textValue and textDescription correctly',
+      (WidgetTester tester) async {
     const String testValue = '75%';
     const String testDescription = 'Success Rate';
 
@@ -34,7 +36,8 @@ void main() {
     expect(find.text(testDescription), findsOneWidget);
   });
 
-  testWidgets('VerticalInfoCard adjusts to full width', (WidgetTester tester) async {
+  testWidgets('VerticalInfoCard adjusts to full width',
+      (WidgetTester tester) async {
     const String testValue = '75%';
     const String testDescription = 'Success Rate';
     const double width = 263.11;

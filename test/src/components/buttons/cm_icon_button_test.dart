@@ -34,7 +34,8 @@ void main() {
     expect(find.byIcon(testIcon), findsOneWidget);
   });
 
-  testWidgets('Triggers onPressed callback when tapped', (WidgetTester tester) async {
+  testWidgets('Triggers onPressed callback when tapped',
+      (WidgetTester tester) async {
     bool wasPressed = false;
 
     await tester.pumpWidget(

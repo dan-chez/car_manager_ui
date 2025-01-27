@@ -22,8 +22,13 @@ import 'package:flutter_test/flutter_test.dart';
 import '../base/base_component_app.dart';
 
 void main() {
-  testWidgets('Close button visibility = true test', (WidgetTester tester) async {
-    const dialogData = ErrorDialogData(title: 'Title', subtitle: 'Subtitle', titleBoldPositions: [], imagePath: '');
+  testWidgets('Close button visibility = true test',
+      (WidgetTester tester) async {
+    const dialogData = ErrorDialogData(
+        title: 'Title',
+        subtitle: 'Subtitle',
+        titleBoldPositions: [],
+        imagePath: '');
     await tester.pumpWidget(
       baseComponentApp(const ErrorDialog(data: dialogData)),
     );
@@ -32,7 +37,11 @@ void main() {
   });
 
   testWidgets('Invalid image data test', (WidgetTester tester) async {
-    const dialogData = ErrorDialogData(title: 'Title', subtitle: 'Subtitle', titleBoldPositions: [], imagePath: '');
+    const dialogData = ErrorDialogData(
+        title: 'Title',
+        subtitle: 'Subtitle',
+        titleBoldPositions: [],
+        imagePath: '');
 
     await tester.pumpWidget(
       baseComponentApp(const ErrorDialog(data: dialogData)),
@@ -41,8 +50,13 @@ void main() {
     expect(find.byType(SvgPicture), findsNothing);
   });
 
-  testWidgets('Dialog transition test, Verify dialog is displayed', (WidgetTester tester) async {
-    const dialogData = ErrorDialogData(title: 'Title', subtitle: 'Subtitle', titleBoldPositions: [], imagePath: '');
+  testWidgets('Dialog transition test, Verify dialog is displayed',
+      (WidgetTester tester) async {
+    const dialogData = ErrorDialogData(
+        title: 'Title',
+        subtitle: 'Subtitle',
+        titleBoldPositions: [],
+        imagePath: '');
 
     await tester.pumpWidget(
       baseComponentApp(const ErrorDialog(data: dialogData)),

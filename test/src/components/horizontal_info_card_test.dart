@@ -19,7 +19,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
-  testWidgets('HorizontalInfoCard renders with provided textValue and textDescription', (WidgetTester tester) async {
+  testWidgets(
+      'HorizontalInfoCard renders with provided textValue and textDescription',
+      (WidgetTester tester) async {
     const textValue = '1000';
     const textDescription = 'Description';
 
@@ -36,7 +38,8 @@ void main() {
     expect(find.text(textDescription), findsOneWidget);
   });
 
-  testWidgets('HorizontalInfoCard displays text with correct styles', (WidgetTester tester) async {
+  testWidgets('HorizontalInfoCard displays text with correct styles',
+      (WidgetTester tester) async {
     const textValue = '1000';
     const textDescription = 'Description';
 
@@ -50,16 +53,19 @@ void main() {
     );
 
     final textValueWidget = tester.widget<Text>(find.text(textValue));
-    final textDescriptionWidget = tester.widget<Text>(find.text(textDescription));
+    final textDescriptionWidget =
+        tester.widget<Text>(find.text(textDescription));
 
     expect(textValueWidget.style?.color, equals(kkMyrtleGreenWithOpacity));
     expect(textValueWidget.style?.fontSize, equals(kTitleTextStyle.fontSize));
 
-    expect(textDescriptionWidget.style?.color, equals(kkMyrtleGreenWithOpacity));
+    expect(
+        textDescriptionWidget.style?.color, equals(kkMyrtleGreenWithOpacity));
     expect(textDescriptionWidget.style?.fontWeight, equals(FontWeight.w300));
   });
 
-  testWidgets('HorizontalInfoCard has correct shadow and border radius', (WidgetTester tester) async {
+  testWidgets('HorizontalInfoCard has correct shadow and border radius',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         const HorizontalInfoCard(
@@ -73,6 +79,7 @@ void main() {
     final decoration = container.decoration as BoxDecoration;
 
     expect(decoration.boxShadow?.first.color, equals(kBoxShadowColor));
-    expect(decoration.borderRadius, equals(const BorderRadius.all(Radius.circular(6))));
+    expect(decoration.borderRadius,
+        equals(const BorderRadius.all(Radius.circular(6))));
   });
 }

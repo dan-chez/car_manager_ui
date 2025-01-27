@@ -66,8 +66,11 @@ class _TextCMTextField extends State<CMTextField> {
   @override
   Widget build(BuildContext context) {
     List<TextInputFormatter>? inputFormatters;
-    if (widget.textInputType != null && widget.textInputType == TextInputType.number) {
-      inputFormatters = <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly];
+    if (widget.textInputType != null &&
+        widget.textInputType == TextInputType.number) {
+      inputFormatters = <TextInputFormatter>[
+        FilteringTextInputFormatter.digitsOnly
+      ];
     }
 
     _errorText = widget.errorText ?? '';

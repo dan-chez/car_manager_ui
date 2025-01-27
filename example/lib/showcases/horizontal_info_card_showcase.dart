@@ -77,7 +77,8 @@ class HorizontalInfoCardShowcase extends StatelessWidget {
         ),
         const HorizontalInfoCard(
           textValue: '100',
-          textDescription: 'This is a showcase with long description for HorizontalInfoCard in HorizontalInfoCardShowcase',
+          textDescription:
+              'This is a showcase with long description for HorizontalInfoCard in HorizontalInfoCardShowcase',
         ),
       ],
     );

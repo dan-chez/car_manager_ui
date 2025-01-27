@@ -32,7 +32,8 @@ class EmptyListShowcase extends StatelessWidget {
       title: 'Empty list showcase',
       children: [
         createShowcaseTitle('CMEmptyList', higherSize: true),
-        createShowcaseTitle('No items available, standard message with emphasis on key words.'),
+        createShowcaseTitle(
+            'No items available, standard message with emphasis on key words.'),
         const CMEmptyList(
           text: 'Opps! no items|found',
           boldPositions: [1],

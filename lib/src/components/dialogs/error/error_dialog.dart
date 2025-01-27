@@ -68,7 +68,8 @@ class ErrorDialog extends DialogBase<ErrorDialogData> {
                 Text(
                   data.subtitle,
                   textAlign: TextAlign.center,
-                  style: kCaptionTextStyle.copyWith(fontWeight: FontWeight.w300, color: kMyrtleGreen),
+                  style: kCaptionTextStyle.copyWith(
+                      fontWeight: FontWeight.w300, color: kMyrtleGreen),
                 ),
               ],
             ),

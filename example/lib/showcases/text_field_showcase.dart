@@ -31,14 +31,16 @@ class TextFieldShowcase extends StatelessWidget {
       title: 'TextField showcase',
       children: [
         createShowcaseTitle('CMTextField', higherSize: true),
-        createShowcaseTitle('Can\'t be empty, capitalize first letter of each word, support any input'),
+        createShowcaseTitle(
+            'Can\'t be empty, capitalize first letter of each word, support any input'),
         const CMTextField(
           hintText: 'Get value',
           onTextChange: printValue,
           errorText: 'This can\'t be empty',
           textCapitalization: TextCapitalization.words,
         ),
-        createShowcaseTitle('Can\'t be empty, capitalize first letter of each word, support any input, initial value'),
+        createShowcaseTitle(
+            'Can\'t be empty, capitalize first letter of each word, support any input, initial value'),
         const CMTextField(
           hintText: 'Custom hint',
           onTextChange: printValue,

@@ -37,7 +37,8 @@ void main() {
     expect(find.byType(SizedBox), findsOneWidget);
   });
 
-  testWidgets('LoadingDialog uses the correct properties', (WidgetTester tester) async {
+  testWidgets('LoadingDialog uses the correct properties',
+      (WidgetTester tester) async {
     const loadingDialogData = LoadingDialogData(
       height: 150,
       width: 150,

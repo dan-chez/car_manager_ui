@@ -17,7 +17,6 @@ import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 
 class CMAppbarBackShowcase extends StatelessWidget {
-
   /// This path is used to navigate to the CMAppBar showcase with back button using GoRouter.
   static String path = '/cmAppbarBack';
   const CMAppbarBackShowcase({super.key});

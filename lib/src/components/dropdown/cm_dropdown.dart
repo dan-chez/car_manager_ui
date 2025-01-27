@@ -63,7 +63,7 @@ class CMDropdown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Access the current theme to apply appropriate styling.
-    var theme = Theme.of(context  );
+    var theme = Theme.of(context);
 
     // Determine if the dropdown should be enabled based on the presence of items.
     bool isEnabled = items.isNotEmpty;

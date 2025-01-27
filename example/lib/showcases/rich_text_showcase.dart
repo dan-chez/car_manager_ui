@@ -33,7 +33,9 @@ class RichTextShowcase extends StatelessWidget {
         createShowcaseTitle(
             'A `RichText` widget in Flutter is a widget that displays a string of text with multiple styles. It allows for complex text layouts with different styles, such as varying fonts, colors, and other text properties within the same block of text.'),
         const Divider(height: 12),
-        const CMRichText(text: 'This text is bold|, this isn\'t,| this is', boldPositions: [0, 2])(),
+        const CMRichText(
+            text: 'This text is bold|, this isn\'t,| this is',
+            boldPositions: [0, 2])(),
         const Divider(height: 12),
         CMRichText(
           text: 'No part of the text is in bold but all text is red',
@@ -41,19 +43,24 @@ class RichTextShowcase extends StatelessWidget {
           textStyle: kMediumTitleTextStyle.copyWith(color: Colors.red),
         )(),
         const Divider(height: 12),
-        const CMRichText(text: 'All text bold and end align|', boldPositions: [0], textAlign: TextAlign.end)(),
+        const CMRichText(
+            text: 'All text bold and end align|',
+            boldPositions: [0],
+            textAlign: TextAlign.end)(),
         const Divider(height: 12),
         CMRichText(
           text: 'Align start and italic',
           boldPositions: [],
           textAlign: TextAlign.start,
-          textStyle: kMediumTitleTextStyle.copyWith(fontStyle: FontStyle.italic),
+          textStyle:
+              kMediumTitleTextStyle.copyWith(fontStyle: FontStyle.italic),
         )(),
         const Divider(height: 12),
         CMRichText(
           text: 'Underlined text',
           boldPositions: [0],
-          textStyle: kMediumTitleTextStyle.copyWith(decoration: TextDecoration.underline),
+          textStyle: kMediumTitleTextStyle.copyWith(
+              decoration: TextDecoration.underline),
         )(),
         const Divider(height: 12),
         const CMRichText(

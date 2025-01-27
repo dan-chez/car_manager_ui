@@ -21,7 +21,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
-  testWidgets('Displays title and description correctly', (WidgetTester tester) async {
+  testWidgets('Displays title and description correctly',
+      (WidgetTester tester) async {
     const title = 'Test Title';
     const description = 'Test Description';
 
@@ -37,7 +38,8 @@ void main() {
     expect(find.text(description), findsOneWidget);
   });
 
-  testWidgets('Does not display icon when cardIcon is null', (WidgetTester tester) async {
+  testWidgets('Does not display icon when cardIcon is null',
+      (WidgetTester tester) async {
     await tester.pumpWidget(baseComponentApp(
       CMBriefCard(
         title: 'Test Title',
@@ -50,7 +52,8 @@ void main() {
     expect(find.byType(SvgPicture), findsNothing);
   });
 
-  testWidgets('Button is disabled when isEnabled is false', (WidgetTester tester) async {
+  testWidgets('Button is disabled when isEnabled is false',
+      (WidgetTester tester) async {
     bool pressed = false;
 
     await tester.pumpWidget(baseComponentApp(
@@ -68,7 +71,8 @@ void main() {
     expect(pressed, false);
   });
 
-  testWidgets('Button is enabled when isEnabled is true', (WidgetTester tester) async {
+  testWidgets('Button is enabled when isEnabled is true',
+      (WidgetTester tester) async {
     bool pressed = false;
 
     await tester.pumpWidget(baseComponentApp(
@@ -86,7 +90,8 @@ void main() {
     expect(pressed, true);
   });
 
-  testWidgets('Correct colors for enabled and disabled states', (WidgetTester tester) async {
+  testWidgets('Correct colors for enabled and disabled states',
+      (WidgetTester tester) async {
     await tester.pumpWidget(baseComponentApp(
       Column(
         children: [
@@ -106,8 +111,10 @@ void main() {
       ),
     ));
 
-    final enabledTitleStyle = tester.widget<Text>(find.text('Enabled Card')).style;
-    final disabledTitleStyle = tester.widget<Text>(find.text('Disabled Card')).style;
+    final enabledTitleStyle =
+        tester.widget<Text>(find.text('Enabled Card')).style;
+    final disabledTitleStyle =
+        tester.widget<Text>(find.text('Disabled Card')).style;
 
     expect(enabledTitleStyle?.color, kMyrtleGreen);
     expect(disabledTitleStyle?.color, kSilver);

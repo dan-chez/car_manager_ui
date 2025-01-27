@@ -66,5 +66,4 @@ const kErrorTextStyle = TextStyle(
   fontWeight: FontWeight.w300,
 );
 
-
 // End Text Style

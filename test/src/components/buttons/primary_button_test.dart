@@ -19,7 +19,8 @@ import 'package:flutter_test/flutter_test.dart';
 import '../base/base_component_app.dart';
 
 void main() {
-  testWidgets('PrimaryButton shows the correct text', (WidgetTester tester) async {
+  testWidgets('PrimaryButton shows the correct text',
+      (WidgetTester tester) async {
     const labelText = 'Click Me';
     await tester.pumpWidget(
       baseComponentApp(
@@ -33,7 +34,8 @@ void main() {
     expect(find.text(labelText), findsOneWidget);
   });
 
-  testWidgets('PrimaryButton is disabled when isEnabled is false', (WidgetTester tester) async {
+  testWidgets('PrimaryButton is disabled when isEnabled is false',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         PrimaryButton(
@@ -48,7 +50,8 @@ void main() {
     expect(button.enabled, isFalse);
   });
 
-  testWidgets('PrimaryButton shows loader when isLoading is true', (WidgetTester tester) async {
+  testWidgets('PrimaryButton shows loader when isLoading is true',
+      (WidgetTester tester) async {
     const labelText = 'Loading Button';
     await tester.pumpWidget(
       baseComponentApp(
@@ -64,7 +67,8 @@ void main() {
     expect(find.text(labelText), findsNothing);
   });
 
-  testWidgets('PrimaryButton displays icon when provided', (WidgetTester tester) async {
+  testWidgets('PrimaryButton displays icon when provided',
+      (WidgetTester tester) async {
     const labelText = 'Button with Icon';
     await tester.pumpWidget(
       baseComponentApp(
@@ -80,7 +84,8 @@ void main() {
     expect(find.text(labelText), findsOneWidget);
   });
 
-  testWidgets('PrimaryButton calls onPressed when tapped', (WidgetTester tester) async {
+  testWidgets('PrimaryButton calls onPressed when tapped',
+      (WidgetTester tester) async {
     bool wasPressed = false;
     const labelText = 'Click Me';
     await tester.pumpWidget(

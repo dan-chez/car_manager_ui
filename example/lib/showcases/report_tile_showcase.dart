@@ -35,14 +35,16 @@ class ReportTileShowcase extends StatelessWidget {
     return ShowcaseAppBase(
       title: 'ReportTile showcase',
       children: [
-        createShowcaseTitle('Date description, positive value, edit and delete icon'),
+        createShowcaseTitle(
+            'Date description, positive value, edit and delete icon'),
         ReportTile(
           text: 'Monday 19',
           value: '13366',
           onPressed: () => showCustomSnackBar(context, onPressedSnackBar),
           onDelete: () => showCustomSnackBar(context, onDeleteSnackBar),
         ),
-        createShowcaseTitle('Date description, negative value, edit and delete icon'),
+        createShowcaseTitle(
+            'Date description, negative value, edit and delete icon'),
         ReportTile(
           text: 'Monday 19',
           value: '-13366',
