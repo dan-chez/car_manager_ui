@@ -26,7 +26,6 @@ dependencies:
   go_router: ^14.7.1
   flutter_svg: ^2.0.10+1
   lottie: ^3.3.1
-  intl: ^0.20.2
   toggle_switch: ^2.3.0
 
 dev_dependencies:
