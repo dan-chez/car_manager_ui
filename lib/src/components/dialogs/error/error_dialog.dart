@@ -18,7 +18,7 @@ import 'package:carmanager_ui/src/components/dialogs/base/dialog_base.dart';
 import 'package:carmanager_ui/src/components/dialogs/error/error_dialog_data.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/dividers.dart';
-import 'package:carmanager_ui/src/constants/text_constants.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
