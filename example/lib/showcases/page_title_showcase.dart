@@ -43,6 +43,14 @@ class PageTitleShowcase extends StatelessWidget {
           boldTitle: 'Dart',
           showBottomDivider: false,
         ),
+        createShowcaseTitle('Long text example.'),
+        const CMPageTitle(
+          lightTitle:
+              'This is a very long title that will be truncated if it exceeds the maximum number of lines.',
+          boldTitle:
+              'Flutter Showcase Large Title Example with Long Text and Truncation',
+          showBottomDivider: true,
+        ),
       ],
     );
   }
