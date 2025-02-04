@@ -59,7 +59,10 @@ class CMPageTitle extends StatelessWidget {
           ),
           Text(
             boldTitle,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             style: kTitleTextStyle.copyWith(fontWeight: FontWeight.w600),
+            textAlign: TextAlign.center,
           ),
           Visibility(
             visible: showBottomDivider,
