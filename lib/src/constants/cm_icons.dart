@@ -50,3 +50,5 @@ const kSecurityIcon =
     Icon(Icons.verified_user_outlined, color: kMyrtleGreen, size: 45);
 
 const kStarIcon = Icon(Icons.star, color: kMyrtleGreen, size: 45);
+
+const kDropdownIcon = Icon(Icons.keyboard_arrow_down_outlined, color: kMyrtleGreen);
