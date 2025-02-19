@@ -15,6 +15,7 @@
 library carmanager_ui;
 
 export 'package:carmanager_ui/src/components/buttons/cm_icon_button.dart';
+export 'package:carmanager_ui/src/components/buttons/cm_date_button.dart';
 export 'package:carmanager_ui/src/components/buttons/primary_button.dart';
 export 'package:carmanager_ui/src/components/buttons/close_icon_button.dart';
 export 'package:carmanager_ui/src/components/cm_appbar.dart';
