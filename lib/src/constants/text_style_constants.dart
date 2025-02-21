@@ -16,7 +16,7 @@ import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/int_constants.dart';
 import 'package:flutter/material.dart';
 
-// Button Style
+// Button TextStyle
 
 const kCMButtonTextStyle = TextStyle(
   fontSize: kTextContentSize,
@@ -29,9 +29,9 @@ const kCMOutLinedButtonTextStyle = TextStyle(
   color: kAmaranthPrimary,
 );
 
-// End Button Style
+// End Button TextStyle
 
-// Text Style
+// TextStyle
 
 const kTitleTextStyle = TextStyle(
   fontSize: kTextTitleSize,

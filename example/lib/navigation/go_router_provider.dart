@@ -18,6 +18,7 @@ import 'package:car_manager_ui/showcases/button_showcase.dart';
 import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_back_showcase.dart';
 import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_no_back_showcase.dart';
 import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_showcase.dart';
+import 'package:car_manager_ui/showcases/date_button_showcase.dart';
 import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/dropdown_showcase.dart';
 import 'package:car_manager_ui/showcases/empty_list_showcase.dart';
@@ -73,6 +74,16 @@ class GoRouterHelper {
         pageBuilder: (_, state) {
           return _getPage(
             child: const ButtonShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: DateButtonShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const DateButtonShowcase(),
             state: state,
           );
         },

@@ -15,7 +15,7 @@
 import 'package:carmanager_ui/src/components/loader/loader.dart';
 import 'package:carmanager_ui/src/constants/button_constants.dart';
 import 'package:carmanager_ui/src/constants/int_constants.dart';
-import 'package:carmanager_ui/src/constants/text_constants.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {

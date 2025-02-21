@@ -17,7 +17,7 @@ import 'package:carmanager_ui/src/components/buttons/primary_button.dart';
 import 'package:carmanager_ui/src/components/cm_rich_text.dart';
 import 'package:carmanager_ui/src/components/dialogs/confirm/confirm_dialog_data.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
-import 'package:carmanager_ui/src/constants/text_constants.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
