@@ -14,10 +14,10 @@
 
 library carmanager_ui;
 
-export 'package:carmanager_ui/src/components/buttons/cm_icon_button.dart';
-export 'package:carmanager_ui/src/components/buttons/cm_date_button.dart';
-export 'package:carmanager_ui/src/components/buttons/primary_button.dart';
 export 'package:carmanager_ui/src/components/buttons/close_icon_button.dart';
+export 'package:carmanager_ui/src/components/buttons/cm_date_button.dart';
+export 'package:carmanager_ui/src/components/buttons/cm_icon_button.dart';
+export 'package:carmanager_ui/src/components/buttons/primary_button.dart';
 export 'package:carmanager_ui/src/components/cm_appbar.dart';
 export 'package:carmanager_ui/src/components/cm_brief_card.dart';
 export 'package:carmanager_ui/src/components/cm_empty_list.dart';
@@ -37,6 +37,8 @@ export 'package:carmanager_ui/src/components/expense_summary_card.dart';
 export 'package:carmanager_ui/src/components/horizontal_info_card.dart';
 export 'package:carmanager_ui/src/components/loader/loader.dart';
 export 'package:carmanager_ui/src/components/report_tile/report_tile.dart';
+export 'package:carmanager_ui/src/components/selectable_vehicle/selectable_vehicle.dart';
+export 'package:carmanager_ui/src/components/selectable_vehicle/selectable_vehicle_item.dart';
 export 'package:carmanager_ui/src/components/text_field/cm_multiline_text_field.dart';
 export 'package:carmanager_ui/src/components/text_field/cm_text_field.dart';
 export 'package:carmanager_ui/src/components/text_field/money_text_field/cm_money_text_field.dart';
