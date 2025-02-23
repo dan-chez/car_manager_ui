@@ -20,17 +20,17 @@ import 'package:flutter_test/flutter_test.dart';
 import '../base/base_component_app.dart';
 
 void main() {
-  group('SelectableVehicle Widget Tests', () {
+  group('SelectableVehicleType Widget Tests', () {
     final items = [
-      SelectableVehicleItem(id: '1', icon: 'assets/car.svg', description: 'Car'),
-      SelectableVehicleItem(id: '2', icon: 'assets/bike.svg', description: 'Bike'),
-      SelectableVehicleItem(id: '3', icon: 'assets/bus.svg', description: 'Bus'),
+      SelectableVehicleTypeItem(id: '1', icon: 'assets/car.svg', description: 'Car'),
+      SelectableVehicleTypeItem(id: '2', icon: 'assets/bike.svg', description: 'Bike'),
+      SelectableVehicleTypeItem(id: '3', icon: 'assets/bus.svg', description: 'Bus'),
     ];
 
     testWidgets('Should display all vehicle items', (WidgetTester tester) async {
       await tester.pumpWidget(
         baseComponentApp(
-          SelectableVehicle(
+          SelectableVehicleType(
             items: items,
             onSelected: (_) {},
           ),
@@ -46,7 +46,7 @@ void main() {
       String? selectedId;
       await tester.pumpWidget(
         baseComponentApp(
-          SelectableVehicle(
+          SelectableVehicleType(
             items: items,
             onSelected: (id) => selectedId = id,
           ),
@@ -62,7 +62,7 @@ void main() {
     testWidgets('Should update the selectedId state when an item is tapped', (WidgetTester tester) async {
       await tester.pumpWidget(
         baseComponentApp(
-          SelectableVehicle(
+          SelectableVehicleType(
             items: items,
             onSelected: (_) {},
           ),
@@ -78,7 +78,7 @@ void main() {
     testWidgets('Should display the selected item’s icon with the selected color', (WidgetTester tester) async {
       await tester.pumpWidget(
         baseComponentApp(
-          SelectableVehicle(
+          SelectableVehicleType(
             items: items,
             onSelected: (_) {},
           ),
@@ -102,9 +102,9 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: SelectableVehicle(
+            body: SelectableVehicleType(
               items: [
-                SelectableVehicleItem(
+                SelectableVehicleTypeItem(
                   id: '1',
                   icon: 'assets/car.svg',
                   description: 'This is a very long vehicle description that should be truncated',
@@ -125,7 +125,7 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: SelectableVehicle(
+            body: SelectableVehicleType(
               items: items,
               onSelected: (_) {},
             ),

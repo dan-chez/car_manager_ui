@@ -1,4 +1,4 @@
-class SelectableVehicleItem {
+class SelectableVehicleTypeItem {
   /// Unique identifier for the vehicle option.
   final String id;
 
@@ -8,7 +8,7 @@ class SelectableVehicleItem {
   /// Descriptive label for the vehicle option.
   final String description;
 
-  const SelectableVehicleItem({
+  const SelectableVehicleTypeItem({
     required this.id,
     required this.icon,
     required this.description,

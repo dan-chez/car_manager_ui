@@ -18,49 +18,49 @@ import 'package:car_manager_ui/showcases/showcase_app_base.dart';
 import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 
-/// The [SelectableVehicleShowcase] class provides a visual representation of SelectableVehicle
+/// The [SelectableVehicleShowcase] class provides a visual representation of SelectableVehicleType
 /// styles and functionalities within the application.
-class SelectableVehicleShowcase extends StatelessWidget {
+class SelectableVehicleTypeShowcase extends StatelessWidget {
   /// This path is used to navigate to the button showcase using GoRouter.
   static String path = '/selectableVehicle';
 
-  const SelectableVehicleShowcase({super.key});
+  const SelectableVehicleTypeShowcase({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ShowcaseAppBase(
-      title: 'SelectableVehicle showcase',
+      title: 'SelectableVehicleType showcase',
       children: [
         createShowcaseTitle(
-          'SelectableVehicle is a widget that allows you to select a vehicle type from the vehicle list.',
+          'SelectableVehicleType is a widget that allows you to select a vehicle type from the vehicle list.',
           higherSize: true,
         ),
         createShowcaseTitle('Basic item list with 2 items.'),
-        SelectableVehicle(
+        SelectableVehicleType(
           items: const [
-            SelectableVehicleItem(id: '1', icon: kSelectableCarImage, description: 'Car'),
-            SelectableVehicleItem(id: '2', icon: kSelectableBikeImage, description: 'Bike'),
+            SelectableVehicleTypeItem(id: '1', icon: kSelectableCarImage, description: 'Car'),
+            SelectableVehicleTypeItem(id: '2', icon: kSelectableBikeImage, description: 'Bike'),
           ],
           onSelected: (selectedVehicle) {
             showCustomSnackBar(context, onSelectedVehicleSnackBar(selectedVehicle));
           },
         ),
         createShowcaseTitle('Basic item list with 2 items and long descriptions.'),
-        SelectableVehicle(
+        SelectableVehicleType(
           items: const [
-            SelectableVehicleItem(id: '1', icon: kSelectableCarImage, description: 'This is a long car description.'),
-            SelectableVehicleItem(id: '2', icon: kSelectableBikeImage, description: 'Bike'),
+            SelectableVehicleTypeItem(id: '1', icon: kSelectableCarImage, description: 'This is a long car description.'),
+            SelectableVehicleTypeItem(id: '2', icon: kSelectableBikeImage, description: 'Bike'),
           ],
           onSelected: (selectedVehicle) {
             showCustomSnackBar(context, onSelectedVehicleSnackBar(selectedVehicle));
           },
         ),
         createShowcaseTitle('Basic item list with 3 items.'),
-        SelectableVehicle(
+        SelectableVehicleType(
           items: const [
-            SelectableVehicleItem(id: '1', icon: kSelectableCarImage, description: 'Car'),
-            SelectableVehicleItem(id: '2', icon: kSelectableBikeImage, description: 'Bike'),
-            SelectableVehicleItem(id: '3', icon: kSelectableCarImage, description: 'Bus'),
+            SelectableVehicleTypeItem(id: '1', icon: kSelectableCarImage, description: 'Car'),
+            SelectableVehicleTypeItem(id: '2', icon: kSelectableBikeImage, description: 'Bike'),
+            SelectableVehicleTypeItem(id: '3', icon: kSelectableCarImage, description: 'Bus'),
           ],
           onSelected: (selectedVehicle) {
             showCustomSnackBar(context, onSelectedVehicleSnackBar(selectedVehicle));

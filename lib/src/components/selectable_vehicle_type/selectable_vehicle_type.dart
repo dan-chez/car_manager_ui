@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:carmanager_ui/src/components/selectable_vehicle/selectable_vehicle_item.dart';
+import 'package:carmanager_ui/src/components/selectable_vehicle_type/selectable_vehicle_type_item.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
@@ -25,34 +25,34 @@ import 'package:flutter_svg/flutter_svg.dart';
 ///
 /// Example usage:
 /// ```dart
-/// SelectableVehicle(
+/// SelectableVehicleType(
 ///   items: const [
-///     SelectableVehicleItem(id: '1', icon: kSelectableCarImage, description: 'Car'),
-///     SelectableVehicleItem(id: '2', icon: kSelectableBikeImage, description: 'Bike'),
+///     SelectableVehicleTypeItem(id: '1', icon: 'car.svg', description: 'Car'),
+///     SelectableVehicleTypeItem(id: '2', icon: 'bike.svg', description: 'Bike'),
 ///   ],
 ///   onSelected: (selectedVehicle) {
 ///     printValue('Selected vehicle: $selectedVehicle');
 ///   },
 /// )
 /// ```
-class SelectableVehicle extends StatefulWidget {
+class SelectableVehicleType extends StatefulWidget {
   /// The list of available vehicle options.
-  final List<SelectableVehicleItem> items;
+  final List<SelectableVehicleTypeItem> items;
 
   /// Callback triggered when a vehicle is selected, returning the selected vehicle's ID.
   final ValueChanged<String> onSelected;
 
-  const SelectableVehicle({
+  const SelectableVehicleType({
     super.key,
     required this.items,
     required this.onSelected,
   });
 
   @override
-  State<SelectableVehicle> createState() => _SelectableVehicleState();
+  State<SelectableVehicleType> createState() => _SelectableVehicleTypeState();
 }
 
-class _SelectableVehicleState extends State<SelectableVehicle> {
+class _SelectableVehicleTypeState extends State<SelectableVehicleType> {
   /// Defines 90% of the screen width as the available width for the widget.
   static const double _availableWidthFactor = 0.9;
 
