@@ -12,8 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-class StringConstants {
-  static const String textDivider = '|';
-  static const String empty = '';
-  static const String lineBreak = '\n';
+class SelectableServiceTypeItem {
+  /// Unique identifier for the service type option.
+  final String id;
+
+  /// Path or asset name of the service type icon.
+  final String icon;
+
+  /// Title label for the service type option.
+  final String title;
+
+  /// Descriptive label for the service type option.
+  final String description;
+
+  const SelectableServiceTypeItem({
+    required this.id,
+    required this.icon,
+    required this.title,
+    required this.description,
+  });
 }
