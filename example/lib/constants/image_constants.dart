@@ -22,6 +22,7 @@ const kCarImage = "${_imagesSvgPath}car.svg";
 const kFolderImage = "${_imagesSvgPath}folder.svg";
 const kSearchImage = "${_imagesSvgPath}loupe.svg";
 const kCarManagerFullLogoImage = "${_imagesSvgPath}carmanager_full_logo.svg";
+const kTransportServiceImage = "${_imagesSvgPath}transport_service.svg";
 
 // Animations
 const kLoadingAnimation = "${_animationsPath}cmloading.json";
