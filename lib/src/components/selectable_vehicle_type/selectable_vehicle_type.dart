@@ -14,6 +14,7 @@
 
 import 'package:carmanager_ui/src/components/selectable_vehicle_type/selectable_vehicle_type_item.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_icons.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -53,87 +54,85 @@ class SelectableVehicleType extends StatefulWidget {
 }
 
 class _SelectableVehicleTypeState extends State<SelectableVehicleType> {
-  /// Defines 90% of the screen width as the available width for the widget.
-  static const double _availableWidthFactor = 0.9;
+  /// Spacing between items.
+  static const double _wrapSpacing = 8;
 
-  /// Allocates 50% of the item width for the description text.
-  static const double _availableTextWidthFactor = 0.5;
+  static const double _iconSize = 24;
 
   String? selectedId;
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final itemWidth = (screenWidth * _availableWidthFactor) / widget.items.length;
-    final textWidth = itemWidth * _availableTextWidthFactor;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Wrap(
+          spacing: _wrapSpacing,
+          runSpacing: _wrapSpacing,
+          children: widget.items.map((item) {
+            final isSelected = item.id == selectedId;
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: widget.items.map((item) {
-        final isSelected = item.id == selectedId;
+            final containerWidth =
+                (constraints.maxWidth / widget.items.length) - _wrapSpacing;
 
-        return GestureDetector(
-          onTap: () {
-            setState(() => selectedId = item.id);
-            widget.onSelected(item.id);
-          },
-          child: Container(
-            width: itemWidth,
-            decoration: const BoxDecoration(
-              color: kWhite,
-              boxShadow: [
-                BoxShadow(
-                  color: kBoxShadowColor,
-                  blurRadius: 4,
-                  offset: Offset(0, 5),
-                )
-              ],
-              borderRadius: BorderRadius.all(
-                Radius.circular(
-                  6,
+            return GestureDetector(
+              onTap: () {
+                setState(() => selectedId = item.id);
+                widget.onSelected(item.id);
+              },
+              child: Container(
+                width: containerWidth,
+                constraints: const BoxConstraints(minWidth: 80),
+                decoration: BoxDecoration(
+                  color: kWhite,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: kBoxShadowColor,
+                      blurRadius: 4,
+                      offset: Offset(0, 5),
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(6),
                 ),
-              ),
-            ),
-            child: Container(
-              decoration: BoxDecoration(
-                color: isSelected ? kMyrtleGreen : kPrimaryColorWithOpacityBG,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(6),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 12),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SvgPicture.asset(
-                      item.icon,
-                      colorFilter: ColorFilter.mode(
-                        isSelected ? kWhite : kAmaranthPrimary,
-                        BlendMode.srcIn,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color:
+                        isSelected ? kMyrtleGreen : kPrimaryColorWithOpacityBG,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SvgPicture.asset(
+                        item.icon,
+                        colorFilter: ColorFilter.mode(
+                          isSelected ? kWhite : kAmaranthPrimary,
+                          BlendMode.srcIn,
+                        ),
+                        width: _iconSize,
+                        height: _iconSize,
                       ),
-                      width: 24,
-                      height: 24,
-                    ),
-                    const SizedBox(width: 8),
-                    SizedBox(
-                      width: textWidth,
-                      child: Text(
-                        item.description,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: kCMButtonTextStyle.copyWith(
-                          color: isSelected ? kWhite : kMyrtleGreen,
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          item.description,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: kCMButtonTextStyle.copyWith(
+                            color: isSelected ? kWhite : kMyrtleGreen,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      if (isSelected) kCheckIcon,
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ),
+            );
+          }).toList(),
         );
-      }).toList(),
+      },
     );
   }
 }
