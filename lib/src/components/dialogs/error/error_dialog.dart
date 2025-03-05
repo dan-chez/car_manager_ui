@@ -17,6 +17,7 @@ import 'package:carmanager_ui/src/components/cm_rich_text.dart';
 import 'package:carmanager_ui/src/components/dialogs/base/dialog_base.dart';
 import 'package:carmanager_ui/src/components/dialogs/error/error_dialog_data.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/dividers.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
@@ -40,20 +41,25 @@ class ErrorDialog extends DialogBase<ErrorDialogData> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      elevation: 10,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-      insetPadding: const EdgeInsets.symmetric(horizontal: 24),
+      elevation: CMDimens.d10,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(CMDimens.d4),
+      ),
+      insetPadding: const EdgeInsets.symmetric(horizontal: CMDimens.d24),
       backgroundColor: kWhite,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
           const Padding(
-            padding: EdgeInsets.only(top: 11.0, right: 11.0),
+            padding: EdgeInsets.only(top: CMDimens.d11, right: CMDimens.d11),
             child: CloseIconButton(),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 14, bottom: 36),
+            padding: const EdgeInsets.only(
+              top: CMDimens.d14,
+              bottom: CMDimens.d36,
+            ),
             child: Column(
               children: [
                 Visibility(

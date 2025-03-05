@@ -14,7 +14,7 @@
 
 import 'package:carmanager_ui/src/components/loader/loader.dart';
 import 'package:carmanager_ui/src/constants/button_constants.dart';
-import 'package:carmanager_ui/src/constants/int_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +41,7 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: kCMButtonHeight,
+      height: CMDimens.d50,
       width: double.infinity,
       child: TextButton(
         style: buttonStyle ?? kCMButtonStyle,
@@ -54,7 +54,7 @@ class PrimaryButton extends StatelessWidget {
             children: [
               if (icon != null)
                 Padding(
-                  padding: const EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.only(right: CMDimens.d10),
                   child: icon,
                 ),
               Text(

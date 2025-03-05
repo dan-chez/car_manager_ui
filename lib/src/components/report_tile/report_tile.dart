@@ -15,6 +15,7 @@
 import 'package:carmanager_ui/src/components/buttons/cm_icon_button.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/button_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/cm_icons.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:carmanager_ui/src/utils/extensions/number_extensions.dart';
@@ -54,7 +55,7 @@ class ReportTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.only(bottom: CMDimens.d12),
       child: ElevatedButton(
         onPressed: onPressed,
         style: kReportTileButtonStyle,
@@ -64,8 +65,9 @@ class ReportTile extends StatelessWidget {
               Expanded(
                 child: Text(
                   text,
-                  style:
-                      kContentTextStyle.copyWith(fontWeight: FontWeight.w600),
+                  style: kContentTextStyle.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
               Text(
@@ -75,7 +77,7 @@ class ReportTile extends StatelessWidget {
                   color: value.parseToInt.isProfit ? kGreen : kAmaranthPrimary,
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: CMDimens.d10),
               Visibility(
                 visible: showDeleteAndEditIcon,
                 child: Row(
@@ -83,16 +85,16 @@ class ReportTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const VerticalDivider(
-                      width: 2,
-                      thickness: 1.5,
+                      width: CMDimens.d2,
+                      thickness: CMDimens.d1_5,
                       color: kMyrtleGreen,
-                      endIndent: 5,
-                      indent: 5,
+                      endIndent: CMDimens.d5,
+                      indent: CMDimens.d5,
                     ),
-                    const SizedBox(width: 10),
+                    const SizedBox(width: CMDimens.d10),
                     kEditReportIcon,
                     CMIconButton(
-                      size: const Size.square(30),
+                      size: const Size.square(CMDimens.d30),
                       icon: kDeleteIcon,
                       onPressed: onDelete,
                     ),

@@ -12,12 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/button_constants.dart';
-import 'package:carmanager_ui/src/constants/text_style_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/cm_icons.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 /// The [CMBriefCard] widget is used to display a brief, actionable card with an optional SVG icon,
 /// a title, and a description. It is commonly used to present succinct information paired
@@ -62,18 +63,18 @@ class CMBriefCard extends StatelessWidget {
       style: kCMBriefCardButtonStyle,
       onPressed: isEnabled ? onPressed : null,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 21),
+        padding: const EdgeInsets.symmetric(vertical: CMDimens.d21),
         child: Row(
           children: [
             Visibility(
               visible: iconPath != null,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: CMDimens.d20),
                 child: SvgPicture.asset(
                   asset,
                   colorFilter: ColorFilter.mode(iconColor, BlendMode.srcIn),
-                  width: 35,
-                  height: 35,
+                  width: CMDimens.d35,
+                  height: CMDimens.d35,
                 ),
               ),
             ),
@@ -89,7 +90,7 @@ class CMBriefCard extends StatelessWidget {
                         : kSubtitleTextStyle.copyWith(
                             fontWeight: FontWeight.w500, color: kSilver),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: CMDimens.d10),
                   Text(
                     description,
                     style: isEnabled
@@ -102,7 +103,10 @@ class CMBriefCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 18, left: 25),
+              padding: const EdgeInsets.only(
+                right: CMDimens.d18,
+                left: CMDimens.d25,
+              ),
               child: isEnabled ? kArrowForwardIcon : kArrowForwardDisableIcon,
             ),
           ],

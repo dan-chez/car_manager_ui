@@ -13,8 +13,9 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
-import 'package:carmanager_ui/src/constants/text_style_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/cm_icons.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
 /// The [ExpenseSummaryCard] widget represents an item with a [description] and [value].
@@ -49,10 +50,10 @@ class ExpenseSummaryCard extends StatelessWidget {
       decoration: const BoxDecoration(
         color: kExpenseSummaryCardBg,
         borderRadius: BorderRadius.all(
-          Radius.circular(4),
+          Radius.circular(CMDimens.d4),
         ),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 14),
+      padding: const EdgeInsets.symmetric(horizontal: CMDimens.d14),
       child: IntrinsicHeight(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -68,7 +69,7 @@ class ExpenseSummaryCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            const SizedBox(width: 14),
+            const SizedBox(width: CMDimens.d14),
             Text(
               value,
               style: kContentTextStyle.copyWith(
@@ -78,7 +79,7 @@ class ExpenseSummaryCard extends StatelessWidget {
             ),
             Visibility(
               visible: onDeletePressed != null,
-              replacement: const SizedBox(height: 47),
+              replacement: const SizedBox(height: CMDimens.d47),
               child: _getDeleteSection(),
             )
           ],
@@ -91,17 +92,20 @@ class ExpenseSummaryCard extends StatelessWidget {
     return Row(
       children: [
         const SizedBox(
-          width: 12,
+          width: CMDimens.d12,
         ),
         const VerticalDivider(
-          width: 2,
-          thickness: 1.5,
+          width: CMDimens.d2,
+          thickness: CMDimens.d1_5,
           color: kAmaranthPrimary,
-          endIndent: 5,
-          indent: 5,
+          endIndent: CMDimens.d5,
+          indent: CMDimens.d5,
         ),
         IconButton(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+          padding: const EdgeInsets.symmetric(
+            vertical: CMDimens.d10,
+            horizontal: CMDimens.d12,
+          ),
           onPressed: onDeletePressed,
           icon: kDeleteIcon,
           highlightColor: Colors.transparent,

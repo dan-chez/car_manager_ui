@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/cm_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -25,9 +26,14 @@ class CloseIconButton extends StatelessWidget {
       alignment: Alignment.topRight,
       child: IconButton(
         constraints: const BoxConstraints(
-          minHeight: 0,
+          minHeight: CMDimens.d0,
         ),
-        padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
+        padding: const EdgeInsets.fromLTRB(
+          CMDimens.d12,
+          CMDimens.d0,
+          CMDimens.d0,
+          CMDimens.d0,
+        ),
         onPressed: () => Navigator.pop(context),
         icon: kCloseIcon,
         highlightColor: Colors.transparent,

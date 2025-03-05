@@ -56,7 +56,7 @@ void main() {
   testWidgets('Applies custom size to the card', (WidgetTester tester) async {
     const testIcon = kStarIcon;
     const testMessage = 'Custom Size';
-    const customSize = Size(150, 180);
+    const customSize = Size(CMDimens.d150, CMDimens.d180);
 
     await tester.pumpWidget(baseComponentApp(
       const CMInfoCard(
