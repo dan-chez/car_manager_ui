@@ -13,12 +13,13 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:flutter/material.dart';
 
 class Loader extends StatelessWidget {
   const Loader({
     super.key,
-    this.size = const Size(20, 20),
+    this.size = const Size(CMDimens.d20, CMDimens.d20),
     this.color = kWhite,
     this.strokeWidth = 3,
   });

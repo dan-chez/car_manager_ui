@@ -12,8 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
 /// The [VerticalInfoCard] widget displays a card with a vertical layout featuring a [textValue]
@@ -46,18 +47,22 @@ class VerticalInfoCard extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: kBoxShadowColor,
-              blurRadius: 4,
-              offset: Offset(0, 5),
+              blurRadius: CMDimens.d4,
+              offset: Offset(CMDimens.d0, CMDimens.d5),
             )
           ],
-          borderRadius: BorderRadius.all(Radius.circular(6))),
+          borderRadius: BorderRadius.all(Radius.circular(CMDimens.d6))),
       child: Container(
         decoration: const BoxDecoration(
             color: kPrimaryColorWithOpacityBG,
-            borderRadius: BorderRadius.all(Radius.circular(6))),
+            borderRadius: BorderRadius.all(Radius.circular(CMDimens.d6))),
         child: Padding(
-          padding:
-              const EdgeInsets.only(right: 12, top: 20, left: 12, bottom: 15),
+          padding: const EdgeInsets.only(
+            right: CMDimens.d12,
+            top: CMDimens.d20,
+            left: CMDimens.d12,
+            bottom: CMDimens.d15,
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
