@@ -1,0 +1,39 @@
+name: Car Manager UI Continuous Delivery (Example App)
+
+# This workflow automates the building and publishing of an APK for the Car Manager UI example application.
+# It is triggered automatically when pushes are made to the 'develop' branch.
+
+on:
+  push:
+    branches:
+      - 'develop'
+
+jobs:
+  build-and-test:
+    name: Build and Publish Test APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Installs the specified version of Flutter in the environment.
+      - name: Setup Flutter Environment
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.27.3'
+
+      # Prints the installed Flutter version to verify the setup.
+      - name: Verify Flutter Version
+        run: flutter --version
+
+      # Compiles the Flutter application into a debug APK.
+      - name: Build Test APK
+        run: cd example && flutter build apk --debug
+
+      # Uploads the generated APK as a GitHub Actions artifact.
+      # The artifact can be downloaded from the workflow run page.
+      - name: Publish APK as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: example/build/app/outputs/flutter-apk/app-debug.apk
