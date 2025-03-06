@@ -27,12 +27,12 @@ jobs:
       - name: Verify Flutter Version
         run: flutter --version
 
+      - name: Change working directory to example
+        run: cd example
+
       # Compiles the Flutter application into a debug APK.
       - name: Build Test APK
         run: flutter build apk --debug --target=example/lib/main.dart
-
-      - name: Change working directory to example
-        run: cd example
 
       # Uploads the generated APK as a GitHub Actions artifact.
       # The artifact can be downloaded from the workflow run page.
