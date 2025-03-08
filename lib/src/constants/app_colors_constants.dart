@@ -36,3 +36,6 @@ const Color kBarrierColor = Color.fromRGBO(0, 0, 0, 0.5);
 
 //ToggleButton
 const Color kInactiveToggleButtonSelection = Color.fromRGBO(235, 235, 235, 1);
+
+// Dividers
+const Color kLightDividerColor = Color(0xFFEDEDED);

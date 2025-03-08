@@ -20,6 +20,12 @@ const kPrimaryDivider = Divider(
   color: kkAmaranthPrimaryWithOpacity,
 );
 
+const kSecondaryDivider = Divider(
+  thickness: 2,
+  height: 0,
+  color: kLightDividerColor,
+);
+
 const kSmallDividerVertical = SizedBox(
   height: 24,
 );

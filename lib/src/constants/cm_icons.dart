@@ -14,6 +14,7 @@
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 
 //Custom Icons
 const String _iconsFontFamily = "CMIcons";
@@ -43,6 +44,8 @@ const kBackArrowIcon =
 const kEditReportIcon = Icon(Icons.edit_note, color: kMyrtleGreen, size: 30);
 
 const kDeleteIcon = Icon(_iconDataDelete, color: kAmaranthPrimary, size: 17);
+
+const kEditSquareIcon = Icon(Symbols.edit_square, color: kMyrtleGreen, size: 23);
 
 const kMonitoringIcon = Icon(Icons.monitor, color: kMyrtleGreen, size: 45);
 
