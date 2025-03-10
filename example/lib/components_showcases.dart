@@ -28,6 +28,7 @@ import 'package:car_manager_ui/showcases/page_title_showcase.dart';
 import 'package:car_manager_ui/showcases/report_tile_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
 import 'package:car_manager_ui/showcases/selectable_service_type_showcase.dart';
+import 'package:car_manager_ui/showcases/selectable_vehicle_type_showcase.dart';
 import 'package:car_manager_ui/showcases/summary_card_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 import 'package:car_manager_ui/showcases/toggle_button_showcase.dart';
@@ -111,6 +112,10 @@ final components = {
   ComponentModel(
     description: 'CMDateButton',
     path: DateButtonShowcase.path,
+  ),
+  ComponentModel(
+    description: 'SelectableVehicleType',
+    path: SelectableVehicleTypeShowcase.path,
   ),
   ComponentModel(
     description: 'SelectableServiceType',
