@@ -32,6 +32,8 @@ const kCloseIcon = Icon(Icons.close, color: kCanyonBronze);
 
 const kArrowDownIcon = Icon(Icons.arrow_drop_down, color: kMyrtleGreen);
 
+const kCheckIcon = Icon(Icons.check, color: kWhite, size: 24);
+
 const kArrowForwardIcon =
     Icon(Icons.arrow_forward_ios_outlined, color: kMyrtleGreen, size: 15);
 
