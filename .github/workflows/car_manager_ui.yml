@@ -1,21 +1,29 @@
 name: analyze and test
 
+# This workflow is triggered on pushes to the repository.
+
+# Default will running for every branch.
 on: push
+
 jobs:
   build-and-test:
+    # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
+
     steps:
-      - name: 'Checkout'
+      - name: Checkout Repository
         uses: actions/checkout@v3
-      - name: 'Set up Flutter'
+
+      - name: Setup Flutter Environment
         uses: subosito/flutter-action@v2
         with:
-          channel: "stable"
+          flutter-version: '3.27.3'
       - run: flutter --version
+      # Get flutter dependencies.
       - run: flutter pub get
-      # Analyze our Dart code
+      # Statically analyze the Dart code for any errors.
       - run: flutter analyze --no-fatal-infos
-      # Run our tests
+      # Run widget tests for our flutter project.
       - run: flutter test --coverage
       - name: 'Publish to coveralls.io'
         uses: coverallsapp/github-action@v2.3.0

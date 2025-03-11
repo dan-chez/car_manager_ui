@@ -47,6 +47,12 @@ const kArrowDownIcon = Icon(
   color: kMyrtleGreen,
 );
 
+const kCheckIcon = Icon(
+  Icons.check,
+  color: kWhite,
+  size: CMDimens.d24,
+);
+
 const kArrowForwardIcon = Icon(
   Icons.arrow_forward_ios_outlined,
   color: kMyrtleGreen,
