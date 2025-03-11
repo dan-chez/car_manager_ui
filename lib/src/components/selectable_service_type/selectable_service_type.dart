@@ -55,113 +55,111 @@ class SelectableServiceType extends StatefulWidget {
 }
 
 class _SelectableServiceTypeState extends State<SelectableServiceType> {
-  /// Allocates 75% of the item width for the description text.
-  static const double _availableTextWidthFactor = 0.75;
-
   static const double _iconSize = 24;
 
   String? selectedId;
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final textWidth = screenWidth * _availableTextWidthFactor;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Column(
+          spacing: 16,
+          children: widget.items.map((item) {
+            final isSelected = item.id == selectedId;
 
-    return Column(
-      spacing: 16,
-      children: widget.items.map((item) {
-        final isSelected = item.id == selectedId;
+            final isDescWrap = willTextWrap(
+                text: item.description, maxWidth: constraints.maxWidth);
 
-        final isTextWrap = willTextWrap(text: item.description, maxWidth: textWidth);
-
-        return GestureDetector(
-          onTap: () {
-            setState(() => selectedId = item.id);
-            widget.onSelected(item.id);
-          },
-          child: Container(
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              color: kWhite,
-              boxShadow: [
-                BoxShadow(
-                  color: kBoxShadowColor,
-                  blurRadius: 4,
-                  offset: Offset(0, 5),
-                )
-              ],
-              borderRadius: BorderRadius.all(
-                Radius.circular(
-                  6,
+            return GestureDetector(
+              onTap: () {
+                setState(() => selectedId = item.id);
+                widget.onSelected(item.id);
+              },
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: kWhite,
+                  boxShadow: [
+                    BoxShadow(
+                      color: kBoxShadowColor,
+                      blurRadius: 4,
+                      offset: Offset(0, 5),
+                    )
+                  ],
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(6),
+                  ),
                 ),
-              ),
-            ),
-            child: Container(
-              decoration: BoxDecoration(
-                color: isSelected ? kMyrtleGreen : kPrimaryColorWithOpacityBG,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(6),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SvgPicture.asset(
-                      item.icon,
-                      colorFilter: ColorFilter.mode(
-                        isSelected ? kWhite : kAmaranthPrimary,
-                        BlendMode.srcIn,
-                      ),
-                      width: _iconSize,
-                      height: _iconSize,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color:
+                        isSelected ? kMyrtleGreen : kPrimaryColorWithOpacityBG,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(6),
                     ),
-                    const SizedBox(width: 12),
-                    Column(
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: textWidth - _iconSize,
-                              child: Text(
-                                item.title,
-                                maxLines: 1,
+                        SvgPicture.asset(
+                          item.icon,
+                          colorFilter: ColorFilter.mode(
+                            isSelected ? kWhite : kAmaranthPrimary,
+                            BlendMode.srcIn,
+                          ),
+                          width: _iconSize,
+                          height: _iconSize,
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      item.title,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: kCMButtonTextStyle.copyWith(
+                                        color:
+                                            isSelected ? kWhite : kMyrtleGreen,
+                                      ),
+                                    ),
+                                  ),
+                                  if (isSelected) kCheckIcon,
+                                ],
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                item.description +
+                                    (isDescWrap
+                                        ? StringConstants.empty
+                                        : StringConstants.lineBreak),
+                                maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
-                                style: kCMButtonTextStyle.copyWith(
+                                style: kCaptionTextStyle.copyWith(
                                   color: isSelected ? kWhite : kMyrtleGreen,
+                                  fontWeight: FontWeight.w300,
                                 ),
                               ),
-                            ),
-                            Visibility(
-                              visible: isSelected,
-                              child: kCheckIcon,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 4),
-                        SizedBox(
-                          width: textWidth,
-                          child: Text(
-                            item.description + (isTextWrap ? StringConstants.empty : StringConstants.lineBreak),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: kCaptionTextStyle.copyWith(
-                              color: isSelected ? kWhite : kMyrtleGreen,
-                              fontWeight: FontWeight.w300,
-                            ),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                  ],
+                  ),
                 ),
               ),
-            ),
-          ),
+            );
+          }).toList(),
         );
-      }).toList(),
+      },
     );
   }
 
