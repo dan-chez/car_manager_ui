@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/cm_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -47,7 +48,7 @@ class CMAppbar extends StatelessWidget implements PreferredSizeWidget {
     final asset = assetName ?? '';
     return SafeArea(
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: CMDimens.d20),
         color: kWhite,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -60,8 +61,13 @@ class CMAppbar extends StatelessWidget implements PreferredSizeWidget {
                 Visibility(
                   visible: canPop,
                   child: IconButton(
-                    constraints: const BoxConstraints(minHeight: 0),
-                    padding: const EdgeInsets.fromLTRB(0, 0, 8, 4),
+                    constraints: const BoxConstraints(minHeight: CMDimens.d0),
+                    padding: const EdgeInsets.fromLTRB(
+                      CMDimens.d0,
+                      CMDimens.d0,
+                      CMDimens.d8,
+                      CMDimens.d4,
+                    ),
                     splashColor: Colors.transparent,
                     onPressed: () {
                       if (canPop) {
@@ -75,7 +81,7 @@ class CMAppbar extends StatelessWidget implements PreferredSizeWidget {
                   visible: assetName != null,
                   child: SvgPicture.asset(
                     asset,
-                    height: 25,
+                    height: CMDimens.d25,
                   ),
                 )
               ],

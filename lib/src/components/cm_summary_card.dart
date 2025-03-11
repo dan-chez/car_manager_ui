@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:carmanager_ui/src/utils/extensions/number_extensions.dart';
 import 'package:carmanager_ui/src/utils/extensions/string_extensions.dart';
@@ -54,21 +55,21 @@ class CMSummaryCard extends StatelessWidget {
             color: kkMyrtleGreenWithOpacity,
           ),
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: CMDimens.d12),
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(vertical: CMDimens.d10),
           width: double.infinity,
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                offset: const Offset(0, 1),
+                offset: const Offset(CMDimens.d0, CMDimens.d1),
                 color: kCanyonBronze.withOpacity(0.17),
-                blurRadius: 3,
+                blurRadius: CMDimens.d3,
               ),
             ],
             color: kWhite,
             borderRadius: const BorderRadius.all(
-              Radius.circular(7),
+              Radius.circular(CMDimens.d7),
             ),
           ),
           child: Text(

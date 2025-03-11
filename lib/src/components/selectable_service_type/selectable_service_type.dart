@@ -14,6 +14,7 @@
 
 import 'package:carmanager_ui/src/components/selectable_service_type/selectable_service_type_item.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/cm_icons.dart';
 import 'package:carmanager_ui/src/constants/string_constants.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
@@ -55,7 +56,7 @@ class SelectableServiceType extends StatefulWidget {
 }
 
 class _SelectableServiceTypeState extends State<SelectableServiceType> {
-  static const double _iconSize = 24;
+  static const double _iconSize = CMDimens.d24;
 
   String? selectedId;
 
@@ -64,7 +65,7 @@ class _SelectableServiceTypeState extends State<SelectableServiceType> {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Column(
-          spacing: 16,
+          spacing: CMDimens.d16,
           children: widget.items.map((item) {
             final isSelected = item.id == selectedId;
 
@@ -82,12 +83,12 @@ class _SelectableServiceTypeState extends State<SelectableServiceType> {
                   boxShadow: [
                     BoxShadow(
                       color: kBoxShadowColor,
-                      blurRadius: 4,
-                      offset: Offset(0, 5),
+                      blurRadius: CMDimens.d4,
+                      offset: Offset(CMDimens.d0, CMDimens.d5),
                     )
                   ],
                   borderRadius: BorderRadius.all(
-                    Radius.circular(6),
+                    Radius.circular(CMDimens.d6),
                   ),
                 ),
                 child: Container(
@@ -95,11 +96,11 @@ class _SelectableServiceTypeState extends State<SelectableServiceType> {
                     color:
                         isSelected ? kMyrtleGreen : kPrimaryColorWithOpacityBG,
                     borderRadius: BorderRadius.all(
-                      Radius.circular(6),
+                      Radius.circular(CMDimens.d6),
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(CMDimens.d16),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -112,7 +113,7 @@ class _SelectableServiceTypeState extends State<SelectableServiceType> {
                           width: _iconSize,
                           height: _iconSize,
                         ),
-                        const SizedBox(width: 12),
+                        const SizedBox(width: CMDimens.d12),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -135,7 +136,7 @@ class _SelectableServiceTypeState extends State<SelectableServiceType> {
                                   if (isSelected) kCheckIcon,
                                 ],
                               ),
-                              const SizedBox(height: 4),
+                              const SizedBox(height: CMDimens.d4),
                               Text(
                                 item.description +
                                     (isDescWrap

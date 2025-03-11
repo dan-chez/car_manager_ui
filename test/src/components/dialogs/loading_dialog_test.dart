@@ -40,8 +40,8 @@ void main() {
   testWidgets('LoadingDialog uses the correct properties',
       (WidgetTester tester) async {
     const loadingDialogData = LoadingDialogData(
-      height: 150,
-      width: 150,
+      height: CMDimens.d150,
+      width: CMDimens.d150,
       lottieAssetPath: '',
     );
 
@@ -52,8 +52,8 @@ void main() {
     );
 
     final sizedBox = tester.widget<SizedBox>(find.byType(SizedBox));
-    expect(sizedBox.height, 150);
-    expect(sizedBox.width, 150);
+    expect(sizedBox.height, CMDimens.d150);
+    expect(sizedBox.width, CMDimens.d150);
   });
 
   testWidgets('LoadingDialog prevents popping', (WidgetTester tester) async {

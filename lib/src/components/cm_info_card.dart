@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +39,7 @@ class CMInfoCard extends StatelessWidget {
     super.key,
     required this.icon,
     required this.message,
-    this.size = const Size(110, 120),
+    this.size = const Size(CMDimens.d110, CMDimens.d120),
   });
 
   @override
@@ -46,15 +47,15 @@ class CMInfoCard extends StatelessWidget {
     return Container(
       width: size.width,
       height: size.height,
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: CMDimens.d10),
       decoration: BoxDecoration(
         color: kLightAmaranthPrimary,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(CMDimens.d15),
         boxShadow: const [
           BoxShadow(
             color: kBoxShadowColor,
-            offset: Offset(0, 3),
-            blurRadius: 3,
+            offset: Offset(CMDimens.d0, CMDimens.d3),
+            blurRadius: CMDimens.d3,
           )
         ],
       ),
@@ -62,7 +63,7 @@ class CMInfoCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           icon,
-          const SizedBox(height: 5),
+          const SizedBox(height: CMDimens.d5),
           Text(
             message,
             style: kContentTextStyle.copyWith(fontWeight: FontWeight.w400),

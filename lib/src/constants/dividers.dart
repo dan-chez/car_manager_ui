@@ -13,13 +13,14 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:flutter/material.dart';
 
 const kPrimaryDivider = Divider(
-  thickness: 1,
+  thickness: CMDimens.d1,
   color: kkAmaranthPrimaryWithOpacity,
 );
 
 const kSmallDividerVertical = SizedBox(
-  height: 24,
+  height: CMDimens.d24,
 );

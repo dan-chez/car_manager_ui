@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/components/cm_rich_text.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/string_constants.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
@@ -54,8 +55,8 @@ class CMEmptyList extends StatelessWidget {
           Visibility(
             visible: imagePath != null,
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: SvgPicture.asset(asset, height: 80),
+              padding: const EdgeInsets.only(bottom: CMDimens.d20),
+              child: SvgPicture.asset(asset, height: CMDimens.d80),
             ),
           ),
           CMRichText(
