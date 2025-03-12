@@ -12,21 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
-import 'package:carmanager_ui/src/constants/cm_dimens.dart';
-import 'package:flutter/material.dart';
-
-const kPrimaryDivider = Divider(
-  thickness: CMDimens.d1,
-  color: kkAmaranthPrimaryWithOpacity,
-);
-
-const kSecondaryDivider = Divider(
-  thickness: 1,
-  height: 0,
-  color: kLightDividerColor,
-);
-
-const kSmallDividerVertical = SizedBox(
-  height: CMDimens.d24,
-);
+/// Enum to define the type of [VehicleInfoCard].
+///
+/// - [toggleable]: Displays a toggle switch to show/hide additional details.
+/// - [fixed]: Always displays full details without a toggle.
+enum VehicleInfoCardType { toggleable, fixed }

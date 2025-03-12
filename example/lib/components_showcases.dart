@@ -32,6 +32,7 @@ import 'package:car_manager_ui/showcases/selectable_vehicle_type_showcase.dart';
 import 'package:car_manager_ui/showcases/summary_card_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 import 'package:car_manager_ui/showcases/toggle_button_showcase.dart';
+import 'package:car_manager_ui/showcases/vehicle_info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/vertical_info_card_showcase.dart';
 
 /// A collection of component showcases used in the example application.
@@ -120,5 +121,9 @@ final components = {
   ComponentModel(
     description: 'SelectableServiceType',
     path: SelectableServiceTypeShowcase.path,
+  ),
+  ComponentModel(
+    description: 'VehicleInfoCard',
+    path: VehicleInfoCardShowcase.path,
   ),
 };

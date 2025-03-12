@@ -26,6 +26,12 @@ const IconData _iconDataDelete = IconData(
   fontPackage: _fontPackage,
 );
 
+const IconData _iconDataEditSquare = IconData(
+  0xe802,
+  fontFamily: _iconsFontFamily,
+  fontPackage: _fontPackage,
+);
+
 //Icons
 const kAddExpenseIconWhite = Icon(
   Icons.add,
@@ -87,6 +93,12 @@ const kMonitoringIcon = Icon(
   Icons.monitor,
   color: kMyrtleGreen,
   size: CMDimens.d45,
+);
+
+const kEditSquareIcon = Icon(
+  _iconDataEditSquare,
+  color: kMyrtleGreen,
+  size: CMDimens.d20,
 );
 
 const kSecurityIcon = Icon(
