@@ -34,6 +34,7 @@ import 'package:car_manager_ui/showcases/selectable_vehicle_type_showcase.dart';
 import 'package:car_manager_ui/showcases/summary_card_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 import 'package:car_manager_ui/showcases/toggle_button_showcase.dart';
+import 'package:car_manager_ui/showcases/vehicle_info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/vertical_info_card_showcase.dart';
 import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
@@ -286,6 +287,16 @@ class GoRouterHelper {
         pageBuilder: (_, state) {
           return _getPage(
             child: const SelectableServiceTypeShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: VehicleInfoCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const VehicleInfoCardShowcase(),
             state: state,
           );
         },
