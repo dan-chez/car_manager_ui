@@ -41,9 +41,9 @@ void main() {
     await tester.pumpWidget(
       baseComponentApp(
         const VehicleInfoCard(
-          type: VehicleInfoCardType.nonSelectable,
+          type: VehicleInfoCardType.fixed,
           name: 'Tesla Model S',
-          plate: 'Placa:|EV2024',
+          plate: 'Plate:|EV2024',
           kms: '15.000|KM',
           vehicleType: 'Electric Vehicle',
         ),
@@ -62,9 +62,9 @@ void main() {
     await tester.pumpWidget(
       baseComponentApp(
         VehicleInfoCard(
-          type: VehicleInfoCardType.selectable,
+          type: VehicleInfoCardType.toggleable,
           name: 'Lamborghini Aventador',
-          plate: 'Placa:|XYZ789',
+          plate: 'Plate:|XYZ789',
           kms: '50.000|KM',
           vehicleType: 'Luxury Sports Car',
         ),
@@ -81,9 +81,9 @@ void main() {
     await tester.pumpWidget(
       baseComponentApp(
         VehicleInfoCard(
-          type: VehicleInfoCardType.nonSelectable,
+          type: VehicleInfoCardType.fixed,
           name: 'Mercedes Sprinter',
-          plate: 'Placa:|FLEET001',
+          plate: 'Plate:|FLEET001',
           kms: '30.000|KM',
           vehicleType: 'Commercial Van',
           onEditPressed: () {
@@ -106,9 +106,9 @@ void main() {
     await tester.pumpWidget(
       baseComponentApp(
         VehicleInfoCard(
-          type: VehicleInfoCardType.nonSelectable,
+          type: VehicleInfoCardType.fixed,
           name: 'Mercedes Sprinter',
-          plate: 'Placa:|FLEET001',
+          plate: 'Plate:|FLEET001',
           kms: '30.000|KM',
           vehicleType: 'Commercial Van',
           onDeletePressed: () {
@@ -129,9 +129,9 @@ void main() {
     await tester.pumpWidget(
       baseComponentApp(
         VehicleInfoCard(
-          type: VehicleInfoCardType.selectable,
+          type: VehicleInfoCardType.toggleable,
           name: 'Ford Mustang',
-          plate: 'Placa:|MUSCLE99',
+          plate: 'Plate:|MUSCLE99',
           kms: '80.000|KM',
           vehicleType: 'Classic Muscle Car',
         ),
@@ -152,9 +152,9 @@ void main() {
     await tester.pumpWidget(
       baseComponentApp(
         const VehicleInfoCard(
-          type: VehicleInfoCardType.nonSelectable,
+          type: VehicleInfoCardType.fixed,
           name: 'Bugatti Chiron',
-          plate: 'Placa:|BUG123',
+          plate: 'Plate:|BUG123',
           kms: '10.000|KM',
           vehicleType: 'Hypercar',
         ),

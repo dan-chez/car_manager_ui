@@ -39,9 +39,9 @@ class VehicleInfoCardShowcase extends StatelessWidget {
       children: [
         createShowcaseTitle('Basic Configuration - Displays essential vehicle details in a non-interactive format.'),
         VehicleInfoCard(
-          type: VehicleInfoCardType.nonSelectable,
+          type: VehicleInfoCardType.fixed,
           name: 'Batmobile',
-          plate: 'Placa:|ABC123',
+          plate: 'Plate:|ABC123',
           kms: '40.000|KM',
           vehicleType: 'Transport Service',
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
@@ -49,9 +49,9 @@ class VehicleInfoCardShowcase extends StatelessWidget {
         ),
         createShowcaseTitle('Selectable Card - Allows to toggle additional details dynamically.'),
         VehicleInfoCard(
-          type: VehicleInfoCardType.selectable,
+          type: VehicleInfoCardType.toggleable,
           name: 'Lamborghini Aventador',
-          plate: 'Placa:|XYZ789',
+          plate: 'Plate:|XYZ789',
           kms: '50.000|KM',
           vehicleType: 'Luxury Sports Car',
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
@@ -59,9 +59,9 @@ class VehicleInfoCardShowcase extends StatelessWidget {
         ),
         createShowcaseTitle('Non-Selectable Card - Always expanded with all details visible.'),
         VehicleInfoCard(
-          type: VehicleInfoCardType.nonSelectable,
+          type: VehicleInfoCardType.fixed,
           name: 'Tesla Model S',
-          plate: 'Placa:|EV2024',
+          plate: 'Plate:|EV2024',
           kms: '15.000|KM',
           vehicleType: 'Electric Vehicle',
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
@@ -69,9 +69,9 @@ class VehicleInfoCardShowcase extends StatelessWidget {
         ),
         createShowcaseTitle('Selectable Card - Initially disabled, allowing users to enable details on demand.'),
         VehicleInfoCard(
-          type: VehicleInfoCardType.selectable,
+          type: VehicleInfoCardType.toggleable,
           name: 'Ford Mustang',
-          plate: 'Placa:|MUSCLE99',
+          plate: 'Plate:|MUSCLE99',
           kms: '80.000|KM',
           vehicleType: 'Classic Muscle Car',
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),

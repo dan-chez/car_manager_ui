@@ -12,8 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:carmanager_ui/carmanager_ui.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:flutter/material.dart';
+import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 
 /// A customizable toggle switch with smooth animations.
 /// Changes state when tapped and calls the `onChanged` callback.
@@ -34,11 +35,11 @@ class CMSwitch extends StatefulWidget {
 class _CMSwitchState extends State<CMSwitch> {
   late bool isOn;
 
-  static const _switchSize = Size(28, 16);
-  static const _circleSize = 10.0;
-  static const _borderRadius = BorderRadius.all(Radius.circular(14));
+  static const _switchSize = Size(CMDimens.d28, CMDimens.d16);
+  static const _circleSize = CMDimens.d10;
+  static const _borderRadius = BorderRadius.all(Radius.circular(CMDimens.d14));
   static const _animationDuration = Duration(milliseconds: 250);
-  static const _padding = EdgeInsets.symmetric(horizontal: 2, vertical: 2);
+  static const _padding = EdgeInsets.all(CMDimens.d2);
 
   @override
   void initState() {
@@ -67,7 +68,7 @@ class _CMSwitchState extends State<CMSwitch> {
         padding: _padding,
         decoration: BoxDecoration(
           borderRadius: _borderRadius,
-          border: Border.all(color: isOn ? activeColor : inactiveColor, width: 2),
+          border: Border.all(color: isOn ? activeColor : inactiveColor, width: CMDimens.d2),
         ),
         alignment: isOn ? Alignment.centerRight : Alignment.centerLeft,
         child: AnimatedContainer(

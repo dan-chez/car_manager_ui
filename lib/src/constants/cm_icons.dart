@@ -15,7 +15,6 @@
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:flutter/material.dart';
-import 'package:material_symbols_icons/material_symbols_icons.dart';
 
 //Custom Icons
 const String _iconsFontFamily = "CMIcons";
@@ -23,6 +22,12 @@ const String _fontPackage = 'carmanager_ui';
 
 const IconData _iconDataDelete = IconData(
   0xe801,
+  fontFamily: _iconsFontFamily,
+  fontPackage: _fontPackage,
+);
+
+const IconData _iconDataEditSquare = IconData(
+  0xe802,
   fontFamily: _iconsFontFamily,
   fontPackage: _fontPackage,
 );
@@ -89,7 +94,12 @@ const kMonitoringIcon = Icon(
   color: kMyrtleGreen,
   size: CMDimens.d45,
 );
-const kEditSquareIcon = Icon(Symbols.edit_square, color: kMyrtleGreen, size: 23);
+
+const kEditSquareIcon = Icon(
+  _iconDataEditSquare,
+  color: kMyrtleGreen,
+  size: CMDimens.d20,
+);
 
 const kSecurityIcon = Icon(
   Icons.verified_user_outlined,

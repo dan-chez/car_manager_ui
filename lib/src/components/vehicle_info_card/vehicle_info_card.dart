@@ -12,23 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:carmanager_ui/carmanager_ui.dart';
+import 'package:carmanager_ui/src/components/cm_rich_text.dart';
 import 'package:carmanager_ui/src/components/cm_switch.dart';
+import 'package:carmanager_ui/src/components/vehicle_info_card/vehicle_info_card_type.dart';
+import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
+import 'package:carmanager_ui/src/constants/cm_icons.dart';
 import 'package:carmanager_ui/src/constants/dividers.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
 /// The [VehicleInfoCard] widget is used to display detailed information about a vehicle.
 ///
 /// This widget supports two modes:
-/// - [VehicleInfoCardType.selectable]: Displays a toggle switch [CMSwitch]
+/// - [VehicleInfoCardType.toggleable]: Displays a toggle switch [CMSwitch]
 ///   that allows enabling or disabling the visibility of additional details.
-/// - [VehicleInfoCardType.nonSelectable]: Hides the switch and always displays
+/// - [VehicleInfoCardType.fixed]: Hides the switch and always displays
 ///   the full vehicle details, making the card always active.
 ///
 /// Example usage:
 /// ```dart
 /// VehicleInfoCard(
-///   type: VehicleInfoCardType.selectable,
+///   type: VehicleInfoCardType.toggleable,
 ///   vehicleInfo: myVehicleInfo,
 ///   onDeletePressed: () {
 ///     print('Delete action triggered');
@@ -39,10 +44,10 @@ import 'package:flutter/material.dart';
 /// )
 /// ```
 ///
-/// When `VehicleInfoCardType.nonSelectable` is used:
+/// When `VehicleInfoCardType.fixed` is used:
 /// ```dart
 /// VehicleInfoCard(
-///   type: VehicleInfoCardType.nonSelectable,
+///   type: VehicleInfoCardType.fixed,
 ///   vehicleInfo: myVehicleInfo,
 /// )
 /// ```
@@ -61,7 +66,7 @@ class VehicleInfoCard extends StatefulWidget {
     required this.plate,
     required this.kms,
     required this.vehicleType,
-    this.type = VehicleInfoCardType.selectable,
+    this.type = VehicleInfoCardType.toggleable,
     this.onDeletePressed,
     this.onEditPressed,
   });
@@ -76,7 +81,7 @@ class _VehicleInfoCardState extends State<VehicleInfoCard> {
   @override
   void initState() {
     super.initState();
-    _isEnabled = ValueNotifier(widget.type == VehicleInfoCardType.nonSelectable);
+    _isEnabled = ValueNotifier(widget.type == VehicleInfoCardType.fixed);
   }
 
   @override
@@ -86,7 +91,7 @@ class _VehicleInfoCardState extends State<VehicleInfoCard> {
   }
 
   void _toggleSwitch(bool value) {
-    if (widget.type == VehicleInfoCardType.selectable) {
+    if (widget.type == VehicleInfoCardType.toggleable) {
       _isEnabled.value = value;
     }
   }
@@ -97,27 +102,27 @@ class _VehicleInfoCardState extends State<VehicleInfoCard> {
       animation: _isEnabled,
       builder: (context, _) {
         return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 11),
+          padding: EdgeInsets.symmetric(
+            horizontal: CMDimens.d16,
+            vertical: CMDimens.d11,
+          ),
           decoration: BoxDecoration(
             color: kWhite,
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(CMDimens.d5),
             boxShadow: [
               BoxShadow(
                 color: kBoxShadowColor,
-                offset: const Offset(0, 2),
-                blurRadius: 7.2,
+                offset: const Offset(CMDimens.d0, CMDimens.d2),
+                blurRadius: CMDimens.d7,
               ),
             ],
           ),
           child: Column(
-            mainAxisSize: MainAxisSize.min,
             children: [
               _buildHeader(),
               AnimatedCrossFade(
                 duration: const Duration(milliseconds: 300),
-                crossFadeState: (_isEnabled.value || widget.type == VehicleInfoCardType.nonSelectable)
-                    ? CrossFadeState.showSecond
-                    : CrossFadeState.showFirst,
+                crossFadeState: getCrossFadeState(),
                 firstChild: const SizedBox.shrink(),
                 secondChild: _buildDetails(),
               ),
@@ -128,30 +133,38 @@ class _VehicleInfoCardState extends State<VehicleInfoCard> {
     );
   }
 
+  CrossFadeState getCrossFadeState() {
+    return (_isEnabled.value || widget.type == VehicleInfoCardType.fixed)
+        ? CrossFadeState.showSecond
+        : CrossFadeState.showFirst;
+  }
+
   Widget _buildHeader() {
     return Row(
       children: [
-        if (widget.type == VehicleInfoCardType.selectable) ...[
+        if (widget.type == VehicleInfoCardType.toggleable) ...[
           CMSwitch(
             initialValue: _isEnabled.value,
             onChanged: _toggleSwitch,
           ),
-          const SizedBox(width: 12),
+          SizedBox(width: CMDimens.d12),
         ],
         Expanded(
           child: Text(
             widget.name.toUpperCase(),
             style: kContentTextStyle.copyWith(fontWeight: FontWeight.bold),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ),
-        if (_isEnabled.value || widget.type == VehicleInfoCardType.nonSelectable) ...[
+        if (_isEnabled.value || widget.type == VehicleInfoCardType.fixed) ...[
           InkWell(
             onTap: widget.onEditPressed,
             highlightColor: Colors.transparent,
             splashColor: Colors.transparent,
             child: kEditSquareIcon,
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: CMDimens.d16),
           InkWell(
             onTap: widget.onDeletePressed,
             highlightColor: Colors.transparent,
@@ -166,9 +179,9 @@ class _VehicleInfoCardState extends State<VehicleInfoCard> {
   Widget _buildDetails() {
     return Column(
       children: [
-        const SizedBox(height: 10),
+        const SizedBox(height: CMDimens.d10),
         kSecondaryDivider,
-        const SizedBox(height: 10),
+        const SizedBox(height: CMDimens.d10),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -192,5 +205,3 @@ class _VehicleInfoCardState extends State<VehicleInfoCard> {
     );
   }
 }
-
-enum VehicleInfoCardType { selectable, nonSelectable }
