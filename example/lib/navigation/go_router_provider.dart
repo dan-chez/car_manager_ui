@@ -324,6 +324,13 @@ class GoRouterHelper {
             context, state,
             dialogData: state.extra as LoadingDialogData),
       ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: CarPickerDialogRoute.path,
+        pageBuilder: (context, state) => CarPickerDialogRoute.createRoute(
+            context, state,
+            dialogData: state.extra as CarPickerDialogData),
+      ),
     ];
     router = GoRouter(
       debugLogDiagnostics: true,

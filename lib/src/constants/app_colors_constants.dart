@@ -30,6 +30,7 @@ const Color kLightShadowColor = Color.fromRGBO(0, 0, 0, 0.35);
 const Color kGreen = Color(0XFF159700);
 const Color kBoxShadowColor = Color(0x1A000000);
 const Color kExpenseSummaryCardBg = Color.fromRGBO(231, 235, 255, 0.53);
+const Color kRadioBg = Color.fromRGBO(234, 234, 234, 1);
 
 // Dialogs
 const Color kBarrierColor = Color.fromRGBO(0, 0, 0, 0.5);

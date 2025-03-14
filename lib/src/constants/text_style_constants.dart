@@ -66,4 +66,21 @@ const kErrorTextStyle = TextStyle(
   fontWeight: FontWeight.w300,
 );
 
+const kCarPickerTitleTextStyle = TextStyle(
+  fontSize: CMDimens.d17,
+  color: kMyrtleGreen,
+  fontWeight: FontWeight.w700,
+);
+
+const kCarPickerItemTextStyle = TextStyle(
+  fontSize: CMDimens.d15,
+  color: kMyrtleGreen,
+  fontWeight: FontWeight.w700,
+);
+
+const kCarPickerPlateTextStyle = TextStyle(
+  fontSize: CMDimens.d13,
+  color: kSilver,
+);
+
 // End Text Style
