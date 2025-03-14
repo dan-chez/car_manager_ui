@@ -20,14 +20,11 @@ import 'package:mockingjay/mockingjay.dart';
 
 import '../../base/base_component_app.dart';
 
-// Mock NavigatorObserver to verify if Navigator.pop() is called
-class MockNavigatorObserver extends Mock implements NavigatorObserver {}
-
 void main() {
   late List<CarPickerItemData> testItems;
   late String selectedItem;
   late Function(String) mockOnItemSelected;
-  late MockNavigatorObserver mockNavigatorObserver;
+  late MockNavigator mockNavigator;
 
   setUp(() {
     testItems = [
@@ -36,17 +33,19 @@ void main() {
     ];
     selectedItem = '1';
     mockOnItemSelected = (String id) {};
-    mockNavigatorObserver = MockNavigatorObserver();
+    mockNavigator = MockNavigator();
+    when(() => mockNavigator.canPop()).thenReturn(true);
   });
 
   Widget buildTestWidget() {
-    return baseComponentApp(
-      CarPickerItems(
+    return baseComponentApp(MockNavigatorProvider(
+      navigator: mockNavigator,
+      child: CarPickerItems(
         items: testItems,
         selectedItem: selectedItem,
         onItemSelected: mockOnItemSelected,
       ),
-    );
+    ));
   }
 
   testWidgets('Displays all car items', (WidgetTester tester) async {
@@ -85,6 +84,6 @@ void main() {
     await tester.tap(find.text('Car 1'));
     await tester.pump();
 
-    verify(() => mockNavigatorObserver.didPop(any(), null)).called(1);
+    verify(() => mockNavigator.pop()).called(1);
   });
 }
