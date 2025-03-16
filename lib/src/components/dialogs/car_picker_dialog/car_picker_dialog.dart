@@ -86,7 +86,7 @@ class CarPickerDialog extends DialogBase<CarPickerDialogData> {
                 txtLabel: data.buttonText,
                 onPressed: () {
                   Navigator.pop(context);
-
+                  data.onButtonPressed.call();
                 },
               ),
             )
