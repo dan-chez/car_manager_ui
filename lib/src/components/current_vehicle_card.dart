@@ -61,9 +61,8 @@ class CurrentVehicleCard extends StatelessWidget {
           ],
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Flexible(
+            Expanded(
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -81,12 +80,13 @@ class CurrentVehicleCard extends StatelessWidget {
               ),
             ),
             const SizedBox(width: CMDimens.d7),
-            Flexible(
+            Expanded(
               child: CMRichText(
                 text: vehiclePlate,
                 boldPositions: plateBoldPositions,
                 maxLines: 1,
-                textStyle: kContentTextStyle.copyWith(color: kGreyDisable),
+                textStyle: kCaptionTextStyle.copyWith(color: kGreyDisable),
+                textAlign: TextAlign.start,
               )(),
             ),
             const SizedBox(width: CMDimens.d7),
