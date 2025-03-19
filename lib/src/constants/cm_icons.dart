@@ -59,6 +59,12 @@ const kCheckIcon = Icon(
   size: CMDimens.d24,
 );
 
+const kCheckIconRed = Icon(
+  Icons.check,
+  color: kAmaranthPrimary,
+  size: CMDimens.d24,
+);
+
 const kArrowForwardIcon = Icon(
   Icons.arrow_forward_ios_outlined,
   color: kMyrtleGreen,
