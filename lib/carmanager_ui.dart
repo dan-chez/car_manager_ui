@@ -27,6 +27,7 @@ export 'package:carmanager_ui/src/components/cm_page_title.dart';
 export 'package:carmanager_ui/src/components/cm_rich_text.dart';
 export 'package:carmanager_ui/src/components/cm_summary_card.dart';
 export 'package:carmanager_ui/src/components/cm_toggle_button.dart';
+export 'package:carmanager_ui/src/components/current_vehicle_card.dart';
 export 'package:carmanager_ui/src/components/dialogs/confirm/confirm_dialog_data.dart';
 export 'package:carmanager_ui/src/components/dialogs/confirm/confirm_dialog_route.dart';
 export 'package:carmanager_ui/src/components/dialogs/error/error_dialog_data.dart';
