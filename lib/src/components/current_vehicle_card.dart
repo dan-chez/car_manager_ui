@@ -12,7 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:carmanager_ui/carmanager_ui.dart';
+import 'package:carmanager_ui/src/components/cm_rich_text.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
+import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_icons.dart';
+import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
 /// The [CurrentVehicleCard] widget displays information about a vehicle,
@@ -48,7 +52,12 @@ class CurrentVehicleCard extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        padding: const EdgeInsets.all(CMDimens.d10),
+        padding: const EdgeInsets.fromLTRB(
+          CMDimens.d10,
+          CMDimens.d10,
+          CMDimens.d16,
+          CMDimens.d10,
+        ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(CMDimens.d2),
           color: kWhite,
@@ -64,10 +73,9 @@ class CurrentVehicleCard extends StatelessWidget {
           children: [
             Expanded(
               child: Row(
-                mainAxisSize: MainAxisSize.min,
                 children: [
                   kCheckIconRed,
-                  const SizedBox(width: CMDimens.d10),
+                  const SizedBox(width: CMDimens.d8),
                   Flexible(
                     child: Text(
                       vehicleName.toUpperCase(),
