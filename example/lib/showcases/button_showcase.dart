@@ -65,7 +65,29 @@ class ButtonShowcase extends StatelessWidget {
             printValue('Button pressed');
           },
         ),
+        createShowcaseTitle('SecondaryButton', higherSize: true),
+        createShowcaseTitle('Can perform an action, receives a title.'),
+        SecondaryButton(
+          label: 'Click me',
+          onPressed: () {
+            showCustomSnackBar(context, onSelectedVehicleSnackBar());
+          },
+        ),
+        createShowcaseTitle('Can\'t perform an action, receives a title.'),
+        SecondaryButton(
+          label: 'Click me',
+          onPressed: () {
+            showCustomSnackBar(context, onSelectedVehicleSnackBar());
+          },
+          isEnabled: false,
+        ),
       ],
     );
   }
+
+  SnackBar onSelectedVehicleSnackBar({String message = 'Button pressed'}) =>
+      SnackBar(
+        content: Text(message),
+        duration: const Duration(seconds: 2),
+      );
 }
