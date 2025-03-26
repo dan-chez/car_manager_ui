@@ -23,6 +23,7 @@ import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/dropdown_showcase.dart';
 import 'package:car_manager_ui/showcases/empty_list_showcase.dart';
 import 'package:car_manager_ui/showcases/expense_summary_card_showcase.dart';
+import 'package:car_manager_ui/showcases/expenses_line_chart_showcase.dart';
 import 'package:car_manager_ui/showcases/horizontal_info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
 import 'package:car_manager_ui/showcases/info_card_showcase.dart';
@@ -131,6 +132,10 @@ final components = {
   ComponentModel(
     description: 'CurrentVehicleCard',
     path: CurrentVehicleCardShowcase.path,
+  ),
+  ComponentModel(
+    description: 'ExpensesLineChart',
+    path: ExpensesLineChartShowcase.path,
   ),
   ComponentModel(
     description: 'Animations',
