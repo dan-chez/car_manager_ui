@@ -19,7 +19,7 @@ import 'package:flutter/material.dart';
 
 /// The [ExpensesLineChartShowcase] class provides a visual representation of [ExpensesLineChart].
 class ExpensesLineChartShowcase extends StatelessWidget {
-  /// This path is used to navigate to the ExpenseSummaryCard showcase using GoRouter.
+  /// This path is used to navigate to the ExpensesLineChart showcase using GoRouter.
   static String path = '/expensesLineChart';
 
   const ExpensesLineChartShowcase({super.key});
