@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'package:carmanager_ui/src/components/animations/cm_animation.dart';
 import 'package:carmanager_ui/src/components/dialogs/base/dialog_base.dart';
 import 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog_data.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 /// To call [LoadingDialog] follow next example
 /// Example usage:
@@ -39,7 +39,7 @@ class LoadingDialog extends DialogBase<LoadingDialogData> {
           child: SizedBox(
             height: data.height,
             width: data.width,
-            child: Lottie.asset(data.lottieAssetPath),
+            child: CMAnimation(data.lottieAssetPath),
           ),
         ),
       );
