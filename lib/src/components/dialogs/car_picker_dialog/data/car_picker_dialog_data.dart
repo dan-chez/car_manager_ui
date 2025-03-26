@@ -12,19 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-class SelectableVehicleTypeItem {
-  /// Unique identifier for the vehicle option.
-  final String id;
+import 'package:carmanager_ui/src/components/dialogs/car_picker_dialog/data/car_picker_item_data.dart';
 
-  /// Path or asset name of the vehicle icon.
-  final String icon;
+class CarPickerDialogData {
+  final String title;
+  final String buttonText;
+  final List<CarPickerItemData> items;
+  final String? selectedId;
+  final Function(String?) onItemSelected;
+  final Function onButtonPressed;
 
-  /// Descriptive label for the vehicle option.
-  final String description;
-
-  const SelectableVehicleTypeItem({
-    required this.id,
-    required this.icon,
-    required this.description,
+  const CarPickerDialogData({
+    required this.title,
+    required this.buttonText,
+    required this.items,
+    this.selectedId,
+    required this.onItemSelected,
+    required this.onButtonPressed,
   });
 }

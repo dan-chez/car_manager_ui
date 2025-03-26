@@ -130,9 +130,114 @@ class DialogsShowcase extends StatelessWidget {
             );
           },
         ),
+        createShowcaseTitle('CarPickerDialog', higherSize: true),
+        createShowcaseTitle('CarPickerDialog with 1 item'),
+        PrimaryButton(
+          txtLabel: 'CarPickerDialog',
+          onPressed: () {
+            context.push(
+              CarPickerDialogRoute.path,
+              extra: CarPickerDialogData(
+                title: 'Select the vehicle you want to view.',
+                buttonText: 'Ver datos',
+                items: [
+                  const CarPickerItemData(
+                    id: '0',
+                    name: 'Batimovil No.1',
+                    plate: 'Plate: |34',
+                  ),
+                ],
+                onItemSelected: (selectedItem) {
+                  showCustomSnackBar(
+                    context,
+                    onSelectedIdSnackBar(
+                      selectedItem,
+                    ),
+                  );
+                },
+                onButtonPressed: () {},
+              ),
+            );
+          },
+        ),
+        createShowcaseTitle('CarPickerDialog with 2 item'),
+        PrimaryButton(
+          txtLabel: 'CarPickerDialog',
+          onPressed: () {
+            context.push(
+              CarPickerDialogRoute.path,
+              extra: CarPickerDialogData(
+                title: 'Select the vehicle you want to view.',
+                buttonText: 'Ver datos',
+                items: [
+                  const CarPickerItemData(
+                    id: '0',
+                    name: 'Batimovil No.1',
+                    plate: 'Plate:|34',
+                  ),
+                  const CarPickerItemData(
+                    id: '1',
+                    name: 'Hervy',
+                    plate: 'Plate:|13',
+                  )
+                ],
+                onItemSelected: (selectedItem) {
+                  showCustomSnackBar(
+                    context,
+                    onSelectedIdSnackBar(
+                      selectedItem,
+                    ),
+                  );
+                },
+                onButtonPressed: () {},
+              ),
+            );
+          },
+        ),
+        createShowcaseTitle(
+            'CarPickerDialog with 2 item and an item selected by default'),
+        PrimaryButton(
+          txtLabel: 'CarPickerDialog',
+          onPressed: () {
+            context.push(
+              CarPickerDialogRoute.path,
+              extra: CarPickerDialogData(
+                title: 'Select the vehicle you want to view.',
+                buttonText: 'Ver datos',
+                items: [
+                  const CarPickerItemData(
+                    id: '0',
+                    name: 'Batimovil No.1',
+                    plate: 'Plate:|34',
+                  ),
+                  const CarPickerItemData(
+                    id: '1',
+                    name: 'Hervy',
+                    plate: 'Plate:|13',
+                  )
+                ],
+                selectedId: '0',
+                onItemSelected: (selectedItem) {
+                  showCustomSnackBar(
+                    context,
+                    onSelectedIdSnackBar(
+                      selectedItem,
+                    ),
+                  );
+                },
+                onButtonPressed: () {},
+              ),
+            );
+          },
+        ),
       ],
     );
   }
+
+  SnackBar onSelectedIdSnackBar(String? selectedId) => SnackBar(
+        content: Text('Selected vehicle id: $selectedId'),
+        duration: const Duration(seconds: 2),
+      );
 
   ConfirmDialogData _getConfirmDialogContent({
     required String message,
