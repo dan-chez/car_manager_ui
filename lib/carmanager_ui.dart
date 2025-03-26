@@ -36,6 +36,7 @@ export 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog_data
 export 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog_route.dart';
 export 'package:carmanager_ui/src/components/dropdown/cm_dropdown.dart';
 export 'package:carmanager_ui/src/components/expense_summary_card.dart';
+export 'package:carmanager_ui/src/components/expenses_line_chart/expenses_line_chart.dart';
 export 'package:carmanager_ui/src/components/horizontal_info_card.dart';
 export 'package:carmanager_ui/src/components/loader/loader.dart';
 export 'package:carmanager_ui/src/components/report_tile/report_tile.dart';

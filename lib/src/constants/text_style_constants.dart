@@ -66,4 +66,21 @@ const kErrorTextStyle = TextStyle(
   fontWeight: FontWeight.w300,
 );
 
+const kExpensesLineTitleTextStyle = TextStyle(
+  fontSize: CMDimens.d15,
+  color: kMyrtleGreen,
+  fontWeight: FontWeight.w600,
+);
+
+const kExpensesLineBottomTitleTextStyle = TextStyle(
+  fontSize: CMDimens.d15,
+  color: kMyrtleGreen,
+  fontWeight: FontWeight.w700,
+);
+
+const kExpensesLineToolTipTextStyle = TextStyle(
+  fontSize: CMDimens.d11,
+  color: kMyrtleGreen,
+);
+
 // End Text Style
