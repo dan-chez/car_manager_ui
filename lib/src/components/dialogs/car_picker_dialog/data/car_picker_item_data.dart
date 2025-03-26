@@ -12,19 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-class SelectableVehicleTypeItem {
-  /// Unique identifier for the vehicle option.
+class CarPickerItemData {
   final String id;
+  final String name;
 
-  /// Path or asset name of the vehicle icon.
-  final String icon;
+  /// This value must have at least one divisor '|'.
+  final String plate;
 
-  /// Descriptive label for the vehicle option.
-  final String description;
-
-  const SelectableVehicleTypeItem({
+  const CarPickerItemData({
     required this.id,
-    required this.icon,
-    required this.description,
+    required this.name,
+    required this.plate,
   });
 }
