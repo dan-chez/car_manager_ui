@@ -27,6 +27,7 @@ export 'package:carmanager_ui/src/components/cm_page_title.dart';
 export 'package:carmanager_ui/src/components/cm_rich_text.dart';
 export 'package:carmanager_ui/src/components/cm_summary_card.dart';
 export 'package:carmanager_ui/src/components/cm_toggle_button.dart';
+export 'package:carmanager_ui/src/components/current_vehicle_card.dart';
 export 'package:carmanager_ui/src/components/dialogs/car_picker_dialog/car_picker_dialog_route.dart';
 export 'package:carmanager_ui/src/components/dialogs/car_picker_dialog/data/car_picker_dialog_data.dart';
 export 'package:carmanager_ui/src/components/dialogs/car_picker_dialog/data/car_picker_item_data.dart';
@@ -38,6 +39,7 @@ export 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog_data
 export 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog_route.dart';
 export 'package:carmanager_ui/src/components/dropdown/cm_dropdown.dart';
 export 'package:carmanager_ui/src/components/expense_summary_card.dart';
+export 'package:carmanager_ui/src/components/expenses_line_chart/expenses_line_chart.dart';
 export 'package:carmanager_ui/src/components/horizontal_info_card.dart';
 export 'package:carmanager_ui/src/components/loader/loader.dart';
 export 'package:carmanager_ui/src/components/report_tile/report_tile.dart';
