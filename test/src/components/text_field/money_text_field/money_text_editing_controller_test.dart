@@ -64,17 +64,42 @@ void main() {
       expect(controller.text, '\$ 123.456.789.012,00');
     });
 
+    test('should append rightSymbol correctly', () {
+      final controller = CMMoneyTextController(rightSymbol: ' USD');
+
+      controller.text = '100';
+
+      expect(controller.text, equals('\$ 100 USD'));
+    });
+
+    test('should maintain rightSymbol after text update', () {
+      final controller = CMMoneyTextController(rightSymbol: ' USD');
+
+      controller.text = '50';
+
+      expect(controller.text, equals('\$ 50 USD'));
+
+      controller.text = '75';
+
+      expect(controller.text, equals('\$ 75 USD'));
+    });
+
+    test('should not duplicate rightSymbol when updating text', () {
+      final controller = CMMoneyTextController(rightSymbol: ' USD');
+
+      controller.text = '200 USD';
+
+      expect(controller.text, equals('\$ 200 USD'));
+
+      controller.text = '300';
+
+      expect(controller.text, equals('\$ 300 USD'));
+    });
+
     test('rightSymbol must not have numbers', () {
       expect(
         () => CMMoneyTextController(rightSymbol: 'USD1'),
         throwsArgumentError,
-      );
-    });
-
-    test('Throws ArgumentError when rightSymbol contains numbers', () {
-      expect(
-            () => CMMoneyTextController(rightSymbol: 'USD1'),
-        throwsA(isA<ArgumentError>()),
       );
     });
 

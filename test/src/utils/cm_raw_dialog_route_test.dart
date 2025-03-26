@@ -41,5 +41,6 @@ void main() {
     expect(rawDialogRoute.barrierColor, kBarrierColor);
     expect(
         rawDialogRoute.transitionDuration, const Duration(milliseconds: 200));
+    expect(find.byType(SizedBox), findsNothing);
   });
 }
