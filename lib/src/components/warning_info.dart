@@ -36,13 +36,13 @@ import 'package:flutter/material.dart';
 /// ```
 class WarningInfo extends StatefulWidget {
   final String message;
-  final VoidCallback? onDismissed;
+  final VoidCallback? onClick;
   final List<int> boldPositions;
 
   const WarningInfo({
     super.key,
     required this.message,
-    this.onDismissed,
+    this.onClick,
     this.boldPositions = const [],
   });
 
@@ -50,104 +50,76 @@ class WarningInfo extends StatefulWidget {
   State<WarningInfo> createState() => _WarningInfoState();
 }
 
-class _WarningInfoState extends State<WarningInfo> with SingleTickerProviderStateMixin {
+class _WarningInfoState extends State<WarningInfo> {
   bool _visible = true;
-  late final AnimationController _controller;
-  late final Animation<double> _fadeAnimation;
-  late final Animation<Offset> _slideAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 500),
-    );
-
-    final curve = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeInOutCubic,
-    );
-
-    _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(curve);
-    _slideAnimation = Tween<Offset>(
-      begin: const Offset(0.0, -0.05),
-      end: Offset.zero,
-    ).animate(curve);
-
-    _controller.forward();
-  }
 
   void _handleDismiss() {
-    _controller.reverse().then((_) {
-      if (mounted) {
-        setState(() => _visible = false);
-        widget.onDismissed?.call();
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+    setState(() => _visible = false);
+    widget.onClick?.call();
   }
 
   @override
   Widget build(BuildContext context) {
-    if (!_visible) return const SizedBox.shrink();
-
-    return FadeTransition(
-      opacity: _fadeAnimation,
-      child: SlideTransition(
-        position: _slideAnimation,
-        child: GestureDetector(
-          onTap: _handleDismiss,
-          child: Container(
-            decoration: BoxDecoration(
-              color: kAlertLight,
-              borderRadius: BorderRadius.circular(CMDimens.d6),
-            ),
-            child: IntrinsicHeight(
-              child: Row(
-                children: [
-                  Container(
-                    width: CMDimens.d8,
-                    margin: const EdgeInsets.only(right: CMDimens.d10),
-                    decoration: BoxDecoration(
-                      color: kAlert,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(CMDimens.d6),
-                        bottomLeft: Radius.circular(CMDimens.d6),
-                      ),
-                    ),
-                  ),
-                  Flexible(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: CMDimens.d10),
-                      child: Row(
-                        children: [
-                          kInfoIcon,
-                          SizedBox(width: CMDimens.d6),
-                          Expanded(
-                            child: CMRichText(
-                              text: widget.message,
-                              textStyle: kContentTextStyle,
-                              boldPositions: widget.boldPositions,
-                              maxLines: 2,
-                              textAlign: TextAlign.start,
-                            )(),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 500),
+      transitionBuilder: (child, animation) => FadeTransition(
+        opacity: animation,
+        child: SlideTransition(
+          position: Tween<Offset>(
+            begin: const Offset(0.0, -0.05),
+            end: Offset.zero,
+          ).animate(animation),
+          child: child,
         ),
       ),
+      child: _visible
+          ? GestureDetector(
+              onTap: _handleDismiss,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: kAlertLight,
+                  borderRadius: BorderRadius.circular(CMDimens.d6),
+                ),
+                child: IntrinsicHeight(
+                  child: Row(
+                    children: [
+                      Container(
+                        width: CMDimens.d8,
+                        margin: const EdgeInsets.only(right: CMDimens.d10),
+                        decoration: BoxDecoration(
+                          color: kAlert,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(CMDimens.d6),
+                            bottomLeft: Radius.circular(CMDimens.d6),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: CMDimens.d10),
+                          child: Row(
+                            children: [
+                              kInfoIcon,
+                              SizedBox(width: CMDimens.d6),
+                              Expanded(
+                                child: CMRichText(
+                                  text: widget.message,
+                                  textStyle: kContentTextStyle,
+                                  boldPositions: widget.boldPositions,
+                                  maxLines: 2,
+                                  textAlign: TextAlign.start,
+                                )(),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            )
+          : const SizedBox.shrink(),
     );
   }
 }

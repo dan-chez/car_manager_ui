@@ -38,18 +38,18 @@ class WarningInfoShowcase extends StatelessWidget {
         WarningInfo(
           message: 'This is a|critical notice|for the user.',
           boldPositions: const [1],
-          onDismissed: () => showCustomSnackBar(context, onDismissedSnackBar),
+          onClick: () => showCustomSnackBar(context, onDismissedSnackBar),
         ),
         createShowcaseTitle('Another example - Highlights multiple segments in the message.'),
         WarningInfo(
           message: 'Please|review|and|acknowledge|this warning.',
           boldPositions: const [1, 3],
-          onDismissed: () => showCustomSnackBar(context, onDismissedSnackBar),
+          onClick: () => showCustomSnackBar(context, onDismissedSnackBar),
         ),
         createShowcaseTitle('Simple message - No bold styling applied.'),
         WarningInfo(
           message: 'System maintenance is scheduled tonight.',
-          onDismissed: () => showCustomSnackBar(context, onDismissedSnackBar),
+          onClick: () => showCustomSnackBar(context, onDismissedSnackBar),
         ),
         createShowcaseTitle('Long message - Verifies layout behavior with multiline text.'),
         WarningInfo(
@@ -57,7 +57,7 @@ class WarningInfoShowcase extends StatelessWidget {
               'Due to scheduled updates|some features might be temporarily unavailable|including vehicle syncing, notifications, and remote access. '
               'Please ensure all critical actions are completed beforehand.',
           boldPositions: const [1],
-          onDismissed: () => showCustomSnackBar(context, onDismissedSnackBar),
+          onClick: () => showCustomSnackBar(context, onDismissedSnackBar),
         ),
       ],
     );

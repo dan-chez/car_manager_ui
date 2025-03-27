@@ -25,7 +25,7 @@ void main() {
     final widget = WarningInfo(
       message: 'This is|important|info',
       boldPositions: [1],
-      onDismissed: () {
+      onClick: () {
         wasDismissed = true;
       },
     );
