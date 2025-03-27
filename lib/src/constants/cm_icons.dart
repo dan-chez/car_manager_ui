@@ -123,3 +123,9 @@ const kDropdownIcon = Icon(
   Icons.keyboard_arrow_down_outlined,
   color: kMyrtleGreen,
 );
+
+const kInfoIcon = Icon(
+  Icons.info_outline,
+  color: kMyrtleGreen,
+  size: 22,
+);

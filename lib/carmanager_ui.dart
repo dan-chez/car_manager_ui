@@ -54,6 +54,7 @@ export 'package:carmanager_ui/src/components/text_field/money_text_field/cm_mone
 export 'package:carmanager_ui/src/components/vehicle_info_card/vehicle_info_card.dart';
 export 'package:carmanager_ui/src/components/vehicle_info_card/vehicle_info_card_type.dart';
 export 'package:carmanager_ui/src/components/vertical_info_card.dart';
+export 'package:carmanager_ui/src/components/warning_info.dart';
 export 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 export 'package:carmanager_ui/src/constants/button_constants.dart';
 export 'package:carmanager_ui/src/constants/cm_dimens.dart';
