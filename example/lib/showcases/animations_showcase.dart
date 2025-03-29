@@ -18,6 +18,9 @@ import 'package:car_manager_ui/showcases/showcase_app_base.dart';
 import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 
+/// The [AnimationsShowcase] class demonstrates different styles and functionalities of the
+/// [CMAnimation] widget, offering a visual representation of how it can be used within the
+/// application.
 class AnimationsShowcase extends StatelessWidget {
   /// This path is used to navigate to the animations showcase using GoRouter.
   static String path = '/animations';
@@ -26,7 +29,7 @@ class AnimationsShowcase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ShowcaseAppBase(title: 'CMBriefCard showcase', children: [
+    return ShowcaseAppBase(title: 'CMAnimation showcase', children: [
       createShowcaseTitle('Animation with default configurations'),
       const CMAnimation(kLoadingAnimation),
       createShowcaseTitle(
