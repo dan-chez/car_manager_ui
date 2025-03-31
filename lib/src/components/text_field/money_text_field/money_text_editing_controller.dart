@@ -15,13 +15,13 @@
 import 'package:flutter/material.dart';
 
 class CMMoneyTextController extends TextEditingController {
-  CMMoneyTextController(
-      {double initialValue = 0.0,
-      this.decimalSeparator = '',
-      this.thousandSeparator = '.',
-      this.rightSymbol = '',
-      this.leftSymbol = '\$ ',
-      this.precision = 0}) {
+  CMMoneyTextController({
+    this.decimalSeparator = '',
+    this.thousandSeparator = '.',
+    this.rightSymbol = '',
+    this.leftSymbol = '\$ ',
+    this.precision = 0,
+  }) {
     _validateConfig();
 
     addListener(() {

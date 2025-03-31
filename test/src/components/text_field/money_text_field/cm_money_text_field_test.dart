@@ -16,7 +16,7 @@ import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../base/base_component_app.dart';
+import '../../base/base_component_app.dart';
 
 void main() {
   testWidgets('CMMoneyTextField displays initial value',

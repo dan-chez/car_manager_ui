@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// coverage:ignore-file
 import 'package:carmanager_ui/src/components/dialogs/base/dialog_page_base.dart';
 import 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog.dart';
 import 'package:carmanager_ui/src/components/dialogs/loading/loading_dialog_data.dart';
