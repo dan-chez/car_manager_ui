@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-library carmanager_ui;
-
 export 'package:carmanager_ui/src/components/animations/cm_animation.dart';
 export 'package:carmanager_ui/src/components/buttons/close_icon_button.dart';
 export 'package:carmanager_ui/src/components/buttons/cm_date_button.dart';
@@ -61,4 +59,5 @@ export 'package:carmanager_ui/src/constants/cm_dimens.dart';
 export 'package:carmanager_ui/src/constants/cm_icons.dart';
 export 'package:carmanager_ui/src/constants/text_style_constants.dart';
 export 'package:carmanager_ui/src/utils/cm_scroll_behavior.dart';
+export 'package:carmanager_ui/src/utils/extensions/color_extensions.dart';
 export 'package:carmanager_ui/src/utils/extensions/string_extensions.dart';
