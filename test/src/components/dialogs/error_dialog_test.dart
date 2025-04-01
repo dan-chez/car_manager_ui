@@ -13,7 +13,6 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/carmanager_ui.dart';
-import 'package:carmanager_ui/src/components/buttons/close_icon_button.dart';
 import 'package:carmanager_ui/src/components/dialogs/error/error_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

@@ -15,6 +15,7 @@
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
+import 'package:carmanager_ui/src/utils/extensions/color_extensions.dart';
 import 'package:carmanager_ui/src/utils/extensions/number_extensions.dart';
 import 'package:carmanager_ui/src/utils/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,7 @@ class CMSummaryCard extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 offset: const Offset(CMDimens.d0, CMDimens.d1),
-                color: kCanyonBronze.withOpacity(0.17),
+                color: kCanyonBronze.withOpacityValue(0.17),
                 blurRadius: CMDimens.d3,
               ),
             ],

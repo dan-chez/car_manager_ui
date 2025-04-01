@@ -15,6 +15,7 @@
 // coverage:ignore-file
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/cm_dimens.dart';
+import 'package:carmanager_ui/src/utils/extensions/color_extensions.dart';
 import 'package:flutter/material.dart';
 
 final kCMButtonStyle = TextButton.styleFrom(
@@ -27,7 +28,7 @@ final kCMButtonStyle = TextButton.styleFrom(
 final kCMOutlinedButtonStyle = OutlinedButton.styleFrom(
   shape: const StadiumBorder(),
   side: const BorderSide(color: kAmaranthPrimary),
-  disabledBackgroundColor: kAmaranthPrimary.withOpacity(0.3),
+  disabledBackgroundColor: kAmaranthPrimary.withOpacityValue(0.3),
   backgroundColor: kWhite,
   foregroundColor: kAmaranthPrimary,
 );
