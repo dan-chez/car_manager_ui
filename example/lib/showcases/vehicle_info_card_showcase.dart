@@ -37,7 +37,8 @@ class VehicleInfoCardShowcase extends StatelessWidget {
     return ShowcaseAppBase(
       title: 'Vehicle info card showcase',
       children: [
-        createShowcaseTitle('Basic Configuration - Displays essential vehicle details in a non-interactive format.'),
+        createShowcaseTitle(
+            'Basic Configuration - Displays essential vehicle details in a non-interactive format.'),
         VehicleInfoCard(
           type: VehicleInfoCardType.fixed,
           name: 'Batmobile',
@@ -47,7 +48,8 @@ class VehicleInfoCardShowcase extends StatelessWidget {
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
           onEditPressed: () => showCustomSnackBar(context, onEditSnackBar),
         ),
-        createShowcaseTitle('Selectable Card - Allows to toggle additional details dynamically.'),
+        createShowcaseTitle(
+            'Selectable Card - Allows to toggle additional details dynamically.'),
         VehicleInfoCard(
           type: VehicleInfoCardType.toggleable,
           name: 'Lamborghini Aventador',
@@ -57,7 +59,8 @@ class VehicleInfoCardShowcase extends StatelessWidget {
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
           onEditPressed: () => showCustomSnackBar(context, onEditSnackBar),
         ),
-        createShowcaseTitle('Non-Selectable Card - Always expanded with all details visible.'),
+        createShowcaseTitle(
+            'Non-Selectable Card - Always expanded with all details visible.'),
         VehicleInfoCard(
           type: VehicleInfoCardType.fixed,
           name: 'Tesla Model S',
@@ -67,7 +70,8 @@ class VehicleInfoCardShowcase extends StatelessWidget {
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
           onEditPressed: () => showCustomSnackBar(context, onEditSnackBar),
         ),
-        createShowcaseTitle('Selectable Card - Initially disabled, allowing users to enable details on demand.'),
+        createShowcaseTitle(
+            'Selectable Card - Initially disabled, allowing users to enable details on demand.'),
         VehicleInfoCard(
           type: VehicleInfoCardType.toggleable,
           name: 'Ford Mustang',

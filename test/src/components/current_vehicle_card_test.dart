@@ -19,7 +19,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
-  testWidgets('CurrentVehicleCard onPressed callback', (WidgetTester tester) async {
+  testWidgets('CurrentVehicleCard onPressed callback',
+      (WidgetTester tester) async {
     bool wasPressed = false;
     final card = CurrentVehicleCard(
       vehicleName: 'Chevrolet Spark GT',
@@ -37,7 +38,8 @@ void main() {
     expect(wasPressed, isTrue);
   });
 
-  testWidgets('CurrentVehicleCard displays uppercase vehicle name', (WidgetTester tester) async {
+  testWidgets('CurrentVehicleCard displays uppercase vehicle name',
+      (WidgetTester tester) async {
     final card = CurrentVehicleCard(
       vehicleName: 'chevrolet spark gt',
       vehiclePlate: 'Plate:|ABC123',
@@ -50,7 +52,8 @@ void main() {
     expect(find.text('CHEVROLET SPARK GT'), findsOneWidget);
   });
 
-  testWidgets('CurrentVehicleCard displays vehicle plate correctly', (WidgetTester tester) async {
+  testWidgets('CurrentVehicleCard displays vehicle plate correctly',
+      (WidgetTester tester) async {
     final card = CurrentVehicleCard(
       vehicleName: 'Chevrolet Spark GT',
       vehiclePlate: 'Plate:|ABC123',
@@ -71,7 +74,8 @@ void main() {
     expect(richTextPlate, findsOneWidget);
   });
 
-  testWidgets('CurrentVehicleCard displays check and arrow icons', (WidgetTester tester) async {
+  testWidgets('CurrentVehicleCard displays check and arrow icons',
+      (WidgetTester tester) async {
     final card = CurrentVehicleCard(
       vehicleName: 'Chevrolet Spark GT',
       vehiclePlate: 'Plate:|ABC123',

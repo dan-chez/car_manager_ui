@@ -346,7 +346,6 @@ class GoRouterHelper {
         },
       ),
 
-
       // Dialog routes
       GoRoute(
         parentNavigatorKey: _appNavigatorKey,

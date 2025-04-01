@@ -15,7 +15,6 @@
 import 'dart:ui';
 
 extension ColorExtension on Color {
-
   /// Returns a new color with the given [opacity] value (0.0 to 1.0).
   Color withOpacityValue(double opacity) {
     if (opacity > 1.0) {

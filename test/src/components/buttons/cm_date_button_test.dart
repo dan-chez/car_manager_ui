@@ -42,7 +42,8 @@ void main() {
       onPressedCalled = false;
     });
 
-    testWidgets('Renders correctly with texts and the default icon', (WidgetTester tester) async {
+    testWidgets('Renders correctly with texts and the default icon',
+        (WidgetTester tester) async {
       await tester.pumpWidget(createWidgetUnderTest());
 
       expect(find.text(txtLabel), findsOneWidget);
@@ -52,7 +53,8 @@ void main() {
       expect(find.byIcon(kDropdownIcon.icon!), findsOneWidget);
     });
 
-    testWidgets('Displays the correct text in the TextField', (WidgetTester tester) async {
+    testWidgets('Displays the correct text in the TextField',
+        (WidgetTester tester) async {
       await tester.pumpWidget(createWidgetUnderTest());
 
       final textField = find.byType(TextField);
@@ -60,7 +62,8 @@ void main() {
       expect(textFieldWidget.controller?.text, txtLabel);
     });
 
-    testWidgets('Triggers onPressed when tapping on the TextField', (WidgetTester tester) async {
+    testWidgets('Triggers onPressed when tapping on the TextField',
+        (WidgetTester tester) async {
       await tester.pumpWidget(createWidgetUnderTest());
 
       final textField = find.byType(TextField);
@@ -70,7 +73,8 @@ void main() {
       expect(onPressedCalled, isTrue);
     });
 
-    testWidgets('Displays a custom icon when provided', (WidgetTester tester) async {
+    testWidgets('Displays a custom icon when provided',
+        (WidgetTester tester) async {
       const customIcon = Icon(Icons.calendar_today);
       await tester.pumpWidget(createWidgetUnderTest(icon: customIcon));
 

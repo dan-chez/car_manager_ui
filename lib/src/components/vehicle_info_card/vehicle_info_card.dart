@@ -194,7 +194,11 @@ class _VehicleInfoCardState extends State<VehicleInfoCard> {
     );
   }
 
-  Widget _buildDetailText(String text, {int flex = 1, List<int> boldPositions = const []}) {
+  Widget _buildDetailText(
+    String text, {
+    int flex = 1,
+    List<int> boldPositions = const [],
+  }) {
     return Flexible(
       flex: flex,
       child: CMRichText(

@@ -18,7 +18,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('ColorExtension - withOpacityValue', () {
-
     const Color testColor = Color(0xFFFF0000);
 
     test('Opacity 0.0 should result in fully transparent testColor', () {
@@ -28,28 +27,24 @@ void main() {
     });
 
     test('Opacity 1.0 should keep the testColor fully opaque', () {
-
       final result = testColor.withOpacityValue(1.0);
 
       expect(result.a, 1);
     });
 
     test('Opacity 0.5 should set a to 0.5019607843137255', () {
-
       final result = testColor.withOpacityValue(0.5);
 
       expect(result.a, 0.5019607843137255);
     });
 
     test('Opacity 0.75 should set a to 0.7490196078431373', () {
-
       final result = testColor.withOpacityValue(0.75);
 
       expect(result.a, 0.7490196078431373);
     });
 
     test('Opacity greater than 1.0 should throw an ArgumentError', () {
-
       expect(() => testColor.withOpacityValue(1.1), throwsArgumentError);
     });
   });

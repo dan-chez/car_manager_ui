@@ -68,7 +68,10 @@ class _CMSwitchState extends State<CMSwitch> {
         padding: _padding,
         decoration: BoxDecoration(
           borderRadius: _borderRadius,
-          border: Border.all(color: isOn ? activeColor : inactiveColor, width: CMDimens.d2),
+          border: Border.all(
+            color: isOn ? activeColor : inactiveColor,
+            width: CMDimens.d2,
+          ),
         ),
         alignment: isOn ? Alignment.centerRight : Alignment.centerLeft,
         child: AnimatedContainer(

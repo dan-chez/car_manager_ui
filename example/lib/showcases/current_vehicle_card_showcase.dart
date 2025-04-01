@@ -34,7 +34,9 @@ class CurrentVehicleCardShowcase extends StatelessWidget {
     return ShowcaseAppBase(
       title: 'Current vehicle card showcase',
       children: [
-        createShowcaseTitle('Basic configuration - Standard vehicle details display.'),
+        createShowcaseTitle(
+          'Basic configuration - Standard vehicle details display.',
+        ),
         CurrentVehicleCard(
           vehicleName: 'Chevrolet Spark GT',
           vehiclePlate: 'Plate:|ABC123',
@@ -43,7 +45,8 @@ class CurrentVehicleCardShowcase extends StatelessWidget {
         ),
         createShowcaseTitle('Long name example'),
         CurrentVehicleCard(
-          vehicleName: 'Chevrolet Spark Grand Turismo Edition with Extended Name for Overflow Testing',
+          vehicleName:
+              'Chevrolet Spark Grand Turismo Edition with Extended Name for Overflow Testing',
           vehiclePlate: 'Plate:|LONGPLATE987654321',
           plateBoldPositions: const [1],
           onPressed: () => showCustomSnackBar(context, onPressedSnackBar),
