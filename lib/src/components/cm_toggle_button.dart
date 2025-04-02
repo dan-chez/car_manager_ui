@@ -12,9 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:flutter/material.dart';
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
+import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 /// A custom toggle button widget with animated transitions and customizable background colors.
@@ -76,9 +77,9 @@ class _CMToggleButtonState extends State<CMToggleButton> {
 
     return ToggleSwitch(
         changeOnTap: false,
-        minWidth: 90.0,
+        minWidth: CMDimens.d90,
         customWidths: customWidths,
-        cornerRadius: 125.0,
+        cornerRadius: CMDimens.d125,
         activeBgColors: activeBGColors,
         animate: true,
         curve: Curves.fastLinearToSlowEaseIn,

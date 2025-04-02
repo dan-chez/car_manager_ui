@@ -13,15 +13,21 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/carmanager_ui.dart';
-import 'package:carmanager_ui/src/components/buttons/close_icon_button.dart';
 import 'package:carmanager_ui/src/components/dialogs/confirm/confirm_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockingjay/mockingjay.dart';
 
 import '../base/base_component_app.dart';
 
 void main() {
+  late MockNavigator mockNavigator;
+
+  setUp(() {
+    mockNavigator = MockNavigator();
+  });
+
   testWidgets('Close button visibility = true test',
       (WidgetTester tester) async {
     const dialogData = ConfirmDialogData(
@@ -93,4 +99,32 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(Dialog), findsOneWidget);
   });
+
+  testWidgets(
+    'ConfirmDialog should pop when popWhenOnPressed is true',
+    (WidgetTester tester) async {
+      when(() => mockNavigator.canPop()).thenReturn(true);
+      await tester.pumpWidget(
+        baseComponentApp(
+          MockNavigatorProvider(
+            navigator: mockNavigator,
+            child: Builder(
+              builder: (context) => ConfirmDialog(
+                data: ConfirmDialogData(
+                  message: 'Are you sure?',
+                  buttonText: 'Confirm',
+                  popWhenOnPressed: true,
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+
+      await tester.tap(find.byType(PrimaryButton));
+      await tester.pumpAndSettle();
+
+      verify(() => mockNavigator.pop()).called(1);
+    },
+  );
 }

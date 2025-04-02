@@ -13,26 +13,33 @@
 // limitations under the License.
 
 import 'package:car_manager_ui/main.dart';
+import 'package:car_manager_ui/showcases/animations_showcase.dart';
 import 'package:car_manager_ui/showcases/brief_card_showcase.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
 import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_back_showcase.dart';
 import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_no_back_showcase.dart';
 import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_showcase.dart';
+import 'package:car_manager_ui/showcases/current_vehicle_card_showcase.dart';
 import 'package:car_manager_ui/showcases/date_button_showcase.dart';
 import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/dropdown_showcase.dart';
 import 'package:car_manager_ui/showcases/empty_list_showcase.dart';
 import 'package:car_manager_ui/showcases/expense_summary_card_showcase.dart';
+import 'package:car_manager_ui/showcases/expenses_line_chart_showcase.dart';
 import 'package:car_manager_ui/showcases/horizontal_info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
 import 'package:car_manager_ui/showcases/info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
 import 'package:car_manager_ui/showcases/report_tile_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
+import 'package:car_manager_ui/showcases/selectable_service_type_showcase.dart';
+import 'package:car_manager_ui/showcases/selectable_vehicle_type_showcase.dart';
 import 'package:car_manager_ui/showcases/summary_card_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 import 'package:car_manager_ui/showcases/toggle_button_showcase.dart';
+import 'package:car_manager_ui/showcases/vehicle_info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/vertical_info_card_showcase.dart';
+import 'package:car_manager_ui/showcases/warning_info_showcase.dart';
 import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -268,6 +275,76 @@ class GoRouterHelper {
           );
         },
       ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: SelectableVehicleTypeShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const SelectableVehicleTypeShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: SelectableServiceTypeShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const SelectableServiceTypeShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: VehicleInfoCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const VehicleInfoCardShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: CurrentVehicleCardShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const CurrentVehicleCardShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: ExpensesLineChartShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const ExpensesLineChartShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: WarningInfoShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const WarningInfoShowcase(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: AnimationsShowcase.path,
+        pageBuilder: (_, state) {
+          return _getPage(
+            child: const AnimationsShowcase(),
+            state: state,
+          );
+        },
+      ),
 
       // Dialog routes
       GoRoute(
@@ -290,6 +367,13 @@ class GoRouterHelper {
         pageBuilder: (context, state) => LoadingDialogRoute.createRoute(
             context, state,
             dialogData: state.extra as LoadingDialogData),
+      ),
+      GoRoute(
+        parentNavigatorKey: _appNavigatorKey,
+        path: CarPickerDialogRoute.path,
+        pageBuilder: (context, state) => CarPickerDialogRoute.createRoute(
+            context, state,
+            dialogData: state.extra as CarPickerDialogData),
       ),
     ];
     router = GoRouter(

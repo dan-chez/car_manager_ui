@@ -12,15 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const double kTextTitleSize = 24;
-const double kTextMediumTitleSize = 20;
-const double kTextSubtitleSize = 17;
-const double kTextContentSize = 15;
-const double kTextCaptionSize = 13;
-const double kTextErrorSize = 11;
+class SelectableVehicleTypeItem {
+  /// Unique identifier for the vehicle option.
+  final String id;
 
-//Button
+  /// Path or asset name of the vehicle icon.
+  final String icon;
 
-const double kCMButtonHeight = 50;
+  /// Descriptive label for the vehicle option.
+  final String description;
 
-//Button end
+  const SelectableVehicleTypeItem({
+    required this.id,
+    required this.icon,
+    required this.description,
+  });
+}

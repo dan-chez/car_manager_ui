@@ -13,19 +13,19 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
-import 'package:carmanager_ui/src/constants/int_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:flutter/material.dart';
 
 // Button TextStyle
 
 const kCMButtonTextStyle = TextStyle(
-  fontSize: kTextContentSize,
+  fontSize: CMDimens.d15,
   color: kWhite,
   fontWeight: FontWeight.w600,
 );
 
 const kCMOutLinedButtonTextStyle = TextStyle(
-  fontSize: kTextContentSize,
+  fontSize: CMDimens.d15,
   color: kAmaranthPrimary,
 );
 
@@ -34,36 +34,70 @@ const kCMOutLinedButtonTextStyle = TextStyle(
 // TextStyle
 
 const kTitleTextStyle = TextStyle(
-  fontSize: kTextTitleSize,
+  fontSize: CMDimens.d24,
   color: kMyrtleGreen,
   fontWeight: FontWeight.w700,
 );
 
 const kMediumTitleTextStyle = TextStyle(
-  fontSize: kTextMediumTitleSize,
+  fontSize: CMDimens.d20,
   color: kMyrtleGreen,
 );
 
 const kSubtitleTextStyle = TextStyle(
-  fontSize: kTextSubtitleSize,
+  fontSize: CMDimens.d17,
   color: kMyrtleGreen,
 );
 
 const kContentTextStyle = TextStyle(
-  fontSize: kTextContentSize,
+  fontSize: CMDimens.d15,
   color: kMyrtleGreen,
   fontWeight: FontWeight.w300,
 );
 
 const kCaptionTextStyle = TextStyle(
-  fontSize: kTextCaptionSize,
+  fontSize: CMDimens.d13,
   color: kMyrtleGreen,
 );
 
 const kErrorTextStyle = TextStyle(
-  fontSize: kTextErrorSize,
+  fontSize: CMDimens.d11,
   color: kAmaranthPrimary,
   fontWeight: FontWeight.w300,
+);
+
+const kExpensesLineTitleTextStyle = TextStyle(
+  fontSize: CMDimens.d15,
+  color: kMyrtleGreen,
+  fontWeight: FontWeight.w600,
+);
+
+const kExpensesLineBottomTitleTextStyle = TextStyle(
+  fontSize: CMDimens.d15,
+  color: kMyrtleGreen,
+  fontWeight: FontWeight.w700,
+);
+
+const kExpensesLineToolTipTextStyle = TextStyle(
+  fontSize: CMDimens.d11,
+  color: kMyrtleGreen,
+);
+
+const kCarPickerTitleTextStyle = TextStyle(
+  fontSize: CMDimens.d17,
+  color: kMyrtleGreen,
+  fontWeight: FontWeight.w700,
+);
+
+const kCarPickerItemTextStyle = TextStyle(
+  fontSize: CMDimens.d15,
+  color: kMyrtleGreen,
+  fontWeight: FontWeight.w700,
+);
+
+const kCarPickerPlateTextStyle = TextStyle(
+  fontSize: CMDimens.d13,
+  color: kSilver,
 );
 
 // End Text Style

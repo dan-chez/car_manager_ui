@@ -25,7 +25,7 @@ RawDialogRoute createRawDialogRoute({
   return RawDialogRoute(
     settings: settings,
     barrierColor: kBarrierColor,
-    pageBuilder: (_, __, ___) => const SizedBox(),
+    pageBuilder: (_, __, ___) => const SizedBox(), // coverage:ignore-line
     transitionDuration: const Duration(milliseconds: 200),
     transitionBuilder: (context, animation, _, __) {
       return ScaleTransition(

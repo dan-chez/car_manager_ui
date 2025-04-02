@@ -13,24 +13,31 @@
 // limitations under the License.
 
 import 'package:car_manager_ui/component_model.dart';
+import 'package:car_manager_ui/showcases/animations_showcase.dart';
 import 'package:car_manager_ui/showcases/brief_card_showcase.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
 import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_showcase.dart';
+import 'package:car_manager_ui/showcases/current_vehicle_card_showcase.dart';
 import 'package:car_manager_ui/showcases/date_button_showcase.dart';
 import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
 import 'package:car_manager_ui/showcases/dropdown_showcase.dart';
 import 'package:car_manager_ui/showcases/empty_list_showcase.dart';
 import 'package:car_manager_ui/showcases/expense_summary_card_showcase.dart';
+import 'package:car_manager_ui/showcases/expenses_line_chart_showcase.dart';
 import 'package:car_manager_ui/showcases/horizontal_info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
 import 'package:car_manager_ui/showcases/info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
 import 'package:car_manager_ui/showcases/report_tile_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
+import 'package:car_manager_ui/showcases/selectable_service_type_showcase.dart';
+import 'package:car_manager_ui/showcases/selectable_vehicle_type_showcase.dart';
 import 'package:car_manager_ui/showcases/summary_card_showcase.dart';
 import 'package:car_manager_ui/showcases/text_field_showcase.dart';
 import 'package:car_manager_ui/showcases/toggle_button_showcase.dart';
+import 'package:car_manager_ui/showcases/vehicle_info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/vertical_info_card_showcase.dart';
+import 'package:car_manager_ui/showcases/warning_info_showcase.dart';
 
 /// A collection of component showcases used in the example application.
 ///
@@ -110,5 +117,33 @@ final components = {
   ComponentModel(
     description: 'CMDateButton',
     path: DateButtonShowcase.path,
+  ),
+  ComponentModel(
+    description: 'SelectableVehicleType',
+    path: SelectableVehicleTypeShowcase.path,
+  ),
+  ComponentModel(
+    description: 'SelectableServiceType',
+    path: SelectableServiceTypeShowcase.path,
+  ),
+  ComponentModel(
+    description: 'VehicleInfoCard',
+    path: VehicleInfoCardShowcase.path,
+  ),
+  ComponentModel(
+    description: 'CurrentVehicleCard',
+    path: CurrentVehicleCardShowcase.path,
+  ),
+  ComponentModel(
+    description: 'ExpensesLineChart',
+    path: ExpensesLineChartShowcase.path,
+  ),
+  ComponentModel(
+    description: 'WarningInfo',
+    path: WarningInfoShowcase.path,
+  ),
+  ComponentModel(
+    description: 'Animations',
+    path: AnimationsShowcase.path,
   ),
 };

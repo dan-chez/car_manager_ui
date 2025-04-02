@@ -13,42 +13,119 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:flutter/material.dart';
 
 //Custom Icons
 const String _iconsFontFamily = "CMIcons";
 const String _fontPackage = 'carmanager_ui';
 
-const IconData _iconDataDelete =
-    IconData(0xe801, fontFamily: _iconsFontFamily, fontPackage: _fontPackage);
+const IconData _iconDataDelete = IconData(
+  0xe801,
+  fontFamily: _iconsFontFamily,
+  fontPackage: _fontPackage,
+);
+
+const IconData _iconDataEditSquare = IconData(
+  0xe802,
+  fontFamily: _iconsFontFamily,
+  fontPackage: _fontPackage,
+);
 
 //Icons
-const kAddExpenseIconWhite = Icon(Icons.add, color: kWhite);
+const kAddExpenseIconWhite = Icon(
+  Icons.add,
+  color: kWhite,
+);
 
-const kAddExpenseIconRed = Icon(Icons.add, color: kAmaranthPrimary);
+const kAddExpenseIconRed = Icon(
+  Icons.add,
+  color: kAmaranthPrimary,
+);
 
-const kCloseIcon = Icon(Icons.close, color: kCanyonBronze);
+const kCloseIcon = Icon(
+  Icons.close,
+  color: kCanyonBronze,
+);
 
-const kArrowDownIcon = Icon(Icons.arrow_drop_down, color: kMyrtleGreen);
+const kArrowDownIcon = Icon(
+  Icons.arrow_drop_down,
+  color: kMyrtleGreen,
+);
 
-const kArrowForwardIcon =
-    Icon(Icons.arrow_forward_ios_outlined, color: kMyrtleGreen, size: 15);
+const kCheckIcon = Icon(
+  Icons.check,
+  color: kWhite,
+  size: CMDimens.d24,
+);
 
-const kArrowForwardDisableIcon =
-    Icon(Icons.arrow_forward_ios_outlined, color: kSilver, size: 15);
+const kCheckIconRed = Icon(
+  Icons.check,
+  color: kAmaranthPrimary,
+  size: CMDimens.d24,
+);
 
-const kBackArrowIcon =
-    Icon(Icons.arrow_back_ios_outlined, color: kMyrtleGreen, size: 20);
+const kArrowForwardIcon = Icon(
+  Icons.arrow_forward_ios_outlined,
+  color: kMyrtleGreen,
+  size: CMDimens.d15,
+);
 
-const kEditReportIcon = Icon(Icons.edit_note, color: kMyrtleGreen, size: 30);
+const kArrowForwardDisableIcon = Icon(
+  Icons.arrow_forward_ios_outlined,
+  color: kSilver,
+  size: CMDimens.d15,
+);
 
-const kDeleteIcon = Icon(_iconDataDelete, color: kAmaranthPrimary, size: 17);
+const kBackArrowIcon = Icon(
+  Icons.arrow_back_ios_outlined,
+  color: kMyrtleGreen,
+  size: CMDimens.d20,
+);
 
-const kMonitoringIcon = Icon(Icons.monitor, color: kMyrtleGreen, size: 45);
+const kEditReportIcon = Icon(
+  Icons.edit_note,
+  color: kMyrtleGreen,
+  size: CMDimens.d30,
+);
 
-const kSecurityIcon =
-    Icon(Icons.verified_user_outlined, color: kMyrtleGreen, size: 45);
+const kDeleteIcon = Icon(
+  _iconDataDelete,
+  color: kAmaranthPrimary,
+  size: CMDimens.d17,
+);
 
-const kStarIcon = Icon(Icons.star, color: kMyrtleGreen, size: 45);
+const kMonitoringIcon = Icon(
+  Icons.monitor,
+  color: kMyrtleGreen,
+  size: CMDimens.d45,
+);
 
-const kDropdownIcon = Icon(Icons.keyboard_arrow_down_outlined, color: kMyrtleGreen);
+const kEditSquareIcon = Icon(
+  _iconDataEditSquare,
+  color: kMyrtleGreen,
+  size: CMDimens.d20,
+);
+
+const kSecurityIcon = Icon(
+  Icons.verified_user_outlined,
+  color: kMyrtleGreen,
+  size: CMDimens.d45,
+);
+
+const kStarIcon = Icon(
+  Icons.star,
+  color: kMyrtleGreen,
+  size: CMDimens.d45,
+);
+
+const kDropdownIcon = Icon(
+  Icons.keyboard_arrow_down_outlined,
+  color: kMyrtleGreen,
+);
+
+const kInfoIcon = Icon(
+  Icons.info_outline,
+  color: kMyrtleGreen,
+  size: 22,
+);

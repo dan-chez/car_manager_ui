@@ -12,7 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// coverage:ignore-file
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
+import 'package:carmanager_ui/src/constants/cm_dimens.dart';
+import 'package:carmanager_ui/src/utils/extensions/color_extensions.dart';
 import 'package:flutter/material.dart';
 
 final kCMButtonStyle = TextButton.styleFrom(
@@ -25,7 +28,7 @@ final kCMButtonStyle = TextButton.styleFrom(
 final kCMOutlinedButtonStyle = OutlinedButton.styleFrom(
   shape: const StadiumBorder(),
   side: const BorderSide(color: kAmaranthPrimary),
-  disabledBackgroundColor: kAmaranthPrimary.withOpacity(0.3),
+  disabledBackgroundColor: kAmaranthPrimary.withOpacityValue(0.3),
   backgroundColor: kWhite,
   foregroundColor: kAmaranthPrimary,
 );
@@ -34,7 +37,7 @@ final kCMBriefCardButtonStyle = ElevatedButton.styleFrom(
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(Radius.circular(10)),
   ),
-  elevation: 3.5,
+  elevation: CMDimens.d3_5,
   shadowColor: kLightShadowColor,
   backgroundColor: kCornejo,
   disabledBackgroundColor: kDarkDisable,
@@ -44,8 +47,13 @@ final kReportTileButtonStyle = ElevatedButton.styleFrom(
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(Radius.circular(4)),
   ),
-  elevation: 3.5,
+  elevation: CMDimens.d3_5,
   shadowColor: kLightShadowColor,
   backgroundColor: kCornejo,
-  padding: const EdgeInsets.only(top: 12, bottom: 12, left: 15, right: 10),
+  padding: const EdgeInsets.only(
+    top: CMDimens.d12,
+    bottom: CMDimens.d12,
+    left: CMDimens.d15,
+    right: CMDimens.d10,
+  ),
 );

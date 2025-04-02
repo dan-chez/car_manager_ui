@@ -14,4 +14,6 @@
 
 class StringConstants {
   static const String textDivider = '|';
+  static const String empty = '';
+  static const String lineBreak = '\n';
 }
