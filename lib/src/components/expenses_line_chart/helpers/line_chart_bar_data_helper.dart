@@ -16,7 +16,6 @@ part of '../expenses_line_chart.dart';
 
 // coverage:ignore-file
 class _LineChartBarDataHelper {
-
   static LineChartBarData build({required List<double> values}) {
     return LineChartBarData(
       showingIndicators: values.showingTooltipOnSpots,

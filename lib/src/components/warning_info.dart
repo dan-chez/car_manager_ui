@@ -96,7 +96,9 @@ class _WarningInfoState extends State<WarningInfo> {
                       ),
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: CMDimens.d10),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: CMDimens.d10,
+                          ),
                           child: Row(
                             children: [
                               kInfoIcon,

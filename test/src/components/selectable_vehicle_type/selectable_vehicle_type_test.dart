@@ -22,12 +22,16 @@ import '../base/base_component_app.dart';
 void main() {
   group('SelectableVehicleType Widget Tests', () {
     final items = [
-      SelectableVehicleTypeItem(id: '1', icon: 'assets/car.svg', description: 'Car'),
-      SelectableVehicleTypeItem(id: '2', icon: 'assets/bike.svg', description: 'Bike'),
-      SelectableVehicleTypeItem(id: '3', icon: 'assets/bus.svg', description: 'Bus'),
+      SelectableVehicleTypeItem(
+          id: '1', icon: 'assets/car.svg', description: 'Car'),
+      SelectableVehicleTypeItem(
+          id: '2', icon: 'assets/bike.svg', description: 'Bike'),
+      SelectableVehicleTypeItem(
+          id: '3', icon: 'assets/bus.svg', description: 'Bus'),
     ];
 
-    testWidgets('Should display all vehicle items', (WidgetTester tester) async {
+    testWidgets('Should display all vehicle items',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         baseComponentApp(
           SelectableVehicleType(
@@ -42,7 +46,8 @@ void main() {
       }
     });
 
-    testWidgets('Should call onSelected callback with the correct ID', (WidgetTester tester) async {
+    testWidgets('Should call onSelected callback with the correct ID',
+        (WidgetTester tester) async {
       String? selectedId;
       await tester.pumpWidget(
         baseComponentApp(
@@ -59,7 +64,8 @@ void main() {
       expect(selectedId, equals('3'));
     });
 
-    testWidgets('Should update the selectedId state when an item is tapped', (WidgetTester tester) async {
+    testWidgets('Should update the selectedId state when an item is tapped',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         baseComponentApp(
           SelectableVehicleType(
@@ -75,7 +81,9 @@ void main() {
       expect(find.text('Bike'), findsOneWidget);
     });
 
-    testWidgets('Should display the selected item’s icon with the selected color', (WidgetTester tester) async {
+    testWidgets(
+        'Should display the selected item’s icon with the selected color',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         baseComponentApp(
           SelectableVehicleType(
@@ -88,7 +96,8 @@ void main() {
       await tester.tap(find.text('Bus'));
       await tester.pumpAndSettle();
 
-      final iconWidget = tester.widget<SvgPicture>(find.byType(SvgPicture).last);
+      final iconWidget =
+          tester.widget<SvgPicture>(find.byType(SvgPicture).last);
       final colorFilter = iconWidget.colorFilter as ColorFilter;
       expect(
           colorFilter,
@@ -98,7 +107,9 @@ void main() {
           )));
     });
 
-    testWidgets('Should apply ellipsis overflow to text if it exceeds the width', (WidgetTester tester) async {
+    testWidgets(
+        'Should apply ellipsis overflow to text if it exceeds the width',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -107,7 +118,8 @@ void main() {
                 SelectableVehicleTypeItem(
                   id: '1',
                   icon: 'assets/car.svg',
-                  description: 'This is a very long vehicle description that should be truncated',
+                  description:
+                      'This is a very long vehicle description that should be truncated',
                 ),
               ],
               onSelected: (_) {},
@@ -121,7 +133,8 @@ void main() {
       expect(textWidget.overflow, equals(TextOverflow.ellipsis));
     });
 
-    testWidgets('Should only have one selected item at a time', (WidgetTester tester) async {
+    testWidgets('Should only have one selected item at a time',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(

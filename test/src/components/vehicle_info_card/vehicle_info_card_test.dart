@@ -37,7 +37,8 @@ void main() {
     });
   }
 
-  testWidgets('Should render VehicleInfoCard correctly (Non-Selectable)', (WidgetTester tester) async {
+  testWidgets('Should render VehicleInfoCard correctly (Non-Selectable)',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         const VehicleInfoCard(
@@ -52,13 +53,15 @@ void main() {
 
     expect(find.text('TESLA MODEL S', skipOffstage: true), findsOneWidget);
 
-    final details = tester.widgetList<RichText>(findDetailsRichTexts()).toList();
+    final details =
+        tester.widgetList<RichText>(findDetailsRichTexts()).toList();
     expect(details.length, 3);
 
     expect(find.byType(CMSwitch), findsNothing);
   });
 
-  testWidgets('Should render VehicleInfoCard with toggle (Selectable)', (WidgetTester tester) async {
+  testWidgets('Should render VehicleInfoCard with toggle (Selectable)',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         VehicleInfoCard(
@@ -71,11 +74,13 @@ void main() {
       ),
     );
 
-    expect(find.text('LAMBORGHINI AVENTADOR', skipOffstage: true), findsOneWidget);
+    expect(
+        find.text('LAMBORGHINI AVENTADOR', skipOffstage: true), findsOneWidget);
     expect(find.byType(CMSwitch), findsOneWidget);
   });
 
-  testWidgets('Should call onEditPressed when edit button is tapped', (WidgetTester tester) async {
+  testWidgets('Should call onEditPressed when edit button is tapped',
+      (WidgetTester tester) async {
     bool editPressed = false;
 
     await tester.pumpWidget(
@@ -100,7 +105,8 @@ void main() {
     expect(editPressed, isTrue);
   });
 
-  testWidgets('Should call onDeletePressed when delete button is tapped', (WidgetTester tester) async {
+  testWidgets('Should call onDeletePressed when delete button is tapped',
+      (WidgetTester tester) async {
     bool deletePressed = false;
 
     await tester.pumpWidget(
@@ -125,7 +131,8 @@ void main() {
     expect(deletePressed, isTrue);
   });
 
-  testWidgets('Should animate details visibility transition', (WidgetTester tester) async {
+  testWidgets('Should animate details visibility transition',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         VehicleInfoCard(
@@ -148,7 +155,8 @@ void main() {
     expect(tester.binding.hasScheduledFrame, isFalse);
   });
 
-  testWidgets('Should render CMRichText correctly with bold positions', (WidgetTester tester) async {
+  testWidgets('Should render CMRichText correctly with bold positions',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         const VehicleInfoCard(
@@ -161,7 +169,8 @@ void main() {
       ),
     );
 
-    final richTexts = tester.widgetList<RichText>(findDetailsRichTexts()).toList();
+    final richTexts =
+        tester.widgetList<RichText>(findDetailsRichTexts()).toList();
     expect(richTexts.length, 3);
 
     final plateRichText = richTexts.firstWhere((rt) {

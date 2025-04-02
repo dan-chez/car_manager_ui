@@ -19,7 +19,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
-  testWidgets('WarningInfo calls onDismissed when tapped', (WidgetTester tester) async {
+  testWidgets('WarningInfo calls onDismissed when tapped',
+      (WidgetTester tester) async {
     bool wasDismissed = false;
 
     final widget = WarningInfo(
@@ -37,7 +38,8 @@ void main() {
     expect(wasDismissed, isTrue);
   });
 
-  testWidgets('WarningInfo renders text with bold segment', (WidgetTester tester) async {
+  testWidgets('WarningInfo renders text with bold segment',
+      (WidgetTester tester) async {
     final widget = WarningInfo(
       message: 'Alert:|System failure|Please restart.',
       boldPositions: [1],
@@ -46,7 +48,8 @@ void main() {
     await tester.pumpWidget(baseComponentApp(widget));
 
     final richText = find.byWidgetPredicate((widget) {
-      return widget is RichText && widget.text.toPlainText().contains('System failure');
+      return widget is RichText &&
+          widget.text.toPlainText().contains('System failure');
     });
 
     expect(richText, findsOneWidget);

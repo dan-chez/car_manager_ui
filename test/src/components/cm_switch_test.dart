@@ -34,7 +34,8 @@ void main() {
     expect(find.byType(CMSwitch), findsOneWidget);
   });
 
-  testWidgets('Should toggle switch state when tapped', (WidgetTester tester) async {
+  testWidgets('Should toggle switch state when tapped',
+      (WidgetTester tester) async {
     bool switchValue = initialState;
 
     await tester.pumpWidget(baseComponentApp(
@@ -57,7 +58,8 @@ void main() {
     expect(switchValue, false);
   });
 
-  testWidgets('Should call onChanged callback when tapped', (WidgetTester tester) async {
+  testWidgets('Should call onChanged callback when tapped',
+      (WidgetTester tester) async {
     bool switchValue = initialState;
     bool callbackCalled = false;
 
@@ -78,7 +80,8 @@ void main() {
     expect(callbackCalled, true);
   });
 
-  testWidgets('Should animate smoothly when toggled', (WidgetTester tester) async {
+  testWidgets('Should animate smoothly when toggled',
+      (WidgetTester tester) async {
     bool switchValue = initialState;
 
     await tester.pumpWidget(baseComponentApp(

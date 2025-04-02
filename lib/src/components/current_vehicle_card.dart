@@ -79,7 +79,9 @@ class CurrentVehicleCard extends StatelessWidget {
                   Flexible(
                     child: Text(
                       vehicleName.toUpperCase(),
-                      style: kCaptionTextStyle.copyWith(fontWeight: FontWeight.bold),
+                      style: kCaptionTextStyle.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),

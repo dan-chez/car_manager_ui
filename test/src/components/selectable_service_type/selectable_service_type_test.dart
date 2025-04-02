@@ -54,11 +54,16 @@ void main() {
       expect(find.text('Car'), findsOneWidget);
       expect(find.text('Bike'), findsOneWidget);
 
-      expect(find.text('Personal service${StringConstants.lineBreak}'), findsOneWidget);
-      expect(find.text('Transports people or goods for a fee.${StringConstants.lineBreak}'), findsOneWidget);
+      expect(find.text('Personal service${StringConstants.lineBreak}'),
+          findsOneWidget);
+      expect(
+          find.text(
+              'Transports people or goods for a fee.${StringConstants.lineBreak}'),
+          findsOneWidget);
     });
 
-    testWidgets('Calls onSelected when an item is tapped', (WidgetTester tester) async {
+    testWidgets('Calls onSelected when an item is tapped',
+        (WidgetTester tester) async {
       String? selectedId;
 
       await tester.pumpWidget(
@@ -76,7 +81,8 @@ void main() {
       expect(selectedId, equals('1'));
     });
 
-    testWidgets('Only one item can be selected at a time', (WidgetTester tester) async {
+    testWidgets('Only one item can be selected at a time',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         baseComponentApp(
           SelectableServiceType(
@@ -99,7 +105,8 @@ void main() {
       expect(bikeWidget.style?.color, kWhite);
     });
 
-    testWidgets('Displays correct icon colors based on selection state', (WidgetTester tester) async {
+    testWidgets('Displays correct icon colors based on selection state',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         baseComponentApp(
           SelectableServiceType(

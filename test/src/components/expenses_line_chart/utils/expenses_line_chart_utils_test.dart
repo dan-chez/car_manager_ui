@@ -56,12 +56,14 @@ void main() {
       expect(values.minY, 0);
     });
 
-    test('showingTooltipOnSpots should return indices 0 to min(length, 4) - 1', () {
+    test('showingTooltipOnSpots should return indices 0 to min(length, 4) - 1',
+        () {
       final values = [10.0, 20.0, 30.0, 40.0, 50.0];
       expect(values.showingTooltipOnSpots, [0, 1, 2, 3]);
     });
 
-    test('showingTooltipOnSpots should return an empty list for an empty input', () {
+    test('showingTooltipOnSpots should return an empty list for an empty input',
+        () {
       final values = <double>[];
       expect(values.showingTooltipOnSpots, isEmpty);
     });
@@ -70,7 +72,8 @@ void main() {
   group('TouchedSpotIndicatorData Tests', () {
     test('touchedSpotIndicator should return a list of hidden indicators', () {
       final indicators = [0, 1, 2];
-      final result = touchedSpotIndicator(LineChartBarData(spots: []), indicators);
+      final result =
+          touchedSpotIndicator(LineChartBarData(spots: []), indicators);
 
       expect(result.length, indicators.length);
       for (final indicator in result) {

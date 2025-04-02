@@ -38,32 +38,45 @@ class SelectableVehicleTypeShowcase extends StatelessWidget {
         createShowcaseTitle('Basic item list with 2 items.'),
         SelectableVehicleType(
           items: const [
-            SelectableVehicleTypeItem(id: '1', icon: kSelectableCarImage, description: 'Car'),
-            SelectableVehicleTypeItem(id: '2', icon: kSelectableBikeImage, description: 'Bike'),
+            SelectableVehicleTypeItem(
+                id: '1', icon: kSelectableCarImage, description: 'Car'),
+            SelectableVehicleTypeItem(
+                id: '2', icon: kSelectableBikeImage, description: 'Bike'),
           ],
           onSelected: (selectedVehicle) {
-            showCustomSnackBar(context, onSelectedVehicleSnackBar(selectedVehicle));
+            showCustomSnackBar(
+                context, onSelectedVehicleSnackBar(selectedVehicle));
           },
         ),
-        createShowcaseTitle('Basic item list with 2 items and long descriptions.'),
+        createShowcaseTitle(
+            'Basic item list with 2 items and long descriptions.'),
         SelectableVehicleType(
           items: const [
-            SelectableVehicleTypeItem(id: '1', icon: kSelectableCarImage, description: 'This is a long car description.'),
-            SelectableVehicleTypeItem(id: '2', icon: kSelectableBikeImage, description: 'Bike'),
+            SelectableVehicleTypeItem(
+                id: '1',
+                icon: kSelectableCarImage,
+                description: 'This is a long car description.'),
+            SelectableVehicleTypeItem(
+                id: '2', icon: kSelectableBikeImage, description: 'Bike'),
           ],
           onSelected: (selectedVehicle) {
-            showCustomSnackBar(context, onSelectedVehicleSnackBar(selectedVehicle));
+            showCustomSnackBar(
+                context, onSelectedVehicleSnackBar(selectedVehicle));
           },
         ),
         createShowcaseTitle('Basic item list with 3 items.'),
         SelectableVehicleType(
           items: const [
-            SelectableVehicleTypeItem(id: '1', icon: kSelectableCarImage, description: 'Car'),
-            SelectableVehicleTypeItem(id: '2', icon: kSelectableBikeImage, description: 'Bike'),
-            SelectableVehicleTypeItem(id: '3', icon: kSelectableCarImage, description: 'Bus'),
+            SelectableVehicleTypeItem(
+                id: '1', icon: kSelectableCarImage, description: 'Car'),
+            SelectableVehicleTypeItem(
+                id: '2', icon: kSelectableBikeImage, description: 'Bike'),
+            SelectableVehicleTypeItem(
+                id: '3', icon: kSelectableCarImage, description: 'Bus'),
           ],
           onSelected: (selectedVehicle) {
-            showCustomSnackBar(context, onSelectedVehicleSnackBar(selectedVehicle));
+            showCustomSnackBar(
+                context, onSelectedVehicleSnackBar(selectedVehicle));
           },
         )
       ],

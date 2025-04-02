@@ -42,7 +42,8 @@ class SelectableServiceTypeShowcase extends StatelessWidget {
               id: '1',
               icon: kTransportServiceImage,
               title: 'Personal service',
-              description: 'Exclusive for your transportation and that of your closest circle.',
+              description:
+                  'Exclusive for your transportation and that of your closest circle.',
             ),
             SelectableServiceTypeItem(
               id: '2',
@@ -52,7 +53,8 @@ class SelectableServiceTypeShowcase extends StatelessWidget {
             ),
           ],
           onSelected: (selectedServiceType) {
-            showCustomSnackBar(context, onSelectedServiceTypeSnackBar(selectedServiceType));
+            showCustomSnackBar(
+                context, onSelectedServiceTypeSnackBar(selectedServiceType));
           },
         ),
         createShowcaseTitle('Basic item list with 3 items.'),
@@ -62,7 +64,8 @@ class SelectableServiceTypeShowcase extends StatelessWidget {
               id: '1',
               icon: kTransportServiceImage,
               title: 'Personal service',
-              description: 'Exclusive for your transportation and that of your closest circle.',
+              description:
+                  'Exclusive for your transportation and that of your closest circle.',
             ),
             SelectableServiceTypeItem(
               id: '2',
@@ -78,10 +81,12 @@ class SelectableServiceTypeShowcase extends StatelessWidget {
             ),
           ],
           onSelected: (selectedServiceType) {
-            showCustomSnackBar(context, onSelectedServiceTypeSnackBar(selectedServiceType));
+            showCustomSnackBar(
+                context, onSelectedServiceTypeSnackBar(selectedServiceType));
           },
         ),
-        createShowcaseTitle('Basic item list with 2 items and long title and description.'),
+        createShowcaseTitle(
+            'Basic item list with 2 items and long title and description.'),
         SelectableServiceType(
           items: const [
             SelectableServiceTypeItem(
@@ -94,19 +99,22 @@ class SelectableServiceTypeShowcase extends StatelessWidget {
             SelectableServiceTypeItem(
               id: '2',
               icon: kTransportServiceImage,
-              title: 'Transport service is a long long long title that should has ellipsis at the end.',
+              title:
+                  'Transport service is a long long long title that should has ellipsis at the end.',
               description: 'Transports people or goods for a fee.',
             ),
           ],
           onSelected: (selectedServiceType) {
-            showCustomSnackBar(context, onSelectedServiceTypeSnackBar(selectedServiceType));
+            showCustomSnackBar(
+                context, onSelectedServiceTypeSnackBar(selectedServiceType));
           },
         ),
       ],
     );
   }
 
-  SnackBar onSelectedServiceTypeSnackBar(String selectedServiceType) => SnackBar(
+  SnackBar onSelectedServiceTypeSnackBar(String selectedServiceType) =>
+      SnackBar(
         content: Text('Selected service type: $selectedServiceType'),
         duration: const Duration(seconds: 2),
       );

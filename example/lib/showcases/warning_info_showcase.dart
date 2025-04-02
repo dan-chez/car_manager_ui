@@ -34,13 +34,15 @@ class WarningInfoShowcase extends StatelessWidget {
     return ShowcaseAppBase(
       title: 'WarningInfo Showcase',
       children: [
-        createShowcaseTitle('Basic configuration - Dismissible message with bolded segments.'),
+        createShowcaseTitle(
+            'Basic configuration - Dismissible message with bolded segments.'),
         WarningInfo(
           message: 'This is a|critical notice|for the user.',
           boldPositions: const [1],
           onClick: () => showCustomSnackBar(context, onDismissedSnackBar),
         ),
-        createShowcaseTitle('Another example - Highlights multiple segments in the message.'),
+        createShowcaseTitle(
+            'Another example - Highlights multiple segments in the message.'),
         WarningInfo(
           message: 'Please|review|and|acknowledge|this warning.',
           boldPositions: const [1, 3],
@@ -51,7 +53,8 @@ class WarningInfoShowcase extends StatelessWidget {
           message: 'System maintenance is scheduled tonight.',
           onClick: () => showCustomSnackBar(context, onDismissedSnackBar),
         ),
-        createShowcaseTitle('Long message - Verifies layout behavior with multiline text.'),
+        createShowcaseTitle(
+            'Long message - Verifies layout behavior with multiline text.'),
         WarningInfo(
           message:
               'Due to scheduled updates|some features might be temporarily unavailable|including vehicle syncing, notifications, and remote access. '
