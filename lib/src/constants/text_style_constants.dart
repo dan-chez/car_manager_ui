@@ -100,4 +100,10 @@ const kCarPickerPlateTextStyle = TextStyle(
   color: kSilver,
 );
 
+const kInfoCardTextStyle = TextStyle(
+  fontSize: CMDimens.d15,
+  color: kMyrtleGreen,
+  fontWeight: FontWeight.w400,
+);
+
 // End Text Style
