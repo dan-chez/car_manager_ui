@@ -82,6 +82,7 @@ class CMDimens {
   static const double d86 = 86;
   static const double d90 = 90;
   static const double d100 = 100;
+  static const double d104 = 104;
   static const double d110 = 110;
   static const double d120 = 120;
   static const double d125 = 125;
