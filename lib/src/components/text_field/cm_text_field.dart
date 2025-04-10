@@ -31,6 +31,7 @@ class CMTextField extends TextFieldBase {
     super.textInputType,
     super.textCapitalization,
     String super.initialValue = '',
+    super.showCounter,
   });
 
   @override
@@ -90,6 +91,9 @@ class _TextCMTextField extends State<CMTextField> {
         labelText: widget.hintText,
         errorText: _hasError ? _errorText : null,
         labelStyle: _hasError ? kErrorTextStyle : kContentTextStyle,
+        counterStyle:
+            widget.showCounter ? null : TextStyle(height: double.minPositive),
+        counterText: widget.showCounter ? null : '',
       ),
       inputFormatters: inputFormatters,
       style: _textStyle,
