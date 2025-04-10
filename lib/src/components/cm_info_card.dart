@@ -39,7 +39,7 @@ class CMInfoCard extends StatelessWidget {
     super.key,
     required this.icon,
     required this.message,
-    this.size = const Size(CMDimens.d110, CMDimens.d120),
+    this.size = const Size(CMDimens.d110, CMDimens.d104),
   });
 
   @override
@@ -49,15 +49,8 @@ class CMInfoCard extends StatelessWidget {
       height: size.height,
       padding: const EdgeInsets.symmetric(horizontal: CMDimens.d10),
       decoration: BoxDecoration(
-        color: kLightAmaranthPrimary,
-        borderRadius: BorderRadius.circular(CMDimens.d15),
-        boxShadow: const [
-          BoxShadow(
-            color: kBoxShadowColor,
-            offset: Offset(CMDimens.d0, CMDimens.d3),
-            blurRadius: CMDimens.d3,
-          )
-        ],
+        color: kInfoCardBgColor,
+        borderRadius: BorderRadius.circular(CMDimens.d4),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +59,7 @@ class CMInfoCard extends StatelessWidget {
           const SizedBox(height: CMDimens.d5),
           Text(
             message,
-            style: kContentTextStyle.copyWith(fontWeight: FontWeight.w400),
+            style: kInfoCardTextStyle,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
