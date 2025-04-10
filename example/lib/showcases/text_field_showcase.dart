@@ -63,11 +63,37 @@ class TextFieldShowcase extends StatelessWidget {
           canBeEmpty: true,
           textInputType: TextInputType.number,
         ),
+        createShowcaseTitle(
+            'Can be empty, numbers input with maxLength 10 and show counter'),
+        const CMTextField(
+          hintText: 'Custom hint',
+          onTextChange: printValue,
+          canBeEmpty: true,
+          maxLength: 10,
+          textInputType: TextInputType.number,
+        ),
+        createShowcaseTitle(
+            'Can be empty, numbers input with maxLength 10 and don\'t show counter'),
+        const CMTextField(
+          hintText: 'Custom hint',
+          onTextChange: printValue,
+          canBeEmpty: true,
+          maxLength: 10,
+          showCounter: false,
+          textInputType: TextInputType.number,
+        ),
         createShowcaseTitle('CMMultilineTextField', higherSize: true),
-        createShowcaseTitle('Can be empty, maxLength 100'),
+        createShowcaseTitle('Can be empty, maxLength 100 and show counter'),
         const CMMultilineTextField(
           onTextChange: printValue,
           maxLength: 100,
+        ),
+        createShowcaseTitle(
+            'Can be empty, maxLength 100 and don\'t show counter'),
+        const CMMultilineTextField(
+          onTextChange: printValue,
+          maxLength: 100,
+          showCounter: false,
         ),
         createShowcaseTitle('Can\'t be empty, initial value'),
         const CMMultilineTextField(

@@ -101,7 +101,30 @@ void main() {
     );
 
     await tester.enterText(find.byType(TextField), 'Very long input');
+    await tester.pump();
     final textField = tester.widget<TextField>(find.byType(TextField));
+    expect(find.text('10/10'), findsOneWidget);
+    expect(textField.controller?.text.length, 10);
+  });
+
+  testWidgets(
+      'CMMultilineTextField respects maxLength and showCounter is false',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(
+      baseComponentApp(
+        CMMultilineTextField(
+          hintText: 'Enter text',
+          onTextChange: (text) {},
+          maxLength: 10,
+          showCounter: false,
+        ),
+      ),
+    );
+
+    await tester.enterText(find.byType(TextField), 'Very long input');
+    await tester.pump();
+    final textField = tester.widget<TextField>(find.byType(TextField));
+    expect(find.text('10/10'), findsNothing);
     expect(textField.controller?.text.length, 10);
   });
 

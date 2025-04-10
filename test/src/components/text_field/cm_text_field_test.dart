@@ -74,8 +74,9 @@ void main() {
     expect(find.text(errorText), findsOneWidget);
   });
 
-  testWidgets('CMTextField respects maxLength', (WidgetTester tester) async {
-    const maxLength = 5;
+  testWidgets('CMTextField respects maxLength and shows counter',
+      (WidgetTester tester) async {
+    const maxLength = 4;
     await tester.pumpWidget(
       baseComponentApp(
         CMTextField(
@@ -87,8 +88,31 @@ void main() {
     );
 
     await tester.enterText(find.byType(TextField), 'Long input');
+    await tester.pump();
     final textField = tester.widget<TextField>(find.byType(TextField));
-    expect(textField.controller!.text.length, lessThanOrEqualTo(maxLength));
+    expect(find.text('4/4'), findsOneWidget);
+    expect(textField.controller!.text.length, equals(maxLength));
+  });
+
+  testWidgets('CMTextField respects maxLength and showCounter is false',
+      (WidgetTester tester) async {
+    const maxLength = 4;
+    await tester.pumpWidget(
+      baseComponentApp(
+        CMTextField(
+          hintText: 'Enter text',
+          maxLength: maxLength,
+          onTextChange: (text) {},
+          showCounter: false,
+        ),
+      ),
+    );
+
+    await tester.enterText(find.byType(TextField), 'Long input');
+    await tester.pump();
+    final textField = tester.widget<TextField>(find.byType(TextField));
+    expect(find.text('4/4'), findsNothing);
+    expect(textField.controller!.text.length, equals(maxLength));
   });
 
   testWidgets('CMTextField uses correct keyboard type',
