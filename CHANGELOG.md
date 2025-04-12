@@ -1,3 +1,25 @@
+## 1.0.1
+
+- Bump java version to 17 in test app and Flutter version to 3.29.2
+- Minor changes in CMInfoCard, CMTextField and CMPageTitle widgets.
+
+## 1.0.0
+
+- Continuous delivery created for example app.
+- New widgets added to package:
+    - VehicleSelected
+    - SelectableVehicleType
+    - SelectableServiceType
+    - VehicleInfoCard
+    - SecondaryButton
+    - CurrentVehicleCard
+    - ExpensesLineChart
+    - CarPickerDialog
+    - WarningInfo
+    - CMAnimation
+- CMDimens created to encapsulate dimens values.
+- Test coverage increased.
+
 ## 0.0.2
 
 - CMDateButton added to package.
