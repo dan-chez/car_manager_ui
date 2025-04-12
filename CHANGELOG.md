@@ -1,3 +1,8 @@
+## 1.0.1
+
+- Bump java version to 17 in test app and Flutter version to 3.29.2
+- Minor changes in CMInfoCard, CMTextField and CMPageTitle widgets.
+
 ## 1.0.0
 
 - Continuous delivery created for example app.

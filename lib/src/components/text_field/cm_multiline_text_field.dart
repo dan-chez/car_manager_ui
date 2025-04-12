@@ -28,6 +28,7 @@ class CMMultilineTextField extends TextFieldBase {
     super.maxLength,
     super.style,
     super.initialValue,
+    super.showCounter,
   });
 
   @override
@@ -81,6 +82,9 @@ class _MultilineCMTextField extends State<TextFieldBase> {
         hintText: widget.hintText,
         errorText: _hasError ? _errorText : null,
         labelStyle: _hasError ? kErrorTextStyle : kContentTextStyle,
+        counterStyle:
+            widget.showCounter ? null : TextStyle(height: double.minPositive),
+        counterText: widget.showCounter ? null : '',
       ),
       style: _textStyle,
     );

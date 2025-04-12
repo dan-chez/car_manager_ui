@@ -26,6 +26,7 @@ abstract class TextFieldBase extends StatefulWidget {
   final TextInputType? textInputType;
   final TextCapitalization textCapitalization;
   final String? initialValue;
+  final bool showCounter;
 
   const TextFieldBase({
     super.key,
@@ -40,5 +41,6 @@ abstract class TextFieldBase extends StatefulWidget {
     this.textInputType,
     this.textCapitalization = TextCapitalization.none,
     this.initialValue,
+    this.showCounter = true,
   });
 }

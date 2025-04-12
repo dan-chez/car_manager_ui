@@ -51,6 +51,22 @@ class PageTitleShowcase extends StatelessWidget {
               'Flutter Showcase Large Title Example with Long Text and Truncation',
           showBottomDivider: true,
         ),
+        createShowcaseTitle('Example text with edit icon.'),
+        const CMPageTitle(
+          lightTitle: 'Create report',
+          boldTitle: 'Dart',
+          showBottomDivider: true,
+          showEditIcon: true,
+        ),
+        createShowcaseTitle('Long text example with edit icon.'),
+        const CMPageTitle(
+          lightTitle:
+              'This is a very long title that will be truncated if it exceeds the maximum number of lines.',
+          boldTitle:
+              'Flutter Showcase Large Title Example with Long Text and Truncation',
+          showBottomDivider: true,
+          showEditIcon: true,
+        ),
       ],
     );
   }

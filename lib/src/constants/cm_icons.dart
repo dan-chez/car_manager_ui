@@ -98,7 +98,7 @@ const kDeleteIcon = Icon(
 const kMonitoringIcon = Icon(
   Icons.monitor,
   color: kMyrtleGreen,
-  size: CMDimens.d45,
+  size: CMDimens.d32,
 );
 
 const kEditSquareIcon = Icon(
@@ -110,7 +110,7 @@ const kEditSquareIcon = Icon(
 const kSecurityIcon = Icon(
   Icons.verified_user_outlined,
   color: kMyrtleGreen,
-  size: CMDimens.d45,
+  size: CMDimens.d32,
 );
 
 const kStarIcon = Icon(
@@ -127,5 +127,11 @@ const kDropdownIcon = Icon(
 const kInfoIcon = Icon(
   Icons.info_outline,
   color: kMyrtleGreen,
-  size: 22,
+  size: CMDimens.d22,
+);
+
+const kEditIcon = Icon(
+  Icons.edit,
+  color: kMyrtleGreen,
+  size: CMDimens.d20,
 );
