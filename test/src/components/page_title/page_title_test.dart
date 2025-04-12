@@ -87,4 +87,35 @@ void main() {
 
     expect(find.byType(Divider), findsNothing);
   });
+
+  testWidgets('Displays edit icon when showEditIcon is true',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(
+      baseComponentApp(
+        const CMPageTitle(
+          lightTitle: 'Hello',
+          boldTitle: 'World',
+          showBottomDivider: false,
+          showEditIcon: true,
+        ),
+      ),
+    );
+
+    expect(find.byType(Icon), findsOneWidget);
+  });
+
+  testWidgets('Does not display edit icon when showEditIcon is false',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(
+      baseComponentApp(
+        const CMPageTitle(
+          lightTitle: 'Hello',
+          boldTitle: 'World',
+          showEditIcon: false,
+        ),
+      ),
+    );
+
+    expect(find.byType(Icon), findsNothing);
+  });
 }
