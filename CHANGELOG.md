@@ -7,16 +7,16 @@
 
 - Continuous delivery created for example app.
 - New widgets added to package:
-    - VehicleSelected
-    - SelectableVehicleType
-    - SelectableServiceType
-    - VehicleInfoCard
-    - SecondaryButton
-    - CurrentVehicleCard
-    - ExpensesLineChart
-    - CarPickerDialog
-    - WarningInfo
-    - CMAnimation
+  - VehicleSelected
+  - SelectableVehicleType
+  - SelectableServiceType
+  - VehicleInfoCard
+  - SecondaryButton
+  - CurrentVehicleCard
+  - ExpensesLineChart
+  - CarPickerDialog
+  - WarningInfo
+  - CMAnimation
 - CMDimens created to encapsulate dimens values.
 - Test coverage increased.
 
