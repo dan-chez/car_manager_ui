@@ -127,5 +127,11 @@ const kDropdownIcon = Icon(
 const kInfoIcon = Icon(
   Icons.info_outline,
   color: kMyrtleGreen,
-  size: 22,
+  size: CMDimens.d22,
+);
+
+const kEditIcon = Icon(
+  Icons.edit,
+  color: kMyrtleGreen,
+  size: CMDimens.d20,
 );
