@@ -35,6 +35,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 ///   onSelected: (selectedVehicle) {
 ///     printValue('Selected vehicle: $selectedVehicle');
 ///   },
+///   initialSelection: '1',
 /// )
 /// ```
 class SelectableVehicleType extends StatefulWidget {
@@ -44,10 +45,15 @@ class SelectableVehicleType extends StatefulWidget {
   /// Callback triggered when a vehicle is selected, returning the selected vehicle's ID.
   final ValueChanged<String> onSelected;
 
+  /// The ID of the vehicle type that should be initially selected when the widget is created.
+  /// If null, no vehicle type will be initially selected.
+  final String? initialSelection;
+
   const SelectableVehicleType({
     super.key,
     required this.items,
     required this.onSelected,
+    this.initialSelection,
   });
 
   @override
@@ -61,6 +67,12 @@ class _SelectableVehicleTypeState extends State<SelectableVehicleType> {
   static const double _iconSize = CMDimens.d24;
 
   String? selectedId;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedId = widget.initialSelection;
+  }
 
   @override
   Widget build(BuildContext context) {
