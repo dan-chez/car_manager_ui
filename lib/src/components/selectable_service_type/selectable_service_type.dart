@@ -36,6 +36,7 @@ import 'package:flutter_svg/svg.dart';
 ///   onSelected: (selectedServiceType) {
 ///     print('Selected service type: $selectedServiceType');
 ///   },
+///   initialSelection: '1',
 /// )
 /// ```
 class SelectableServiceType extends StatefulWidget {
@@ -45,10 +46,15 @@ class SelectableServiceType extends StatefulWidget {
   /// Callback triggered when a service type is selected, returning the selected service type's ID.
   final ValueChanged<String> onSelected;
 
+  /// The ID of the service type that should be initially selected when the widget is created.
+  /// If null, no service type will be initially selected.
+  final String? initialSelection;
+
   const SelectableServiceType({
     super.key,
     required this.items,
     required this.onSelected,
+    this.initialSelection,
   });
 
   @override
@@ -59,6 +65,12 @@ class _SelectableServiceTypeState extends State<SelectableServiceType> {
   static const double _iconSize = CMDimens.d24;
 
   String? selectedId;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedId = widget.initialSelection;
+  }
 
   @override
   Widget build(BuildContext context) {
