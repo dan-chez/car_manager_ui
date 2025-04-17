@@ -49,6 +49,21 @@ class SelectableVehicleTypeShowcase extends StatelessWidget {
           },
         ),
         createShowcaseTitle(
+            'Basic item list with 2 items and initial selection.'),
+        SelectableVehicleType(
+          items: const [
+            SelectableVehicleTypeItem(
+                id: '1', icon: kSelectableCarImage, description: 'Car'),
+            SelectableVehicleTypeItem(
+                id: '2', icon: kSelectableBikeImage, description: 'Bike'),
+          ],
+          onSelected: (selectedVehicle) {
+            showCustomSnackBar(
+                context, onSelectedVehicleSnackBar(selectedVehicle));
+          },
+          initialSelection: '2',
+        ),
+        createShowcaseTitle(
             'Basic item list with 2 items and long descriptions.'),
         SelectableVehicleType(
           items: const [
