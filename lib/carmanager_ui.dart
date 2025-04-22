@@ -41,6 +41,8 @@ export 'package:carmanager_ui/src/components/expense_summary_card.dart';
 export 'package:carmanager_ui/src/components/expenses_line_chart/expenses_line_chart.dart';
 export 'package:carmanager_ui/src/components/horizontal_info_card.dart';
 export 'package:carmanager_ui/src/components/loader/loader.dart';
+export 'package:carmanager_ui/src/components/profile_menu_item/profile_menu_item.dart';
+export 'package:carmanager_ui/src/components/profile_menu_item/profile_menu_item_model.dart';
 export 'package:carmanager_ui/src/components/report_tile/report_tile.dart';
 export 'package:carmanager_ui/src/components/selectable_service_type/selectable_service_type.dart';
 export 'package:carmanager_ui/src/components/selectable_service_type/selectable_service_type_item.dart';

@@ -28,6 +28,7 @@ import 'package:car_manager_ui/showcases/horizontal_info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/icon_button_showcase.dart';
 import 'package:car_manager_ui/showcases/info_card_showcase.dart';
 import 'package:car_manager_ui/showcases/page_title_showcase.dart';
+import 'package:car_manager_ui/showcases/profile_menu_item_showcase.dart';
 import 'package:car_manager_ui/showcases/report_tile_showcase.dart';
 import 'package:car_manager_ui/showcases/rich_text_showcase.dart';
 import 'package:car_manager_ui/showcases/selectable_service_type_showcase.dart';
@@ -145,5 +146,9 @@ final components = {
   ComponentModel(
     description: 'Animations',
     path: AnimationsShowcase.path,
+  ),
+  ComponentModel(
+    description: 'ProfileMenuItem',
+    path: ProfileMenuItemShowcase.path,
   ),
 };
