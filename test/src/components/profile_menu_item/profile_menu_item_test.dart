@@ -20,7 +20,8 @@ import 'package:flutter_test/flutter_test.dart';
 import '../base/base_component_app.dart';
 
 void main() {
-  testWidgets('Should render ProfileMenuItem with content and icon', (tester) async {
+  testWidgets('Should render ProfileMenuItem with content and icon',
+      (tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         ProfileMenuItem(
@@ -38,21 +39,24 @@ void main() {
     expect(find.byIcon(Icons.arrow_forward_ios_outlined), findsOneWidget);
   });
 
-  testWidgets('Should truncate content if text exceeds maxLines', (tester) async {
+  testWidgets('Should truncate content if text exceeds maxLines',
+      (tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         ProfileMenuItem(
-          maxLines: 1,
           item: ProfileMenuItemModel(
-            content: 'A very long profile item content that should be truncated',
+            content:
+                'A very long profile item content that should be truncated',
             onPressed: () {},
             icon: const Icon(Icons.info),
+            maxLines: 1,
           ),
         ),
       ),
     );
 
-    final textWidget = tester.widget<Text>(find.textContaining('A very long profile'));
+    final textWidget =
+        tester.widget<Text>(find.textContaining('A very long profile'));
     expect(textWidget.maxLines, 1);
     expect(textWidget.overflow, TextOverflow.ellipsis);
   });
@@ -78,16 +82,16 @@ void main() {
     expect(tapped, isTrue);
   });
 
-  testWidgets('Should render correctly with multiple lines when maxLines > 1', (tester) async {
+  testWidgets('Should render correctly with multiple lines when maxLines > 1',
+      (tester) async {
     await tester.pumpWidget(
       baseComponentApp(
         ProfileMenuItem(
-          maxLines: 2,
           item: ProfileMenuItemModel(
-            content: 'Multi-line content test for overflow behavior',
-            onPressed: () {},
-            icon: const Icon(Icons.description),
-          ),
+              content: 'Multi-line content test for overflow behavior',
+              onPressed: () {},
+              icon: const Icon(Icons.description),
+              maxLines: 2),
         ),
       ),
     );

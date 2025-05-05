@@ -36,11 +36,9 @@ class ProfileMenuItem extends StatelessWidget {
   const ProfileMenuItem({
     super.key,
     required this.item,
-    this.maxLines = 1,
   });
 
   final ProfileMenuItemModel item;
-  final int maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -50,15 +48,20 @@ class ProfileMenuItem extends StatelessWidget {
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
       child: Container(
-        padding: EdgeInsets.fromLTRB(CMDimens.d12, CMDimens.d12, CMDimens.d18, CMDimens.d12),
+        padding: EdgeInsets.fromLTRB(
+          CMDimens.d12,
+          CMDimens.d12,
+          CMDimens.d18,
+          CMDimens.d12,
+        ),
         decoration: BoxDecoration(
           color: kWhite,
           borderRadius: BorderRadius.circular(CMDimens.d4),
           boxShadow: [
             BoxShadow(
               color: kBoxShadowColor,
-              blurRadius: 4,
-              offset: const Offset(0, 2),
+              blurRadius: CMDimens.d4,
+              offset: const Offset(CMDimens.d0, CMDimens.d2),
             ),
           ],
         ),
@@ -71,7 +74,7 @@ class ProfileMenuItem extends StatelessWidget {
               child: Text(
                 item.content,
                 style: kContentTextStyle.copyWith(fontWeight: FontWeight.w400),
-                maxLines: maxLines,
+                maxLines: item.maxLines,
                 overflow: TextOverflow.ellipsis,
               ),
             ),

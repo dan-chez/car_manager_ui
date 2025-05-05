@@ -22,10 +22,12 @@ class ProfileMenuItemModel {
   final String content;
   final VoidCallback onPressed;
   final Icon icon;
+  final int maxLines;
 
   const ProfileMenuItemModel({
     required this.content,
     required this.onPressed,
     required this.icon,
+    this.maxLines = 1,
   });
 }
