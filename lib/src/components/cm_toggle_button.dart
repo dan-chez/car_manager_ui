@@ -61,11 +61,13 @@ class _CMToggleButtonState extends State<CMToggleButton> {
   @override
   Widget build(BuildContext context) {
     final labels = widget.labels;
-    final activeColors = List.generate(labels.length, (_) => [widget.activeBgColor]);
+    final activeColors =
+        List.generate(labels.length, (_) => [widget.activeBgColor]);
     final textStyles = List.generate(
       labels.length,
       (i) => kContentTextStyle.copyWith(
-        fontWeight: i == _switchButtonIndexSelected ? FontWeight.w500 : FontWeight.w300,
+        fontWeight:
+            i == _switchButtonIndexSelected ? FontWeight.w500 : FontWeight.w300,
         color: i == _switchButtonIndexSelected ? kWhite : kMyrtleGreen,
       ),
     );
@@ -78,7 +80,8 @@ class _CMToggleButtonState extends State<CMToggleButton> {
         final baseWidth = (totalWidth - extra) / count;
         final widths = List<double>.generate(
           count,
-          (i) => i == _switchButtonIndexSelected ? baseWidth + extra : baseWidth,
+          (i) =>
+              i == _switchButtonIndexSelected ? baseWidth + extra : baseWidth,
         );
 
         return ToggleSwitch(
