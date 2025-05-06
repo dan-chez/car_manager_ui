@@ -60,49 +60,60 @@ class _CMToggleButtonState extends State<CMToggleButton> {
 
   @override
   Widget build(BuildContext context) {
-    final List<TextStyle> itemsTextStyle = [];
-    final List<List<Color>> activeBGColors = [];
-    final List<double> customWidths = [];
-    for (int i = 0; i < widget.labels.length; i++) {
-      activeBGColors.add([widget.activeBgColor]);
-      customWidths.add(i == _switchButtonIndexSelected ? 95 : 85);
-      itemsTextStyle.add(
-        kContentTextStyle.copyWith(
-            fontWeight: i == _switchButtonIndexSelected
-                ? FontWeight.w500
-                : FontWeight.w300,
-            color: i == _switchButtonIndexSelected ? kWhite : kMyrtleGreen),
-      );
-    }
+    final labels = widget.labels;
+    final activeColors =
+        List.generate(labels.length, (_) => [widget.activeBgColor]);
+    final textStyles = List.generate(
+      labels.length,
+      (i) => kContentTextStyle.copyWith(
+        fontWeight:
+            i == _switchButtonIndexSelected ? FontWeight.w500 : FontWeight.w300,
+        color: i == _switchButtonIndexSelected ? kWhite : kMyrtleGreen,
+      ),
+    );
 
-    return ToggleSwitch(
-        changeOnTap: false,
-        minWidth: CMDimens.d90,
-        customWidths: customWidths,
-        cornerRadius: CMDimens.d125,
-        activeBgColors: activeBGColors,
-        animate: true,
-        curve: Curves.fastLinearToSlowEaseIn,
-        animationDuration: 500,
-        activeFgColor: kMyrtleGreen,
-        inactiveBgColor: kInactiveToggleButtonSelection,
-        initialLabelIndex: _switchButtonIndexSelected,
-        totalSwitches: widget.labels.length,
-        labels: widget.labels,
-        radiusStyle: true,
-        customTextStyles: itemsTextStyle,
-        onToggle: (index) {
-          if (!_isToggleLocked) {
-            _isToggleLocked = true;
-            // A delay is applied to allow time for any ongoing animations to complete.
-            Future.delayed(const Duration(milliseconds: 500), () {
-              _isToggleLocked = false;
-            });
-            setState(() {
-              widget.onChanged(index ?? 0);
-              _switchButtonIndexSelected = index ?? 0;
-            });
-          }
-        });
+    return LayoutBuilder(
+      builder: (_, constraints) {
+        final totalWidth = constraints.maxWidth;
+        final count = labels.length;
+        const extra = 10.0;
+        final baseWidth = (totalWidth - extra) / count;
+        final widths = List<double>.generate(
+          count,
+          (i) =>
+              i == _switchButtonIndexSelected ? baseWidth + extra : baseWidth,
+        );
+
+        return ToggleSwitch(
+          changeOnTap: false,
+          customWidths: widths,
+          cornerRadius: CMDimens.d125,
+          activeBgColors: activeColors,
+          inactiveBgColor: kInactiveToggleButtonSelection,
+          activeFgColor: kMyrtleGreen,
+          customTextStyles: textStyles,
+          animate: true,
+          animationDuration: 500,
+          curve: Curves.fastLinearToSlowEaseIn,
+          initialLabelIndex: _switchButtonIndexSelected,
+          totalSwitches: count,
+          labels: labels,
+          radiusStyle: true,
+          onToggle: (index) {
+            if (!_isToggleLocked) {
+              _isToggleLocked = true;
+              // A delay is applied to allow time for any ongoing animations to complete.
+              Future.delayed(const Duration(milliseconds: 500), () {
+                _isToggleLocked = false;
+              });
+              setState(() {
+                widget.onChanged(index ?? 0);
+                _switchButtonIndexSelected = index ?? 0;
+              });
+            }
+          },
+        );
+      },
+    );
   }
 }
