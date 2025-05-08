@@ -38,5 +38,5 @@ jobs:
           appId: ${{ secrets.FIREBASE_APP_ID_TESTAPP_CM_UI }}
           serviceCredentialsFileContent: ${{ secrets.SERVICE_ACCOUNT_TESTAPP_CM_UI }}
           groups: "cm-testers"
-          file: build/app/outputs/flutter-apk/app-debug.apk
+          file: example/build/app/outputs/flutter-apk/app-debug.apk
           releaseNotes: "Test build (debug) generated on merge to develop."
