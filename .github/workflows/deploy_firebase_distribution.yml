@@ -6,7 +6,7 @@ name: Car Manager UI Continuous Delivery (Example App)
 on:
   push:
     branches:
-      - 'feature/CARMAN-314/cd_firebase_distribution'
+      - 'develop'
 
 jobs:
   build-and-test:
