@@ -129,5 +129,63 @@ void main() {
             BlendMode.srcIn,
           )));
     });
+    testWidgets(
+        'Initially selects the item with the provided initialSelection ID',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(
+        baseComponentApp(
+          SelectableServiceType(
+            items: items,
+            onSelected: (_) {},
+            initialSelection: '2',
+          ),
+        ),
+      );
+
+      final carText = tester.widget<Text>(find.text('Car'));
+      final bikeText = tester.widget<Text>(find.text('Bike'));
+
+      expect(carText.style?.color, kMyrtleGreen);
+      expect(bikeText.style?.color, kWhite);
+    });
+
+    testWidgets('Does not select any item if initialSelection is null',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(
+        baseComponentApp(
+          SelectableServiceType(
+            items: items,
+            onSelected: (_) {},
+            initialSelection: null,
+          ),
+        ),
+      );
+
+      final carText = tester.widget<Text>(find.text('Car'));
+      final bikeText = tester.widget<Text>(find.text('Bike'));
+
+      expect(carText.style?.color, kMyrtleGreen);
+      expect(bikeText.style?.color, kMyrtleGreen);
+    });
+
+    testWidgets(
+        'Does not select any item if initialSelection ID does not exist in items',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(
+        baseComponentApp(
+          SelectableServiceType(
+            items: items,
+            onSelected: (_) {},
+            initialSelection: '3',
+          ),
+        ),
+      );
+
+      final carText = tester.widget<Text>(find.text('Car'));
+      final bikeText = tester.widget<Text>(find.text('Bike'));
+
+      expect(carText.style?.color, kMyrtleGreen);
+      expect(bikeText.style?.color, kMyrtleGreen);
+    });
   });
 }

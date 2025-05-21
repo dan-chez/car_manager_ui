@@ -1,3 +1,9 @@
+## 1.1.0
+
+- New ProfileMenuItem widget.
+- Support initial selection for SelectableServiceType and SelectableVehicleType widgets.
+- UI refactor for CMToggleButton.
+ 
 ## 1.0.1
 
 - Bump java version to 17 in test app and Flutter version to 3.29.2

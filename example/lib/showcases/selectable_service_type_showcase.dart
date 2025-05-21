@@ -57,6 +57,30 @@ class SelectableServiceTypeShowcase extends StatelessWidget {
                 context, onSelectedServiceTypeSnackBar(selectedServiceType));
           },
         ),
+        createShowcaseTitle(
+            'Basic item list with 2 items and initial selection.'),
+        SelectableServiceType(
+          initialSelection: '2',
+          items: const [
+            SelectableServiceTypeItem(
+              id: '1',
+              icon: kTransportServiceImage,
+              title: 'Personal service',
+              description:
+                  'Exclusive for your transportation and that of your closest circle.',
+            ),
+            SelectableServiceTypeItem(
+              id: '2',
+              icon: kTransportServiceImage,
+              title: 'Transport service',
+              description: 'Transports people or goods for a fee.',
+            ),
+          ],
+          onSelected: (selectedServiceType) {
+            showCustomSnackBar(
+                context, onSelectedServiceTypeSnackBar(selectedServiceType));
+          },
+        ),
         createShowcaseTitle('Basic item list with 3 items.'),
         SelectableServiceType(
           items: const [

@@ -85,20 +85,25 @@ class ToggleButtonShowcase extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              spacing: 10,
               children: [
-                CMToggleButton(
-                  labels: const ['Start', 'Stop'],
-                  activeBgColor: kAmaranthPrimary,
-                  onChanged: (index) {
-                    printValue('Selected option index: $index');
-                  },
+                Flexible(
+                  child: CMToggleButton(
+                    labels: const ['Start', 'Stop'],
+                    activeBgColor: kAmaranthPrimary,
+                    onChanged: (index) {
+                      printValue('Selected option index: $index');
+                    },
+                  ),
                 ),
-                CMToggleButton(
-                  activeBgColor: Colors.deepPurple,
-                  labels: const ['Dark', 'Light'],
-                  onChanged: (index) {
-                    printValue('Selected option index: $index');
-                  },
+                Flexible(
+                  child: CMToggleButton(
+                    activeBgColor: Colors.deepPurple,
+                    labels: const ['Dark', 'Light'],
+                    onChanged: (index) {
+                      printValue('Selected option index: $index');
+                    },
+                  ),
                 ),
               ],
             )
