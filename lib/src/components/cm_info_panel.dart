@@ -69,7 +69,8 @@ class CMInfoPanel extends StatelessWidget {
             Flexible(
               child: CMRichText(
                 text: content,
-                textStyle: kCaptionTextStyle.copyWith(color: kkMyrtleGreenWithOpacity),
+                textStyle:
+                    kCaptionTextStyle.copyWith(color: kkMyrtleGreenWithOpacity),
                 boldFontWeight: FontWeight.w700,
                 contentFontWeight: FontWeight.w400,
                 boldPositions: boldPositions,

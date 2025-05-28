@@ -40,7 +40,8 @@ class CMInfoPanelShowcase extends StatelessWidget {
           'Multi-line content - Shows how the panel handles longer text with line breaks.',
         ),
         const CMInfoPanel(
-          content: 'This is a|multi-line|informational message|that wraps to the next line',
+          content:
+              'This is a|multi-line|informational message|that wraps to the next line',
           boldPositions: [1, 3],
           maxLines: 2,
         ),
