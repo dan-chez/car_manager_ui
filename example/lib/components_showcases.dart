@@ -17,6 +17,7 @@ import 'package:car_manager_ui/showcases/animations_showcase.dart';
 import 'package:car_manager_ui/showcases/brief_card_showcase.dart';
 import 'package:car_manager_ui/showcases/button_showcase.dart';
 import 'package:car_manager_ui/showcases/cm_appbar/cm_appbar_showcase.dart';
+import 'package:car_manager_ui/showcases/cm_info_panel_showcase.dart';
 import 'package:car_manager_ui/showcases/current_vehicle_card_showcase.dart';
 import 'package:car_manager_ui/showcases/date_button_showcase.dart';
 import 'package:car_manager_ui/showcases/dialogs_showcase.dart';
@@ -150,5 +151,9 @@ final components = {
   ComponentModel(
     description: 'ProfileMenuItem',
     path: ProfileMenuItemShowcase.path,
+  ),
+  ComponentModel(
+    description: 'CMInfoPanel',
+    path: CMInfoPanelShowcase.path,
   ),
 };
