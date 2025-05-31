@@ -64,3 +64,17 @@ const kMultilineTextFieldInputDecoration = InputDecoration(
     vertical: CMDimens.d10,
   ),
 );
+
+const kBoxDecorationWithWhitBG = BoxDecoration(
+  color: kWhite,
+  boxShadow: [
+    BoxShadow(
+      color: kBoxShadowColor,
+      blurRadius: CMDimens.d4,
+      offset: Offset(CMDimens.d0, CMDimens.d2),
+    )
+  ],
+  borderRadius: BorderRadius.all(
+    Radius.circular(CMDimens.d6),
+  ),
+);
