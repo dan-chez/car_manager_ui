@@ -1,3 +1,7 @@
+## 1.2.1
+
+- Bump intl package version and flutter version in workflows.
+ 
 ## 1.2.0
 
 - New CMInfoPanel widget.
