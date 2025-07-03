@@ -96,6 +96,40 @@ class DialogsShowcase extends StatelessWidget {
             );
           },
         ),
+        createShowcaseTitle(
+            'Confirmation dialog with image, title, subtitle and button'),
+        PrimaryButton(
+          txtLabel: 'Confirm dialog',
+          onPressed: () {
+            context.push(
+              ConfirmDialogRoute.path,
+              extra: _getConfirmDialogContent(
+                title: 'This is the title of the dialog',
+                message: 'This is the message of the dialog',
+                buttonText: 'Accept',
+                image: kSuccessImage,
+                boldPositions: [],
+              ),
+            );
+          },
+        ),
+        createShowcaseTitle(
+            'Confirmation dialog with title, subtitle and button'),
+        PrimaryButton(
+          txtLabel: 'Confirm dialog',
+          onPressed: () {
+            context.push(
+              ConfirmDialogRoute.path,
+              extra: _getConfirmDialogContent(
+                showCloseButton: false,
+                title: 'This is the title of the dialog',
+                message: 'This is the message of the dialog',
+                buttonText: 'Accept',
+                boldPositions: [],
+              ),
+            );
+          },
+        ),
         createShowcaseTitle('ErrorDialog', higherSize: true),
         createShowcaseTitle('Basic error dialog with title an subtitle'),
         PrimaryButton(
@@ -240,6 +274,7 @@ class DialogsShowcase extends StatelessWidget {
       );
 
   ConfirmDialogData _getConfirmDialogContent({
+    String? title,
     required String message,
     required String buttonText,
     required List<int> boldPositions,
@@ -249,6 +284,7 @@ class DialogsShowcase extends StatelessWidget {
     String? image,
   }) {
     return ConfirmDialogData(
+      title: title,
       message: message,
       buttonText: buttonText,
       canPop: canPop,

@@ -16,6 +16,7 @@ import 'package:carmanager_ui/src/constants/string_constants.dart';
 import 'package:flutter/material.dart' show VoidCallback;
 
 class ConfirmDialogData {
+  final String? title;
   final String message;
   final String buttonText;
   final String? image;
@@ -27,6 +28,7 @@ class ConfirmDialogData {
   final bool popWhenOnPressed;
 
   const ConfirmDialogData({
+    this.title,
     required this.message,
     required this.buttonText,
     this.image,

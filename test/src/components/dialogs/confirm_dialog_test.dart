@@ -127,4 +127,39 @@ void main() {
       verify(() => mockNavigator.pop()).called(1);
     },
   );
+
+  testWidgets('Title is displayed when provided', (WidgetTester tester) async {
+    const testTitle = 'Test Title';
+    const dialogData = ConfirmDialogData(
+      title: testTitle,
+      message: 'Message',
+      buttonText: 'Button',
+    );
+    await tester.pumpWidget(
+      baseComponentApp(const ConfirmDialog(data: dialogData)),
+    );
+
+    expect(find.text(testTitle), findsOneWidget);
+  });
+
+  testWidgets('Title is not displayed when not provided',
+      (WidgetTester tester) async {
+    const dialogData = ConfirmDialogData(
+      message: 'Message',
+      buttonText: 'Button',
+      title: null,
+    );
+    await tester.pumpWidget(
+      baseComponentApp(const ConfirmDialog(data: dialogData)),
+    );
+
+    final titleVisibilityFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Visibility &&
+          widget.child is Padding &&
+          (widget.child as Padding).child is Text &&
+          !widget.visible,
+    );
+    expect(titleVisibilityFinder, findsWidgets);
+  });
 }
