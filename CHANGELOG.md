@@ -1,3 +1,8 @@
+## 1.2.2
+
+- Title added to confirmation dialog.
+- Font assets added to package.
+
 ## 1.2.1
 
 - Bump intl package version and flutter version in workflows.

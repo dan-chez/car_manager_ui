@@ -14,7 +14,7 @@
 
 name: carmanager_ui
 description: "Provides UI components for the CarManager vehicle management application."
-version: 1.2.1
+version: 1.2.2
 repository: https://github.com/dan-chez/car_manager_ui
 
 environment:
