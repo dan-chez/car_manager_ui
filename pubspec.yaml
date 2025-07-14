@@ -14,7 +14,7 @@
 
 name: carmanager_ui
 description: "Provides UI components for the CarManager vehicle management application."
-version: 1.2.1
+version: 1.2.2
 repository: https://github.com/dan-chez/car_manager_ui
 
 environment:
@@ -40,4 +40,17 @@ flutter:
   fonts:
     - family: CMIcons
       fonts:
-        - asset: packages/carmanager_ui/assets/fonts/CMIcons.ttf
+        - asset: packages/carmanager_ui/fonts/CMIcons.ttf
+    - family: Poppins
+      fonts:
+        - asset: packages/carmanager_ui/fonts/poppins/Poppins-Light.ttf
+          weight: 300
+        - asset: packages/carmanager_ui/fonts/poppins/Poppins-Regular.ttf
+        - asset: packages/carmanager_ui/fonts/poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: packages/carmanager_ui/fonts/poppins/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: packages/carmanager_ui/fonts/poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: packages/carmanager_ui/fonts/poppins/Poppins-LightItalic.ttf
+          style: italic

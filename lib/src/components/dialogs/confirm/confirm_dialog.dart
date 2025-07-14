@@ -57,6 +57,7 @@ class ConfirmDialog extends DialogBase<ConfirmDialogData> {
           children: [
             Visibility(
               visible: data.showCloseButton,
+              replacement: const SizedBox(height: CMDimens.d24),
               child: const Padding(
                 padding: EdgeInsets.only(
                   top: CMDimens.d11,
@@ -74,13 +75,29 @@ class ConfirmDialog extends DialogBase<ConfirmDialogData> {
                 children: [
                   Visibility(
                     visible: data.image != null,
-                    child: SizedBox(
-                      height: CMDimens.d42,
-                      width: CMDimens.d42,
-                      child: SvgPicture.asset(asset),
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: CMDimens.d10),
+                      child: SizedBox(
+                        height: CMDimens.d42,
+                        width: CMDimens.d42,
+                        child: SvgPicture.asset(asset),
+                      ),
                     ),
                   ),
-                  const SizedBox(height: CMDimens.d20),
+                  Visibility(
+                    visible: data.title != null,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: CMDimens.d15,
+                      ),
+                      child: Text(
+                        data.title ?? '',
+                        style: kMediumTitleTextStyle.copyWith(
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: CMDimens.d35,
