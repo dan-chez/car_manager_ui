@@ -30,25 +30,48 @@ import 'package:flutter/material.dart';
 /// - [VehicleInfoCardType.fixed]: Hides the switch and always displays
 ///   the full vehicle details, making the card always active.
 ///
-/// Example usage:
+/// Parameters:
+/// - [name]: The name of the vehicle to be displayed in uppercase.
+/// - [plate]: The license plate information of the vehicle, typically formatted as "Plate:|ABC123".
+/// - [kms]: The mileage of the vehicle, typically formatted as "10.000|KM".
+/// - [vehicleType]: The type or category of the vehicle (e.g., "Electric Vehicle").
+/// - [type]: The display mode of the card, defaults to [VehicleInfoCardType.toggleable].
+/// - [onDeletePressed]: Callback function triggered when the delete button is pressed.
+/// - [onEditPressed]: Callback function triggered when the edit button is pressed.
+/// - [onToggleSwitch]: Callback function triggered when the toggle switch changes state.
+/// - [isToggleActive]: Initial state of the toggle switch, defaults to true. Only applicable when [type] is [VehicleInfoCardType.toggleable].
+///
+/// Example usage with toggleable type:
 /// ```dart
 /// VehicleInfoCard(
 ///   type: VehicleInfoCardType.toggleable,
-///   vehicleInfo: myVehicleInfo,
+///   name: 'Tesla Model S',
+///   plate: 'Plate:|ABC123',
+///   kms: '10.000|KM',
+///   vehicleType: 'Electric Vehicle',
 ///   onDeletePressed: () {
 ///     print('Delete action triggered');
 ///   },
 ///   onEditPressed: () {
 ///     print('Edit action triggered');
 ///   },
+///   onToggleSwitch: () {
+///     print('Toggle switch changed');
+///   },
+///   isToggleActive: true,
 /// )
 /// ```
 ///
-/// When `VehicleInfoCardType.fixed` is used:
+/// Example usage with fixed type:
 /// ```dart
 /// VehicleInfoCard(
 ///   type: VehicleInfoCardType.fixed,
-///   vehicleInfo: myVehicleInfo,
+///   name: 'Ford Mustang',
+///   plate: 'Plate:|MUSCLE99',
+///   kms: '80.000|KM',
+///   vehicleType: 'Classic Muscle Car',
+///   onDeletePressed: () => handleDelete(),
+///   onEditPressed: () => handleEdit(),
 /// )
 /// ```
 class VehicleInfoCard extends StatefulWidget {
@@ -59,6 +82,8 @@ class VehicleInfoCard extends StatefulWidget {
   final VehicleInfoCardType type;
   final VoidCallback? onDeletePressed;
   final VoidCallback? onEditPressed;
+  final VoidCallback? onToggleSwitch;
+  final bool isToggleActive;
 
   const VehicleInfoCard({
     super.key,
@@ -69,6 +94,8 @@ class VehicleInfoCard extends StatefulWidget {
     this.type = VehicleInfoCardType.toggleable,
     this.onDeletePressed,
     this.onEditPressed,
+    this.onToggleSwitch,
+    this.isToggleActive = true,
   });
 
   @override
@@ -81,7 +108,8 @@ class _VehicleInfoCardState extends State<VehicleInfoCard> {
   @override
   void initState() {
     super.initState();
-    _isEnabled = ValueNotifier(widget.type == VehicleInfoCardType.fixed);
+    _isEnabled = ValueNotifier(
+        widget.type == VehicleInfoCardType.fixed || widget.isToggleActive);
   }
 
   @override
@@ -145,7 +173,10 @@ class _VehicleInfoCardState extends State<VehicleInfoCard> {
         if (widget.type == VehicleInfoCardType.toggleable) ...[
           CMSwitch(
             initialValue: _isEnabled.value,
-            onChanged: _toggleSwitch,
+            onChanged: (value) {
+              _toggleSwitch(value);
+              widget.onToggleSwitch?.call();
+            },
           ),
           SizedBox(width: CMDimens.d12),
         ],
