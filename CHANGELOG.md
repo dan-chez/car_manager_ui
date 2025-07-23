@@ -1,3 +1,7 @@
+## 1.2.3
+
+- Add toggle switch callback to VehicleInfoCard.
+
 ## 1.2.2
 
 - Title added to confirmation dialog.
