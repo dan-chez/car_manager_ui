@@ -187,4 +187,31 @@ void main() {
     final kmsSpans = (kmsRichText.text as TextSpan).children!;
     expect((kmsSpans[0] as TextSpan).style!.fontWeight, FontWeight.w600);
   });
+
+  testWidgets('Should call onToggleSwitch callback when switch is toggled',
+      (WidgetTester tester) async {
+    bool toggleSwitchCalled = false;
+
+    await tester.pumpWidget(
+      baseComponentApp(
+        VehicleInfoCard(
+          type: VehicleInfoCardType.toggleable,
+          name: 'Audi A4',
+          plate: 'Plate:|AUD789',
+          kms: '35.000|KM',
+          vehicleType: 'Luxury Sedan',
+          onToggleSwitch: () {
+            toggleSwitchCalled = true;
+          },
+        ),
+      ),
+    );
+
+    // Toggle the switch
+    await tester.tap(find.byType(CMSwitch));
+    await tester.pump();
+
+    // Verify callback was called
+    expect(toggleSwitchCalled, isTrue);
+  });
 }

@@ -33,6 +33,9 @@ class VehicleInfoCardShowcase extends StatelessWidget {
     const onEditSnackBar = SnackBar(
       content: Text('onEdit pressed'),
     );
+    const onToggleSnackBar = SnackBar(
+      content: Text('toggle pressed'),
+    );
 
     return ShowcaseAppBase(
       title: 'Vehicle info card showcase',
@@ -80,6 +83,21 @@ class VehicleInfoCardShowcase extends StatelessWidget {
           vehicleType: 'Classic Muscle Car',
           onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
           onEditPressed: () => showCustomSnackBar(context, onEditSnackBar),
+          onToggleSwitch: () => showCustomSnackBar(context, onToggleSnackBar),
+          isToggleActive: false,
+        ),
+        createShowcaseTitle(
+            'Selectable Card - Initially enabled, allowing users to enable details on demand.'),
+        VehicleInfoCard(
+          type: VehicleInfoCardType.toggleable,
+          name: 'Ford Mustang',
+          plate: 'Plate:|MUSCLE99',
+          kms: '80.000|KM',
+          vehicleType: 'Classic Muscle Car',
+          onDeletePressed: () => showCustomSnackBar(context, onDeleteSnackBar),
+          onEditPressed: () => showCustomSnackBar(context, onEditSnackBar),
+          onToggleSwitch: () => showCustomSnackBar(context, onToggleSnackBar),
+          isToggleActive: true,
         ),
       ],
     );
