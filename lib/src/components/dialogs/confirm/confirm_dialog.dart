@@ -107,6 +107,7 @@ class ConfirmDialog extends DialogBase<ConfirmDialogData> {
                       textStyle: kSubtitleTextStyle,
                       textDivider: data.textDivider,
                       boldPositions: data.boldPositions,
+                      messageOverflow: data.messageOverflow,
                     )(),
                   ),
                   const SizedBox(height: CMDimens.d30),
