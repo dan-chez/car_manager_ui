@@ -130,6 +130,25 @@ class DialogsShowcase extends StatelessWidget {
             );
           },
         ),
+        createShowcaseTitle(
+            'Confirmation dialog with image, with subtitle and button'),
+        PrimaryButton(
+          txtLabel: 'Confirm dialog',
+          onPressed: () {
+            context.push(
+              ConfirmDialogRoute.path,
+              extra: _getConfirmDialogContent(
+                showCloseButton: false,
+                message:
+                    'Something went wrong. Please|check|your connection and try again.',
+                buttonText: 'Retry',
+                image: kSuccessImage,
+                boldPositions: [1],
+                overflow: TextOverflow.clip,
+              ),
+            );
+          },
+        ),
         createShowcaseTitle('ErrorDialog', higherSize: true),
         createShowcaseTitle('Basic error dialog with title an subtitle'),
         PrimaryButton(
@@ -282,6 +301,7 @@ class DialogsShowcase extends StatelessWidget {
     bool showCloseButton = true,
     bool popWhenOnPressed = true,
     String? image,
+    TextOverflow overflow = TextOverflow.ellipsis,
   }) {
     return ConfirmDialogData(
       title: title,
@@ -293,6 +313,7 @@ class DialogsShowcase extends StatelessWidget {
       boldPositions: boldPositions,
       onPressed: () {},
       image: image,
+      messageOverflow: overflow,
     );
   }
 }
