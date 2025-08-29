@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import 'package:carmanager_ui/src/constants/string_constants.dart';
-import 'package:flutter/material.dart' show VoidCallback;
+import 'package:flutter/material.dart';
 
 class ConfirmDialogData {
   final String? title;
@@ -26,6 +26,7 @@ class ConfirmDialogData {
   final bool canPop;
   final bool showCloseButton;
   final bool popWhenOnPressed;
+  final TextOverflow messageOverflow;
 
   const ConfirmDialogData({
     this.title,
@@ -38,5 +39,6 @@ class ConfirmDialogData {
     this.canPop = true,
     this.showCloseButton = true,
     this.popWhenOnPressed = true,
+    this.messageOverflow = TextOverflow.ellipsis,
   });
 }

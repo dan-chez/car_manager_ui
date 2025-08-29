@@ -39,6 +39,7 @@ class CMRichText {
   final FontWeight boldFontWeight;
   final FontWeight contentFontWeight;
   final int? maxLines;
+  final TextOverflow messageOverflow;
 
   const CMRichText({
     required this.text,
@@ -49,6 +50,7 @@ class CMRichText {
     this.boldFontWeight = FontWeight.w600,
     this.contentFontWeight = FontWeight.w300,
     this.maxLines,
+    this.messageOverflow = TextOverflow.ellipsis,
   });
 
   RichText call() {
@@ -72,7 +74,7 @@ class CMRichText {
       textAlign: textAlign,
       text: TextSpan(children: textSpans),
       maxLines: maxLines,
-      overflow: TextOverflow.ellipsis,
+      overflow: messageOverflow,
     );
   }
 
