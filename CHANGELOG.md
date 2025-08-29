@@ -1,3 +1,7 @@
+## 1.3.0
+
+- Add message overflow option to confirm dialog.
+
 ## 1.2.3
 
 - Add toggle switch callback to VehicleInfoCard.
