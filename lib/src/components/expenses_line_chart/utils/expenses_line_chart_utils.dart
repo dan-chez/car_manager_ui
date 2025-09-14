@@ -14,32 +14,16 @@
 
 part of '../expenses_line_chart.dart';
 
-const _allowedXValues = [0.5, 1.5, 2.5, 3.5];
-
-/// Returns a list of `TouchedSpotIndicatorData` with transparent lines and hidden dots.
-/// This is used to customize the appearance of touched spots in a line chart.
-List<TouchedSpotIndicatorData> touchedSpotIndicator(
-  LineChartBarData _,
-  List<int> indicators,
-) {
-  return indicators.map(
-    (int index) {
-      return const TouchedSpotIndicatorData(
-        FlLine(color: Colors.transparent),
-        FlDotData(show: false),
-      );
-    },
-  ).toList();
-}
+final _allowedXValues = List.generate(12, (index) => index + 0.5);
 
 extension FlSpotExtensions on List<double> {
-  /// Converts the first four elements of the list into a list of [FlSpot].
+  /// Converts the first twelve elements of the list into a list of [FlSpot].
   /// The x-values are assigned from [allowedValues], and y-values come from the list.
   ///
-  /// Only the first four elements are converted; the rest are ignored.
+  /// Only the first twelve elements are converted; the rest are ignored.
   List<FlSpot> toFlSpots() {
     return List.generate(
-      length.clamp(0, 4),
+      length.clamp(0, 12),
       (index) => FlSpot(_allowedXValues[index], this[index]),
     );
   }
@@ -61,8 +45,44 @@ extension FlSpotExtensions on List<double> {
   /// Generates a list of sequential indices from 0 to [length] - 1.
   /// This is used to show tooltips on all available spots.
   ///
-  /// Only the first four elements are converted; the rest are ignored.
+  /// Only the first twelve elements are converted; the rest are ignored.
   List<int> get showingTooltipOnSpots {
-    return List.generate(length.clamp(0, 4), (index) => index);
+    return List.generate(length.clamp(0, 12), (index) => index);
+  }
+
+  /// Calculates a "nice" interval for a chart's axis.
+  ///
+  /// This method computes an interval that is easy for humans to read by
+  /// finding a rounded value that appropriately divides the data range into
+  /// a reasonable number of ticks (in this case, 5).
+  ///
+  /// Returns `null` if the list is empty. If all values are the same, it returns half of that value.
+  double? getNiceInterval() {
+    if (isEmpty) return null;
+
+    final minValue = reduce((a, b) => a < b ? a : b);
+    final maxValue = reduce((a, b) => a > b ? a : b);
+    final range = maxValue - minValue;
+
+    if (range == 0) return minValue / 2;
+
+    const numTicks = 5;
+    final rawInterval = range / (numTicks - 1);
+
+    final magnitude = pow(10, (log(rawInterval) / ln10).floor());
+    final residual = rawInterval / magnitude;
+
+    num niceInterval;
+    if (residual > 5) {
+      niceInterval = 10 * magnitude;
+    } else if (residual > 2) {
+      niceInterval = 5 * magnitude;
+    } else if (residual > 1) {
+      niceInterval = 2 * magnitude;
+    } else {
+      niceInterval = magnitude;
+    }
+
+    return niceInterval.toDouble();
   }
 }

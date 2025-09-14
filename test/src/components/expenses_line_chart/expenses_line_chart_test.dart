@@ -106,5 +106,60 @@ void main() {
 
       expect(values.showingTooltipOnSpots.length, equals(values.length));
     });
+
+    testWidgets('throws assertion error if both xPrefix and xTitles are null',
+        (WidgetTester tester) async {
+      expect(
+        () async => await tester.pumpWidget(
+          MaterialApp(
+            home: Scaffold(
+              body: ExpensesLineChart(
+                title: 'Assert Test',
+                values: [100, 200],
+              ),
+            ),
+          ),
+        ),
+        throwsA(isA<AssertionError>()),
+      );
+    });
+
+    testWidgets('renders correctly with xTitles', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: ExpensesLineChart(
+              title: 'xTitles Test',
+              xTitles: ['Jan', 'Feb', 'Mar'],
+              values: [100, 200, 300],
+            ),
+          ),
+        ),
+      );
+
+      expect(find.text('Jan'), findsOneWidget);
+      expect(find.text('Feb'), findsOneWidget);
+      expect(find.text('Mar'), findsOneWidget);
+    });
+
+    testWidgets('renders yTitles values', (WidgetTester tester) async {
+      final values = [100.0, 200.0, 300.0, 400.0, 500.0, 600.0];
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: ExpensesLineChart(
+              title: 'Index Test',
+              xPrefix: 'M',
+              values: values,
+            ),
+          ),
+        ),
+      );
+
+      expect(find.textContaining('50'), findsOneWidget);
+      expect(find.textContaining('200'), findsOneWidget);
+      expect(find.textContaining('400'), findsOneWidget);
+      expect(find.textContaining('600'), findsOneWidget);
+    });
   });
 }

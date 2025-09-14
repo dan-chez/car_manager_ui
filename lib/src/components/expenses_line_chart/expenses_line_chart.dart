@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'dart:math';
+
 import 'package:carmanager_ui/src/constants/app_colors_constants.dart';
 import 'package:carmanager_ui/src/constants/cm_dimens.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
@@ -25,33 +27,67 @@ part 'helpers/line_chart_bar_data_helper.dart';
 
 part 'utils/expenses_line_chart_utils.dart';
 
-/// A line chart widget that displays up to four expense values, one per week.
+/// A line chart widget that displays a series of expense values.
 ///
-/// It includes tooltips for each data point and dynamically calculates min/max values.
+/// It includes tooltips for each data point and dynamically calculates min/max values
+/// for the y-axis. The x-axis labels can be provided either as a list of strings
+/// (`xTitles`) or generated using a prefix (`xPrefix`).
 ///
-/// Example usage:
+/// Example usage with `xPrefix`:
 /// ```dart
 /// ExpensesLineChart(
-///   title: 'Expenses per week',
+///   title: 'Weekly Expenses',
 ///   xPrefix: 'W',
-///   values: [...],
+///   values: [150.0, 200.0, 180.0, 220.0],
 /// )
 /// ```
-class ExpensesLineChart extends StatelessWidget {
+///
+/// Example usage with `xTitles`:
+/// ```dart
+/// ExpensesLineChart(
+///   title: 'Monthly Expenses',
+///   xTitles: ['Jan', 'Feb', 'Mar', 'Apr'],
+///   values: [500.0, 450.0, 600.0, 550.0],
+/// )
+/// ```
+class ExpensesLineChart extends StatefulWidget {
   final String title;
-  final String xPrefix;
+  final String? xPrefix;
+  final List<String>? xTitles;
   final List<double> values;
 
   const ExpensesLineChart({
     super.key,
     required this.title,
-    required this.xPrefix,
+    this.xPrefix,
+    this.xTitles,
     required this.values,
-  });
+  }) : assert(
+          xPrefix != null || xTitles != null,
+          'Either xPrefix or xTitles must be provided.',
+        );
+
+  @override
+  State<ExpensesLineChart> createState() => _ExpensesLineChartState();
+}
+
+class _ExpensesLineChartState extends State<ExpensesLineChart> {
+  int? _touchedIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.values.isNotEmpty) {
+      _touchedIndex = widget.values.length - 1;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    final lineChartBarData = _LineChartBarDataHelper.build(values: values);
+    final lineChartBarData =
+        _LineChartBarDataHelper.build(values: widget.values);
+
+    final maxX = widget.values.length < 4 ? 4 : widget.values.length;
 
     return Container(
       decoration: BoxDecoration(
@@ -71,7 +107,7 @@ class ExpensesLineChart extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              title,
+              widget.title,
               style: kExpensesLineTitleTextStyle,
             ),
             const SizedBox(height: CMDimens.d16),
@@ -80,27 +116,21 @@ class ExpensesLineChart extends StatelessWidget {
               child: LineChart(
                 LineChartData(
                   showingTooltipIndicators:
-                      values.showingTooltipOnSpots.map((index) {
-                    return ShowingTooltipIndicators([
-                      LineBarSpot(
-                        lineChartBarData,
-                        0,
-                        lineChartBarData.spots[index],
-                      ),
-                    ]);
-                  }).toList(),
+                      _LineChartBarDataHelper.getShowingTooltipIndicators(
+                    lineChartBarData,
+                    widget.values,
+                    _touchedIndex,
+                  ),
                   lineTouchData: LineTouchData(
                     enabled: true,
                     handleBuiltInTouches: false,
                     touchTooltipData: LineTouchTooltipData(
                       tooltipRoundedRadius: CMDimens.d4,
-                      fitInsideHorizontally: true,
                       tooltipMargin: CMDimens.d8,
-                      tooltipHorizontalAlignment: FLHorizontalAlignment.right,
                       tooltipPadding: const EdgeInsets.all(CMDimens.d2),
                       getTooltipColor: (spot) => kExpensesLineChartBg,
                       getTooltipItems: (List<LineBarSpot> touchedSpots) {
-                        return touchedSpots.map((LineBarSpot touchedSpot) {
+                        return touchedSpots.map((touchedSpot) {
                           return LineTooltipItem(
                             touchedSpot.y.toInt().toString().toMoneyFormat,
                             kExpensesLineToolTipTextStyle,
@@ -108,14 +138,30 @@ class ExpensesLineChart extends StatelessWidget {
                         }).toList();
                       },
                     ),
-                    getTouchedSpotIndicator: touchedSpotIndicator,
+                    touchCallback:
+                        (FlTouchEvent event, LineTouchResponse? touchResponse) {
+                      if (event is FlTapUpEvent &&
+                          touchResponse?.lineBarSpots != null &&
+                          touchResponse?.lineBarSpots?.isNotEmpty == true) {
+                        final spotIndex =
+                            touchResponse?.lineBarSpots!.first.spotIndex;
+
+                        setState(() {
+                          _touchedIndex = spotIndex;
+                        });
+                      }
+                    },
                   ),
                   lineBarsData: [lineChartBarData],
-                  minY: values.minY,
                   minX: 0,
-                  maxX: 4,
-                  maxY: values.maxY,
-                  titlesData: _FlTitlesDataHelper.build(xPrefix: xPrefix),
+                  maxX: maxX.toDouble(),
+                  minY: widget.values.minY,
+                  maxY: widget.values.maxY,
+                  titlesData: _FlTitlesDataHelper.build(
+                    xPrefix: widget.xPrefix,
+                    xTitles: widget.xTitles,
+                    values: widget.values,
+                  ),
                   gridData: const FlGridData(show: false),
                   borderData: FlBorderData(
                     show: true,
