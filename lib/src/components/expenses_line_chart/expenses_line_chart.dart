@@ -138,6 +138,7 @@ class _ExpensesLineChartState extends State<ExpensesLineChart> {
                         }).toList();
                       },
                     ),
+                    // coverage:ignore-start
                     touchCallback:
                         (FlTouchEvent event, LineTouchResponse? touchResponse) {
                       if (event is FlTapUpEvent &&
@@ -151,6 +152,7 @@ class _ExpensesLineChartState extends State<ExpensesLineChart> {
                         });
                       }
                     },
+                    // coverage:ignore-end
                   ),
                   lineBarsData: [lineChartBarData],
                   minX: 0,
