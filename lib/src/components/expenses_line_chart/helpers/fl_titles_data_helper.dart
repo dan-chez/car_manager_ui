@@ -17,13 +17,30 @@ part of '../expenses_line_chart.dart';
 // coverage:ignore-file
 class _FlTitlesDataHelper {
   static FlTitlesData build({
-    required String xPrefix,
+    String? xPrefix,
+    List<String>? xTitles,
+    required List<double> values,
   }) {
+    final prefixTextSize = values.length < 10 ? CMDimens.d15 : CMDimens.d10;
+    final showLeftTitles = values.length > 4;
     return FlTitlesData(
       leftTitles: AxisTitles(
         sideTitles: SideTitles(
-          showTitles: false,
-        ),
+            maxIncluded: false,
+            interval: values.getNiceInterval(),
+            showTitles: showLeftTitles,
+            reservedSize: CMDimens.d40,
+            getTitlesWidget: (value, meta) {
+              return SideTitleWidget(
+                meta: meta,
+                child: Text(
+                  meta.formattedValue.toString(),
+                  style: kExpensesLineBottomTitleTextStyle.copyWith(
+                    fontSize: CMDimens.d10,
+                  ),
+                ),
+              );
+            }),
       ),
       rightTitles: AxisTitles(
         sideTitles: SideTitles(
@@ -36,11 +53,24 @@ class _FlTitlesDataHelper {
           interval: 0.5,
           getTitlesWidget: (value, meta) {
             if (_allowedXValues.contains(value)) {
+              final index = value.toInt();
+              String text;
+              if (xTitles != null && index < xTitles.length) {
+                final originalText = xTitles[index];
+                final maxLength = values.length > 6 ? 2 : 3;
+                text = originalText.length > maxLength
+                    ? originalText.substring(0, maxLength)
+                    : originalText;
+              } else {
+                text = '$xPrefix${index + 1}';
+              }
               return SideTitleWidget(
                 meta: meta,
                 child: Text(
-                  '$xPrefix${value.toInt() + 1}',
-                  style: kExpensesLineBottomTitleTextStyle,
+                  text,
+                  style: kExpensesLineBottomTitleTextStyle.copyWith(
+                    fontSize: prefixTextSize,
+                  ),
                 ),
               );
             }

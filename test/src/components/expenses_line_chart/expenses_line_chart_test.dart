@@ -14,20 +14,19 @@
 
 import 'package:carmanager_ui/carmanager_ui.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import '../base/base_component_app.dart';
 
 void main() {
   group('ExpensesLineChart Widget Tests', () {
     testWidgets('renders without errors', (WidgetTester tester) async {
       await tester.pumpWidget(
-        MaterialApp(
-          home: Scaffold(
-            body: ExpensesLineChart(
-              title: 'Test Chart',
-              xPrefix: 'W',
-              values: [100, 200, 300, 400],
-            ),
+        baseComponentApp(
+          ExpensesLineChart(
+            title: 'Test Chart',
+            xPrefix: 'W',
+            values: [100, 200, 300, 400],
           ),
         ),
       );
@@ -38,13 +37,11 @@ void main() {
     testWidgets('renders correctly with given parameters',
         (WidgetTester tester) async {
       await tester.pumpWidget(
-        const MaterialApp(
-          home: Scaffold(
-            body: ExpensesLineChart(
-              title: 'Test Chart',
-              xPrefix: 'W',
-              values: [1000, 2000, 3000, 4000],
-            ),
+        baseComponentApp(
+          ExpensesLineChart(
+            title: 'Test Chart',
+            xPrefix: 'W',
+            values: [1000, 2000, 3000, 4000],
           ),
         ),
       );
@@ -58,13 +55,11 @@ void main() {
       final List<double> testValues = [1000, 2000, 3000, 4000];
 
       await tester.pumpWidget(
-        MaterialApp(
-          home: Scaffold(
-            body: ExpensesLineChart(
-              title: 'Tooltip Test',
-              xPrefix: 'W',
-              values: testValues,
-            ),
+        baseComponentApp(
+          ExpensesLineChart(
+            title: 'Tooltip Test',
+            xPrefix: 'W',
+            values: testValues,
           ),
         ),
       );
@@ -83,13 +78,11 @@ void main() {
       final expectedMaxY = testValues.reduce((a, b) => a > b ? a : b) * 1.25;
 
       await tester.pumpWidget(
-        MaterialApp(
-          home: Scaffold(
-            body: ExpensesLineChart(
-              title: 'Range Test',
-              xPrefix: 'W',
-              values: testValues,
-            ),
+        baseComponentApp(
+          ExpensesLineChart(
+            title: 'Range Test',
+            xPrefix: 'W',
+            values: testValues,
           ),
         ),
       );
@@ -105,6 +98,55 @@ void main() {
       final List<double> values = [100, 200, 300, 400];
 
       expect(values.showingTooltipOnSpots.length, equals(values.length));
+    });
+
+    testWidgets('throws assertion error if both xPrefix and xTitles are null',
+        (WidgetTester tester) async {
+      expect(
+        () async => await tester.pumpWidget(
+          baseComponentApp(
+            ExpensesLineChart(
+              title: 'Assert Test',
+              values: [100, 200],
+            ),
+          ),
+        ),
+        throwsA(isA<AssertionError>()),
+      );
+    });
+
+    testWidgets('renders correctly with xTitles', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        baseComponentApp(
+          ExpensesLineChart(
+            title: 'xTitles Test',
+            xTitles: ['Jan', 'Feb', 'Mar'],
+            values: [100, 200, 300],
+          ),
+        ),
+      );
+
+      expect(find.text('Jan'), findsOneWidget);
+      expect(find.text('Feb'), findsOneWidget);
+      expect(find.text('Mar'), findsOneWidget);
+    });
+
+    testWidgets('renders yTitles values', (WidgetTester tester) async {
+      final values = [100.0, 200.0, 300.0, 400.0, 500.0, 600.0];
+      await tester.pumpWidget(
+        baseComponentApp(
+          ExpensesLineChart(
+            title: 'Index Test',
+            xPrefix: 'M',
+            values: values,
+          ),
+        ),
+      );
+
+      expect(find.textContaining('50'), findsOneWidget);
+      expect(find.textContaining('200'), findsOneWidget);
+      expect(find.textContaining('400'), findsOneWidget);
+      expect(find.textContaining('600'), findsOneWidget);
     });
   });
 }
