@@ -90,92 +90,97 @@ class _ExpensesLineChartState extends State<ExpensesLineChart> {
     final maxX = widget.values.length < 4 ? 4 : widget.values.length;
 
     return Container(
-      decoration: BoxDecoration(
-        color: kLightAmaranthPrimary,
-        borderRadius: BorderRadius.all(
-          Radius.circular(CMDimens.d4),
+      decoration: const BoxDecoration(
+          color: kWhite,
+          boxShadow: [
+            BoxShadow(
+              color: kBoxShadowColor,
+              blurRadius: CMDimens.d4,
+              offset: Offset(CMDimens.d0, CMDimens.d5),
+            )
+          ],
+          borderRadius: BorderRadius.all(Radius.circular(CMDimens.d6))),
+      child: Container(
+        decoration: BoxDecoration(
+          color: kPrimaryColorWithOpacityBG,
+          borderRadius: BorderRadius.all(Radius.circular(CMDimens.d6)),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(
-          left: CMDimens.d10,
-          right: CMDimens.d16,
-          top: CMDimens.d16,
-          bottom: CMDimens.d12,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              widget.title,
-              style: kExpensesLineTitleTextStyle,
-            ),
-            const SizedBox(height: CMDimens.d16),
-            AspectRatio(
-              aspectRatio: 2.3,
-              child: LineChart(
-                LineChartData(
-                  showingTooltipIndicators:
-                      _LineChartBarDataHelper.getShowingTooltipIndicators(
-                    lineChartBarData,
-                    widget.values,
-                    _touchedIndex,
-                  ),
-                  lineTouchData: LineTouchData(
-                    enabled: true,
-                    handleBuiltInTouches: false,
-                    touchTooltipData: LineTouchTooltipData(
-                      tooltipRoundedRadius: CMDimens.d4,
-                      tooltipMargin: CMDimens.d8,
-                      tooltipPadding: const EdgeInsets.all(CMDimens.d2),
-                      getTooltipColor: (spot) => kExpensesLineChartBg,
-                      getTooltipItems: (List<LineBarSpot> touchedSpots) {
-                        return touchedSpots.map((touchedSpot) {
-                          return LineTooltipItem(
-                            touchedSpot.y.toInt().toString().toMoneyFormat,
-                            kExpensesLineToolTipTextStyle,
-                          );
-                        }).toList();
-                      },
+        child: Padding(
+          padding: const EdgeInsets.all(CMDimens.d16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                widget.title,
+                style: kExpensesLineTitleTextStyle,
+              ),
+              const SizedBox(height: CMDimens.d16),
+              AspectRatio(
+                aspectRatio: 2.3,
+                child: LineChart(
+                  LineChartData(
+                    showingTooltipIndicators:
+                        _LineChartBarDataHelper.getShowingTooltipIndicators(
+                      lineChartBarData,
+                      widget.values,
+                      _touchedIndex,
                     ),
-                    // coverage:ignore-start
-                    touchCallback:
-                        (FlTouchEvent event, LineTouchResponse? touchResponse) {
-                      if (event is FlTapUpEvent &&
-                          touchResponse?.lineBarSpots != null &&
-                          touchResponse?.lineBarSpots?.isNotEmpty == true) {
-                        final spotIndex =
-                            touchResponse?.lineBarSpots!.first.spotIndex;
+                    lineTouchData: LineTouchData(
+                      enabled: true,
+                      handleBuiltInTouches: false,
+                      touchTooltipData: LineTouchTooltipData(
+                        tooltipRoundedRadius: CMDimens.d4,
+                        tooltipMargin: CMDimens.d8,
+                        tooltipPadding: const EdgeInsets.all(CMDimens.d2),
+                        getTooltipColor: (spot) => kExpensesLineChartBg,
+                        getTooltipItems: (List<LineBarSpot> touchedSpots) {
+                          return touchedSpots.map((touchedSpot) {
+                            return LineTooltipItem(
+                              touchedSpot.y.toInt().toString().toMoneyFormat,
+                              kExpensesLineToolTipTextStyle,
+                            );
+                          }).toList();
+                        },
+                      ),
+                      // coverage:ignore-start
+                      touchCallback: (FlTouchEvent event,
+                          LineTouchResponse? touchResponse) {
+                        if (event is FlTapUpEvent &&
+                            touchResponse?.lineBarSpots != null &&
+                            touchResponse?.lineBarSpots?.isNotEmpty == true) {
+                          final spotIndex =
+                              touchResponse?.lineBarSpots!.first.spotIndex;
 
-                        setState(() {
-                          _touchedIndex = spotIndex;
-                        });
-                      }
-                    },
-                    // coverage:ignore-end
-                  ),
-                  lineBarsData: [lineChartBarData],
-                  minX: 0,
-                  maxX: maxX.toDouble(),
-                  minY: widget.values.minY,
-                  maxY: widget.values.maxY,
-                  titlesData: _FlTitlesDataHelper.build(
-                    xPrefix: widget.xPrefix,
-                    xTitles: widget.xTitles,
-                    values: widget.values,
-                  ),
-                  gridData: const FlGridData(show: false),
-                  borderData: FlBorderData(
-                    show: true,
-                    border: const Border(
-                      left: BorderSide(color: kkAmaranthPrimaryWithOpacity),
-                      bottom: BorderSide(color: kkAmaranthPrimaryWithOpacity),
+                          setState(() {
+                            _touchedIndex = spotIndex;
+                          });
+                        }
+                      },
+                      // coverage:ignore-end
+                    ),
+                    lineBarsData: [lineChartBarData],
+                    minX: 0,
+                    maxX: maxX.toDouble(),
+                    minY: widget.values.minY,
+                    maxY: widget.values.maxY,
+                    titlesData: _FlTitlesDataHelper.build(
+                      xPrefix: widget.xPrefix,
+                      xTitles: widget.xTitles,
+                      values: widget.values,
+                    ),
+                    gridData: const FlGridData(show: false),
+                    borderData: FlBorderData(
+                      show: true,
+                      border: const Border(
+                        left: BorderSide(color: kkAmaranthPrimaryWithOpacity),
+                        bottom: BorderSide(color: kkAmaranthPrimaryWithOpacity),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
