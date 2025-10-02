@@ -1,3 +1,9 @@
+## 1.4.0
+
+- Update Android Gradle plugin version to 8.3.0.
+- The ExpensesLineChart widget now supports up to 12 values on the X-axis.
+- Align colors and margins in ExpensesLineChart widget.
+
 ## 1.3.0
 
 - Add message overflow option to confirm dialog.
