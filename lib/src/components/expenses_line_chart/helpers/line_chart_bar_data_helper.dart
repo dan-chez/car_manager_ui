@@ -21,11 +21,11 @@ class _LineChartBarDataHelper {
       spots: values.toFlSpots(),
       belowBarData: BarAreaData(
         show: true,
-        color: kLightAmaranthPrimary,
+        color: Colors.transparent,
       ),
       aboveBarData: BarAreaData(
         show: true,
-        color: kLightAmaranthPrimary,
+        color: Colors.transparent,
       ),
       dotData: FlDotData(
         show: true,

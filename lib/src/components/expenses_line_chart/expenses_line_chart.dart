@@ -91,18 +91,13 @@ class _ExpensesLineChartState extends State<ExpensesLineChart> {
 
     return Container(
       decoration: BoxDecoration(
-        color: kLightAmaranthPrimary,
+        color: kPrimaryColorWithOpacityBG,
         borderRadius: BorderRadius.all(
           Radius.circular(CMDimens.d4),
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(
-          left: CMDimens.d10,
-          right: CMDimens.d16,
-          top: CMDimens.d16,
-          bottom: CMDimens.d12,
-        ),
+        padding: const EdgeInsets.all(CMDimens.d16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
