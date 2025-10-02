@@ -18,15 +18,14 @@ part of '../expenses_line_chart.dart';
 class _LineChartBarDataHelper {
   static LineChartBarData build({required List<double> values}) {
     return LineChartBarData(
-      showingIndicators: values.showingTooltipOnSpots,
       spots: values.toFlSpots(),
       belowBarData: BarAreaData(
         show: true,
-        color: kLightAmaranthPrimary,
+        color: Colors.transparent,
       ),
       aboveBarData: BarAreaData(
         show: true,
-        color: kLightAmaranthPrimary,
+        color: Colors.transparent,
       ),
       dotData: FlDotData(
         show: true,
@@ -40,5 +39,41 @@ class _LineChartBarDataHelper {
       color: kSilver,
       barWidth: CMDimens.d1,
     );
+  }
+
+  static const _maxSpotsToShowTooltips = 4;
+
+  static List<ShowingTooltipIndicators> getShowingTooltipIndicators(
+    LineChartBarData lineChartBarData,
+    List<double> values,
+    int? touchedIndex,
+  ) {
+    final showAllTooltips = values.length <= _maxSpotsToShowTooltips;
+
+    if (showAllTooltips) {
+      return values.showingTooltipOnSpots.map((index) {
+        return ShowingTooltipIndicators([
+          LineBarSpot(
+            lineChartBarData,
+            0,
+            lineChartBarData.spots[index],
+          ),
+        ]);
+      }).toList();
+    }
+
+    if (touchedIndex != null) {
+      return [
+        ShowingTooltipIndicators([
+          LineBarSpot(
+            lineChartBarData,
+            0,
+            lineChartBarData.spots[touchedIndex],
+          ),
+        ])
+      ];
+    }
+
+    return [];
   }
 }

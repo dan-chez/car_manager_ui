@@ -48,7 +48,7 @@ class ShowcaseAppBase extends StatelessWidget {
         behavior: CMScrollBehavior(),
         child: ListView(
           shrinkWrap: true,
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(CMDimens.d16),
           children: children,
         ),
       ),
