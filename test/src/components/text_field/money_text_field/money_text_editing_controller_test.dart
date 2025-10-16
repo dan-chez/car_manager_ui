@@ -3,41 +3,35 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('CMMoneyTextController', () {
-    test('updateValue should format numbers correctly', () {
+    test('formats numbers when typing', () {
       final controller = CMMoneyTextController(
-        decimalSeparator: ',',
         thousandSeparator: '.',
         leftSymbol: '\$ ',
         rightSymbol: '',
-        precision: 2,
       );
 
-      controller.updateValue(1234.56);
-      expect(controller.text, '\$ 1.234,56');
+      controller.text = '1234.56';
+      expect(controller.text, '\$ 123.456');
 
-      controller.updateValue(1000000);
-      expect(controller.text, '\$ 1.000.000,00');
+      controller.text = '1000000';
+      expect(controller.text, '\$ 1.000.000');
     });
 
-    test('numberValue should return the correct numeric representation', () {
+    test('numberValue returns correct numeric representation', () {
       final controller = CMMoneyTextController(
-        decimalSeparator: ',',
         thousandSeparator: '.',
         leftSymbol: '\$ ',
-        precision: 2,
       );
 
-      controller.text = '\$ 1.234,56';
-      expect(controller.numberValue, 1234.56);
+      controller.text = '\$ 1.234';
+      expect(controller.numberValue, 1234);
 
-      controller.text = '\$ 100.000,99';
-      expect(controller.numberValue, 100000.99);
+      controller.text = '\$ 100.000';
+      expect(controller.numberValue, 100000);
     });
 
-    test('hasError should return true for invalid input', () {
-      final controller = CMMoneyTextController(
-        leftSymbol: '\$ ',
-      );
+    test('hasError returns true for invalid input', () {
+      final controller = CMMoneyTextController(leftSymbol: '\$ ');
 
       controller.text = '\$ ';
       expect(controller.hasError, true);
@@ -49,51 +43,44 @@ void main() {
       expect(controller.hasError, false);
     });
 
-    test('updateValue should not exceed 12 digits before decimal', () {
+    test('does not exceed 12 digits', () {
       final controller = CMMoneyTextController(
-        decimalSeparator: ',',
         thousandSeparator: '.',
         leftSymbol: '\$ ',
-        precision: 2,
       );
 
-      controller.updateValue(1234567890123);
-      expect(controller.text, '\$ 0,00');
+      controller.text = '1234567890123';
+      expect(controller.text, '\$ 0');
 
-      controller.updateValue(123456789012);
-      expect(controller.text, '\$ 123.456.789.012,00');
+      controller.text = '123456789012';
+      expect(controller.text, '\$ 123.456.789.012');
     });
 
-    test('should append rightSymbol correctly', () {
+    test('appends rightSymbol correctly', () {
       final controller = CMMoneyTextController(rightSymbol: ' USD');
 
       controller.text = '100';
-
-      expect(controller.text, equals('\$ 100 USD'));
+      expect(controller.text, '\$ 100 USD');
     });
 
-    test('should maintain rightSymbol after text update', () {
+    test('maintains rightSymbol after text update', () {
       final controller = CMMoneyTextController(rightSymbol: ' USD');
 
       controller.text = '50';
-
-      expect(controller.text, equals('\$ 50 USD'));
+      expect(controller.text, '\$ 50 USD');
 
       controller.text = '75';
-
-      expect(controller.text, equals('\$ 75 USD'));
+      expect(controller.text, '\$ 75 USD');
     });
 
-    test('should not duplicate rightSymbol when updating text', () {
+    test('does not duplicate rightSymbol when updating text', () {
       final controller = CMMoneyTextController(rightSymbol: ' USD');
 
       controller.text = '200 USD';
-
-      expect(controller.text, equals('\$ 200 USD'));
+      expect(controller.text, '\$ 200 USD');
 
       controller.text = '300';
-
-      expect(controller.text, equals('\$ 300 USD'));
+      expect(controller.text, '\$ 300 USD');
     });
 
     test('rightSymbol must not have numbers', () {
