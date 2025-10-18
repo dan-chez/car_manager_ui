@@ -103,14 +103,5 @@ void main() {
         throwsArgumentError,
       );
     });
-
-    test('executes super.value branch when already formatting', () {
-      final controller = CMMoneyTextController();
-
-      final value = controller.value;
-      controller.value = value;
-      controller.value = value;
-      expect(controller.text, isNotEmpty);
-    });
   });
 }

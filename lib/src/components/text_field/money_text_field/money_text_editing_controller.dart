@@ -28,20 +28,12 @@ class CMMoneyTextController extends TextEditingController {
   final String rightSymbol;
   final String leftSymbol;
 
-  bool _isFormatting = false;
   double _lastValue = 0.0;
 
   static final RegExp _nonDigits = RegExp(r'[^0-9]');
 
   @override
   set value(TextEditingValue newValue) {
-    if (_isFormatting) {
-      super.value = newValue;
-      return;
-    }
-
-    _isFormatting = true;
-
     final formatted = _formatInput(newValue.text);
     final cursor = formatted.length;
 
@@ -50,8 +42,6 @@ class CMMoneyTextController extends TextEditingController {
       selection: TextSelection.collapsed(offset: cursor),
       composing: TextRange.empty,
     );
-
-    _isFormatting = false;
   }
 
   String _formatInput(String input) {
