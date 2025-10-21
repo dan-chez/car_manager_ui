@@ -34,7 +34,7 @@ class DialogsShowcase extends StatelessWidget {
       children: [
         createShowcaseTitle('ConfirmDialog', higherSize: true),
         createShowcaseTitle(
-            'Basic confirmation dialog with message an button, shows close button, can pop'),
+            'Basic confirmation dialog with message and button, shows close button, can pop'),
         PrimaryButton(
           txtLabel: 'Confirm dialog',
           onPressed: () {
@@ -49,7 +49,7 @@ class DialogsShowcase extends StatelessWidget {
           },
         ),
         createShowcaseTitle(
-            'Basic confirmation dialog with message an button, can\'t pop'),
+            'Basic confirmation dialog with message and button, can\'t pop'),
         PrimaryButton(
           txtLabel: 'Confirm dialog',
           onPressed: () {
@@ -66,7 +66,7 @@ class DialogsShowcase extends StatelessWidget {
           },
         ),
         createShowcaseTitle(
-            'Basic confirmation dialog with message with bold words an button, shows close button, can pop'),
+            'Basic confirmation dialog with message with bold words and button, shows close button, can pop'),
         PrimaryButton(
           txtLabel: 'Confirm dialog',
           onPressed: () {
@@ -81,7 +81,7 @@ class DialogsShowcase extends StatelessWidget {
           },
         ),
         createShowcaseTitle(
-            'Basic confirmation dialog with message an button, shows close button, can pop and image'),
+            'Basic confirmation dialog with message and button, shows close button, can pop and image'),
         PrimaryButton(
           txtLabel: 'Confirm dialog',
           onPressed: () {
@@ -150,7 +150,7 @@ class DialogsShowcase extends StatelessWidget {
           },
         ),
         createShowcaseTitle('ErrorDialog', higherSize: true),
-        createShowcaseTitle('Basic error dialog with title an subtitle'),
+        createShowcaseTitle('Basic error dialog with title and subtitle'),
         PrimaryButton(
           txtLabel: 'Error dialog',
           onPressed: () {
@@ -248,7 +248,7 @@ class DialogsShowcase extends StatelessWidget {
           },
         ),
         createShowcaseTitle(
-            'CarPickerDialog with 2 item and an item selected by default'),
+            'CarPickerDialog with 2 items and a item selected by default'),
         PrimaryButton(
           txtLabel: 'CarPickerDialog',
           onPressed: () {
