@@ -89,12 +89,14 @@ class ConfirmDialog extends DialogBase<ConfirmDialogData> {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                         vertical: CMDimens.d15,
+                        horizontal: CMDimens.d16,
                       ),
                       child: Text(
                         data.title ?? '',
                         style: kMediumTitleTextStyle.copyWith(
                           fontWeight: FontWeight.w700,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
