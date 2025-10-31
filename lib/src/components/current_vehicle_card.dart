@@ -38,6 +38,7 @@ class CurrentVehicleCard extends StatelessWidget {
   final String vehiclePlate;
   final List<int> plateBoldPositions;
   final VoidCallback onPressed;
+  final String? label;
 
   const CurrentVehicleCard({
     super.key,
@@ -45,64 +46,92 @@ class CurrentVehicleCard extends StatelessWidget {
     required this.vehiclePlate,
     this.plateBoldPositions = const [],
     required this.onPressed,
+    this.label,
   });
 
   @override
   Widget build(BuildContext context) {
+    final bool hasLabel = label != null && label!.trim().isNotEmpty;
+
     return GestureDetector(
       onTap: onPressed,
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(
-          CMDimens.d10,
-          CMDimens.d10,
-          CMDimens.d16,
-          CMDimens.d10,
-        ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(CMDimens.d2),
-          color: kWhite,
-          boxShadow: const [
-            BoxShadow(
-              color: kBoxShadowColor,
-              offset: Offset(CMDimens.d0, CMDimens.d3),
-              blurRadius: CMDimens.d3,
-            )
-          ],
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: Row(
-                children: [
-                  kCheckIconRed,
-                  const SizedBox(width: CMDimens.d8),
-                  Flexible(
-                    child: Text(
-                      vehicleName.toUpperCase(),
-                      style: kCaptionTextStyle.copyWith(
-                        fontWeight: FontWeight.bold,
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Container(
+            padding: const EdgeInsets.fromLTRB(
+              CMDimens.d10,
+              CMDimens.d14,
+              CMDimens.d16,
+              CMDimens.d10,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(CMDimens.d2),
+              color: kWhite,
+              border: Border.all(
+                color: kGreyDisable.withValues(alpha: 0.1),
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: kBoxShadowColor,
+                  offset: Offset(CMDimens.d0, CMDimens.d3),
+                  blurRadius: CMDimens.d3,
+                )
+              ],
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Row(
+                    children: [
+                      kCheckIconRed,
+                      const SizedBox(width: CMDimens.d8),
+                      Flexible(
+                        child: Text(
+                          vehicleName.toUpperCase(),
+                          style: kCaptionTextStyle.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+                    ],
                   ),
-                ],
+                ),
+                const SizedBox(width: CMDimens.d7),
+                Expanded(
+                  child: CMRichText(
+                    text: vehiclePlate,
+                    boldPositions: plateBoldPositions,
+                    maxLines: 1,
+                    textStyle: kCaptionTextStyle.copyWith(color: kGreyDisable),
+                    textAlign: TextAlign.start,
+                  )(),
+                ),
+                const SizedBox(width: CMDimens.d7),
+                kArrowForwardIcon,
+              ],
+            ),
+          ),
+          Visibility(
+            visible: hasLabel,
+            child: Positioned(
+              left: CMDimens.d12,
+              top: -CMDimens.d9,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: CMDimens.d4),
+                color: kWhite,
+                child: Text(
+                  label ?? '',
+                  style: kCaptionTextStyle.copyWith(
+                    color: kSilver,
+                  ),
+                ),
               ),
             ),
-            const SizedBox(width: CMDimens.d7),
-            Expanded(
-              child: CMRichText(
-                text: vehiclePlate,
-                boldPositions: plateBoldPositions,
-                maxLines: 1,
-                textStyle: kCaptionTextStyle.copyWith(color: kGreyDisable),
-                textAlign: TextAlign.start,
-              )(),
-            ),
-            const SizedBox(width: CMDimens.d7),
-            kArrowForwardIcon
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
