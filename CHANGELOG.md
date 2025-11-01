@@ -1,3 +1,9 @@
+## 1.5.0
+
+- Fix high delay in add expenses button.
+- Fix dialog title alignment.
+- Add label to current vehicle card.
+
 ## 1.4.0
 
 - Update Android Gradle plugin version to 8.3.0.

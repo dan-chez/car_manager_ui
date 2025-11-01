@@ -16,115 +16,87 @@ import 'package:flutter/material.dart';
 
 class CMMoneyTextController extends TextEditingController {
   CMMoneyTextController({
-    this.decimalSeparator = '',
     this.thousandSeparator = '.',
     this.rightSymbol = '',
     this.leftSymbol = '\$ ',
-    this.precision = 0,
   }) {
     _validateConfig();
-
-    addListener(() {
-      updateValue(numberValue);
-    });
+    super.text = '${leftSymbol}0';
   }
 
-  final String decimalSeparator;
   final String thousandSeparator;
   final String rightSymbol;
   final String leftSymbol;
-  final int precision;
 
   double _lastValue = 0.0;
 
-  void updateValue(double value) {
-    double valueToUse = value;
+  static final RegExp _nonDigits = RegExp(r'[^0-9]');
 
-    if (value.toStringAsFixed(0).length > 12) {
-      valueToUse = _lastValue;
-    } else {
-      _lastValue = value;
-    }
+  @override
+  set value(TextEditingValue newValue) {
+    final formatted = _formatInput(newValue.text);
+    final cursor = formatted.length;
 
-    String masked = _applyMask(valueToUse);
-
-    if (rightSymbol.isNotEmpty) {
-      masked += rightSymbol;
-    }
-
-    if (leftSymbol.isNotEmpty) {
-      masked = leftSymbol + masked;
-    }
-
-    if (masked != text) {
-      text = masked;
-
-      var cursorPosition = super.text.length - rightSymbol.length;
-      selection =
-          TextSelection.fromPosition(TextPosition(offset: cursorPosition));
-    }
+    super.value = TextEditingValue(
+      text: formatted,
+      selection: TextSelection.collapsed(offset: cursor),
+      composing: TextRange.empty,
+    );
   }
 
-  double get numberValue {
-    List<String> parts = _getOnlyNumbers(text).split('').toList(growable: true);
-
-    parts.insert(parts.length - precision, '.');
-
-    if (parts.join() == '.') {
-      return double.parse('0');
-    } else {
-      return double.parse(parts.join());
+  String _formatInput(String input) {
+    final numbers = _getOnlyNumbers(input);
+    if (numbers.isEmpty) {
+      _lastValue = 0.0;
+      return _applyMaskWithSymbols(0.0);
     }
-  }
 
-  bool get hasError {
-    return (text.isEmpty) || (text == '\$ 0') || (text == '\$ ');
-  }
+    if (numbers.length > 12) return _applyMaskWithSymbols(_lastValue);
 
-  String get finalValue {
-    if (hasError) {
-      return '';
-    } else {
-      return numberValue.toInt().toString();
-    }
-  }
-
-  _validateConfig() {
-    bool rightSymbolHasNumbers = _getOnlyNumbers(rightSymbol).isNotEmpty;
-
-    if (rightSymbolHasNumbers) {
-      throw ArgumentError("rightSymbol must not have numbers.");
-    }
-  }
-
-  String _getOnlyNumbers(String text) {
-    String cleanedText = text;
-
-    var onlyNumbersRegex = RegExp(r'[^\d]');
-
-    cleanedText = cleanedText.replaceAll(onlyNumbersRegex, '');
-
-    return cleanedText;
+    final parsed = double.tryParse(numbers) ?? 0.0;
+    _lastValue = parsed;
+    return _applyMaskWithSymbols(parsed);
   }
 
   String _applyMask(double value) {
-    List<String> textRepresentation = value
-        .toStringAsFixed(precision)
+    final digitsReversed = value
+        .toStringAsFixed(0)
         .replaceAll('.', '')
         .split('')
         .reversed
-        .toList(growable: true);
+        .toList();
 
-    textRepresentation.insert(precision, decimalSeparator);
-
-    for (var i = precision + 4; true; i = i + 4) {
-      if (textRepresentation.length > i) {
-        textRepresentation.insert(i, thousandSeparator);
-      } else {
-        break;
+    if (thousandSeparator.isNotEmpty) {
+      for (var i = 3; i < digitsReversed.length; i += 4) {
+        digitsReversed.insert(i, thousandSeparator);
       }
     }
 
-    return textRepresentation.reversed.join('');
+    return digitsReversed.reversed.join('');
   }
+
+  String _applyMaskWithSymbols(double value) {
+    var masked = _applyMask(value);
+    if (rightSymbol.isNotEmpty) masked += rightSymbol;
+    if (leftSymbol.isNotEmpty) masked = leftSymbol + masked;
+    return masked;
+  }
+
+  String _getOnlyNumbers(String text) => text.replaceAll(_nonDigits, '');
+
+  void _validateConfig() {
+    if (_getOnlyNumbers(rightSymbol).isNotEmpty) {
+      throw ArgumentError('rightSymbol must not have numbers');
+    }
+  }
+
+  bool get hasError => text.isEmpty || text == '\$ ' || text == '\$ 0';
+
+  double get numberValue {
+    final digits = _getOnlyNumbers(text);
+    if (digits.isEmpty) return 0.0;
+    return double.tryParse(digits) ?? 0.0;
+  }
+
+  String get finalValue => hasError ? '' : numberValue.toInt().toString();
 }
