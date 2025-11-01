@@ -64,6 +64,13 @@ class CurrentVehicleCardShowcase extends StatelessWidget {
           vehiclePlate: 'Plate:|TESLA3',
           onPressed: () => showCustomSnackBar(context, onPressedSnackBar),
         ),
+        createShowcaseTitle('With label'),
+        CurrentVehicleCard(
+          vehicleName: 'Tesla Model 4',
+          vehiclePlate: 'Plate:|TES421',
+          label: 'Current vehicle',
+          onPressed: () => showCustomSnackBar(context, onPressedSnackBar),
+        ),
       ],
     );
   }
