@@ -61,7 +61,7 @@ class CMSelectableCardShowcase extends StatelessWidget {
         CMSelectableCard(
           leadingIcon: kCheckIconRed,
           title:
-          'Chevrolet Spark Grand Turismo Edition with Extended Name for Overflow Testing',
+              'Chevrolet Spark Grand Turismo Edition with Extended Name for Overflow Testing',
           subtitle: 'Plate:|LONGPLATE987654321',
           subtitleBoldPositions: const [1],
           onPressed: () => showCustomSnackBar(context, onPressedSnackBar),
