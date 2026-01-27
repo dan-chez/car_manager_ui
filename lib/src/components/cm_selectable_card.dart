@@ -19,39 +19,48 @@ import 'package:carmanager_ui/src/constants/cm_icons.dart';
 import 'package:carmanager_ui/src/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
 
-/// The [CurrentVehicleCard] widget displays information about a vehicle,
-/// including its name and plate, within a styled container that reacts to tap events.
+/// The [CMSelectableCard] widget displays a card with a leading icon, a primary title,
+/// an optional subtitle with rich text support, and a trailing arrow icon.
 ///
 /// Example usage:
 /// ```dart
-/// CurrentVehicleCard(
-///   vehicleName: 'Chevrolet Spark GT',
-///   vehiclePlate: 'Plate:|ABC123',
-///   plateBoldPositions: [1],
+/// CMSelectableCard(
+///   leadingIcon: kCheckIconRed,
+///   title: 'Chevrolet Spark GT',
+///   subtitleBoldPositions: [1],
+///   floatingLabel: 'Current vehicle',
+///   subtitle: 'Plate:|ABC123',
+///   titleUpperCase: false,
 ///   onPressed: () {
 ///     // Handle tap event
 ///   },
 /// );
 /// ```
-class CurrentVehicleCard extends StatelessWidget {
-  final String vehicleName;
-  final String vehiclePlate;
-  final List<int> plateBoldPositions;
+class CMSelectableCard extends StatelessWidget {
+  final Widget leadingIcon;
+  final String title;
+  final bool titleUpperCase;
+  final String? subtitle;
+  final List<int> subtitleBoldPositions;
   final VoidCallback onPressed;
-  final String? label;
+  final String? floatingLabel;
 
-  const CurrentVehicleCard({
+  const CMSelectableCard({
     super.key,
-    required this.vehicleName,
-    required this.vehiclePlate,
-    this.plateBoldPositions = const [],
+    required this.leadingIcon,
+    required this.title,
+    this.titleUpperCase = true,
+    this.subtitle,
+    this.subtitleBoldPositions = const [],
     required this.onPressed,
-    this.label,
+    this.floatingLabel,
   });
 
   @override
   Widget build(BuildContext context) {
-    final bool hasLabel = label != null && label!.trim().isNotEmpty;
+    final bool hasFloatingLabel =
+        floatingLabel != null && floatingLabel!.trim().isNotEmpty;
+    final bool hasSubtitle = subtitle != null && subtitle!.trim().isNotEmpty;
 
     return GestureDetector(
       onTap: onPressed,
@@ -84,12 +93,12 @@ class CurrentVehicleCard extends StatelessWidget {
                 Expanded(
                   child: Row(
                     children: [
-                      kCheckIconRed,
+                      leadingIcon,
                       const SizedBox(width: CMDimens.d8),
                       Flexible(
                         child: Text(
-                          vehicleName.toUpperCase(),
-                          style: kCaptionTextStyle.copyWith(
+                          titleUpperCase ? title.toUpperCase() : title,
+                          style: kContentTextStyle.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
                           maxLines: 1,
@@ -99,23 +108,26 @@ class CurrentVehicleCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(width: CMDimens.d7),
-                Expanded(
-                  child: CMRichText(
-                    text: vehiclePlate,
-                    boldPositions: plateBoldPositions,
-                    maxLines: 1,
-                    textStyle: kCaptionTextStyle.copyWith(color: kGreyDisable),
-                    textAlign: TextAlign.start,
-                  )(),
-                ),
+                if (hasSubtitle) ...[
+                  const SizedBox(width: CMDimens.d7),
+                  Expanded(
+                    child: CMRichText(
+                      text: subtitle!,
+                      boldPositions: subtitleBoldPositions,
+                      maxLines: 1,
+                      textStyle:
+                          kCaptionTextStyle.copyWith(color: kGreyDisable),
+                      textAlign: TextAlign.start,
+                    )(),
+                  ),
+                ],
                 const SizedBox(width: CMDimens.d7),
                 kArrowForwardIcon,
               ],
             ),
           ),
           Visibility(
-            visible: hasLabel,
+            visible: hasFloatingLabel,
             child: Positioned(
               left: CMDimens.d12,
               top: -CMDimens.d9,
@@ -123,7 +135,7 @@ class CurrentVehicleCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: CMDimens.d4),
                 color: kWhite,
                 child: Text(
-                  label ?? '',
+                  floatingLabel ?? '',
                   style: kCaptionTextStyle.copyWith(
                     color: kSilver,
                   ),

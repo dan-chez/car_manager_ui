@@ -44,12 +44,14 @@ class ShowcaseAppBase extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(title),
       ),
-      body: ScrollConfiguration(
-        behavior: CMScrollBehavior(),
-        child: ListView(
-          shrinkWrap: true,
-          padding: const EdgeInsets.all(CMDimens.d16),
-          children: children,
+      body: SafeArea(
+        child: ScrollConfiguration(
+          behavior: CMScrollBehavior(),
+          child: ListView(
+            shrinkWrap: true,
+            padding: const EdgeInsets.all(CMDimens.d16),
+            children: children,
+          ),
         ),
       ),
     );

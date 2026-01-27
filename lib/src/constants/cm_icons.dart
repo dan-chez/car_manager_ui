@@ -135,3 +135,13 @@ const kEditIcon = Icon(
   color: kMyrtleGreen,
   size: CMDimens.d20,
 );
+
+const kImageIconRed = Icon(
+  Icons.image_outlined,
+  color: kAmaranthPrimary,
+);
+
+const kFileIconRed = Icon(
+  Icons.insert_drive_file_outlined,
+  color: kAmaranthPrimary,
+);
