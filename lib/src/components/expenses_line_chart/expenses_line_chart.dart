@@ -129,7 +129,7 @@ class _ExpensesLineChartState extends State<ExpensesLineChart> {
                       enabled: true,
                       handleBuiltInTouches: false,
                       touchTooltipData: LineTouchTooltipData(
-                        tooltipRoundedRadius: CMDimens.d4,
+                        tooltipBorderRadius: BorderRadius.circular(CMDimens.d4),
                         tooltipMargin: CMDimens.d8,
                         tooltipPadding: const EdgeInsets.all(CMDimens.d2),
                         getTooltipColor: (spot) => kExpensesLineChartBg,
