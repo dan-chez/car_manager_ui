@@ -27,7 +27,7 @@ dependencies:
   carmanager_ui:
     path: ../
   go_router: ^17.0.1
-  flutter_riverpod: ^3.2.0
+  flutter_riverpod: ^2.6.1
 
 dev_dependencies:
   flutter_test:

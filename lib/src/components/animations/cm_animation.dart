@@ -57,6 +57,11 @@ class CMAnimation extends StatelessWidget {
       height: height,
       fit: fit,
       onLoaded: onLoaded,
+      options: LottieOptions(
+        enableMergePaths: true,
+      ),
+      renderCache: RenderCache.raster,
+      frameRate: FrameRate(60),
     );
   }
 }
