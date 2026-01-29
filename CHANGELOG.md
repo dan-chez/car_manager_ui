@@ -1,3 +1,8 @@
+## 1.6.0
+
+- CurrentVehicleCard is now CMSelectableCard.
+- Bump packages versions.
+ 
 ## 1.5.0
 
 - Fix high delay in add expenses button.

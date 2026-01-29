@@ -23,27 +23,27 @@ import '../base/base_component_app.dart';
 void main() {
   testWidgets('Close button visibility = true test',
       (WidgetTester tester) async {
-    const dialogData = ErrorDialogData(
+    final dialogData = ErrorDialogData(
         title: 'Title',
         subtitle: 'Subtitle',
         titleBoldPositions: [],
         imagePath: '');
     await tester.pumpWidget(
-      baseComponentApp(const ErrorDialog(data: dialogData)),
+      baseComponentApp(ErrorDialog(data: dialogData)),
     );
 
     expect(find.byType(CloseIconButton), findsOneWidget);
   });
 
   testWidgets('Invalid image data test', (WidgetTester tester) async {
-    const dialogData = ErrorDialogData(
+    final dialogData = ErrorDialogData(
         title: 'Title',
         subtitle: 'Subtitle',
         titleBoldPositions: [],
         imagePath: '');
 
     await tester.pumpWidget(
-      baseComponentApp(const ErrorDialog(data: dialogData)),
+      baseComponentApp(ErrorDialog(data: dialogData)),
     );
 
     expect(find.byType(SvgPicture), findsNothing);
@@ -51,14 +51,14 @@ void main() {
 
   testWidgets('Dialog transition test, Verify dialog is displayed',
       (WidgetTester tester) async {
-    const dialogData = ErrorDialogData(
+        final dialogData = ErrorDialogData(
         title: 'Title',
         subtitle: 'Subtitle',
         titleBoldPositions: [],
         imagePath: '');
 
     await tester.pumpWidget(
-      baseComponentApp(const ErrorDialog(data: dialogData)),
+      baseComponentApp(ErrorDialog(data: dialogData)),
     );
 
     await tester.pumpAndSettle();

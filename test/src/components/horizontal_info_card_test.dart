@@ -27,7 +27,7 @@ void main() {
 
     await tester.pumpWidget(
       baseComponentApp(
-        const HorizontalInfoCard(
+        HorizontalInfoCard(
           textValue: textValue,
           textDescription: textDescription,
         ),
@@ -45,7 +45,7 @@ void main() {
 
     await tester.pumpWidget(
       baseComponentApp(
-        const HorizontalInfoCard(
+        HorizontalInfoCard(
           textValue: textValue,
           textDescription: textDescription,
         ),
@@ -68,7 +68,7 @@ void main() {
       (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
-        const HorizontalInfoCard(
+        HorizontalInfoCard(
           textValue: '1000',
           textDescription: 'Description',
         ),

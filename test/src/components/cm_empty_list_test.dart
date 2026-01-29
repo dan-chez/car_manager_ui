@@ -29,7 +29,7 @@ void main() {
     // Build the CMEmptyList widget
     await tester.pumpWidget(
       baseComponentApp(
-        const CMEmptyList(
+        CMEmptyList(
           text: testText,
           boldPositions: testBoldPositions,
           imagePath: null,
@@ -69,7 +69,7 @@ void main() {
 
     // Build the CMEmptyList widget
     await tester.pumpWidget(baseComponentApp(
-      const CMEmptyList(
+      CMEmptyList(
         text: testText,
         boldPositions: testBoldPositions,
         textDivider: testTextDivider,
@@ -104,7 +104,7 @@ void main() {
 
     // Define the test data with a null image path
     await tester.pumpWidget(baseComponentApp(
-      const CMEmptyList(
+      CMEmptyList(
         text: testText,
         boldPositions: testBoldPositions,
         imagePath: null, // No image path provided
