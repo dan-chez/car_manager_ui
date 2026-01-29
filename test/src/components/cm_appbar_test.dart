@@ -22,7 +22,7 @@ Widget baseAppBarApp(MockNavigator navigator, {String? assetName}) {
   return MaterialApp(
     home: MockNavigatorProvider(
       navigator: navigator,
-      child: const Scaffold(
+      child: Scaffold(
         appBar: CMAppbar(),
       ),
     ),
