@@ -19,6 +19,18 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
+  test('Constructor creates instance with correct properties', () {
+    const infoCard = CMInfoCard(
+      icon: kMonitoringIcon,
+      message: 'Test message',
+      size: Size(CMDimens.d120, CMDimens.d130),
+    );
+
+    expect(infoCard.icon, kMonitoringIcon);
+    expect(infoCard.message, 'Test message');
+    expect(infoCard.size, const Size(CMDimens.d120, CMDimens.d130));
+  });
+
   testWidgets('Displays the correct icon and message',
       (WidgetTester tester) async {
     const testIcon = kMonitoringIcon;

@@ -19,6 +19,16 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
+  test('Constructor creates instance with correct properties', () {
+    const summaryCard = CMSummaryCard(
+      text: 'Total Revenue',
+      profit: '100000',
+    );
+
+    expect(summaryCard.text, 'Total Revenue');
+    expect(summaryCard.profit, '100000');
+  });
+
   testWidgets('Displays the correct text and profit value',
       (WidgetTester tester) async {
     const String testText = 'Total Revenue';

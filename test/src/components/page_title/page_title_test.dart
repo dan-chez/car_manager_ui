@@ -19,6 +19,20 @@ import 'package:flutter_test/flutter_test.dart';
 import '../base/base_component_app.dart';
 
 void main() {
+  test('Constructor creates instance with correct properties', () {
+    const pageTitle = CMPageTitle(
+      lightTitle: 'Light',
+      boldTitle: 'Bold',
+      showBottomDivider: true,
+      showEditIcon: false,
+    );
+
+    expect(pageTitle.lightTitle, 'Light');
+    expect(pageTitle.boldTitle, 'Bold');
+    expect(pageTitle.showBottomDivider, true);
+    expect(pageTitle.showEditIcon, false);
+  });
+
   testWidgets('Displays both light and bold titles correctly',
       (WidgetTester tester) async {
     const lightTitle = 'Welcome to';

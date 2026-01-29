@@ -31,6 +31,11 @@ Widget baseAppBarApp(MockNavigator navigator, {String? assetName}) {
 
 void main() {
   group('CMAppbar', () {
+    test('Constructor creates instance with correct assetName', () {
+      const appbar = CMAppbar(assetName: 'assets/logo.svg');
+      expect(appbar.assetName, 'assets/logo.svg');
+    });
+
     late MockNavigator navigator;
 
     setUp(() {

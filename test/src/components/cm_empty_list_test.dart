@@ -20,6 +20,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
+  test('Constructor creates instance with correct properties', () {
+    const emptyList = CMEmptyList(
+      text: 'Test text',
+      boldPositions: [0, 1],
+      textDivider: '|',
+      imagePath: 'assets/empty.svg',
+    );
+
+    expect(emptyList.text, 'Test text');
+    expect(emptyList.boldPositions, [0, 1]);
+    expect(emptyList.textDivider, '|');
+    expect(emptyList.imagePath, 'assets/empty.svg');
+  });
+
   testWidgets('CMEmptyList displays text with bold positions correctly',
       (WidgetTester tester) async {
     // Define the test data

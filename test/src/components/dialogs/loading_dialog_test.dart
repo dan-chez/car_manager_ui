@@ -21,6 +21,16 @@ import 'package:lottie/lottie.dart';
 import '../base/base_component_app.dart';
 
 void main() {
+  test('LoadingDialog constructor creates instance with correct data', () {
+    const dialogData = LoadingDialogData(
+      lottieAssetPath: 'assets/loading.json',
+    );
+
+    const dialog = LoadingDialog(data: dialogData);
+
+    expect(dialog.data, dialogData);
+  });
+
   testWidgets('LoadingDialog renders correctly', (WidgetTester tester) async {
     const loadingDialogData = LoadingDialogData(
       lottieAssetPath: '',

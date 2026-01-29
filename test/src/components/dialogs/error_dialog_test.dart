@@ -21,6 +21,19 @@ import 'package:flutter_test/flutter_test.dart';
 import '../base/base_component_app.dart';
 
 void main() {
+  test('ErrorDialog constructor creates instance with correct data', () {
+    const dialogData = ErrorDialogData(
+      title: 'Title',
+      subtitle: 'Subtitle',
+      titleBoldPositions: [],
+      imagePath: '',
+    );
+
+    const dialog = ErrorDialog(data: dialogData);
+
+    expect(dialog.data, dialogData);
+  });
+
   testWidgets('Close button visibility = true test',
       (WidgetTester tester) async {
     const dialogData = ErrorDialogData(

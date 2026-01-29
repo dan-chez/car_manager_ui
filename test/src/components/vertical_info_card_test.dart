@@ -19,6 +19,16 @@ import 'package:flutter_test/flutter_test.dart';
 import 'base/base_component_app.dart';
 
 void main() {
+  test('Constructor creates instance with correct properties', () {
+    const card = VerticalInfoCard(
+      textValue: '100',
+      textDescription: 'Total Items',
+    );
+
+    expect(card.textValue, '100');
+    expect(card.textDescription, 'Total Items');
+  });
+
   testWidgets(
       'VerticalInfoCard displays textValue and textDescription correctly',
       (WidgetTester tester) async {
