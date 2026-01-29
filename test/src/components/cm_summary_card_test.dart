@@ -25,7 +25,7 @@ void main() {
     const String testProfit = '100000';
 
     await tester.pumpWidget(baseComponentApp(
-      const CMSummaryCard(
+      CMSummaryCard(
         text: testText,
         profit: testProfit,
       ),
@@ -41,7 +41,7 @@ void main() {
     const String testProfit = '50000';
 
     await tester.pumpWidget(baseComponentApp(
-      const CMSummaryCard(
+      CMSummaryCard(
         text: testText,
         profit: testProfit,
       ),
@@ -58,7 +58,7 @@ void main() {
     const String testProfit = '-15000';
 
     await tester.pumpWidget(baseComponentApp(
-      const CMSummaryCard(
+      CMSummaryCard(
         text: testText,
         profit: testProfit,
       ),
@@ -75,7 +75,7 @@ void main() {
     const String testProfit = '123456789';
 
     await tester.pumpWidget(baseComponentApp(
-      const CMSummaryCard(
+      CMSummaryCard(
         text: testText,
         profit: testProfit,
       ),

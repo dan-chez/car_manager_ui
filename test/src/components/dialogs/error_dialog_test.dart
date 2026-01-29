@@ -29,7 +29,7 @@ void main() {
         titleBoldPositions: [],
         imagePath: '');
     await tester.pumpWidget(
-      baseComponentApp(const ErrorDialog(data: dialogData)),
+      baseComponentApp(ErrorDialog(data: dialogData)),
     );
 
     expect(find.byType(CloseIconButton), findsOneWidget);
@@ -43,7 +43,7 @@ void main() {
         imagePath: '');
 
     await tester.pumpWidget(
-      baseComponentApp(const ErrorDialog(data: dialogData)),
+      baseComponentApp(ErrorDialog(data: dialogData)),
     );
 
     expect(find.byType(SvgPicture), findsNothing);
@@ -58,7 +58,7 @@ void main() {
         imagePath: '');
 
     await tester.pumpWidget(
-      baseComponentApp(const ErrorDialog(data: dialogData)),
+      baseComponentApp(ErrorDialog(data: dialogData)),
     );
 
     await tester.pumpAndSettle();

@@ -26,7 +26,7 @@ void main() {
     const String testDescription = 'Success Rate';
 
     await tester.pumpWidget(baseComponentApp(
-      const VerticalInfoCard(
+      VerticalInfoCard(
         textValue: testValue,
         textDescription: testDescription,
       ),
