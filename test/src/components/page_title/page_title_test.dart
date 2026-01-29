@@ -26,7 +26,7 @@ void main() {
 
     await tester.pumpWidget(
       baseComponentApp(
-        const CMPageTitle(
+        CMPageTitle(
           lightTitle: lightTitle,
           boldTitle: boldTitle,
         ),
@@ -44,7 +44,7 @@ void main() {
 
     await tester.pumpWidget(
       baseComponentApp(
-        const CMPageTitle(
+        CMPageTitle(
           lightTitle: lightTitle,
           boldTitle: boldTitle,
         ),
@@ -62,7 +62,7 @@ void main() {
       (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
-        const CMPageTitle(
+        CMPageTitle(
           lightTitle: 'Hello',
           boldTitle: 'World',
           showBottomDivider: true,
@@ -77,7 +77,7 @@ void main() {
       (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
-        const CMPageTitle(
+        CMPageTitle(
           lightTitle: 'Hello',
           boldTitle: 'World',
           showBottomDivider: false,
@@ -92,7 +92,7 @@ void main() {
       (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
-        const CMPageTitle(
+        CMPageTitle(
           lightTitle: 'Hello',
           boldTitle: 'World',
           showBottomDivider: false,
@@ -108,7 +108,7 @@ void main() {
       (WidgetTester tester) async {
     await tester.pumpWidget(
       baseComponentApp(
-        const CMPageTitle(
+        CMPageTitle(
           lightTitle: 'Hello',
           boldTitle: 'World',
           showEditIcon: false,

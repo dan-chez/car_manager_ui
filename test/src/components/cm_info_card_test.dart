@@ -25,7 +25,7 @@ void main() {
     const testMessage = 'Test Info';
 
     await tester.pumpWidget(baseComponentApp(
-      const CMInfoCard(
+      CMInfoCard(
         icon: testIcon,
         message: testMessage,
       ),
@@ -41,7 +41,7 @@ void main() {
     const longMessage = 'This is a very long message that should be truncated';
 
     await tester.pumpWidget(baseComponentApp(
-      const CMInfoCard(
+      CMInfoCard(
         icon: testIcon,
         message: longMessage,
       ),
@@ -59,7 +59,7 @@ void main() {
     const customSize = Size(CMDimens.d150, CMDimens.d180);
 
     await tester.pumpWidget(baseComponentApp(
-      const CMInfoCard(
+      CMInfoCard(
         icon: testIcon,
         message: testMessage,
         size: customSize,

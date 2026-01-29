@@ -21,7 +21,7 @@ jobs:
       - name: Setup Flutter Environment
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.32.1'
+          flutter-version: '3.38.8'
 
       # Prints the installed Flutter version to verify the setup.
       - name: Verify Flutter Version
