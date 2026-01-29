@@ -23,7 +23,7 @@ import '../base/base_component_app.dart';
 void main() {
   testWidgets('Close button visibility = true test',
       (WidgetTester tester) async {
-    const dialogData = ErrorDialogData(
+    final dialogData = ErrorDialogData(
         title: 'Title',
         subtitle: 'Subtitle',
         titleBoldPositions: [],
@@ -36,7 +36,7 @@ void main() {
   });
 
   testWidgets('Invalid image data test', (WidgetTester tester) async {
-    const dialogData = ErrorDialogData(
+    final dialogData = ErrorDialogData(
         title: 'Title',
         subtitle: 'Subtitle',
         titleBoldPositions: [],
@@ -51,7 +51,7 @@ void main() {
 
   testWidgets('Dialog transition test, Verify dialog is displayed',
       (WidgetTester tester) async {
-    const dialogData = ErrorDialogData(
+        final dialogData = ErrorDialogData(
         title: 'Title',
         subtitle: 'Subtitle',
         titleBoldPositions: [],

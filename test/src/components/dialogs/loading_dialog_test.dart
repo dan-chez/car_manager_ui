@@ -22,13 +22,13 @@ import '../base/base_component_app.dart';
 
 void main() {
   testWidgets('LoadingDialog renders correctly', (WidgetTester tester) async {
-    const loadingDialogData = LoadingDialogData(
+    final loadingDialogData = LoadingDialogData(
       lottieAssetPath: '',
     );
 
     await tester.pumpWidget(
       baseComponentApp(
-        const LoadingDialog(data: loadingDialogData),
+        LoadingDialog(data: loadingDialogData),
       ),
     );
 
@@ -47,7 +47,7 @@ void main() {
 
     await tester.pumpWidget(
       baseComponentApp(
-        const LoadingDialog(data: loadingDialogData),
+        LoadingDialog(data: loadingDialogData),
       ),
     );
 
@@ -57,13 +57,13 @@ void main() {
   });
 
   testWidgets('LoadingDialog prevents popping', (WidgetTester tester) async {
-    const loadingDialogData = LoadingDialogData(
+    final loadingDialogData = LoadingDialogData(
       lottieAssetPath: '',
     );
 
     await tester.pumpWidget(
       baseComponentApp(
-        const LoadingDialog(data: loadingDialogData),
+        LoadingDialog(data: loadingDialogData),
       ),
     );
 
