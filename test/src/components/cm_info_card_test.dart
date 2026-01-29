@@ -23,12 +23,12 @@ void main() {
     const infoCard = CMInfoCard(
       icon: kMonitoringIcon,
       message: 'Test message',
-      size: Size(CMDimens.d120, CMDimens.d130),
+      size: Size(CMDimens.d120, CMDimens.d120),
     );
 
     expect(infoCard.icon, kMonitoringIcon);
     expect(infoCard.message, 'Test message');
-    expect(infoCard.size, const Size(CMDimens.d120, CMDimens.d130));
+    expect(infoCard.size, const Size(CMDimens.d120, CMDimens.d120));
   });
 
   testWidgets('Displays the correct icon and message',
